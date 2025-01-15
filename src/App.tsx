@@ -4,18 +4,18 @@ import { ThemeProvider } from "./components/theme-provider";
 // import NavigationBar from "./modules/NaviationBar/NavBar";
 import { FloatButton } from "antd";
 import { Toaster } from "./components/ui/toaster";
-import LandingPage from "./modules/LandingPage";
+import LandingPage from "./modules/Routes/LandingPage";
+
 function App() {
   return (
     <>
-    <div>
-      hello luxoflex
-    </div>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Router>
+         
           {/* <NavigationBar /> */}
           <Routes>
             <Route path="/" element={<LandingPage />} />
+          
           </Routes>
 
           {/* <Footer /> */}
