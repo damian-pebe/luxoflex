@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -30,14 +29,15 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --color-primary: 50 32% 93%; 
+    --color-primary: 50 32% 93%;
     --color-secondary: 75 25% 44%;
     --color-t: 11 15% 50%;
-    --shadows: 0 0% 4%; 
+    --shadows: 0 0% 4%;
     --navbar: 0 100% 99%;
-    --footerContrast:0, 0%, 10%;
-    --color-email: 0, 72%, 50%;    --color-facebook: 221, 44%, 41%; 
-    --color-whatsapp: 120, 61%, 34%; 
+    --footerContrast: 0, 0%, 10%;
+    --color-email: 0, 72%, 50%;
+    --color-facebook: 221, 44%, 41%;
+    --color-whatsapp: 120, 61%, 34%;
     --color-instagram: 328, 63%, 47%;
   }
 
@@ -66,14 +66,15 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --color-primary: 0 0% 4%; 
+    --color-primary: 0 0% 4%;
     --color-secondary: 33, 56%, 76%;
     --color-t: 33, 56%, 76%;
-    --shadows: 50 32% 93%; 
+    --shadows: 50 32% 93%;
     --navbar: 34, 8%, 16%;
     --footerContrast: 0, 90%, 98%;
-    --color-email: 0, 72%, 50%;    --color-facebook: 221, 44%, 41%; 
-    --color-whatsapp: 120, 61%, 34%; 
+    --color-email: 0, 72%, 50%;
+    --color-facebook: 221, 44%, 41%;
+    --color-whatsapp: 120, 61%, 34%;
     --color-instagram: 328, 63%, 47%;
   }
 }
