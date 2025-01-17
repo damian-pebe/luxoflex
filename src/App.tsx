@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "./components/theme-provider";
 // import Footer from "./modules/Footer/Footer";
-// import NavigationBar from "./modules/NaviationBar/NavBar";
+import Navbar from "./modules/NaviationBar/NavBar";
 import { FloatButton } from "antd";
 import { Toaster } from "./components/ui/toaster";
-import LandingPage from "./modules/Routes/LandingPage";
+import LandingPage from "./modules/Routes/LandingPageComponents/LandingPage";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Router>
          
-          {/* <NavigationBar /> */}
+          <Navbar />
           <Routes>
             <Route path="/" element={<LandingPage />} />
           
