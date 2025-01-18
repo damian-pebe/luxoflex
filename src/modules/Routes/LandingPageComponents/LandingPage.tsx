@@ -3,7 +3,6 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import "./LandingPage.css";
 import ButtonStyle1 from "@/components/buttons_style/style1/button_style1";
-
 export default function LandingPage() {
   const words = ["color", "arte", "magia", "diseño", "pasion"];
   const words2 = [
@@ -49,14 +48,13 @@ export default function LandingPage() {
             <h2 className="scroll-m-20 border-b pb-2 text-3xl  font-alfa tracking-widest first:mt-2 border-white animate-flyinup">
               Tu marca hablará por sí sola.
             </h2>
-            <div className="flex flex-col gap-10 md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 ">
+            <div className="flex flex-col items-center md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 ">
               <div className="animate-slideindown">
-
-              <ButtonStyle1 str="Contactanos ahora" />
+                <ButtonStyle1 str="Contactanos ahora" />
               </div>
               <div className="animate-slideinup">
-
-              <ButtonStyle1 str="Contactanos ahora" />
+                <ButtonStyle1 str="Trabajos pasados" />
+                
               </div>
             </div>
           </div>
