@@ -8,7 +8,7 @@ export default function Title() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIsHovered(prev => !prev); 
-    }, isHovered ? 2000 : 500); 
+    }, isHovered ? 3000 : 1000); 
   
     return () => clearInterval(intervalId);
   }, [isHovered]);
