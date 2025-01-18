@@ -60,7 +60,7 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-      <div className="text-3xl">
+      {/* <div className="text-3xl">
         <h1 className="font-playfair">Playfair Display</h1>
         <h1 className="font-safira">Safira March</h1>
         <h1 className="font-orbitron">Orbitron</h1>
@@ -86,6 +86,9 @@ export default function LandingPage() {
         <h1 className="font-flamenco">Flamenco</h1>
         <h1 className="font-neon">Neon</h1>
         <h1 className="font-zilla">Zilla Slab Highlight</h1>
+      </div> */}
+      <div>
+        continue here
       </div>
     </div>
   );
