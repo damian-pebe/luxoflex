@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const ButtonLink1 = ({ str }: ButtonProps) => {
   return (
-    <div className="hover:animate-wiggle">
+    <div className="hover:animate-wiggle z-10">
       <button className="cta">
         <span className="hover-underline-animation pl-5 font-rajdhani">{str}</span>
         <ChevronRightIcon width={20} className="icon" />
