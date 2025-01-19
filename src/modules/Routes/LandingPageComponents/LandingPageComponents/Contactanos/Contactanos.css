@@ -1,0 +1,49 @@
+.custom-shape-divider-top-1737323798 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1737323798 svg {
+    position: relative;
+    display: block;
+    width: calc(102% + 1.3px);
+    height: 163px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1737323798 .shape-fill {
+    fill: #5272F2   ;
+}
+
+
+
+.custom-shape-divider-bottom-1737325185 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1737325185 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 112px;
+}
+
+.custom-shape-divider-bottom-1737325185 .shape-fill {
+    fill: #5272F2;
+}
+
+
+.social-icon-4 {
+    transition-duration: 0.4s;
+    background: linear-gradient(45deg, #000000, #141414); /* Twitter-like Blue */
+  }

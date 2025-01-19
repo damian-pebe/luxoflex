@@ -11,7 +11,7 @@ function NavBar() {
         {/* <ButtonHoverTitle /> */}
         <Title/>
         <Categories />
-        <div className="md:hidden block">
+        <div className="md:hidden block z-30">
           <Sidebar />
         </div>
       </nav>

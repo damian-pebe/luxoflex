@@ -42,7 +42,7 @@
   }
 
   .dark {
-    --background: 0, 0%, 10%;
+    --background: 0, 0%, 1%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
