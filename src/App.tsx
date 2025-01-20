@@ -9,7 +9,7 @@ import LandingPage from "./modules/Routes/LandingPageComponents/LandingPage";
 function App() {
   return (
     <>
-      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Router>
          
           <Navbar />
