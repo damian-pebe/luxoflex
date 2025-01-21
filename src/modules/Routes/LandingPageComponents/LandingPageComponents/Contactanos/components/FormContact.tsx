@@ -50,7 +50,7 @@ export default function FormContact() {
   }
 
   return (
-    <div className="w-[30%]">
+    <div className="">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
