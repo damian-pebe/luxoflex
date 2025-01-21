@@ -146,7 +146,7 @@ function AnimatedPinDemo() {
             href="luxoflex.vercel.app"
             className="flex-grow"
           >
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
+            <div className="flex basis-full flex-col  tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
               <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
                 Email
               </h3>
@@ -161,7 +161,7 @@ function AnimatedPinDemo() {
             </div>
           </PinContainer>
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
+            <div className="flex basis-full flex-col  tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
               <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
                 Llamadas
               </h3>
@@ -177,7 +177,7 @@ function AnimatedPinDemo() {
             </div>
           </PinContainer>
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
+            <div className="flex basis-full flex-col  tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
               <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
                 WhatsApp
               </h3>
@@ -192,7 +192,7 @@ function AnimatedPinDemo() {
             </div>
           </PinContainer>
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
+            <div className="flex basis-full flex-col  tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
               <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
                 Facebook
               </h3>
@@ -207,7 +207,7 @@ function AnimatedPinDemo() {
             </div>
           </PinContainer>
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
+            <div className="flex basis-full flex-col  tracking-tighter text-slate-100/50 sm:basis-1/2 w-[5rem] h-[8rem] ">
               <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
                 Instagram
               </h3>
@@ -274,7 +274,7 @@ const Socials = () => {
 };
 function ContactData() {
   return (
-    <div className="flex flex-col items-center justify-between gap-6 ">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 ">
       <Card />
       <Card />
       <Card />
