@@ -13,7 +13,7 @@ export default function Categories() {
               <ButtonLink1 str="¿Quienes somos?" />
             </div>
             <div
-              onClick={() => navigate("/contact")}
+              onClick={() => navigate("/contactus")}
               className="animate-slideinleft2"
             >
               <ButtonLink1 str="Contactanos" />

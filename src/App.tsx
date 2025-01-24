@@ -5,6 +5,7 @@ import Navbar from "./modules/NaviationBar/NavBar";
 import { FloatButton } from "antd";
 import { Toaster } from "./components/ui/toaster";
 import LandingPage from "./modules/Routes/LandingPageComponents/LandingPage";
+import Contactus from "./modules/Routes/LandingPageComponents/ContactUs/Contactus";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<LandingPage />} />
-          
+            <Route path="/contactus" element={<Contactus />} />
           </Routes>
 
           {/* <Footer /> */}

@@ -67,7 +67,7 @@ export function Sidebar() {
               </div>
             </div>
             <div
-              onClick={() => navigate("/contact")}
+              onClick={() => navigate("/contactus")}
               className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
             >
               <ButtonLink1 str="Contactanos" />

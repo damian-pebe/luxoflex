@@ -3,6 +3,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import "./StartPage.css";
 import ButtonStyle1 from "@/components/buttons_style/style1/button_style1";
+import { useNavigate } from "react-router-dom";
 export default function StartPage() {
   const words = ["color", "arte", "magia", "diseño", "pasion"];
   const words2 = [
@@ -31,7 +32,7 @@ export default function StartPage() {
       className: "text-blue-500 dark:text-blue-500 font-zilla font-light",
     },
   ];
-
+const navigate = useNavigate();
   return (
     <div>
       <div className="relative h-screen shadow-md bg- ">
@@ -50,7 +51,7 @@ export default function StartPage() {
             </h2>
             <div className="flex flex-col gap-5 items-center md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 ">
               <div className="animate-slideindown">
-                <ButtonStyle1 str="Contactanos ahora" />
+                <ButtonStyle1 str="Contactanos ahora" onClick={() => navigate("/contactus")} />
               </div>
               <div className="animate-slideinup">
                 <ButtonStyle1 str="Trabajos pasados" />
