@@ -34,11 +34,14 @@ export default function Contactanos() {
         <div className="md:hidden block">
           <DividerNoSpacing />
         </div>
-        <div className="group-hover:flex-1 transition-all duration-1000">
-          <h3 className="pt-2 justify-center flex items-center scroll-m-20 text-4xl font-extralight font-zilla">
+        <div className="group-hover:flex-1  transition-all duration-1000">
+          <h3 className="py-16 justify-center flex items-center scroll-m-20 text-4xl font-extralight font-zilla">
             Nuestras redes sociales
           </h3>
           <AnimatedPinDemo />
+          <div className="py-16 flex justify-center w-full ">
+            <Socials />
+          </div>
         </div>
       </div>
       <div className="md:hidden block">
@@ -138,9 +141,6 @@ function AnimatedPinDemo() {
               </div>
             </div>
           </PinContainer>
-        </div>
-        <div className="flex justify-center w-full pt-10">
-          <Socials />
         </div>
       </div>
     </div>

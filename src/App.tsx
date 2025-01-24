@@ -6,6 +6,7 @@ import { FloatButton } from "antd";
 import { Toaster } from "./components/ui/toaster";
 import LandingPage from "./modules/Routes/LandingPageComponents/LandingPage";
 import Contactus from "./modules/Routes/LandingPageComponents/ContactUs/Contactus";
+import Who from "./modules/Routes/LandingPageComponents/Luxoflex/who";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/contactus" element={<Contactus />} />
+            <Route path="/luxoflex" element={<Who />} />
           </Routes>
 
           {/* <Footer /> */}
