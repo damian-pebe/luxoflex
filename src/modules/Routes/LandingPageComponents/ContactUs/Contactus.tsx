@@ -1,9 +1,7 @@
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
 import { toast } from "@/hooks/use-toast"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import background from "@/assets/background.jpg";
@@ -40,12 +38,12 @@ const formSchema = z.object({
 });
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   subject: "",
+  //   message: "",
+  // })
 
   const enterpriseInfo = {
     address: "Calle Principal #123, Ciudad de México",
