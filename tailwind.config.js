@@ -1206,6 +1206,10 @@ export default {
             height: "0",
           },
         },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         aurora: "aurora 3s aurora 0.25s 1",
@@ -1309,6 +1313,7 @@ export default {
         wiggle: "wiggle 3s ease 0.25s 2",
         accordionDown: "accordion-down 0.2s ease-out",
         accordionUp: "accordion-up 0.2s ease-out",
+        fadeUp: "fadeUp 0.5s ease-out forwards",
       },
     },
   },
