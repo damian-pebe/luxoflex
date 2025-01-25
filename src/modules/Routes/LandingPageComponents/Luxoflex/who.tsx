@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import { useInView } from 'react-intersection-observer';
-import { TypeAnimation } from 'react-type-animation';
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
+import { TypeAnimation } from "react-type-animation";
 import background from "@/assets/background.jpg";
 import innovationImg from "@/assets/background.jpg";
 import experienceImg from "@/assets/background.jpg";
-import { WobbleCardDemo } from './WobbleCard';
+import { WobbleCardDemo } from "./WobbleCard";
 
 const WhoWeAre = () => {
   const [ref, inView] = useInView({
@@ -17,121 +17,169 @@ const WhoWeAre = () => {
     <Container>
       <BackgroundOverlay />
       <ContentWrapper ref={ref}>
-        {/* Full width title section */}
-        <FullWidthSection>
-          <Title className="font-monoton tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-400 to-white animate-pulse">
-            <TypeAnimation
-              sequence={[
-                'Quiénes Somos',
-                1000,
-                'Nuestra Historia',
-                1000,
-                'Luxoflex',
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
+        <div className=" pb-12 ">
+          <div className="relative h-[300px] rounded-b-xl overflow-hidden">
+            <img
+              src={background}
+              alt="Imagen de contacto"
+              className="w-full h-full object-cover"
             />
-          </Title>
-          <Text className="text-center max-w-3xl mx-auto font-exo tracking-wide text-lg text-white/80">
-            En Luxoflex, transformamos ideas en realidades. Nuestra pasión por la innovación
-            y el compromiso con la excelencia nos define en cada proyecto que emprendemos.
-          </Text>
-        </FullWidthSection>
-
-        {/* Text + Image Grid */}
-        <TextImageGrid>
-          <ContentBlock>
-            <SectionTitle>Innovación y Diseño</SectionTitle>
-            <Text>
-              Cada proyecto representa una oportunidad para crear soluciones 
-              únicas que transforman espacios ordinarios en extraordinarios.
-            </Text>
-          </ContentBlock>
-          <ImageContainer>
-            <StyledImage src={innovationImg} alt="Innovación" />
-          </ImageContainer>
-        </TextImageGrid>
-
-        {/* Three Column Text Section */}
-        <ThreeColumnSection>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="group"
-          >
-            <div className="hover:cursor-grab">
-              <ValueCard
-                title="Visión"
-              description="Ser líderes en soluciones innovadoras y sostenibles, transformando la industria con excelencia y creatividad."
-              icon={
-                <svg className="w-8 h-8 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-              }
-            />
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+              <FullWidthSection>
+                <Title className="font-playfair text-4xl md:text-5xl lg:text-6xl tracking-wider text-white">
+                  <TypeAnimation
+                    sequence={[
+                      "Quiénes Somos",
+                      1000,
+                      "Nuestra Historia",
+                      1000,
+                      "LUXOFLEX",
+                      2000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    repeat={Infinity}
+                  />
+                </Title>
+                <Text className="text-center max-w-3xl mx-auto font-exo text-lg md:text-xl tracking-wide text-white/80 mt-6">
+                  En LUXOFLEX, transformamos ideas en realidades. Nuestra pasión
+                  por la innovación y el compromiso con la excelencia nos define
+                  en cada proyecto que emprendemos.
+                </Text>
+              </FullWidthSection>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="group"
-          >            <div className="hover:cursor-grab">
+          {/* Text + Image Grid */}
+          <TextImageGrid>
+            <ContentBlock>
+              <SectionTitle>Innovación y Diseño</SectionTitle>
+              <Text>
+                Cada proyecto representa una oportunidad para crear soluciones
+                únicas que transforman espacios ordinarios en extraordinarios.
+              </Text>
+            </ContentBlock>
+            <ImageContainer>
+              <StyledImage src={innovationImg} alt="Innovación" />
+            </ImageContainer>
+          </TextImageGrid>
 
-            <ValueCard
-              title="Misión"
-              description="Transformar espacios con diseños únicos y funcionales, superando las expectativas de nuestros clientes."
-              icon={
-                <svg className="w-8 h-8 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              }
-            />            </div>
+          {/* Three Column Text Section */}
+          <ThreeColumnSection>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="group"
+            >
+              <div className="hover:cursor-grab">
+                <ValueCard
+                  title="Visión"
+                  description="Ser líderes en soluciones innovadoras y sostenibles, transformando la industria con excelencia y creatividad."
+                  icon={
+                    <svg
+                      className="w-8 h-8 text-blue-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                  }
+                />
+              </div>
+            </motion.div>
 
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="group"
+            >
+              {" "}
+              <div className="hover:cursor-grab">
+                <ValueCard
+                  title="Misión"
+                  description="Transformar espacios con diseños únicos y funcionales, superando las expectativas de nuestros clientes."
+                  icon={
+                    <svg
+                      className="w-8 h-8 text-purple-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      />
+                    </svg>
+                  }
+                />{" "}
+              </div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="group"
-          >            <div className="hover:cursor-grab">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="group"
+            >
+              {" "}
+              <div className="hover:cursor-grab">
+                <ValueCard
+                  title="Valores"
+                  description="Excelencia, innovación y compromiso inquebrantable con la satisfacción de nuestros clientes."
+                  icon={
+                    <svg
+                      className="w-8 h-8 text-emerald-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      />
+                    </svg>
+                  }
+                />{" "}
+              </div>
+            </motion.div>
+          </ThreeColumnSection>
 
-            <ValueCard
-              title="Valores"
-              description="Excelencia, innovación y compromiso inquebrantable con la satisfacción de nuestros clientes."
-              icon={
-                <svg className="w-8 h-8 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              }
-            />            </div>
-
-          </motion.div>
-        </ThreeColumnSection>
-
-        {/* Full width image section */}
-        <FullWidthImageSection className="hover:cursor-cell">
-          <StyledImage 
-            src={experienceImg}
-            alt="Experiencia" 
-            className="h-[50vh] md:h-[70vh] "
-          />
-          <OverlayText>
-            <SectionTitle>Experiencia Comprobada</SectionTitle>
-            <Text>
-              Más de 1000 proyectos exitosos respaldan nuestra trayectoria
-            </Text>
-          </OverlayText>
-        </FullWidthImageSection>
+          {/* Full width image section */}
+          <FullWidthImageSection className="hover:cursor-cell">
+            <StyledImage
+              src={experienceImg}
+              alt="Experiencia"
+              className="h-[50vh] md:h-[70vh] "
+            />
+            <OverlayText>
+              <SectionTitle>Experiencia Comprobada</SectionTitle>
+              <Text>
+                Más de 1000 proyectos exitosos respaldan nuestra trayectoria
+              </Text>
+            </OverlayText>
+          </FullWidthImageSection>
+        </div>
       </ContentWrapper>
 
-      <WobbleCardDemo/>
+      <WobbleCardDemo />
     </Container>
   );
 };
@@ -139,13 +187,9 @@ const WhoWeAre = () => {
 const Container = styled.div`
   position: relative;
   min-height: 100vh;
-  padding: 6rem 0;
   background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
   overflow: hidden;
-
-  @media (max-width: 768px) {
-    padding: 4rem 0;
-  }
+  z-index: 0;
 `;
 
 const BackgroundOverlay = styled.div`
@@ -154,26 +198,26 @@ const BackgroundOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   pointer-events: none;
+  z-index: 1;
 `;
 
 const ContentWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 `;
 
 const Title = styled.h1`
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 4rem;
-  font-weight: 700;
-  font-family: 'Monoton', cursive;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: 0.1em;
 `;
 
 const SectionTitle = styled.h2`
@@ -181,17 +225,13 @@ const SectionTitle = styled.h2`
   color: #f0f0f0;
   margin-bottom: 1.5rem;
   font-weight: 600;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   letter-spacing: 0.05em;
 `;
 
 const Text = styled.p`
-  color: #d0d0d0;
-  line-height: 1.8;
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  max-width: 65ch;
-  font-family: 'Exo 2', sans-serif;
-  letter-spacing: 0.02em;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 `;
 
 const TextImageGrid = styled.div`
@@ -209,22 +249,88 @@ const TextImageGrid = styled.div`
     background-image: url(${background});
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 15px;
     overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: all 0.5s ease;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.4);
+      transition: all 0.5s ease;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+      &::before {
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+
+  .card:hover .card__content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card__title {
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .card__description {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 80%;
+    font-family: "Exo 2", sans-serif;
+  }
+
+  .card__features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    span {
+      color: #a0a0ff;
+      font-size: 1rem;
+      font-family: "Exo 2", sans-serif;
+      letter-spacing: 1px;
       transition: all 0.3s ease;
+
+      &:hover {
+        color: #ffffff;
+        transform: translateX(5px);
+      }
     }
   }
 
@@ -251,7 +357,8 @@ const TextImageGrid = styled.div`
   }
 
   @keyframes bounce {
-    0%, 100% {
+    0%,
+    100% {
       transform: translate(-50%, -50%);
     }
     50% {
@@ -260,20 +367,12 @@ const TextImageGrid = styled.div`
   }
 
   @keyframes wiggle {
-    0%, 100% {
+    0%,
+    100% {
       transform: rotate(-20deg);
     }
     50% {
       transform: rotate(-30deg);
-    }
-  }
-
-  .card:hover {
-    transform: rotate(-5deg) scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-
-    &::before {
-      background-color: rgba(0, 0, 0, 0.7);
     }
   }
 
@@ -282,38 +381,82 @@ const TextImageGrid = styled.div`
     transition: all 0.3s ease;
   }
 
-  .card__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.9);
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  }
-
-  .card:hover .card__content {
-    transform: translate(-50%, -50%) rotate(0deg);
-    opacity: 1;
-  }
-
   .card__title {
     margin: 0;
-    font-size: 24px;
-    color: #e0e0e0;
+    font-size: 2rem;
+    color: #ffffff;
     font-weight: 700;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    background: linear-gradient(45deg, #ffffff, #a0a0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
   }
 
   .card__description {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #a0a0a0;
-    line-height: 1.4;
+    margin: 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    text-align: center;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 1.5rem;
+  }
+
+  .card__features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+
+    span {
+      color: #a0a0ff;
+      font-size: 0.9rem;
+      font-family: "Exo 2", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #ffffff;
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  .hover-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+  }
+
+  .cursor-icon {
+    width: 24px;
+    height: 24px;
+    animation: float 2s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-20deg);
+    }
+    50% {
+      transform: translateY(-5px) rotate(-25deg);
+    }
   }
 
   @media (max-width: 1024px) {
@@ -325,7 +468,11 @@ const TextImageGrid = styled.div`
 const ContentBlock = styled.div`
   direction: ltr;
   padding: 3rem;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.8) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(10, 10, 10, 0.8) 100%
+  );
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
@@ -337,7 +484,11 @@ const ContentBlock = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   &:hover {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.9) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.98) 0%,
+      rgba(10, 10, 10, 0.9) 100%
+    );
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   }
@@ -347,22 +498,21 @@ const ContentBlock = styled.div`
   }
 `;
 
-const ImageContainer = ({  }: { children: React.ReactNode }) => (
+const ImageContainer = ({}: { children: React.ReactNode }) => (
   <div>
     <div className="card">
-      <div className="hover-indicator">
-        <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem' }}>Hover me</span>
-        <svg 
-          className="cursor-icon" 
-          fill="white" 
-          viewBox="0 0 24 24"
-        >
-          <path d="M13.64,21.97C13.14,22.21 12.54,22 12.31,21.5L10.13,16.76L7.62,18.78C7.45,18.92 7.24,19 7,19A1,1 0 0,1 6,18V3A1,1 0 0,1 7,2C7.24,2 7.47,2.09 7.64,2.23L7.65,2.22L19.14,11.86C19.57,12.22 19.62,12.85 19.27,13.27C19.12,13.45 18.91,13.57 18.7,13.61L15.54,14.23L17.74,18.96C18,19.46 17.76,20.05 17.26,20.28L13.64,21.97Z" />
-        </svg>
-      </div>
       <div className="card__content">
-        <p className="card__title">Innovación</p>
-        <p className="card__description">Transformamos espacios con diseños únicos y funcionales, creando soluciones innovadoras que superan expectativas.</p>
+        <h3 className="card__title">Innovación LUXOFLEX</h3>
+        <p className="card__description">
+          Creamos espacios excepcionales que reflejan elegancia y sofisticación.
+          Nuestra pasión por el diseño y la innovación nos distingue en cada
+          proyecto.
+        </p>
+        <div className="card__features">
+          <span>✧ Diseños Exclusivos</span>
+          <span>✧ Tecnología de Vanguardia</span>
+          <span>✧ Elegancia Atemporal</span>
+        </div>
       </div>
     </div>
   </div>
@@ -381,8 +531,10 @@ const StyledImage = styled.img`
 
 const FullWidthSection = styled.div`
   width: 100%;
-  margin: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 2rem;
+  text-align: center;
 `;
 
 const ThreeColumnSection = styled.div`
@@ -407,7 +559,8 @@ const ThreeColumnSection = styled.div`
     border-radius: 5px;
   }
 
-  .front, .back {
+  .front,
+  .back {
     background-color: #000000;
     position: absolute;
     width: 100%;
@@ -429,11 +582,19 @@ const ThreeColumnSection = styled.div`
 
   .back::before {
     position: absolute;
-    content: ' ';
+    content: " ";
     display: block;
     width: 160px;
     height: 160%;
-    background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #ff9966,
+      #ff9966,
+      #ff9966,
+      #ff9966,
+      transparent
+    );
     animation: rotation_481 5000ms infinite linear;
   }
 
@@ -451,7 +612,7 @@ const ThreeColumnSection = styled.div`
     gap: 30px;
 
     strong {
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
       font-size: 2rem;
     }
   }
@@ -491,7 +652,7 @@ const ThreeColumnSection = styled.div`
     border-radius: 10px;
     backdrop-filter: blur(2px);
     width: fit-content;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: 1.2rem;
   }
 
@@ -509,7 +670,7 @@ const ThreeColumnSection = styled.div`
     max-width: 100%;
     display: flex;
     justify-content: space-between;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
   }
 
   .title p {
@@ -579,9 +740,17 @@ const ThreeColumnSection = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-  `;
+`;
 
-const ValueCard = ({ title, description, icon }: { title: string; description: string; icon: React.ReactNode }) => (
+const ValueCard = ({
+  title,
+  description,
+  icon,
+}: {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}) => (
   <div className="card">
     <div className="content">
       <div className="back">
@@ -604,9 +773,7 @@ const ValueCard = ({ title, description, icon }: { title: string; description: s
                 <strong>{title}</strong>
               </p>
             </div>
-            <p className="card-footer">
-              {description}
-            </p>
+            <p className="card-footer">{description}</p>
           </div>
         </div>
       </div>
@@ -621,9 +788,9 @@ const FullWidthImageSection = styled.div`
   height: 70vh;
   overflow: hidden;
   border-radius: 20px;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -666,27 +833,32 @@ const OverlayText = styled.div`
   }
 
   ${SectionTitle} {
-    color: #F0F8FF; // Alice Blue
+    color: #f0f8ff; // Alice Blue
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     position: relative;
-    font-family: 'Playfair Display', serif;
-    
+    font-family: "Playfair Display", serif;
+
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
       width: 150px;
       height: 3px;
-      background: linear-gradient(90deg, transparent, #E6E6FA, transparent); // Lavender
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #e6e6fa,
+        transparent
+      ); // Lavender
     }
   }
 
   ${Text} {
-    color: #F0FFFF; // Azure
+    color: #f0ffff; // Azure
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     font-size: 1.5rem;
     max-width: 800px;
@@ -695,22 +867,23 @@ const OverlayText = styled.div`
     position: relative;
     padding: 30px;
     line-height: 1.8;
-    
-    &::before, &::after {
-      content: '';
+
+    &::before,
+    &::after {
+      content: "";
       position: absolute;
       width: 40px;
       height: 40px;
       border: 2px solid rgba(230, 230, 250, 0.4); // Lavender with opacity
     }
-    
+
     &::before {
       top: 0;
       left: 0;
       border-right: none;
       border-bottom: none;
     }
-    
+
     &::after {
       bottom: 0;
       right: 0;
@@ -723,28 +896,28 @@ const OverlayText = styled.div`
     display: flex;
     gap: 4rem;
     margin-top: 3rem;
-    
+
     .value-item {
       text-align: center;
       transition: transform 0.3s ease;
-      
+
       &:hover {
         transform: translateY(-5px);
       }
-      
+
       .icon {
         font-size: 2.5rem;
-        color: #E0FFFF; // Light Cyan
+        color: #e0ffff; // Light Cyan
         margin-bottom: 1rem;
       }
-      
+
       .label {
         font-size: 1.2rem;
-        color: #F0F8FF; // Alice Blue
-        font-family: 'Playfair Display', serif;
+        color: #f0f8ff; // Alice Blue
+        font-family: "Playfair Display", serif;
         margin-bottom: 0.5rem;
       }
-      
+
       .description {
         font-size: 0.9rem;
         color: rgba(240, 248, 255, 0.8); // Alice Blue with opacity

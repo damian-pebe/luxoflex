@@ -1310,7 +1310,7 @@ export default {
         flipDown: "flip-down 3s ease 0.25s 1",
         flip: "flip 3s 0.25s 1",
         flip2: "flip 1s 0.25s 1",
-        wiggle: "wiggle 3s ease 0.25s 2",
+        wiggle: "wiggle 3s ease 0.25s 1",
         accordionDown: "accordion-down 0.2s ease-out",
         accordionUp: "accordion-up 0.2s ease-out",
         fadeUp: "fadeUp 0.5s ease-out forwards",
