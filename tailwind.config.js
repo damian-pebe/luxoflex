@@ -31,6 +31,8 @@ export default {
         flamenco: ["Flamenco", "serif"],
         neon: ["Neon", "sans-serif"],
         zilla: ["Zilla Slab Highlight", "serif"],
+        heading: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

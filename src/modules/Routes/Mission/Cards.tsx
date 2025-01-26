@@ -13,49 +13,49 @@ import {
 export function Cards() {
   const features = [
     {
-      title: "Built for developers",
+      title: "Nuestra Visión",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
-      icon: <IconTerminal2 />,
-    },
-    {
-      title: "Ease of use",
-      description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
+        "Ser líderes en la industria de etiquetas autoadheribles, ofreciendo soluciones innovadoras y personalizadas que superen las expectativas de nuestros clientes.",
       icon: <IconEaseInOut />,
     },
     {
-      title: "Pricing like no other",
+      title: "Quiénes Somos",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
-      icon: <IconCurrencyDollar />,
+        "Somos una empresa especializada en la fabricación de etiquetas autoadheribles de alta calidad, con años de experiencia sirviendo a diversas industrias.",
+      icon: <IconHeart />,
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
-      icon: <IconCloud />,
-    },
-    {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
-      icon: <IconRouteAltLeft />,
-    },
-    {
-      title: "24/7 Customer Support",
+      title: "Nuestros Servicios",
       description:
-        "We are available a 100% of the time. Atleast our AI Agents are.",
-      icon: <IconHelp />,
+        "Ofrecemos una amplia gama de etiquetas autoadheribles: promocionales, industriales, de seguridad, para códigos de barras y más, con impresión personalizada.",
+      icon: <IconTerminal2 />,
     },
     {
-      title: "Money back guarantee",
-      description:
-        "If you donot like EveryAI, we will convince you to like us.",
+      title: "Calidad Garantizada",
+      description: "Utilizamos materiales premium y tecnología de vanguardia para garantizar etiquetas duraderas y de excelente acabado.",
       icon: <IconAdjustmentsBolt />,
     },
     {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
-      icon: <IconHeart />,
+      title: "Innovación",
+      description: "Constantemente actualizamos nuestros procesos y materiales para ofrecer soluciones modernas que satisfagan las necesidades del mercado.",
+      icon: <IconRouteAltLeft />,
+    },
+    {
+      title: "Contáctanos",
+      description:
+        "Permítenos asesorarte para encontrar la mejor solución en etiquetas para tu negocio. ¡Solicita una cotización hoy!",
+      icon: <IconHelp />,
+    },
+    {
+      title: "Sustentabilidad",
+      description:
+        "Comprometidos con el medio ambiente, ofrecemos opciones de etiquetas eco-amigables y procesos de producción sustentables.",
+      icon: <IconCloud />,
+    },
+    {
+      title: "Alianzas",
+      description: "Desarrollamos relaciones comerciales duraderas, siendo el socio confiable que tu empresa necesita en etiquetas autoadheribles.",
+      icon: <IconCurrencyDollar />,
     },
   ];
   return (
@@ -95,13 +95,13 @@ const Feature = ({
       <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
         {icon}
       </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+      <div className="text-lg font-bold mb-2 relative z-10 px-10 font-heading">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100 tracking-tight">
           {title}
         </span>
       </div>
-      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10 font-normal leading-relaxed">
         {description}
       </p>
     </div>
