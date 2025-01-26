@@ -5,9 +5,10 @@ import Navbar from "./modules/NaviationBar/NavBar";
 import { FloatButton } from "antd";
 import { Toaster } from "./components/ui/toaster";
 import LandingPage from "./modules/Routes/LandingPageComponents/LandingPage";
-import Contactus from "./modules/Routes/LandingPageComponents/ContactUs/Contactus";
-import Who from "./modules/Routes/LandingPageComponents/Luxoflex/who";
-
+import Contactus from "./modules/Routes/ContactUs/Contactus";
+import Who from "./modules/Routes/Luxoflex/who";
+import Vision from "./modules/Routes/Vision/Vision";
+import Mission from "./modules/Routes/Mission/Mission";
 function App() {
   return (
     <>
@@ -19,6 +20,8 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/contactus" element={<Contactus />} />
             <Route path="/luxoflex" element={<Who />} />
+            <Route path="/vision" element={<Vision />} />
+            <Route path="/mission" element={<Mission />} />
           </Routes>
 
           {/* <Footer /> */}

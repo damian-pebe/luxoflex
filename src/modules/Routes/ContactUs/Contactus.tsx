@@ -1,12 +1,18 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { toast } from "@/hooks/use-toast"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+import { toast } from "@/hooks/use-toast";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import background from "@/assets/background.jpg";
-import { TypewriterEffect } from "@/components/ui/typewriter-effect"
-import Socials from "../LandingPageComponents/Contactanos/components/Socials"
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import Socials from "../LandingPageComponents/LandingPageComponents/Contactanos/components/Socials";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -49,8 +55,8 @@ export default function ContactUs() {
     address: "Calle Principal #123, Ciudad de México",
     phone: "+52 (555) 123-4567",
     email: "contacto@empresa.com",
-    schedule: "Lunes a Viernes: 9:00 - 18:00"
-  }
+    schedule: "Lunes a Viernes: 9:00 - 18:00",
+  };
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -66,7 +72,8 @@ export default function ContactUs() {
     console.log(values);
     toast({
       title: "¡Éxito!",
-      description: "Tu mensaje ha sido enviado. Nos pondremos en contacto pronto.",
+      description:
+        "Tu mensaje ha sido enviado. Nos pondremos en contacto pronto.",
     });
   }
 
@@ -101,8 +108,8 @@ export default function ContactUs() {
     },
   ];
   return (
-    <div className="container pb-12">
-      <div className="relative h-[300px] rounded-b-xl overflow-hidden">
+    <div className="container pb-12 overflow-hidden">
+      <div className="relative h-[300px] rounded-b-xl overflow-hidden opacity-0 animate-fadeinbouncedown hover:scale-105 transition-all duration-1000 ">
         <img
           src={background}
           alt="Imagen de contacto"
@@ -115,7 +122,7 @@ export default function ContactUs() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12">
         <div className="space-y-6">
-          <Card>
+          <Card className="animate-flyinleft">
             <CardHeader>
               <CardTitle className="text-2xl font-bold">
                 Información de Contacto
@@ -166,15 +173,17 @@ export default function ContactUs() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="animate-fadeinbottomleft overflow-hidden">
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-4">Síguenos en nuestras redes sociales</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                Síguenos en nuestras redes sociales
+              </h3>
               <Socials />
             </CardContent>
           </Card>
         </div>
 
-        <Card className="backdrop-blur-sm bg-white/10 dark:bg-black/10 border-2 shadow-xl">
+        <Card className="backdrop-blur-sm bg-white/10 dark:bg-black/10 border-2 shadow-xl animate-flyinright overflow-hidden">
           <CardHeader className="space-y-2">
             <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
               Envíanos un mensaje
@@ -185,7 +194,10 @@ export default function ContactUs() {
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
                 <FormField
                   control={form.control}
                   name="name"
@@ -196,10 +208,10 @@ export default function ContactUs() {
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <Input 
-                            placeholder="Nombre..." 
-                            {...field} 
-                            className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          <Input
+                            placeholder="Nombre..."
+                            {...field}
+                            className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500"
                           />
                           <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-blue-500" />
                         </div>
@@ -219,10 +231,10 @@ export default function ContactUs() {
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <Input 
-                            placeholder="Correo electronico..." 
-                            {...field} 
-                            className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          <Input
+                            placeholder="Correo electronico..."
+                            {...field}
+                            className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500"
                           />
                           <MailPlus className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-blue-500" />
                         </div>
@@ -242,10 +254,10 @@ export default function ContactUs() {
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <Input 
-                            placeholder="Telefono..." 
-                            {...field} 
-                            className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          <Input
+                            placeholder="Telefono..."
+                            {...field}
+                            className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500"
                           />
                           <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-blue-500" />
                         </div>
@@ -265,10 +277,10 @@ export default function ContactUs() {
                       </FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <Textarea 
-                            placeholder="Descripcion..." 
-                            {...field} 
-                            className="pl-10 min-h-[150px] bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500" 
+                          <Textarea
+                            placeholder="Descripcion..."
+                            {...field}
+                            className="pl-10 min-h-[150px] bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500"
                           />
                           <LucideNotebookPen className="absolute left-3 top-3 h-5 w-5 text-blue-500" />
                         </div>
@@ -293,5 +305,5 @@ export default function ContactUs() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
