@@ -17,7 +17,7 @@ export default function Mission() {
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-950 relative overflow-hidden  z-[0]">
        <div className="relative h-[60vh] overflow-hidden animate-fadeInSlideUp">
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-950/90 to-neutral-950 z-[0]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-950/90 to-neutral-950 z-[1]" />
         <div 
           className="absolute inset-0 bg-cover bg-center animate-slowZoom"
           style={{
