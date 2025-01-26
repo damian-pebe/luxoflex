@@ -19,11 +19,10 @@ export default function Mission() {
     <div className="min-h-screen bg-neutral-950 relative overflow-hidden  z-[0]">
        <div className="relative h-[60vh] overflow-hidden animate-fadeInSlideUp">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-950/90 to-neutral-950 z-[1]" />
-        <div 
-          className="absolute inset-0 bg-cover bg-center animate-slowZoom"
-          style={{
-            backgroundImage: `url(${background})`,
-          }}
+        <img 
+          src={background}
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover object-center animate-slowZoom"
         />
         <div className="relative z-20 h-full flex flex-col items-center justify-center px-4">
           <h1 className="text-7xl font-bold mb-4 font-audiowide text-white animate-slideInFromLeft">
@@ -81,6 +80,10 @@ export default function Mission() {
 
       <div className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <h3 className="text-5xl text-center font-bungee font-extralight text-gray-200 mb-8">
+          Lo que dicen nuestros clientes
+        </h3>
+        <InfiniteMovingCardsDemo />
           <h2 className="text-5xl md:text-7xl font-bold text-center mb-4 font-vt323 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
             Lo Que Nos Impulsa
           </h2>
@@ -91,7 +94,7 @@ export default function Mission() {
           </p>
         </div>
         <Cards />
-        <InfiniteMovingCardsDemo />
+        
       </div>
 
       <div className="absolute inset-0 w-full h-full dark:opacity-40 opacity-30 pointer-events-none">
