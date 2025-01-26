@@ -6,6 +6,7 @@ import { useRef } from "react"
 import { Cards } from "./Cards"
 import { Brain, Rocket, Target, Users } from "lucide-react"
 import background from "@/assets/background.jpg"
+import { InfiniteMovingCardsDemo } from "./carousel-infinity"
 
 export default function Mission() {
   const title = useTypewriter("  Nuestra Misión");
@@ -45,7 +46,7 @@ export default function Mission() {
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6 ">
           {[
             { icon: Brain, value: "1000+", label: "Diseños Personalizados" },
             { icon: Users, value: "500+", label: "Clientes Satisfechos" },
@@ -60,7 +61,7 @@ export default function Mission() {
               whileHover={{ scale: 1.05, rotate: [0, 2, -2, 0] }}
               className="group backdrop-blur-sm bg-white/10 dark:bg-black/10 p-6 rounded-xl border-2 border-blue-500/20 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/20"
             >
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center ">
                 <div
                   className="mb-4 text-blue-500 transition-transform duration-500 group-hover:rotate-[360deg]"
                 >
@@ -90,6 +91,7 @@ export default function Mission() {
           </p>
         </div>
         <Cards />
+        <InfiniteMovingCardsDemo />
       </div>
 
       <div className="absolute inset-0 w-full h-full dark:opacity-40 opacity-30 pointer-events-none">

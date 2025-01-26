@@ -1,5 +1,8 @@
 import tailwindcssAnimate from "tailwindcss-animate";
-
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
@@ -31,8 +34,8 @@ export default {
         flamenco: ["Flamenco", "serif"],
         neon: ["Neon", "sans-serif"],
         zilla: ["Zilla Slab Highlight", "serif"],
-        heading: ['Inter', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -82,6 +85,11 @@ export default {
         },
       },
       keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
         aurora: {
           from: {
             backgroundPosition: "50% 50%, 50% 50%",
@@ -1209,31 +1217,33 @@ export default {
           },
         },
         fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
         fadeinbouncedown: {
-          '0%': { 
-            opacity: '0',
-            transform: 'translateY(-10px)'
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-10px)",
           },
-          '100%': { 
-            opacity: '1',
-            transform: 'translateY(0)'
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
           },
         },
         initialHover: {
-          '0%, 100%': { transform: 'scale(1)' },
-          '20%, 30%': { transform: 'scale(1.05)', filter: 'brightness(1.1)' },
-          '45%, 55%': { transform: 'scale(1)' },
-          '70%, 80%': { transform: 'scale(1.05)', filter: 'brightness(1.1)' },
+          "0%, 100%": { transform: "scale(1)" },
+          "20%, 30%": { transform: "scale(1.05)", filter: "brightness(1.1)" },
+          "45%, 55%": { transform: "scale(1)" },
+          "70%, 80%": { transform: "scale(1.05)", filter: "brightness(1.1)" },
         },
       },
       animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         aurora: "aurora 3s aurora forwards",
         fadein: "fade-in 3s ease-in-out forwards",
         fadeout: "fade-out 3s ease-out forwards",
@@ -1336,9 +1346,20 @@ export default {
         accordionDown: "accordion-down 0.2s ease-out",
         accordionUp: "accordion-up 0.2s ease-out",
         fadeUp: "fadeUp 0.5s ease-out forwards",
-        'initial-hover': 'initialHover 4s ease-in-out forwards',
+        "initial-hover": "initialHover 4s ease-in-out forwards",
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, addVariablesForColors],
 };
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
