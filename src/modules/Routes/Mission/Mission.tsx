@@ -16,9 +16,8 @@ export default function Mission() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-950 relative overflow-hidden  z-[0]">
-      {/* Hero Section with Background */}
-      <div className="relative h-[60vh] overflow-hidden animate-fadeInSlideUp">
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-950/90 to-neutral-950 z-[1]" />
+       <div className="relative h-[60vh] overflow-hidden animate-fadeInSlideUp">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-950/90 to-neutral-950 z-[0]" />
         <div 
           className="absolute inset-0 bg-cover bg-center animate-slowZoom"
           style={{
@@ -37,7 +36,6 @@ export default function Mission() {
         </div>
       </div>
 
-      {/* Stats Section */}
       <div 
         ref={statsRef}
         className="relative z-20 -mt-20 mb-20"
@@ -80,10 +78,9 @@ export default function Mission() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <h2 className="text-7xl font-bold text-center mb-4 font-vt323 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
+          <h2 className="text-5xl md:text-7xl font-bold text-center mb-4 font-vt323 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
             Lo Que Nos Impulsa
           </h2>
           <p className="text-center text-gray-400 max-w-3xl font-orbitron mx-auto mb-16 animate-fadeIn">
@@ -95,7 +92,6 @@ export default function Mission() {
         <Cards />
       </div>
 
-      {/* Enhanced Animated Background */}
       <div className="absolute inset-0 w-full h-full dark:opacity-40 opacity-30 pointer-events-none">
         <div className="absolute h-full w-full">
           {[...Array(150)].map((_, i) => (
