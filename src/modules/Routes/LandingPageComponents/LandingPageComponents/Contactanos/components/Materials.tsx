@@ -4,7 +4,7 @@ import {
   CardContainer,
   CardItem,
 } from "@/components/aceternity/3d-card";
-import { BackgroundLines } from "@/components/aceternity/background-lines";
+import background from "@/assets/background.jpg";
 import Divider from "@/components/divider";
 
 export function Materials() {
