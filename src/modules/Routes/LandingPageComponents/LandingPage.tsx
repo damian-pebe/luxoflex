@@ -2,17 +2,18 @@ import StartPage from "./LandingPageComponents/StartPage/StartPage";
 import { ParallaxLuxoflex } from "./LandingPageComponents/Parallax/Parallax";
 import TypographyExamples from "./LandingPageComponents/typography/typography";
 import Contactanos from "./LandingPageComponents/Contactanos/Contactanos";
-import FocusCards from "./LandingPageComponents/Contactanos/components/focusCards";
+import { Materials } from "./LandingPageComponents/Contactanos/components/Materials";
 
 export default function LandingPage() {
- 
   return (
     <div>
-      <StartPage/>
-      <ParallaxLuxoflex/>
-      <Contactanos/>
-      <FocusCards/>
-     <TypographyExamples/>
+      <StartPage />
+      <ParallaxLuxoflex />
+      <Contactanos />
+
+        <Materials />
+      
+      <TypographyExamples />
     </div>
   );
 }

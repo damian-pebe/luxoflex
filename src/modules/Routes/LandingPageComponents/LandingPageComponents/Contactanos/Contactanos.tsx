@@ -184,7 +184,7 @@ function ContactData() {
       <a className="font-extrabold font-flamenco text-4xl  justify-center flex items-center pt-10 pb-5">
         CONTACTANOS PERSONALMENTE
       </a>
-      <div className=" flex justify-evenly items-center pl-10 md:pl-28 lg:pl-14 jusify-cetnter gap-6 ">
+      <div className=" grid grid-cols-1 md:grid-cols-2  justify-evenly items-center pl-10 md:pl-28 lg:pl-14 jusify-cetnter gap-6 ">
         {data.map((user) => (
           <Card {...user} />
         ))}
