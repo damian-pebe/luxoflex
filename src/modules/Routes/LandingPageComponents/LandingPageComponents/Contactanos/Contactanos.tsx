@@ -2,7 +2,6 @@
 import Divider, { DividerNoSpacing } from "@/components/divider";
 import "./Contactanos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import FocusCardsDemo from "./components/focusCards";
 import ContactTitles from "./components/contactTitles";
 import FormContact from "./components/FormContact";
 import { PinContainer } from "@/components/ui/3d-pin";
@@ -10,7 +9,7 @@ import facebook from "@/assets/facebook.png";
 import whatsapp from "@/assets/whatsapp.webp";
 import instagram from "@/assets/instagram.webp";
 import email from "@/assets/email.png";
-// import ceo1 from "@/assets/rb_174457.png";
+import ceo1 from "@/assets/rb_174457.png";
 import ceo2 from "@/assets/rb_176267.png";
 import { Mail, Phone } from "lucide-react";
 import { Popover } from "antd";
@@ -49,9 +48,7 @@ export default function Contactanos() {
       </div>
       <ContactData />
       <Divider />
-      <FocusCardsDemo />
-
-      <Divider />
+      
     </div>
   );
 }
@@ -72,7 +69,10 @@ function AnimatedPinDemo() {
                 </span>
               </div>
               <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
-                <img className="rounded-t-lg p-2 w-12 h-12 object-contain" src={email} />
+                <img
+                  className="rounded-t-lg p-2 w-12 h-12 object-contain"
+                  src={email}
+                />
               </div>
             </div>
           </PinContainer>
@@ -104,7 +104,10 @@ function AnimatedPinDemo() {
                 </span>
               </div>
               <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
-                <img className="rounded-t-lg w-12 h-12 object-contain" src={whatsapp} />
+                <img
+                  className="rounded-t-lg w-12 h-12 object-contain"
+                  src={whatsapp}
+                />
               </div>
             </div>
           </PinContainer>
@@ -120,7 +123,10 @@ function AnimatedPinDemo() {
                 </span>
               </div>
               <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
-                <img className="rounded-t-lg p-2 w-12 h-12 object-contain" src={facebook} />
+                <img
+                  className="rounded-t-lg p-2 w-12 h-12 object-contain"
+                  src={facebook}
+                />
               </div>
             </div>
           </PinContainer>
@@ -136,7 +142,10 @@ function AnimatedPinDemo() {
                 </span>
               </div>
               <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
-                <img className="rounded-t-lg p-2 w-12 h-12 object-contain" src={instagram} />
+                <img
+                  className="rounded-t-lg p-2 w-12 h-12 object-contain"
+                  src={instagram}
+                />
               </div>
             </div>
           </PinContainer>
@@ -147,36 +156,69 @@ function AnimatedPinDemo() {
 }
 
 function ContactData() {
+  const data = [
+    {
+      name: "Tomas Perez",
+      hrefEmail: "mailto:tomasperez@gmail.com",
+      hrefPhone: "3311940001",
+      hrefWhatsapp: "3311940001",
+      hrefFacebook: "https://facebook.com/tomasperez",
+      hrefInstagram: "https://instagram.com/tomasperez",
+      img: ceo1,
+      description: "CEO y Fundador de LUXOFLEX\nCon más de 15 años de experiencia en la industria de etiquetas autoadheribles",
+    },
+    {
+      name: "Mayra Becerril",
+      hrefEmail: "mailto:mayra@gmail.com",
+      hrefPhone: "3334626001",
+      hrefWhatsapp: "3334626001",
+      hrefFacebook: "https://facebook.com/mayra",
+      hrefInstagram: "https://instagram.com/mayra",
+      img: ceo2,
+      description:
+        "CEO y Fundadora de LUXOFLEX\nCon más de 4 años de experiencia en etiquetas autoadheribles.",
+    },
+  ];
   return (
     <div>
-      <a
-        className="font-extrabold font-flamenco text-4xl  justify-center flex items-center pt-10 pb-5"
-        href="https://luxoflex.vercel.app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a className="font-extrabold font-flamenco text-4xl  justify-center flex items-center pt-10 pb-5">
         CONTACTANOS PERSONALMENTE
       </a>
-      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center pl-10 md:pl-28 lg:pl-14 jusify-cetnter gap-6 ">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+      <div className=" flex justify-evenly items-center pl-10 md:pl-28 lg:pl-14 jusify-cetnter gap-6 ">
+        {data.map((user) => (
+          <Card {...user} />
+        ))}
       </div>
     </div>
   );
 }
 
-const Card = () => {
+const Card = ({
+  name,
+  hrefEmail,
+  hrefPhone,
+  hrefWhatsapp,
+  hrefFacebook,
+  hrefInstagram,
+  img,
+  description,
+}: {
+  name: string;
+  hrefEmail: string;
+  hrefPhone: string;
+  hrefWhatsapp: string;
+  hrefFacebook: string;
+  hrefInstagram: string;
+  img: string;
+  description: string;
+}) => {
   return (
     <StyledWrapper>
       <div className="card">
         <div className="mail">
           <Popover content="Enviar email">
             <Mail
-              onClick={() =>
-                (window.location.href = "mailto:luxoflex@gmail.com")
-              }
+              onClick={() => (window.location.href = hrefEmail)}
               className="hover:cursor-pointer transition-colors duration-1000 text-pink-300 hover:text-pink-800"
             />
           </Popover>
@@ -184,21 +226,19 @@ const Card = () => {
         <div className="profile-pic">
           <img
             className=" w-full h-full object-top transition-all duration-500 hover:scale-150 hover:object-top"
-            src={ceo2}
+            src={img}
           />
         </div>
         <div className="bottom">
           <div className="content">
-            <span className="name font-audiowide">My Name</span>
-            <div className=" font-playfair text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicinFcls{" "}
-            </div>
+            <span className="name font-audiowide">{name}</span>
+            <div className=" font-playfair text-base overflow-hidden">{description}</div>
           </div>
           <div className="bottom-bottom">
             <div className="social-links-container">
               <Popover content="Llamar">
                 <i
-                  onClick={() => (window.location.href = "tel:+523334626001")}
+                  onClick={() => (window.location.href = `tel:+52${hrefPhone}`)}
                   className="hover:cursor-pointer bi bi-telephone-outbound text-lg  transition-all duration-1000 text-white hover:text-pink-800 hover:scale-150"
                 ></i>
               </Popover>
@@ -206,7 +246,7 @@ const Card = () => {
               <Popover content="WhatsApp">
                 <i
                   onClick={() =>
-                    (window.location.href = "https://wa.me/+523334626001")
+                    (window.location.href = `https://wa.me/+52${hrefWhatsapp}`)
                   }
                   className="hover:cursor-pointer bi bi-whatsapp text-lg  transition-all duration-1000 text-white hover:text-pink-800 hover:scale-150"
                 ></i>
@@ -214,25 +254,21 @@ const Card = () => {
 
               <Popover content="Facebook">
                 <i
-                  onClick={() =>
-                    (window.location.href = "https://facebook.com/luxoflex")
-                  }
+                  onClick={() => (window.location.href = hrefFacebook)}
                   className="hover:cursor-pointer bi bi-facebook text-lg  transition-all duration-1000 text-white hover:text-pink-800 hover:scale-150"
                 ></i>
               </Popover>
 
               <Popover content="Instagram">
                 <i
-                  onClick={() =>
-                    (window.location.href = "https://instagram.com/luxoflex")
-                  }
+                  onClick={() => (window.location.href = hrefInstagram)}
                   className="hover:cursor-pointer bi bi-instagram text-lg  transition-all duration-1000 text-white hover:text-pink-800 hover:scale-150"
                 ></i>
               </Popover>
             </div>
             <button
               className="button font-playfair font-bold transition-colors duration-1000"
-              onClick={() => (window.location.href = "tel:+523334626001")}
+              onClick={() => (window.location.href = `tel:+52${hrefPhone}`)}
             >
               Contactame
             </button>
