@@ -71,14 +71,14 @@ function MaterialsCards() {
 
 export function BackgroundLinesDemo() {
   return (
-    <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
+    <div className="flex items-center justify-center w-full flex-col px-4">
       <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-5xl md:text-6xl lg:text-8xl font-sans py-2 relative z-20 font-bold tracking-tight">
       Eleva tu experiencia <br /> con <br />LUXOFLEX.
       </h2>
       <p className=" mx-auto text-lg md:text-xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
         Conoce los materiales que usamos para crear las mejores etiquetas.
       </p>
-    </BackgroundLines>
+    </div>
   );
 }
 

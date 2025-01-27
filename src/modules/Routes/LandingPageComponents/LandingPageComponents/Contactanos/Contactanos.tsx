@@ -178,13 +178,14 @@ function ContactData() {
       description:
         "CEO y Fundadora de LUXOFLEX\nCon más de 4 años de experiencia en etiquetas autoadheribles.",
     },
+   
   ];
   return (
     <div>
       <a className="font-extrabold font-flamenco text-4xl  justify-center flex items-center pt-10 pb-5">
         CONTACTANOS PERSONALMENTE
       </a>
-      <div className=" grid grid-cols-1 md:grid-cols-2  justify-evenly items-center pl-10 md:pl-28 lg:pl-14 jusify-cetnter gap-6 ">
+      <div className=" flex flex-wrap justify-center items-center gap-6 ">
         {data.map((user) => (
           <Card {...user} />
         ))}
