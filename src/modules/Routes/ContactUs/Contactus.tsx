@@ -25,6 +25,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { ContactIcon, LucideNotebookPen, MailPlus, User } from "lucide-react";
+import MapComponent from "./Map";
 
 // import locationMap from "@/assets/location-map.jpg";
 
@@ -163,12 +164,8 @@ export default function ContactUs() {
                 </div>
               </div>
 
-              <div className="mt-6 relative h-[200px] rounded-lg overflow-hidden">
-                {/* <img
-                  src={locationMap}
-                  alt="Ubicación en el mapa"
-                  className="w-full h-full object-cover"
-                /> */}
+              <div className="mt-6 relative h-[200px] bg-white/10 rounded-lg overflow-hidden">
+              <MapComponent/>
               </div>
             </CardContent>
           </Card>
