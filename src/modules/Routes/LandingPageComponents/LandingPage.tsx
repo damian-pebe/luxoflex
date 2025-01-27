@@ -3,6 +3,7 @@ import { ParallaxLuxoflex } from "./LandingPageComponents/Parallax/Parallax";
 import TypographyExamples from "./LandingPageComponents/typography/typography";
 import Contactanos from "./LandingPageComponents/Contactanos/Contactanos";
 import { Materials } from "./LandingPageComponents/Contactanos/components/Materials";
+import Products from "../Products/Products";
 
 export default function LandingPage() {
   return (
@@ -11,8 +12,8 @@ export default function LandingPage() {
       <ParallaxLuxoflex />
       <Contactanos />
 
-        <Materials />
-      
+      <Materials />
+      <Products />
       <TypographyExamples />
     </div>
   );
