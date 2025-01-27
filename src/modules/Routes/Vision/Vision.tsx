@@ -1,18 +1,18 @@
-"use client"
-import '../../../index.css'
-import { useTypewriter } from "@/hooks/useTypewriter"
-import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import {  Eye, Lightbulb, Target, Rocket } from "lucide-react"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import background from "@/assets/background.jpg"
-import { useNavigate } from 'react-router-dom'
+"use client";
+import "../../../index.css";
+import { useTypewriter } from "@/hooks/useTypewriter";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Eye, Lightbulb, Target, Rocket } from "lucide-react";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import background from "@/assets/background.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function VisionPage() {
   const title = useTypewriter(" Nuestra Visión del Futuro");
   const subtitle = useTypewriter(" Construyendo el mañana, hoy");
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const principlesRef = useRef(null);
   const roadmapRef = useRef(null);
@@ -43,12 +43,12 @@ const navigate = useNavigate()
       </div>
 
       <main className="max-w-6xl mx-auto mt-12">
-        <section 
+        <section
           ref={principlesRef}
           style={{
             transform: isPrinciplesInView ? "none" : "translateX(-200px)",
             opacity: isPrinciplesInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
           className="mb-20"
         >
@@ -57,9 +57,24 @@ const navigate = useNavigate()
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Innovación", icon: Lightbulb, description: "Impulsando los límites y explorando nuevas fronteras tecnológicas." },
-              { title: "Impacto", icon: Target, description: "Creando cambios significativos en el mundo digital." },
-              { title: "Visión", icon: Eye, description: "Comprensión profunda de los desafíos tecnológicos actuales." },
+              {
+                title: "Innovación",
+                icon: Lightbulb,
+                description:
+                  "Impulsando los límites y explorando nuevas fronteras tecnológicas.",
+              },
+              {
+                title: "Impacto",
+                icon: Target,
+                description:
+                  "Creando cambios significativos en el mundo digital.",
+              },
+              {
+                title: "Visión",
+                icon: Eye,
+                description:
+                  "Comprensión profunda de los desafíos tecnológicos actuales.",
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -89,12 +104,12 @@ const navigate = useNavigate()
           </div>
         </section>
 
-        <section 
+        <section
           ref={roadmapRef}
           style={{
             transform: isRoadmapInView ? "none" : "translateX(200px)",
             opacity: isRoadmapInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
           className="mb-20"
         >
@@ -103,9 +118,29 @@ const navigate = useNavigate()
           </h2>
           <div className="space-y-8">
             {[
-              { year: "2024", milestone: "Lanzamiento de nuestros servicios innovadores" },
-              { year: "2025", milestone: "Expansión a nuevos mercados latinoamericanos" },
-              { year: "2026", milestone: "Consolidación como líder en soluciones tecnológicas" },
+              {
+                year: "2022",
+                milestone: "Iniciamos nuestros servicios innovadores",
+              },
+              {
+                year: "2023",
+                milestone:
+                  "Continuamos con la expansión a nuevos mercados latinoamericanos",
+              },
+              {
+                year: "2024",
+                milestone: "Seguimos innovando con nuevos servicios",
+              },
+              {
+                year: "2025",
+                milestone:
+                  "Esperamos continuar expandiéndonos a nuevos mercados latinoamericanos",
+              },
+              {
+                year: "2026",
+                milestone:
+                  "Aspiramos a consolidarnos como líderes en soluciones tecnológicas",
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -115,26 +150,28 @@ const navigate = useNavigate()
                 className="animate-flyinright backdrop-blur-sm bg-white/5 dark:bg-black/5 p-6 rounded-lg border-2 hover:border-blue-500/50 transition-all duration-300"
               >
                 <div className="flex items-center">
-                  <motion.div 
+                  <motion.div
                     whileHover={{ scale: 1.1 }}
                     className="text-2xl font-bold mr-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent"
                   >
                     {item.year}
                   </motion.div>
                   <div className="flex-grow border-t border-blue-500/20"></div>
-                  <div className="ml-4 text-lg text-gray-300">{item.milestone}</div>
+                  <div className="ml-4 text-lg text-gray-300">
+                    {item.milestone}
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </section>
 
-        <section 
+        <section
           ref={joinRef}
           style={{
             transform: isJoinInView ? "none" : "translateY(100px)",
             opacity: isJoinInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
           className="text-center"
         >
@@ -142,16 +179,14 @@ const navigate = useNavigate()
             Únete a Nuestro Viaje
           </h2>
           <p className="mb-8 text-xl text-gray-400">
-            Sé parte del futuro que estamos creando. Juntos, podemos convertir esta visión en realidad.
+            Sé parte del futuro que estamos creando. Juntos, podemos convertir
+            esta visión en realidad.
           </p>
           <div className="flex justify-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <button 
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <button
                 className="px-5 py-3 border-none text-lg text-white rounded-lg tracking-[4px] font-bold uppercase transition-all duration-500 bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-[0_0_5px_rgb(0,140,255),0_0_25px_rgb(0,140,255),0_0_50px_rgb(0,140,255),0_0_100px_rgb(0,140,255)] flex items-center gap-2"
-              onClick={() => navigate('/contactus')}
+                onClick={() => navigate("/contactus")}
               >
                 Participa con Nosotros
                 <motion.div
@@ -166,6 +201,5 @@ const navigate = useNavigate()
         </section>
       </main>
     </div>
-  )
+  );
 }
-

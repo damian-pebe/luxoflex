@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "./components/theme-provider";
 import Navbar from "./modules/NaviationBar/NavBar";
-import { FloatButton } from "antd";
 import { Toaster } from "./components/ui/toaster";
 import LandingPage from "./modules/Routes/LandingPageComponents/LandingPage";
 import Contactus from "./modules/Routes/ContactUs/Contactus";
@@ -24,7 +23,7 @@ function App() {
           </Routes>
           {/* <Footer /> */}
           
-          <FloatButton.BackTop />
+          {/* <FloatButton.BackTop /> */}
         </Router>
       </ThemeProvider>
       <Toaster />

@@ -53,10 +53,10 @@ export default function ContactUs() {
   // })
 
   const enterpriseInfo = {
-    address: "Calle Principal #123, Ciudad de México",
-    phone: "+52 (555) 123-4567",
-    email: "contacto@empresa.com",
-    schedule: "Lunes a Viernes: 9:00 - 18:00",
+    address: "C. Pedro García Conde 282 Col. Villa Hermosa, Guadalajara, Jalisco, Mexico",
+    phone: "+52 33 34626001",
+    email: "luxoflex@gmail.com",
+    schedule: "Lunes a Domingo: 08:00 - 20:00",
   };
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -134,11 +134,12 @@ export default function ContactUs() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
+                
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-primary" />
+                  <Mail className="h-5 w-5 text-primary" />
                   <div>
-                    <h4 className="font-semibold">Dirección</h4>
-                    <p>{enterpriseInfo.address}</p>
+                    <h4 className="font-semibold">Email</h4>
+                    <p>{enterpriseInfo.email}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -149,17 +150,17 @@ export default function ContactUs() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <div>
-                    <h4 className="font-semibold">Email</h4>
-                    <p>{enterpriseInfo.email}</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
                   <Clock className="h-5 w-5 text-primary" />
                   <div>
                     <h4 className="font-semibold">Horario</h4>
                     <p>{enterpriseInfo.schedule}</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <div>
+                    <h4 className="font-semibold">Dirección</h4>
+                    <p>{enterpriseInfo.address}</p>
                   </div>
                 </div>
               </div>

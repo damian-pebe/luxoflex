@@ -158,12 +158,12 @@ function AnimatedPinDemo() {
 function ContactData() {
   const data = [
     {
-      name: "Tomas Perez",
-      hrefEmail: "mailto:tomasperez@gmail.com",
+      name: "Martin Ojeda",
+      hrefEmail: "mailto:martin@gmail.com",
       hrefPhone: "3311940001",
       hrefWhatsapp: "3311940001",
-      hrefFacebook: "https://facebook.com/tomasperez",
-      hrefInstagram: "https://instagram.com/tomasperez",
+      hrefFacebook: "https://facebook.com/martin",
+      hrefInstagram: "https://instagram.com/martin",
       img: ceo1,
       description: "CEO y Fundador de LUXOFLEX\nCon más de 15 años de experiencia en la industria de etiquetas autoadheribles",
     },
@@ -176,7 +176,7 @@ function ContactData() {
       hrefInstagram: "https://instagram.com/mayra",
       img: ceo2,
       description:
-        "CEO y Fundadora de LUXOFLEX\nCon más de 4 años de experiencia en etiquetas autoadheribles.",
+        "CEO y Fundadora de LUXOFLEX\nCon más de 8 años de experiencia en etiquetas autoadheribles.",
     },
    
   ];

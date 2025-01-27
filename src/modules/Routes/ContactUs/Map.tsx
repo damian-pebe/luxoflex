@@ -4,19 +4,34 @@ import "leaflet/dist/leaflet.css";
 
 const MapComponent = () => {
   useEffect(() => {
-    // Initialize the map
-    const map = L.map("map").setView([51.505, -0.09], 13); // Centered at London, zoom level 13
+    const map = L.map("map", { zoomControl: false }).setView(
+      [20.62391219402623, -103.35026599913583],
+      13
+    );
 
-    // Add a tile layer (OpenStreetMap by default)
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: "abcd",
+      }).addTo(map);
 
-    // Add a marker
-    L.marker([51.505, -0.09]).addTo(map).bindPopup("A sample marker").openPopup();
+    // dark mode
+    // L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    //     attribution:
+    //       '&copy; <a href="https://carto.com/">CARTO</a> contributors &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    //   }).addTo(map);
+
+    const marker = L.marker([20.64791219402623, -103.35026599913583]).addTo(map);
+    marker.bindPopup("LUXOFLEX");
+    marker.openPopup();
+
+    // Add onClick event to open the popup
+    marker.on('click', () => {
+      window.open('https://maps.app.goo.gl/TtJRRY97rhED6eJ77');
+    });
 
     return () => {
-      map.remove(); // Clean up map on component unmount
+      map.remove();
     };
   }, []);
 
