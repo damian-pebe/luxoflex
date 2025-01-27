@@ -60,84 +60,83 @@ function AnimatedPinDemo() {
   return (
     <div>
       <div className="">
-        <div className=" grid md:grid-cols-5 grid-cols-2 gap-10 justify-center ">
-          <PinContainer
-            title="/luxoflex.vercel.app"
-            href="luxoflex.vercel.app"
-            className="flex-grow"
-          >
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem] ">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
+        <div className="grid md:grid-cols-5 grid-cols-2 gap-10 justify-center">
+          <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
+            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
+              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
                 Email
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500  text-sm">
-                  LUXOFLEX tiene contacto por medio de Email asdasdasd
+                <span className="text-slate-500 text-sm">
+                  LUXOFLEX tiene contacto por medio de Email
                 </span>
               </div>
-              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white">
-                <img className="rounded-t-lg p-2" src={email} />
+              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
+                <img className="rounded-t-lg p-2 w-12 h-12 object-contain" src={email} />
               </div>
             </div>
           </PinContainer>
+
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem] ">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
+            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
+              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
                 Llamadas
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500  text-sm">
+                <span className="text-slate-500 text-sm">
                   LUXOFLEX tiene contacto por medio de telefono celular
                 </span>
               </div>
-              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white">
-                {/* <img className="rounded-t-lg p-2" src={phone} /> */}
-                <Phone className="rounded-t-lg p-2 w-full h-full text-black" />
+              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
+                <Phone className="w-12 h-12 text-black" />
               </div>
             </div>
           </PinContainer>
+
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem] ">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
+            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
+              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
                 WhatsApp
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500  text-sm">
+                <span className="text-slate-500 text-sm">
                   LUXOFLEX tiene contacto por medio de WhatsApp
                 </span>
               </div>
-              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white">
-                <img className="rounded-t-lg" src={whatsapp} />
+              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
+                <img className="rounded-t-lg w-12 h-12 object-contain" src={whatsapp} />
               </div>
             </div>
           </PinContainer>
+
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem] ">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
+            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
+              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
                 Facebook
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500  text-sm">
+                <span className="text-slate-500 text-sm">
                   LUXOFLEX tiene contacto por medio de Facebook
                 </span>
               </div>
-              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white">
-                <img className="rounded-t-lg p-2" src={facebook} />
+              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
+                <img className="rounded-t-lg p-2 w-12 h-12 object-contain" src={facebook} />
               </div>
             </div>
           </PinContainer>
+
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem] ">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla  text-base text-slate-100">
+            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
+              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
                 Instagram
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500  text-sm">
+                <span className="text-slate-500 text-sm">
                   LUXOFLEX tiene contacto por medio de Instagram
                 </span>
               </div>
-              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white">
-                <img className="rounded-t-lg p-2" src={instagram} />
+              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gradient-to-br from-white via-gray-300 to-white justify-center items-center">
+                <img className="rounded-t-lg p-2 w-12 h-12 object-contain" src={instagram} />
               </div>
             </div>
           </PinContainer>

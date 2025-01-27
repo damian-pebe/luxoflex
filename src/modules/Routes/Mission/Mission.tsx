@@ -84,10 +84,12 @@ export default function Mission() {
           Lo que dicen nuestros clientes
         </h3>
         <InfiniteMovingCardsDemo />
-          <h2 className="text-5xl md:text-7xl font-bold text-center mb-4 font-vt323 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
-            Lo Que Nos Impulsa
-          </h2>
-          <p className="text-center text-gray-400 max-w-3xl font-orbitron mx-auto mb-16 animate-fadeIn">
+          <div className="pt-20 relative w-full">
+            <h2 className="absolute left-1/2 transform -translate-x-1/2 text-5xl md:text-7xl font-bold text-center mb-4 font-vt323 tracking-widest bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
+              Lo Que Nos Impulsa
+            </h2>
+          </div>
+          <p className=" pt-20 text-center text-gray-400 max-w-3xl font-orbitron mx-auto mb-16 animate-fadeIn tracking-wider">
             Nos dedicamos a revolucionar la industria de etiquetas autoadheribles, 
             ofreciendo soluciones innovadoras y personalizadas que transforman la 
             manera en que nuestros clientes presentan sus productos al mundo.
@@ -97,7 +99,7 @@ export default function Mission() {
         
       </div>
 
-      <div className="absolute inset-0 w-full h-full dark:opacity-40 opacity-30 pointer-events-none">
+      <div className="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
         <div className="absolute h-full w-full">
           {[...Array(150)].map((_, i) => (
             <div
