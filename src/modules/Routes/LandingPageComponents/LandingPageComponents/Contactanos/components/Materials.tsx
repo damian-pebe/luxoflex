@@ -12,9 +12,8 @@ export function Materials() {
     <div>
       <BackgroundLinesDemo />
       <MaterialsCards />
-<Divider/>
+      <Divider />
       <PoweringTeams />
-      
     </div>
   );
 }
@@ -42,7 +41,10 @@ function MaterialsCards() {
       {materials.map((material, index) => (
         <CardContainer className="inter-var cursor-pointer" key={index}>
           <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
-            <CardItem translateZ="50" className="text-xl font-bold text-white font-sigmar text-center">
+            <CardItem
+              translateZ="50"
+              className="text-xl font-bold text-white font-sigmar text-center"
+            >
               {material.name}
             </CardItem>
             <CardItem
@@ -72,7 +74,8 @@ export function BackgroundLinesDemo() {
   return (
     <div className="flex items-center justify-center w-full flex-col px-4">
       <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-5xl md:text-6xl lg:text-8xl font-sans py-2 relative z-20 font-bold tracking-tight">
-      Eleva tu experiencia <br /> con <br />LUXOFLEX.
+        Eleva tu experiencia <br /> con <br />
+        LUXOFLEX.
       </h2>
       <p className=" mx-auto text-lg md:text-xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
         Conoce los materiales que usamos para crear las mejores etiquetas.
@@ -81,21 +84,39 @@ export function BackgroundLinesDemo() {
   );
 }
 
-
 const PoweringTeams = () => {
   return (
     <div className="bg-black text-white text-center py-10">
-      <h2 className="text-3xl md:text-5xl font-bold mb-4">Impulsando los mejores productos.</h2>
-      <p className="text-lg md:text-xl mb-8">Desde startups de nueva generación hasta empresas consolidadas.</p>
+      <h2 className="text-3xl md:text-5xl font-bold mb-4">
+        Impulsando los mejores productos.
+      </h2>
+      <p className="text-lg md:text-xl mb-8">
+        Desde startups de nueva generación hasta empresas consolidadas.
+      </p>
       <div className="flex justify-center flex-wrap">
-        <img src="/path/to/ramp-logo.png" alt="Ramp" className="h-12 mx-4" />
-        <img src="/path/to/vercel-logo.png" alt="Vercel" className="h-12 mx-4" />
+        <img
+          src="https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png"
+          alt="La Coculence"
+          className="h-12 mx-4"
+        />
+        <img
+          src="/path/to/vercel-logo.png"
+          alt="Vercel"
+          className="h-12 mx-4"
+        />
         <img src="/path/to/scale-logo.png" alt="Scale" className="h-12 mx-4" />
         <img src="/path/to/arc-logo.png" alt="ARC" className="h-12 mx-4" />
-        <img src="/path/to/cashapp-logo.png" alt="Cash App" className="h-12 mx-4" />
-        <img src="/path/to/retool-logo.png" alt="Retool" className="h-12 mx-4" />
+        <img
+          src="/path/to/cashapp-logo.png"
+          alt="Cash App"
+          className="h-12 mx-4"
+        />
+        <img
+          src="/path/to/retool-logo.png"
+          alt="Retool"
+          className="h-12 mx-4"
+        />
       </div>
     </div>
   );
 };
-

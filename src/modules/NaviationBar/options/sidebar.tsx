@@ -13,7 +13,13 @@ import {
 } from "@/components/ui/drawer";
 import { useNavigate } from "react-router-dom";
 import ButtonLink1 from "@/components/buttons_style/button_link_style1/button_link1";
-import { EyeIcon, HeartHandshakeIcon, HomeIcon, PhoneForwarded, UsersIcon } from "lucide-react";
+import {
+  EyeIcon,
+  HeartHandshakeIcon,
+  HomeIcon,
+  PhoneForwarded,
+  UsersIcon,
+} from "lucide-react";
 
 export function Sidebar() {
   const navigate = useNavigate();
@@ -43,66 +49,72 @@ export function Sidebar() {
             </DrawerDescription>
           </DrawerHeader>
           <div className="py-5 md:flex md:flex-col md:items-center md:justify-center space-y-4 z-10">
-            <div
-              onClick={() => navigate("/")}
-              className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
-            >
-              <div className="flex justify-start">
+            <DrawerClose asChild>
+              <div
+                onClick={() => navigate("/")}
+                className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
+              >
+                <div className="flex justify-start">
+                  <ButtonLink1 str="Inicio" />
+                </div>
 
-              <ButtonLink1 str="Inicio" />
+                <div className="flex justify-end">
+                  <HomeIcon />
+                </div>
               </div>
+            </DrawerClose>
 
-              <div className="flex justify-end">
-                <HomeIcon />
+            <DrawerClose asChild>
+              <div
+                onClick={() => navigate("/luxoflex")}
+                className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
+              >
+                <ButtonLink1 str="Nosotros" />
+
+                <div className="flex justify-end">
+                  <UsersIcon />
+                </div>
               </div>
-            </div>
-            <div
-              onClick={() => navigate("/luxoflex")}
-              className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
-            >
-              <ButtonLink1 str="Nosotros" />
+            </DrawerClose>
 
-              <div className="flex justify-end">
-                <UsersIcon />
+            <DrawerClose asChild>
+              <div
+                onClick={() => navigate("/contactus")}
+                className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
+              >
+                <ButtonLink1 str="Contactanos" />
+
+                <div className="flex justify-end">
+                  <PhoneForwarded />
+                </div>
               </div>
-            </div>
-            <div
-              onClick={() => navigate("/contactus")}
-              className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
-            >
-              <ButtonLink1 str="Contactanos" />
+            </DrawerClose>
 
-              <div className="flex justify-end">
-                <PhoneForwarded />
+            <DrawerClose asChild>
+              <div
+                onClick={() => navigate("/mission")}
+                className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
+              >
+                <ButtonLink1 str="Mision" />
+
+                <div className="flex justify-end">
+                  <HeartHandshakeIcon />
+                </div>
               </div>
-            </div>
-            <div
-              onClick={() => navigate("/mission")}
-              className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
-            >
-              <ButtonLink1 str="Mision" />
+            </DrawerClose>
 
-              <div className="flex justify-end">
-                <HeartHandshakeIcon />
+            <DrawerClose asChild>
+              <div
+                onClick={() => navigate("/vision")}
+                className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
+              >
+                <ButtonLink1 str="Vision" />
+
+                <div className="flex justify-end">
+                  <EyeIcon />
+                </div>
               </div>
-            </div>
-            <div
-              onClick={() => navigate("/vision")}
-              className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
-            >
-
-              <ButtonLink1 str="Vision" />
-
-              <div className="flex justify-end">
-                <EyeIcon />
-              </div>
-            </div>
-
-
-
-          
-         
-      
+            </DrawerClose>
           </div>
           <DrawerFooter>
             <DrawerClose asChild>
