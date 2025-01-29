@@ -7,6 +7,7 @@ import Contactus from "./modules/Routes/ContactUs/Contactus";
 import Who from "./modules/Routes/Luxoflex/who";
 import Vision from "./modules/Routes/Vision/Vision";
 import Mission from "./modules/Routes/Mission/Mission";
+import Footer from "./modules/Footer/Footer";
 function App() {
   return (
     <>
@@ -21,7 +22,7 @@ function App() {
             <Route path="/vision" element={<Vision />} />
             <Route path="/mission" element={<Mission />} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
           
           {/* <FloatButton.BackTop /> */}
         </Router>
