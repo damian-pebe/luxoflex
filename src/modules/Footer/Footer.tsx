@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@radix-ui/react-select";
 import {
@@ -9,6 +8,9 @@ import {
   EnvelopeFill,
   TelephoneFill,
 } from "react-bootstrap-icons";
+import { CookiesPolicy } from "./components/CookiesPolicy";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
+import { TermsOfService } from "./components/TermsOfService";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -19,72 +21,72 @@ const Footer = () => {
           <div className="text-center sm:text-left">
             <h3 className="text-white font-semibold mb-4 text-lg">Empresa</h3>
             <div className="flex flex-col space-y-2">
-              <Button
-                variant="link"
+              <Link
+                to="/luxoflex"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Sobre Nosotros
-              </Button>
-              <Button
-                variant="link"
+              </Link>
+              <Link
+                to="/vision"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Carrera
-              </Button>
-              <Button
-                variant="link"
+              </Link>
+              <Link
+                to="/contactus"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Contactanos
-              </Button>
+              </Link>
             </div>
           </div>
 
           <div className="text-center sm:text-left">
             <h3 className="text-white font-semibold mb-4 text-lg">Servicios</h3>
             <div className="flex flex-col space-y-2">
-              <Button
-                variant="link"
+              <Link
+                to="/web"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Desarrollo Web
-              </Button>
-              <Button
-                variant="link"
+              </Link>
+              <Link
+                to="/design"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Diseño
-              </Button>
-              <Button
-                variant="link"
+              </Link>
+              <Link
+                to="/marketing"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Marketing
-              </Button>
+              </Link>
             </div>
           </div>
 
           <div className="text-center sm:text-left">
             <h3 className="text-white font-semibold mb-4 text-lg">Recursos</h3>
             <div className="flex flex-col space-y-2">
-              <Button
-                variant="link"
+              <Link
+                to="/blog"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Blog
-              </Button>
-              <Button
-                variant="link"
+              </Link>
+              <Link
+                to="/documentacion"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Documentación
-              </Button>
-              <Button
-                variant="link"
+              </Link>
+              <Link
+                to="/help"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
               >
                 Centro de Ayuda
-              </Button>
+              </Link>
             </div>
           </div>
 
@@ -160,24 +162,11 @@ const Footer = () => {
             {"  "} 2021. Todos los derechos reservados.
           </p>
           <div className="flex flex-wrap justify-center gap-6 order-1 md:order-2">
-            <Button
-              variant="link"
-              className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md"
-            >
-              Política de Privacidad
-            </Button>
-            <Button
-              variant="link"
-              className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md"
-            >
-              Términos de Servicio
-            </Button>
-            <Button
-              variant="link"
-              className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md"
-            >
-              Política de Cookies
-            </Button>
+            
+             
+            <PrivacyPolicy />
+            <TermsOfService />
+            <CookiesPolicy />
           </div>
         </div>
       </CardContent>
