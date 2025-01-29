@@ -1,28 +1,27 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Title() {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setIsHovered(prev => !prev); 
-    }, isHovered ? 3000 : 1000); 
-  
-    return () => clearInterval(intervalId);
-  }, [isHovered]);
-  
-const navigate = useNavigate()
+      setIsActive(prev => !prev); // Toggle the state every second
+    }, 1000);
+
+    return () => clearInterval(intervalId); // Cleanup interval on unmount
+  }, []);
+
   return (
-    <div onClick={() => navigate('/')}>
+    <Link to="/" className="animate-slideinright">
       <StyledWrapper>
-        <button className={`button ${isHovered ? 'hovered' : ''}`} data-text="Awesome">
+        <button className={`button ${isActive ? 'active' : ''}`} data-text="Awesome">
           <span className="actual-text">&nbsp;luxoflex&nbsp;</span>
-          <span aria-hidden="true" className="hover-text">&nbsp;luxoflex&nbsp;</span>
+          <span aria-hidden="true" className="animated-text">&nbsp;luxoflex&nbsp;</span>
         </button>
       </StyledWrapper>
-    </div>
+    </Link>
   );
 }
 
@@ -44,8 +43,7 @@ const StyledWrapper = styled.div`
     font-family: "Arial";
   }
 
-  /* this is the text, when you hover on button */
-  .hover-text {
+  .animated-text {
     position: absolute;
     box-sizing: border-box;
     content: attr(data-text);
@@ -58,14 +56,8 @@ const StyledWrapper = styled.div`
     -webkit-text-stroke: 1px white;
   }
 
-  /* Triggered hover effect when class is added */
-  .button.hovered .hover-text {
-    width: 100%;
-    filter: drop-shadow(0 0 23px white);
-  }
-
-  /* Optional, hover effect for manual hover */
-  .button:hover .hover-text {
+  /* Active state for animation */
+  .button.active .animated-text {
     width: 100%;
     filter: drop-shadow(0 0 23px white);
   }

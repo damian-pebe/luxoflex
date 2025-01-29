@@ -11,7 +11,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ButtonLink1 from "@/components/buttons_style/button_link_style1/button_link1";
 import {
   EyeIcon,
@@ -22,7 +22,6 @@ import {
 } from "lucide-react";
 
 export function Sidebar() {
-  const navigate = useNavigate();
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -50,8 +49,8 @@ export function Sidebar() {
           </DrawerHeader>
           <div className="py-5 md:flex md:flex-col md:items-center md:justify-center space-y-4 z-10">
             <DrawerClose asChild>
-              <div
-                onClick={() => navigate("/")}
+              <Link
+                to="/"
                 className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
               >
                 <div className="flex justify-start">
@@ -61,12 +60,12 @@ export function Sidebar() {
                 <div className="flex justify-end">
                   <HomeIcon />
                 </div>
-              </div>
+              </Link>
             </DrawerClose>
 
             <DrawerClose asChild>
-              <div
-                onClick={() => navigate("/luxoflex")}
+              <Link
+                to="/luxoflex"
                 className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
               >
                 <ButtonLink1 str="Nosotros" />
@@ -74,12 +73,12 @@ export function Sidebar() {
                 <div className="flex justify-end">
                   <UsersIcon />
                 </div>
-              </div>
+              </Link>
             </DrawerClose>
 
             <DrawerClose asChild>
-              <div
-                onClick={() => navigate("/contactus")}
+              <Link
+                to="/contactus"
                 className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
               >
                 <ButtonLink1 str="Contactanos" />
@@ -87,12 +86,12 @@ export function Sidebar() {
                 <div className="flex justify-end">
                   <PhoneForwarded />
                 </div>
-              </div>
+              </Link>
             </DrawerClose>
 
             <DrawerClose asChild>
-              <div
-                onClick={() => navigate("/mission")}
+              <Link
+                to="/mission"
                 className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
               >
                 <ButtonLink1 str="Mision" />
@@ -100,12 +99,12 @@ export function Sidebar() {
                 <div className="flex justify-end">
                   <HeartHandshakeIcon />
                 </div>
-              </div>
+              </Link>
             </DrawerClose>
 
             <DrawerClose asChild>
-              <div
-                onClick={() => navigate("/vision")}
+              <Link
+                to="/vision"
                 className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
               >
                 <ButtonLink1 str="Vision" />
@@ -113,7 +112,7 @@ export function Sidebar() {
                 <div className="flex justify-end">
                   <EyeIcon />
                 </div>
-              </div>
+              </Link>
             </DrawerClose>
           </div>
           <DrawerFooter>
