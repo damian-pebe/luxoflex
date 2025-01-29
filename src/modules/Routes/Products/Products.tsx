@@ -27,10 +27,6 @@ const projects = [
       description: "Integra códigos QR para rastreo, promociones o información interactiva. Conexión directa con el cliente.",
       image: img},
     {
-      title: "Etiquetas Inteligentes (NFC/RFID)",
-      description: "Tecnología NFC o RFID para inventarios, autenticación y experiencias interactivas. Innovación en tus productos.",
-      image: img},
-    {
       title: "Etiquetas en Rollo",
       description: "Perfectas para producción masiva. Fáciles de aplicar, adhesivo resistente y personalizables.",
       image: img},
@@ -43,28 +39,8 @@ const projects = [
       description: "Protección contra agua y humedad. Perfectas para bebidas, cosméticos y productos químicos.",
       image: img},
     {
-      title: "Etiquetas de Seguridad",
-      description: "Anti-manipulación. Garantizan autenticidad con adhesivos destructibles, hologramas o serialización.",
-      image: img},
-    {
-      title: "Etiquetas Térmicas",
-      description: "Resistentes a altas temperaturas. Ideales para procesos industriales y envasado.",
-      image: img},
-    {
       title: "Etiquetas Personalizadas",
       description: "Diseños únicos. Colores vibrantes, acabados metálicos y detalles premium para destacar tu marca.",
-      image: img},
-    {
-      title: "Etiquetas Ecológicas",
-      description: "Materiales reciclados y biodegradables. Sostenibilidad sin sacrificar calidad.",
-      image: img},
-    {
-      title: "Etiquetas para Exteriores",
-      description: "Resistentes a UV, clima y abrasión. Durabilidad en condiciones extremas.",
-      image: img},
-    {
-      title: "Etiquetas para Vidrio",
-      description: "Adhesivos fuertes para superficies lisas. Ideales para botellas y envases de vidrio.",
       image: img},
     {
       title: "Etiquetas para Logística",

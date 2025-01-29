@@ -84,8 +84,8 @@ export default function Mission() {
           Lo que dicen nuestros clientes
         </h3>
         <InfiniteMovingCardsDemo />
-          <div className=" relative w-full">
-            <h2 className=" left-1/2 transform -translate-x-1/2 text-5xl md:text-7xl font-bold text-center font-vt323 tracking-widest bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
+          <div className=" relative w-[99%]">
+            <h2 className=" items-center justify-center text-5xl md:text-7xl font-bold text-center font-vt323 tracking-widest bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
               Lo Que Nos Impulsa
             </h2>
           </div>
