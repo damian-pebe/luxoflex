@@ -1,5 +1,6 @@
 import BlurText from "@/components/reactbits/blur_text";
 import ShinyText from "@/components/reactbits/shiny_text";
+import { Link } from "react-router-dom";
 
 export const PoweringTeams = () => {
   return (
@@ -13,48 +14,53 @@ export const PoweringTeams = () => {
       />
 
       <ShinyText
-        text="        Desde startups de nueva generación hasta empresas consolidadas.
-"
+        text="Desde startups de nueva generación hasta empresas consolidadas."
         disabled={false}
         speed={1}
-        className="custom-class text-2xl mb-8 text-muted-foreground font-playfair"
+        className="custom-class text-2xl mb-8 text-muted-foreground font-playfair animate-pulse duration-1000"
       />
 
-      <p className="text-2xl mb-8 text-muted-foreground font-playfair">
-        Desde startups de nueva generación hasta empresas consolidadas.
-      </p>
       <div className="grid grid-cols-2 gap-4 md:flex md:justify-center md:items-center md:flex-wrap">
-        <img
-          src="https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png"
-          alt="La Coculence"
-          className="h-12 mx-4"
-        />
-        <img
-          src="https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png"
-          alt="La Coculence"
-          className="h-12 mx-4"
-        />
-        <img
-          src="https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png"
-          alt="La Coculence"
-          className="h-12 mx-4"
-        />
-        <img
-          src="https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png"
-          alt="La Coculence"
-          className="h-12 mx-4"
-        />
-        <img
-          src="https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png"
-          alt="La Coculence"
-          className="h-12 mx-4"
-        />
-        <img
-          src="https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png"
-          alt="La Coculence"
-          className="h-12 mx-4"
-        />
+        {teams.map((team, index) => (
+          <Link to={team.link}>
+            <img
+              src={team.img}
+              alt={index.toString()}
+              className="h-12 mx-4 hover:scale-110 transition-transform duration-1000 animate-fadeinup"
+            />
+          </Link>
+        ))}
       </div>
     </div>
   );
 };
+interface Team {
+  img: string;
+  link: string;
+}
+const teams: Team[] = [
+  {
+    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    link: "https://lacoculence.com",
+  },
+  {
+    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    link: "https://lacoculence.com",
+  },
+  {
+    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    link: "https://lacoculence.com",
+  },
+  {
+    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    link: "https://lacoculence.com",
+  },
+  {
+    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    link: "https://lacoculence.com",
+  },
+  {
+    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    link: "https://lacoculence.com",
+  },
+];

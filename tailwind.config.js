@@ -85,14 +85,14 @@ export default {
         },
       },
       keyframes: {
-        
-        gradientShift: {
+
+        "gradientShift": {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
         
         },
-        scroll: {
+        "scroll": {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
           },
