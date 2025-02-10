@@ -53,8 +53,3 @@ export default function Preprensa() {
     </div>
   );
 }
-
-
-<AnimatedContent>
-  <div>Content to Animate</div>
-</AnimatedContent>
