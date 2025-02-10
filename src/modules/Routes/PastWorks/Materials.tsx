@@ -5,15 +5,12 @@ import {
   CardItem,
 } from "@/components/aceternity/3d-card";
 import background from "@/assets/background.jpg";
-import Divider from "@/components/divider";
 
 export function Materials() {
   return (
     <div>
       <TitleSolidGradiant />
       <MaterialsCards />
-      <Divider />
-      <PoweringTeams />
     </div>
   );
 }
@@ -75,39 +72,4 @@ function MaterialsCards() {
   );
 }
 
-const PoweringTeams = () => {
-  return (
-    <div className=" text-white text-center py-10 from-black to-zinc-900">
-      <h2 className="text-3xl md:text-5xl font-bold mb-4">
-        Impulsando los mejores productos.
-      </h2>
-      <p className="text-lg md:text-xl mb-8">
-        Desde startups de nueva generación hasta empresas consolidadas.
-      </p>
-      <div className="flex justify-center flex-wrap">
-        <img
-          src="https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png"
-          alt="La Coculence"
-          className="h-12 mx-4"
-        />
-        <img
-          src="/path/to/vercel-logo.png"
-          alt="Vercel"
-          className="h-12 mx-4"
-        />
-        <img src="/path/to/scale-logo.png" alt="Scale" className="h-12 mx-4" />
-        <img src="/path/to/arc-logo.png" alt="ARC" className="h-12 mx-4" />
-        <img
-          src="/path/to/cashapp-logo.png"
-          alt="Cash App"
-          className="h-12 mx-4"
-        />
-        <img
-          src="/path/to/retool-logo.png"
-          alt="Retool"
-          className="h-12 mx-4"
-        />
-      </div>
-    </div>
-  );
-};
+

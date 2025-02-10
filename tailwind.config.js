@@ -85,6 +85,7 @@ export default {
         },
       },
       keyframes: {
+        
         gradientShift: {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
@@ -1248,6 +1249,7 @@ export default {
         },
       },
       animation: {
+
         gradientShift: "gradientShift 3s infinite ease-in-out",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",

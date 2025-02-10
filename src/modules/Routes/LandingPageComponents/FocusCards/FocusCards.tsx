@@ -1,5 +1,5 @@
 import { Divider } from "antd";
-import { Materials } from "../LandingPageComponents/Contactanos/components/Materials";
+import { Materials } from "../../PastWorks/Materials";
 
 export default function FocusCards() {
   return (
