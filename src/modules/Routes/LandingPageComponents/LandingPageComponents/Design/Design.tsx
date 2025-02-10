@@ -4,7 +4,8 @@ import ShinyText from "@/components/reactbits/shiny_text";
 import Stepper, { Step } from "@/components/reactbits/stepper";
 import { useState } from "react";
 import background from "@/assets/background.jpg";
-import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Users } from "lucide-react";
 export function Design() {
   const [feedback, setFeedback] = useState("");
   return (
@@ -39,42 +40,52 @@ export function Design() {
         nextButtonText="Siguiente"
       >
         <Step>
-          <h2>Nosotros diseñaremos tu logo</h2>
-          <p>Check out the next step!</p>
+          <h2 className="font-rajdhani font-bold text-2xl">
+            Nosotros diseñaremos tu logo
+          </h2>
+          <p className="font-rajdhani font-bold text-lg">
+            ¡Sube tu logo o una idea!
+          </p>
 
           <div className="w-full max-w-4xl mx-auto min-h-96 border border-dashed bg-white dark:bg-black border-neutral-200 dark:border-neutral-800 rounded-lg">
             <FileUpload />
           </div>
         </Step>
         <Step>
-          <h2>Paso 2</h2>
-          <p>Custom step content!</p>
+          <h2 className="font-rajdhani font-bold text-2xl">Paso 2</h2>
+          <p className="font-rajdhani font-bold text-lg">
+            Te enviaremos el avance del diseño!
+          </p>
 
           <img
-            style={{
-              height: "100px",
-              width: "100%",
-              objectFit: "cover",
-              objectPosition: "center -70px",
-              borderRadius: "15px",
-              marginTop: "1em",
-            }}
+            className="object-cover h-full w-full rounded-lg mt-4"
             src={background}
           />
         </Step>
         <Step>
-          <h2>Give us feedback about the logo</h2>
-          <Input
-            className="my-5"
+          <h2 className="font-rajdhani font-bold text-2xl">
+            Por favor, proporciona tus recomendaciones o cambios deseados
+          </h2>
+
+          <Textarea
+            className="my-5 font-rajdhani font-bold text-md"
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}
-            placeholder="Your feedback"
+            placeholder="Tus recomendaciones"
           />
-          <h2>we'll make the logo get 100x better</h2>
+
+          <h2 className="font-rajdhani font-bold text-lg">
+            Mejoraremos tu diseño al máximo
+          </h2>
         </Step>
         <Step>
-          <h2>Final Step</h2>
-          <p>We repeat step 2 n 3 untill u ove ur design</p>
+          <div className="flex fex-wrap gap-3">
+            <Users size={36} />
+            <h2 className="font-rajdhani font-bold text-3xl">Ultimo paso!</h2>
+          </div>
+          <p className="font-rajdhani font-bold text-lg">
+            Repetiremos el paso 2 y 3 hasta que ames tu diseño
+          </p>
         </Step>
       </Stepper>
     </div>

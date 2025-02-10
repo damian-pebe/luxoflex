@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface StepperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -76,10 +77,11 @@ export default function Stepper({
       updateStep(currentStep + 1);
     }
   };
-
+ const navigate = useNavigate()
   const handleComplete = () => {
     setDirection(1);
     updateStep(totalSteps + 1);
+    navigate("/contactus");
   };
 
   return (
@@ -147,7 +149,7 @@ export default function Stepper({
                 <Button
                   variant="secondary"
                   onClick={handleBack}
-                  className={`duration-350  px-2 py-1 transition rounded-full ${
+                  className={`duration-1000  px-5 py-3 transition rounded-full font-raleway ${
                     currentStep === 1
                       ? "pointer-events-none "
                       : ""
@@ -160,10 +162,10 @@ export default function Stepper({
               <Button
                 onClick={isLastStep ? handleComplete : handleNext}
                 variant="default"
-                className="duration-350 flex items-center justify-center rounded-full  py-1.5 px-3.5 font-medium tracking-tight text-black transition hover:bg-cyan-300"
+                className="duration-1000 px-5 flex items-center justify-center rounded-full font-raleway  py-2 font-medium tracking-tight text-black transition hover:bg-cyan-300"
                 {...nextButtonProps}
               >
-                {isLastStep ? "Complete" : nextButtonText}
+                {isLastStep ? "Terminado" : nextButtonText}
               </Button>
             </div>
           </div>
