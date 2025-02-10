@@ -7,7 +7,6 @@ import { PinContainer } from "@/components/ui/3d-pin";
 
 import ceo1 from "@/assets/rb_174457.png";
 import ceo2 from "@/assets/rb_176267.png";
-import { Popover } from "antd";
 import Socials from "./components/Socials";
 import {
   Whatsapp,
@@ -204,61 +203,51 @@ function ContactData() {
   ];
   return (
     <div>
-      <a className="font-extrabold font-flamenco text-4xl  justify-center flex items-center pt-10 pb-5">
+      <a className="bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
+
         CONTACTANOS PERSONALMENTE
       </a>
       <div className=" flex flex-wrap justify-center items-center gap-6 ">
         {data.map((user) => (
           <SpotlightCard
             className="custom-spotlight-card w-96 h-72"
-            spotlightColor="rgba(255, 255, 255, 0.2)"
+            spotlightColor="rgba(255, 255, 255, 0.3)"
           >
             <div className="flex flex-col justify-between gap-5">
-             
-                <span className="text-2xl font-audiowide">{user.name}</span>
-                <div className=" text-1xl font-audiowide text-base overflow-hidden">
-                  {user.description}
-                </div>
-              
-              <div className="bottom-bottom">
-                <div className="social-links-container">
-                  <Popover content="Llamar">
-                    <i
-                      onClick={() =>
-                        (window.location.href = `tel:+52${user.hrefPhone}`)
-                      }
-                      className="hover:cursor-pointer bi bi-telephone-outbound text-lg  transition-all duration-1000 text-white hover:text-pink-800 hover:scale-150"
-                    ></i>
-                  </Popover>
+              <span className="text-2xl font-audiowide">{user.name}</span>
+              <div className=" text-lg font-serif  overflow-hidden">
+                {user.description}
+              </div>
 
-                  <Popover content="WhatsApp">
-                    <i
-                      onClick={() =>
-                        (window.location.href = `https://wa.me/+52${user.hrefWhatsapp}`)
-                      }
-                      className="hover:cursor-pointer bi bi-whatsapp text-lg  transition-all duration-1000 text-white hover:text-pink-800 hover:scale-150"
-                    ></i>
-                  </Popover>
+              <div className="space-y-1 pb-1">
+                <div className="flex flex-wrap justify-center gap-2">
+                  <i
+                    onClick={() =>
+                      (window.location.href = `tel:+52${user.hrefPhone}`)
+                    }
+                    className="hover:cursor-pointer bi bi-telephone-outbound text-lg  transition-all duration-1000 text-white hover:text-teal-600 hover:scale-150"
+                  ></i>
 
-                  <Popover content="Facebook">
-                    <i
-                      onClick={() => (window.location.href = user.hrefFacebook)}
-                      className="hover:cursor-pointer bi bi-facebook text-lg  transition-all duration-1000 text-white hover:text-pink-800 hover:scale-150"
-                    ></i>
-                  </Popover>
+                  <i
+                    onClick={() =>
+                      (window.location.href = `https://wa.me/+52${user.hrefWhatsapp}`)
+                    }
+                    className="hover:cursor-pointer bi bi-whatsapp text-lg  transition-all duration-1000 text-white hover:text-green-600 hover:scale-150"
+                  ></i>
 
-                  <Popover content="Instagram">
-                    <i
-                      onClick={() =>
-                        (window.location.href = user.hrefInstagram)
-                      }
-                      className="hover:cursor-pointer bi bi-instagram text-lg  transition-all duration-1000 text-white hover:text-pink-800 hover:scale-150"
-                    ></i>
-                  </Popover>
+                  <i
+                    onClick={() => (window.location.href = user.hrefFacebook)}
+                    className="hover:cursor-pointer bi bi-facebook text-lg  transition-all duration-1000 text-white hover:text-blue-600 hover:scale-150"
+                  ></i>
+
+                  <i
+                    onClick={() => (window.location.href = user.hrefInstagram)}
+                    className="hover:cursor-pointer bi bi-instagram text-lg  transition-all duration-1000 text-white hover:text-pink-600 hover:scale-150"
+                  ></i>
                 </div>
                 <Button
                   variant="default"
-                  className="px-10 py-2 hover:bg-black hover:text-white font-poppins font-light  transition-colors duration-1000"
+                  className="w-full hover:bg-black hover:text-white font-poppins font-light  transition-colors duration-1000"
                   onClick={() =>
                     (window.location.href = `tel:+52${user.hrefPhone}`)
                   }
@@ -273,39 +262,3 @@ function ContactData() {
     </div>
   );
 }
-
-// const Card = ({
-//   name,
-//   hrefEmail,
-//   hrefPhone,
-//   hrefWhatsapp,
-//   hrefFacebook,
-//   hrefInstagram,
-//   img,
-//   description,
-// }: {
-//   name: string;
-//   hrefEmail: string;
-//   hrefPhone: string;
-//   hrefWhatsapp: string;
-//   hrefFacebook: string;
-//   hrefInstagram: string;
-//   img: string;
-//   description: string;
-// }) => {
-//   return (
-//     <div>
-//       <div className="card">
-//         <div className="mail">
-//           <Popover content="Enviar email">
-//             <Mail
-//               onClick={() => (window.location.href = hrefEmail)}
-//               className="hover:cursor-pointer transition-colors duration-1000 text-pink-300 hover:text-pink-800"
-//             />
-//           </Popover>
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// };

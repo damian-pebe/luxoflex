@@ -46,7 +46,7 @@ const WhoWeAre = () => {
           </FullWidthSection>
         </div>
       </div>
-      <Container>
+      <Container className="px-5">
         <BackgroundOverlay />
         <ContentWrapper ref={ref}>
           <div className=" pb-12 ">
