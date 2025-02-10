@@ -27,11 +27,11 @@ export default function Mission() {
         <div className="relative z-20 h-full flex flex-col items-center justify-center px-4">
           <h1 className="text-7xl font-bold mb-4 font-audiowide text-white animate-slideInFromLeft">
             {title}
-            <span className="animate-blink">|</span>
+            <span className="animate-pulse duration-800">|</span>
           </h1>
           <p className="text-2xl text-gray-300 font-audiowide animate-slideInFromRight">
             {subtitle}
-            <span className="animate-blink">|</span>
+            <span className="animate-pulse duration-800">|</span>
           </p>
         </div>
       </div>

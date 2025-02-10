@@ -18,6 +18,7 @@ import {
   HeartHandshakeIcon,
   HomeIcon,
   PhoneForwarded,
+  Users2Icon,
   UsersIcon,
 } from "lucide-react";
 
@@ -111,6 +112,19 @@ export function Sidebar() {
 
                 <div className="flex justify-end">
                   <EyeIcon />
+                </div>
+              </Link>
+            </DrawerClose>
+
+            <DrawerClose asChild>
+              <Link
+                to="/pastworks"
+                className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
+              >
+                <ButtonLink1 str="Trabajos" />
+
+                <div className="flex justify-end">
+                  <Users2Icon />
                 </div>
               </Link>
             </DrawerClose>

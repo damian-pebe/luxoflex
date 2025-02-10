@@ -33,11 +33,11 @@ export default function VisionPage() {
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 font-audiowide">
             {title}
-            <span className="animate-blink">|</span>
+            <span className="animate-pulse duration-800">|</span>
           </h1>
           <p className="text-xl text-gray-300 font-audiowide">
             {subtitle}
-            <span className="animate-blink">|</span>
+            <span className="animate-pulse duration-800">|</span>
           </p>
         </div>
       </div>

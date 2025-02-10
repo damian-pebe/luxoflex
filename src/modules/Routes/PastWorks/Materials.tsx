@@ -10,7 +10,7 @@ import Divider from "@/components/divider";
 export function Materials() {
   return (
     <div>
-      <BackgroundLinesDemo />
+      <TitleSolidGradiant />
       <MaterialsCards />
       <Divider />
       <PoweringTeams />
@@ -61,7 +61,7 @@ function MaterialsCards() {
   );
 }
 
-export function BackgroundLinesDemo() {
+ function TitleSolidGradiant() {
   return (
     <div className="flex items-center justify-center w-full flex-col px-4 ">
       <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-5xl md:text-6xl lg:text-8xl font-sans py-2 relative z-20 font-bold tracking-tight">

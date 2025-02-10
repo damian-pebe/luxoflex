@@ -2,7 +2,6 @@
 import Divider, { DividerNoSpacing } from "@/components/divider";
 import "./Contactanos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import ContactTitles from "./components/contactTitles";
 import FormContact from "./components/FormContact";
 import { PinContainer } from "@/components/ui/3d-pin";
 import facebook from "@/assets/facebook.png";
@@ -20,11 +19,8 @@ export default function Contactanos() {
   return (
     <div className=" bg-gradient-to-b from-black via-gray-950 to-black p-6 rounded-lg shadow-lg">
       <Divider />
-      <ContactTitles />
-      <h2 className="pt-10 justify-center flex items-center scroll-m-20 border-b pb-2 text-base font-semibold tracking-tight first:mt-0">
-        ¿Buscas etiquetas autoadheribles para tus productos? ¡Déjanos tus datos
-        y te contactaremos de inmediato!
-      </h2>
+      {/* <ContactTitles /> */}
+      <TitleSolidGradiant />
       <div className="group justify-evenly flex flex-col md:flex-row gap-20 ">
         <div className="md:w-[30%]">
           <FormContact />
@@ -49,6 +45,21 @@ export default function Contactanos() {
       <ContactData />
       <Divider />
       
+    </div>
+  );
+}
+
+function TitleSolidGradiant() {
+  
+  return (
+    <div className="flex items-center justify-center w-full flex-col px-4 ">
+      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-t  from-neutral-600 to-white text-7xl lg:text-8xl py-2 relative z-20 font-bold font-poppins tracking-tight">
+        Eleve su marca <br /> con <br />
+        LUXOFLEX.
+      </h2>
+      <p className=" mx-auto text-lg md:text-xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
+      ¡Cuéntanos tu idea, nosotros la haremos realidad!
+      </p>
     </div>
   );
 }
