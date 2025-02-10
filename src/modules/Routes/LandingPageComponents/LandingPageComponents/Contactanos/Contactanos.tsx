@@ -19,17 +19,14 @@ export default function Contactanos() {
   return (
     <div className=" bg-gradient-to-b from-black via-gray-950 to-black p-6 rounded-lg shadow-lg">
       <Divider />
-      {/* <ContactTitles /> */}
       <TitleSolidGradiant />
       <div className="group justify-evenly flex flex-col md:flex-row gap-20 ">
         <div className="md:w-[30%]">
           <FormContact />
         </div>
 
-        <div className="md:hidden block">
-          <DividerNoSpacing />
-        </div>
-        <div className="group-hover:flex-1  transition-all duration-1000">
+        
+        <div className=" md:block hidden flex-1  transition-all duration-1000">
           <h3 className="py-16 justify-center flex items-center scroll-m-20 text-4xl font-extralight font-zilla">
             Nuestras redes sociales
           </h3>
@@ -38,6 +35,9 @@ export default function Contactanos() {
             <Socials />
           </div>
         </div>
+        <div className="sm:block md:hidden py-8 flex justify-center w-full ">
+            <Socials />
+          </div>
       </div>
       <div className="md:hidden block">
         <DividerNoSpacing />

@@ -54,7 +54,7 @@ const navigate = useNavigate();
                 <ButtonStyle1 str="Contactanos ahora" onClick={() => navigate("/contactus")} />
               </div>
               <div className="animate-slideinup">
-                <ButtonStyle1 str="Trabajos pasados" />
+                <ButtonStyle1 str="Trabajos pasados" onClick={() => navigate("/pastworks")} />
                 
               </div>
             </div>

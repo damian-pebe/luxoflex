@@ -26,7 +26,7 @@ export const PoweringTeams = () => {
             <img
               src={team.img}
               alt={index.toString()}
-              className="h-12 mx-4 hover:scale-110 transition-transform duration-1000 animate-fadeinup"
+              className="h-12 mx-4 hover:scale-x-125 transition-transform duration-1000"
             />
           </Link>
         ))}
