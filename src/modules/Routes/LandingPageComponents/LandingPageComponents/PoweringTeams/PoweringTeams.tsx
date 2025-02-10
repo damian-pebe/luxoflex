@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const PoweringTeams = () => {
   return (
-    <div className=" text-white text-center px-10 md:px-30 py-40 bg-gradient-to-b from-black via-zinc-800 to-black">
+    <div className=" text-white text-center px-10 md:px-30 pt-40 pb-20 bg-gradient-to-b from-black via-zinc-800 to-black">
       <BlurText
         text="Impulsando los mejores productos!!"
         delay={250}
