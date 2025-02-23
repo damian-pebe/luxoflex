@@ -2,13 +2,15 @@
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Cards } from "./Cards";
-import { Brain, Rocket, Target, Users } from "lucide-react";
+import { Brain, Rocket, Users } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 import background from "@/assets/background.jpg";
 import { InfiniteMovingCardsDemo } from "./carousel-infinity";
-
+import { IconMoodHappy } from "@tabler/icons-react";
 export default function Mission() {
+  const [isLoading] = useState(false);
   const title = useTypewriter("  Nuestra Misión");
   const subtitle = useTypewriter(" Innovación en Etiquetas Autoadheribles");
 
@@ -17,19 +19,18 @@ export default function Mission() {
 
   return (
     <div className="min-h-screen bg-neutral-950 relative overflow-hidden  z-[0]">
-      <div className="relative h-[60vh] overflow-hidden animate-fadeInSlideUp">
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-950/90 to-neutral-950 z-[1]" />
+      <div className="relative h-[300px] rounded-b-xl overflow-hidden opacity-0 animate-fadeinbouncedown hover:scale-105 transition-all duration-1000">
         <img
           src={background}
-          alt="Background"
-          className="absolute inset-0 w-full h-full object-cover object-center animate-slowZoom"
+          alt="Imagen de visión"
+          className="w-full h-full object-cover"
         />
-        <div className="relative z-20 h-full flex flex-col items-center justify-center px-4">
-          <h1 className="text-7xl font-bold mb-4 font-audiowide text-white animate-slideInFromLeft">
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-audiowide">
             {title}
             <span className="animate-pulse duration-800">|</span>
           </h1>
-          <p className="text-2xl text-gray-300 font-audiowide animate-slideInFromRight">
+          <p className="text-xl text-gray-300 font-audiowide">
             {subtitle}
             <span className="animate-pulse duration-800">|</span>
           </p>
@@ -49,7 +50,7 @@ export default function Mission() {
           {[
             { icon: Brain, value: "1000+", label: "Diseños Personalizados" },
             { icon: Users, value: "500+", label: "Clientes Satisfechos" },
-            { icon: Target, value: "99%", label: "Calidad Garantizada" },
+            { icon: IconMoodHappy, value: "99%", label: "Calidad Garantizada" },
             { icon: Rocket, value: "24/7", label: "Servicio al Cliente" },
           ].map((stat, index) => (
             <motion.div
@@ -78,11 +79,22 @@ export default function Mission() {
 
       <div className="w-full">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <h3 className="text-5xl text-center font-bungee font-extralight text-gray-200 mb-8">
-            Lo que dicen nuestros clientes
-          </h3>
-          <InfiniteMovingCardsDemo />
-          <h2 className="w-full font-alfa  text-5xl md:text-7xl font-bold text-center tracking-widest bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
+            {isLoading ? (
+            <>
+              <div className="space-y-4 w-full">
+              <Skeleton className="h-12 w-3/4 mx-auto" />
+              <Skeleton className="h-[200px] w-full" />
+              </div>
+            </>
+            ) : (
+            <>
+              <h3 className="text-5xl text-center font-bungee font-extralight text-gray-200 mb-8">
+              Lo que dicen nuestros clientes
+              </h3>
+              <InfiniteMovingCardsDemo />
+            </>
+            )}
+          <h2 className="w-full font-russo pt-5 flex justify-center  text-5xl md:text-7xl font-bold text-center tracking-widest">
             Lo Que Nos Impulsa
           </h2>
         </div>

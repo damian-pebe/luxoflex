@@ -84,7 +84,7 @@ export default function Preprensa() {
         />
       </div>
       <div className="px-5 md:px-14 flex  items-center justify-center">
-        <div className="gap-6 py-10 flex flex-col lg:flex-row w-full items-center text-center text-lg font-bold">
+        <div className="gap-6 flex h-full flex-col lg:flex-row w-full items-center text-center text-lg font-bold">
           <div className="relative flex flex-col justify-center items-start w-full max-w-2xl">
             <img
               src={background}

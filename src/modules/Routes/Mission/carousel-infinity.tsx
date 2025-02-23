@@ -13,8 +13,8 @@ export function InfiniteMovingCardsDemo() {
     <div className=" rounded-md flex flex-col antialiased bg-neutral-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards
         items={testimonials}
-        direction="right"
-        speed="slow"
+        direction="left"
+        speed="normal"
       />
     </div>
   );
