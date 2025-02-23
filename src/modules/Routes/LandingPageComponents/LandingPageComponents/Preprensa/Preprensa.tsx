@@ -3,6 +3,7 @@ import Carousel from "./Carousel";
 import { User } from "lucide-react";
 import { CarouselItem } from "./models/Models";
 import background from "@/assets/background.jpg";
+import EffectScroll from "@/components/effectScroll";
 
 const PREPRINTER_BENEFITS: CarouselItem[] = [
   {
@@ -69,22 +70,26 @@ const PREPRINTER_BENEFITS: CarouselItem[] = [
 export default function Preprensa() {
   return (
     <div className="md:px-32 w-full flex flex-col bg-gradient-to-b  text-white">
-      <div className="py-5 relative ">
-        <TextPressure
-          text="Preprensa"
-          flex={true}
-          alpha={false}
-          stroke={true}
-          width={true}
-          weight={true}
-          italic={true}
-          textColor="#f0f0f0"
-          strokeColor="#2563eb"
-          minFontSize={36}
-        />
-      </div>
+      <EffectScroll classname="duration-1000 animate-fadein">
+        <div className="py-5 relative ">
+          <TextPressure
+            text="Preprensa"
+            flex={true}
+            alpha={false}
+            stroke={true}
+            width={true}
+            weight={true}
+            italic={true}
+            textColor="#f0f0f0"
+            strokeColor="#2563eb"
+            minFontSize={36}
+          />
+        </div>
+      </EffectScroll>
       <div className="px-5 h-full md:px-14 flex  items-center justify-center">
         <div className="gap-6 flex h-full flex-col lg:flex-row w-full items-center text-center text-lg font-bold">
+          <EffectScroll>
+
           <div className="relative flex flex-col justify-center items-start w-full ">
             <img
               src={background}
@@ -101,8 +106,10 @@ export default function Preprensa() {
               </p>
             </div>
           </div>
+          </EffectScroll>
 
-          <div className="flex flex-col justify-center items-start w-full  p-6">
+         <EffectScroll>
+           <div className="flex flex-col justify-center items-start w-full  p-6">
             <h3 className="font-unica text-3xl font-semibold mb-4 text-blue-600">
               Ventajas Clave
             </h3>
@@ -126,16 +133,25 @@ export default function Preprensa() {
               </li>
             </ul>
           </div>
+          </EffectScroll>
         </div>
       </div>
-      <div className="px-2">
-        <p className="text-center font-mono text-4xl bg-gradient-to-tl from-white via-zinc-300  bg-clip-text text-transparent">
-          ¡Elige LUXOFLEX y transforma tu visión en realidad!
+      <div className="px-5">
+        <EffectScroll classname="animate-fadeinbouncedown">
+
+        <p className="text-center font-flamenco text-6xl bg-gradient-to-tl from-white via-zinc-300  bg-clip-text text-transparent">
+          Con LUXOFLEX transforma tu visión en realidad
         </p>
+        </EffectScroll>
+        <EffectScroll >
+
         <p className="text-center font-mono text-2xl bg-gradient-to-br from-white via-zinc-400  bg-clip-text text-transparent">
           No dejes al azar la calidad de tus impresiones.
         </p>
+        </EffectScroll>
       </div>
+      <EffectScroll classname="animate-fadeinbounceup">
+
       <div className="hidden lg:block sm:flex flex-col lg:flex-row items-center justify-center ">
         <div className="py-10 flex flex-row w-full text-center text-lg font-bold ">
           <div className="flex justify-center w-full h-full">
@@ -151,6 +167,9 @@ export default function Preprensa() {
           </div>
         </div>
       </div>
+      </EffectScroll>
+      <EffectScroll classname="animate-fadeinbounceup">
+
       <div className="md:hidden flex flex-col lg:flex-row items-center justify-center ">
         <div className="py-10 flex flex-row w-full text-center text-lg font-bold ">
           <div className="flex justify-center w-full h-full">
@@ -166,6 +185,7 @@ export default function Preprensa() {
           </div>
         </div>
       </div>
+      </EffectScroll>
     </div>
   );
 }

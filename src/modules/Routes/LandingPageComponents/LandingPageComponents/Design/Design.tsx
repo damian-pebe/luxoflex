@@ -6,39 +6,46 @@ import { useState } from "react";
 import background from "@/assets/background.jpg";
 import { Textarea } from "@/components/ui/textarea";
 import { Users } from "lucide-react";
+import EffectScroll from "@/components/effectScroll";
 export function Design() {
   const [feedback, setFeedback] = useState("");
   return (
     <div className="items-center justify-center flex flex-col min-h-screen bg-gradient-to-b from-black via-neutral-900">
-      <div className="text-center mt-10 text-3xl md:text-5xl font-alfa font-light flex gap-2   text-white">
-        Realizamos <br className="block md:hidden" /> Diseños
-        <RotatingText
-          texts={["Profesionales!", "Elegantes!", "Relevantes!", "Formales!"]}
-          mainClassName="p-7 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-2 justify-center rounded-lg"
-          staggerFrom={"first"}
-          initial={{ y: "100%" }}
-          animate={{ y: 0 }}
-          exit={{ y: "-120%" }}
-          staggerDuration={0.025}
-          splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-          transition={{ type: "spring", damping: 30, stiffness: 400 }}
-          rotationInterval={2000}
-        />
-      </div>
+      <EffectScroll classname="animate-fadeinbouncedown flex justify-center">
+        <div className="text-center mt-10 text-3xl md:text-5xl font-alfa font-light flex gap-2   text-white">
+          Realizamos <br className="block md:hidden" /> Diseños
+          <RotatingText
+            texts={["Profesionales!", "Elegantes!", "Relevantes!", "Formales!"]}
+            mainClassName="p-7 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-2 justify-center rounded-lg"
+            staggerFrom={"first"}
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-120%" }}
+            staggerDuration={0.025}
+            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            rotationInterval={2000}
+          />
+        </div>
+      </EffectScroll>
+
+     <EffectScroll classname="animate-fadeinbounceup">
 
       <ShinyText
         text="Realizamos todos los diseños personalizados en 4 simples pasos."
         disabled={true}
         speed={2}
         className="items-center flex justify-center p-10 custom-class text-2xl mb-8 text-muted-foreground font-playfair animate-pulse duration-1000"
-      />
+        />
+        </EffectScroll>
+<EffectScroll classname="animate-fadein duration-1000" >
 
       <Stepper
         className="w-full"
         initialStep={1}
         backButtonText="Anterior"
         nextButtonText="Siguiente"
-      >
+        >
         <Step>
           <h2 className="font-rajdhani font-bold text-2xl">
             Nosotros diseñaremos tu logo
@@ -60,7 +67,7 @@ export function Design() {
           <img
             className="object-cover h-full w-full rounded-lg mt-4"
             src={background}
-          />
+            />
         </Step>
         <Step>
           <h2 className="font-rajdhani font-bold text-2xl">
@@ -72,7 +79,7 @@ export function Design() {
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}
             placeholder="Tus recomendaciones"
-          />
+            />
 
           <h2 className="font-rajdhani font-bold text-lg">
             Mejoraremos tu diseño al máximo
@@ -88,6 +95,7 @@ export function Design() {
           </p>
         </Step>
       </Stepper>
+            </EffectScroll>
     </div>
   );
 }
