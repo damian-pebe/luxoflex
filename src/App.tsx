@@ -28,7 +28,6 @@ function App() {
             <Route path="*" element={<NotFoundPage />} /> 
           </Routes>
           <Footer />
-          
           {/* <FloatButton.BackTop /> */}
         </Router>
       </ThemeProvider>
