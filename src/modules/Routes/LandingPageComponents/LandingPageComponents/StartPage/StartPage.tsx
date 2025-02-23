@@ -52,28 +52,30 @@ export default function StartPage() {
               </div>
             </EffectScroll>
 
-            <EffectScroll classname="animate-fadeinbounceright">
               <h2 className="text-center scroll-m-20 border-b pb-2 text-3xl  font-alfa tracking-widest first:mt-2 border-white animate-fadeinbounceright">
+            <EffectScroll classname="animate-fadeinbounceright">
                 Tu marca hablará por sí sola.
-              </h2>
             </EffectScroll>
+              </h2>
 
-              <EffectScroll>
             <div className="flex flex-col gap-5 items-center md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 ">
                 <div className="animate-slideindown">
+                  <EffectScroll>
                   <ButtonStyle1
                     str="Contactanos ahora"
                     onClick={() => navigate("/contactus")}
-                  />
+                    />
+                  </EffectScroll>
                 </div>
                 <div className="animate-slideinup">
+                    <EffectScroll>
                   <ButtonStyle1
                     str="Trabajos pasados"
                     onClick={() => navigate("/pastworks")}
                   />
+              </EffectScroll>
                 </div>
             </div>
-              </EffectScroll>
           </div>
         </div>
       </div>

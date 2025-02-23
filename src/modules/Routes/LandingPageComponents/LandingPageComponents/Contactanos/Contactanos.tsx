@@ -47,7 +47,7 @@ export default function Contactanos() {
               />
               </EffectScroll>
           </div>
-          <EffectScroll classname="animate-fadeinbouncedown">
+          <EffectScroll>
           <AnimatedPinDemo />
           </EffectScroll>
         </div>
