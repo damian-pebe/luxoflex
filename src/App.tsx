@@ -9,6 +9,7 @@ import Vision from "./modules/Routes/Vision/Vision";
 import Mission from "./modules/Routes/Mission/Mission";
 import Footer from "./modules/Footer/Footer";
 import PastWorks from "./modules/Routes/PastWorks/PastWorks";
+import NotFoundPage from "./404";
 function App() {
   return (
     <>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/vision" element={<Vision />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/pastworks" element={<PastWorks />} />
+            <Route path="/404" element={<NotFoundPage />} />
           </Routes>
           <Footer />
           
