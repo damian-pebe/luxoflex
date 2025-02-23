@@ -20,10 +20,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="text-center sm:text-left">
             <h3 className="text-white font-semibold mb-4 text-lg">Empresa</h3>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-row  md:flex-col justify-center ">
               <Link
                 to="/luxoflex"
-                className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
+                className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md "
               >
                 Sobre Nosotros
               </Link>
@@ -44,7 +44,7 @@ const Footer = () => {
 
           <div className="text-center sm:text-left">
             <h3 className="text-white font-semibold mb-4 text-lg">Servicios</h3>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-row  md:flex-col justify-center">
               <Link
                 to="/web"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
@@ -68,7 +68,7 @@ const Footer = () => {
 
           <div className="text-center sm:text-left">
             <h3 className="text-white font-semibold mb-4 text-lg">Recursos</h3>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-row  md:flex-col justify-center">
               <Link
                 to="/blog"
                 className="text-zinc-400 hover:text-white  transition-all p-2 rounded-md w-fit"
@@ -162,8 +162,6 @@ const Footer = () => {
             {"  "} 2021. Todos los derechos reservados.
           </p>
           <div className="flex flex-wrap justify-center gap-6 order-1 md:order-2">
-            
-             
             <PrivacyPolicy />
             <TermsOfService />
             <CookiesPolicy />
