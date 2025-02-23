@@ -25,13 +25,13 @@ export default function Contactanos() {
     <div className=" bg-gradient-to-b from-black via-gray-950 to-black p-6 rounded-lg shadow-lg">
       <Divider />
       <TitleSolidGradiant />
-      <div className="group justify-evenly flex flex-col md:flex-row gap-20 ">
+      <div className="group justify-evenly flex flex-col md:flex-row gap-10 ">
         <div className="md:w-[30%]">
           <FormContact />
         </div>
 
         <div className=" md:block hidden flex-1  transition-all duration-1000">
-          <div className="pb-8 justify-center flex items-center scroll-m-20 text-4xl font-extralight font-raleway">
+          <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
             <TrueFocus
               sentence="Redes sociales"
               manualMode={false}
@@ -43,7 +43,17 @@ export default function Contactanos() {
           </div>
           <AnimatedPinDemo />
         </div>
-        <div className="sm:block md:hidden py-8 flex justify-center w-full ">
+        <div className="sm:block md:hidden py-2 flex flex-col justify-center w-full ">
+        <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
+            <TrueFocus
+              sentence="Redes sociales"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="rgba(29, 204, 206, 0.8)"
+              animationDuration={2}
+              pauseBetweenAnimations={0.5}
+            />
+          </div>
           <Socials />
         </div>
       </div>
@@ -77,11 +87,11 @@ function AnimatedPinDemo() {
         <div className="grid grid-cols-3 gap-10 justify-center">
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
-                Email
+              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
+                PaginaWeb
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500 text-sm">
+                <span className="text-gray-500 text-xs">
                   LUXOFLEX tiene contacto por medio de Email
                 </span>
               </div>
@@ -93,11 +103,11 @@ function AnimatedPinDemo() {
 
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
+              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
                 Email
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500 text-sm">
+                <span className="text-gray-500 text-xs">
                   LUXOFLEX tiene contacto por medio de Email
                 </span>
               </div>
@@ -109,11 +119,11 @@ function AnimatedPinDemo() {
 
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
+              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
                 Llamadas
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500 text-sm">
+                <span className="text-gray-500 text-xs">
                   LUXOFLEX tiene contacto por medio de telefono celular
                 </span>
               </div>
@@ -125,11 +135,11 @@ function AnimatedPinDemo() {
 
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
+              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
                 WhatsApp
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500 text-sm">
+                <span className="text-gray-500 text-xs">
                   LUXOFLEX tiene contacto por medio de WhatsApp
                 </span>
               </div>
@@ -141,11 +151,11 @@ function AnimatedPinDemo() {
 
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
+              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
                 Facebook
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500 text-sm">
+                <span className="text-gray-500 text-xs">
                   LUXOFLEX tiene contacto por medio de Facebook
                 </span>
               </div>
@@ -157,11 +167,11 @@ function AnimatedPinDemo() {
 
           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="max-w-xs !pb-1 !m-0 font-extralight font-zilla text-base text-slate-100">
+              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
                 Instagram
               </h3>
               <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-slate-500 text-sm">
+                <span className="text-gray-500 text-xs">
                   LUXOFLEX tiene contacto por medio de Instagram
                 </span>
               </div>
@@ -203,7 +213,7 @@ function ContactData() {
   ];
   return (
     <div>
-      <a className="bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
+      <a className=" pt-5 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
 
         CONTACTANOS PERSONALMENTE
       </a>

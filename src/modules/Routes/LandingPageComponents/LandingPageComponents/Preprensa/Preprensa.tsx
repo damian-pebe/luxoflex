@@ -69,7 +69,7 @@ const PREPRINTER_BENEFITS: CarouselItem[] = [
 export default function Preprensa() {
   return (
     <div className="md:px-32 w-full flex flex-col bg-gradient-to-b  text-white">
-      <div className="relative h-[300px] ">
+      <div className="py-5 relative ">
         <TextPressure
           text="Preprensa"
           flex={true}
@@ -83,9 +83,9 @@ export default function Preprensa() {
           minFontSize={36}
         />
       </div>
-      <div className="px-5 md:px-14 flex  items-center justify-center">
+      <div className="px-5 h-full md:px-14 flex  items-center justify-center">
         <div className="gap-6 flex h-full flex-col lg:flex-row w-full items-center text-center text-lg font-bold">
-          <div className="relative flex flex-col justify-center items-start w-full max-w-2xl">
+          <div className="relative flex flex-col justify-center items-start w-full ">
             <img
               src={background}
               className="object-cover opacity-30 rounded-2xl w-full h-full"
@@ -102,7 +102,7 @@ export default function Preprensa() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center items-start w-full max-w-2xl p-6">
+          <div className="flex flex-col justify-center items-start w-full  p-6">
             <h3 className="font-unica text-3xl font-semibold mb-4 text-blue-600">
               Ventajas Clave
             </h3>

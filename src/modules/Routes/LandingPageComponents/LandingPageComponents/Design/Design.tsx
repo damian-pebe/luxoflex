@@ -10,8 +10,8 @@ export function Design() {
   const [feedback, setFeedback] = useState("");
   return (
     <div className="items-center justify-center flex flex-col min-h-screen bg-gradient-to-b from-black via-neutral-900">
-      <div className=" mt-10 text-3xl md:text-5xl font-alfa font-light flex gap-2   text-white">
-        Realizamos <br className="md:hidden" /> Diseños
+      <div className="text-center mt-10 text-3xl md:text-5xl font-alfa font-light flex gap-2   text-white">
+        Realizamos <br className="block md:hidden" /> Diseños
         <RotatingText
           texts={["Profesionales!", "Elegantes!", "Relevantes!", "Formales!"]}
           mainClassName="p-7 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-2 justify-center rounded-lg"
