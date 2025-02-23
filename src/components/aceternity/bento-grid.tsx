@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import EffectScroll from "../effectScroll";
 
 export const BentoGrid = ({
   className,
@@ -34,20 +35,26 @@ export const BentoGridItem = ({
 }) => {
   return (
     <div
-      className={cn(
-        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+    className={cn(
+      "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
       )}
-    >
+      >
+
       {header}
       <div className="group-hover/bento:translate-x-2 transition duration-200">
         {icon}
+      <EffectScroll>
         <div className="font-sans font-bold text-white  mb-2 mt-2">
           {title}
         </div>
+      </EffectScroll>
+      <EffectScroll>
+
         <div className="font-sans font-normal text-neutral-300 text-xs ">
           {description}
         </div>
+      </EffectScroll>
       </div>
     </div>
   );

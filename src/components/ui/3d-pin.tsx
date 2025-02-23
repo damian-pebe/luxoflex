@@ -71,7 +71,7 @@ export const PinPerspective = ({
   href?: string;
 }) => {
   return (
-    <motion.div className="pointer-events-none   h-64 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
+    <motion.div className="pointer-events-none   h-64 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-300">
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
         <div className="absolute top-0 inset-x-0  flex justify-center">
           <a
@@ -87,7 +87,7 @@ export const PinPerspective = ({
 
             <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] 
             bg-gradient-to-r from-pink-300/0 via-pink-300/90 to-pink-300/0 
-            transition-opacity duration-500 group-hover/btn:opacity-60"></span>
+            transition-opacity duration-300 group-hover/btn:opacity-60"></span>
           </a>
         </div>
 
@@ -165,9 +165,9 @@ export const PinPerspective = ({
 
         <>
           <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent via-pink-300 to-rose-300 
-          translate-y-[14px] w-px h-20 group-hover/pin:h-40 blur-[2px] transition-all duration-500" />
+          translate-y-[14px] w-px h-20 group-hover/pin:h-40 blur-[2px] transition-all duration-300" />
           <motion.div className="absolute right-1/2 bottom-1/2 bg-gradient-to-b from-transparent via-pink-300 to-rose-300 
-          translate-y-[14px] w-px h-20 group-hover/pin:h-40 transition-all duration-500" />
+          translate-y-[14px] w-px h-20 group-hover/pin:h-40 transition-all duration-300" />
           <motion.div className="absolute right-1/2 translate-x-[1.5px] bottom-1/2 bg-pink-300 translate-y-[14px] 
           w-[4px] h-[4px] rounded-full z-40 blur-[3px] animate-pulse" />
           <motion.div className="absolute right-1/2 translate-x-[0.5px] bottom-1/2 bg-rose-200 translate-y-[14px] 

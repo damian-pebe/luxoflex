@@ -106,7 +106,7 @@ function AnimatedPinDemo() {
                   LUXOFLEX tiene contacto por medio de Email
                 </span>
               </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-purple-900 duration-1000 rounded-lg mt-2  justify-center items-center">
+              <div className="flex flex-1 w-full bg-gray-800 hover:bg-purple-900 duration-300 rounded-lg mt-2  justify-center items-center">
                 <Globe className="h-12 w-12 text-purple-600" />
               </div>
             </div>
@@ -122,7 +122,7 @@ function AnimatedPinDemo() {
                   LUXOFLEX tiene contacto por medio de Email
                 </span>
               </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-red-900 duration-1000 rounded-lg mt-2  justify-center items-center">
+              <div className="flex flex-1 w-full bg-gray-800 hover:bg-red-900 duration-300 rounded-lg mt-2  justify-center items-center">
                 <EnvelopeFill className="h-12 w-12 text-red-600" />
               </div>
             </div>
@@ -138,7 +138,7 @@ function AnimatedPinDemo() {
                   LUXOFLEX tiene contacto por medio de telefono celular
                 </span>
               </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-teal-900 duration-1000 rounded-lg mt-2  justify-center items-center">
+              <div className="flex flex-1 w-full bg-gray-800 hover:bg-teal-900 duration-300 rounded-lg mt-2  justify-center items-center">
                 <TelephoneFill className="h-12 w-12 text-teal-600" />
               </div>
             </div>
@@ -154,7 +154,7 @@ function AnimatedPinDemo() {
                   LUXOFLEX tiene contacto por medio de WhatsApp
                 </span>
               </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-green-900 duration-1000 rounded-lg mt-2  justify-center items-center">
+              <div className="flex flex-1 w-full bg-gray-800 hover:bg-green-900 duration-300 rounded-lg mt-2  justify-center items-center">
                 <Whatsapp className="h-12 w-12 text-green-600" />
               </div>
             </div>
@@ -170,7 +170,7 @@ function AnimatedPinDemo() {
                   LUXOFLEX tiene contacto por medio de Facebook
                 </span>
               </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-blue-900 duration-1000 rounded-lg mt-2  justify-center items-center">
+              <div className="flex flex-1 w-full bg-gray-800 hover:bg-blue-900 duration-300 rounded-lg mt-2  justify-center items-center">
                 <Facebook className="h-12 w-12 text-blue-600" />
               </div>
             </div>
@@ -186,7 +186,7 @@ function AnimatedPinDemo() {
                   LUXOFLEX tiene contacto por medio de Instagram
                 </span>
               </div>
-              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gray-800 hover:bg-pink-900 duration-1000 justify-center items-center">
+              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gray-800 hover:bg-pink-900 duration-300 justify-center items-center">
                 <Instagram className="h-12 w-12 text-pink-600" />
               </div>
             </div>
@@ -230,7 +230,7 @@ function ContactData() {
         CONTACTANOS PERSONALMENTE
       </a>
       </EffectScroll>
-      <div className=" flex flex-wrap justify-center items-center gap-6 ">
+      <div className=" flex flex-col lg:flex-row justify-center gap-6  ">
         {data.map((user) => (
           <EffectScroll classname="flex justify-center items-center animate-fadein ">
 

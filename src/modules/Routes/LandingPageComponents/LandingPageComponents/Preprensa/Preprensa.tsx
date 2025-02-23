@@ -168,7 +168,7 @@ export default function Preprensa() {
         </div>
       </div>
       </EffectScroll>
-      <EffectScroll classname="animate-fadeinbounceup">
+      <EffectScroll classname="animate-fadeinbounceup duration-1000">
 
       <div className="md:hidden flex flex-col lg:flex-row items-center justify-center ">
         <div className="py-10 flex flex-row w-full text-center text-lg font-bold ">

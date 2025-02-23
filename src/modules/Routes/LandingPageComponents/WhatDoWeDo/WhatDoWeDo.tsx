@@ -86,9 +86,9 @@ export default function WhatDoWeDo() {
           </p>
         </EffectScroll>
       </div>
+        <EffectScroll classname="animate-fadein duration-1000">
       <BentoGrid className="gap-4">
         {items.map((item, i) => (
-            <EffectScroll classname="animate-fadein duration-1000">
 
           <BentoGridItem
             key={i}
@@ -98,9 +98,9 @@ export default function WhatDoWeDo() {
             className={item.className}
             icon={item.icon}
             />
-            </EffectScroll>
-        ))}
+          ))}
       </BentoGrid>
+          </EffectScroll>
     </div>
   );
 }
