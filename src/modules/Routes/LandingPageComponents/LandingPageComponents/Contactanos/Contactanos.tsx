@@ -1,5 +1,5 @@
 "use client";
-import Divider, { DividerNoSpacing } from "@/components/divider";
+import { DividerNoSpacing } from "@/components/divider";
 import "./Contactanos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import FormContact from "./components/FormContact";
@@ -19,19 +19,24 @@ import {
 import TrueFocus from "@/components/reactbits/true_focus";
 import SpotlightCard from "@/components/reactbits/spotlight_card";
 import { Button } from "@/components/ui/button";
+import EffectScroll from "@/components/effectScroll";
 
 export default function Contactanos() {
   return (
     <div className=" bg-gradient-to-b from-black via-gray-950 to-black p-6 rounded-lg shadow-lg">
-      <Divider />
-      <TitleSolidGradiant />
+      <EffectScroll>
+        <TitleSolidGradiant />
+      </EffectScroll>
       <div className="group justify-evenly flex flex-col md:flex-row gap-10 ">
         <div className="md:w-[30%]">
-          <FormContact />
+          <EffectScroll>
+            <FormContact />
+          </EffectScroll>
         </div>
-
+       
         <div className=" md:block hidden flex-1  transition-all duration-1000">
           <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
+          <EffectScroll>
             <TrueFocus
               sentence="Redes sociales"
               manualMode={false}
@@ -39,29 +44,35 @@ export default function Contactanos() {
               borderColor="rgba(29, 204, 206, 0.8)"
               animationDuration={2}
               pauseBetweenAnimations={0.5}
-            />
+              />
+              </EffectScroll>
           </div>
+          <EffectScroll classname="animate-fadeinbouncedown">
           <AnimatedPinDemo />
+          </EffectScroll>
         </div>
         <div className="sm:block md:hidden py-2 flex flex-col justify-center w-full ">
-        <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
-            <TrueFocus
+          <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
+          <EffectScroll>
+          <TrueFocus
               sentence="Redes sociales"
               manualMode={false}
               blurAmount={5}
               borderColor="rgba(29, 204, 206, 0.8)"
               animationDuration={2}
               pauseBetweenAnimations={0.5}
-            />
+              />
+              </EffectScroll>
           </div>
+          <EffectScroll classname="animate-fadeinbouncedown">
           <Socials />
+          </EffectScroll>
         </div>
       </div>
       <div className="md:hidden block">
         <DividerNoSpacing />
       </div>
       <ContactData />
-      <Divider />
     </div>
   );
 }
@@ -213,12 +224,16 @@ function ContactData() {
   ];
   return (
     <div>
-      <a className=" pt-5 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
+      <EffectScroll>
 
+      <a className=" pt-5 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
         CONTACTANOS PERSONALMENTE
       </a>
+      </EffectScroll>
       <div className=" flex flex-wrap justify-center items-center gap-6 ">
         {data.map((user) => (
+          <EffectScroll classname="flex justify-center items-center animate-fadein ">
+
           <SpotlightCard
             className="custom-spotlight-card w-96 h-72"
             spotlightColor="rgba(255, 255, 255, 0.3)"
@@ -266,7 +281,8 @@ function ContactData() {
                 </Button>
               </div>
             </div>
-          </SpotlightCard>
+          </SpotlightCard>          </EffectScroll>
+
         ))}
       </div>
     </div>
