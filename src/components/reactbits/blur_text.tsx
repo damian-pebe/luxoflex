@@ -33,7 +33,6 @@ const BlurText: React.FC<BlurTextProps> = ({
   const ref = useRef<HTMLParagraphElement>(null);
   const animatedCount = useRef(0);
 
-  // Default animations based on direction
   const defaultFrom: Record<string, any> = direction === 'top'
     ? { filter: 'blur(10px)', opacity: 0, transform: 'translate3d(0,-50px,0)' }
     : { filter: 'blur(10px)', opacity: 0, transform: 'translate3d(0,50px,0)' };
@@ -50,11 +49,10 @@ const BlurText: React.FC<BlurTextProps> = ({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          if (ref.current) {
-            observer.unobserve(ref.current);
-          }
+        setInView(entry.isIntersecting);
+        // Reset animation count when element goes out of view
+        if (!entry.isIntersecting) {
+          animatedCount.current = 0;
         }
       },
       { threshold, rootMargin }
@@ -84,11 +82,12 @@ const BlurText: React.FC<BlurTextProps> = ({
         : animationFrom || defaultFrom,
       delay: i * delay,
       config: { easing: easing as any },
+      reset: !inView, // Reset animation when element goes out of view
     }))
   );
 
   return (
-    <p ref={ref} className={`blur-text ${className} flex flex-wrap `}>
+    <p ref={ref} className={`blur-text ${className} flex flex-wrap`}>
       {springs.map((props, index) => (
         <animated.span
           key={index}
