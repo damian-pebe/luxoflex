@@ -29,7 +29,7 @@ export const PoweringTeams = () => {
             <img
               src={team.img}
               alt={index.toString()}
-              className="h-8 mx-4 group-hover:scale-105 transition-transform duration-1000"
+              className="h-8 mx-4 group-hover:scale-125 transition-transform duration-1000"
             />
           </Link>
         ))}

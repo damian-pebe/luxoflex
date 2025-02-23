@@ -100,6 +100,7 @@ export function ParallaxLuxoflex() {
   ];
   return (
     <div className=" w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
+      
       <HeroParallax products={products} />
     </div>
   );

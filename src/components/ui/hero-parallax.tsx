@@ -7,6 +7,7 @@ import {
   useSpring,
   MotionValue,
 } from "framer-motion";
+import EffectScroll from "../effectScroll";
 
 export const HeroParallax = ({
   products,
@@ -24,9 +25,9 @@ export const HeroParallax = ({
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
-  });
+  }); 
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+  const springConfig = { stiffness: 300, damping: 70, bounce: 0 };
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 1000]),
@@ -103,17 +104,24 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto pt-40 px-4 w-full left-0 top-0 group z-10 ">
+      <EffectScroll classname="animate-fadeinbouncedown">
+
       <h1 className="text-4xl md:text-7xl text-white font-playfair font-light italic ">
         Para Hacer que Tu Marca Destaque <br />{" "}
         <div className="font-audiowide text-4xl pt-1 md:text-7xl">
           Confía en Luxoflex
         </div>
       </h1>
+      </EffectScroll>
+      
+      <EffectScroll classname="animate-fadeinbounceup">
+
       <h1 className="max-w-3xl text-base md:text-3xl mt-8 text-white font-poppins ">
         En Luxoflex, creamos etiquetas autoadheribles personalizadas de alta
         calidad. Únete asi como las marcas que confían en nosotros para
         potenciar su imagen con soluciones duraderas y funcionales.
       </h1>
+      </EffectScroll>
     </div>
   );
 };
@@ -135,19 +143,19 @@ export const ProductCard = ({
         x: translate,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0 hover:animate-pulse"
+      className="group/product h-96 w-[30rem] relative flex-shrink-0 "
     >
       <div className="block group-hover/product:shadow-2xl ">
         <img
           src={product.thumbnail}
           height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
+          width="600" 
+          className="object-cover object-left-top absolute h-full w-full inset-0 hover:opacity-60 transition-all duration-1000"
           alt={product.title}
         />
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0  bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-slate-500">
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
       </h2>
     </motion.div>

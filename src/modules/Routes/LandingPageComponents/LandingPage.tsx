@@ -8,7 +8,7 @@ import WhatDoWeDo from "./WhatDoWeDo/WhatDoWeDo";
 
 export default function LandingPage() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <StartPage />
       <ParallaxLuxoflex />
       <Design/>

@@ -4,6 +4,7 @@ import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import "./StartPage.css";
 import ButtonStyle1 from "@/components/buttons_style/style1/button_style1";
 import { useNavigate } from "react-router-dom";
+import EffectScroll from "@/components/effectScroll";
 export default function StartPage() {
   const words = ["color", "arte", "magia", "diseño", "pasion"];
   const words2 = [
@@ -32,7 +33,7 @@ export default function StartPage() {
       className: "text-blue-500 dark:text-blue-500 font-zilla font-light",
     },
   ];
-const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <div>
       <div className="relative h-screen shadow-md bg- ">
@@ -42,26 +43,40 @@ const navigate = useNavigate();
         />
         <div className="absolute inset-0 flex justify-center items-center px-4">
           <div className="flex flex-col items-center gap-10 justify-center h-[40rem]">
-            <TypewriterEffect words={words2} />
-            <div className="text-5xl mx-auto font-wire font-extrabold  text-foreground animate-slideinleft">
-              Ponemos alma y <FlipWords words={words} /> en cada etiqueta.
-            </div>
-            <h2 className="scroll-m-20 border-b pb-2 text-3xl  font-alfa tracking-widest first:mt-2 border-white animate-flyinup">
-              Tu marca hablará por sí sola.
-            </h2>
+            <EffectScroll classname="animate-fadeinbounceup ">
+              <TypewriterEffect words={words2} />
+            </EffectScroll>
+            <EffectScroll classname="animate-fadeinbounceleft">
+              <div className="text-center text-5xl mx-auto font-wire font-extrabold  text-foreground animate-fadeinbounceleft">
+                Ponemos alma y <FlipWords words={words} /> en cada etiqueta.
+              </div>
+            </EffectScroll>
+
+            <EffectScroll classname="animate-fadeinbounceright">
+              <h2 className="text-center scroll-m-20 border-b pb-2 text-3xl  font-alfa tracking-widest first:mt-2 border-white animate-fadeinbounceright">
+                Tu marca hablará por sí sola.
+              </h2>
+            </EffectScroll>
+
+              <EffectScroll>
             <div className="flex flex-col gap-5 items-center md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 ">
-              <div className="animate-slideindown">
-                <ButtonStyle1 str="Contactanos ahora" onClick={() => navigate("/contactus")} />
-              </div>
-              <div className="animate-slideinup">
-                <ButtonStyle1 str="Trabajos pasados" onClick={() => navigate("/pastworks")} />
-                
-              </div>
+                <div className="animate-slideindown">
+                  <ButtonStyle1
+                    str="Contactanos ahora"
+                    onClick={() => navigate("/contactus")}
+                  />
+                </div>
+                <div className="animate-slideinup">
+                  <ButtonStyle1
+                    str="Trabajos pasados"
+                    onClick={() => navigate("/pastworks")}
+                  />
+                </div>
             </div>
+              </EffectScroll>
           </div>
         </div>
       </div>
-     
     </div>
   );
 }
