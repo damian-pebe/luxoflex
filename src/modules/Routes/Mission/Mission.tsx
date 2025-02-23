@@ -76,24 +76,21 @@ export default function Mission() {
         </div>
       </div>
 
-      <div className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      <div className="w-full">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <h3 className="text-5xl text-center font-bungee font-extralight text-gray-200 mb-8">
             Lo que dicen nuestros clientes
           </h3>
           <InfiniteMovingCardsDemo />
-          <div className=" relative w-[99%]">
-            <h2 className=" items-center justify-center text-5xl md:text-7xl font-bold text-center font-vt323 tracking-widest bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
-              Lo Que Nos Impulsa
-            </h2>
-          </div>
-          <p className=" text-center text-gray-400 max-w-3xl font-orbitron mx-auto mb-16 animate-fadeIn tracking-wider">
-            Nos dedicamos a revolucionar la industria de etiquetas
-            autoadheribles, ofreciendo soluciones innovadoras y personalizadas
-            que transforman la manera en que nuestros clientes presentan sus
-            productos al mundo.
-          </p>
+          <h2 className="w-full font-alfa  text-5xl md:text-7xl font-bold text-center tracking-widest bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-bounce">
+            Lo Que Nos Impulsa
+          </h2>
         </div>
+        <p className=" text-center text-gray-400 max-w-3xl font-orbitron mx-auto mb-16 animate-fadeIn tracking-wider">
+          Nos dedicamos a revolucionar la industria de etiquetas autoadheribles,
+          ofreciendo soluciones innovadoras y personalizadas que transforman la
+          manera en que nuestros clientes presentan sus productos al mundo.
+        </p>
         <Cards />
       </div>
 
