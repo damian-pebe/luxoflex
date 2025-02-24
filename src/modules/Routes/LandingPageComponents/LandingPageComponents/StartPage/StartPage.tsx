@@ -5,6 +5,7 @@ import "./StartPage.css";
 import ButtonStyle1 from "@/components/buttons_style/style1/button_style1";
 import { useNavigate } from "react-router-dom";
 import EffectScroll from "@/components/effectScroll";
+
 export default function StartPage() {
   const words = ["color", "arte", "magia", "diseño", "pasion"];
   const words2 = [
@@ -43,6 +44,11 @@ export default function StartPage() {
         />
         <div className="absolute inset-0 flex justify-center items-center px-4">
           <div className="flex flex-col items-center gap-10 justify-center h-[40rem]">
+            <EffectScroll classname="animate-flash ">
+            <div className="flex justify-center ">
+
+<img src={"logo"} className="py-2" alt="logo"/>
+</div>            </EffectScroll>
             <EffectScroll classname="animate-fadeinbounceup ">
               <TypewriterEffect words={words2} />
             </EffectScroll>
@@ -52,29 +58,29 @@ export default function StartPage() {
               </div>
             </EffectScroll>
 
-              <h2 className="text-center scroll-m-20 border-b pb-2 text-3xl  font-alfa tracking-widest first:mt-2 border-white animate-fadeinbounceright">
-            <EffectScroll classname="animate-fadeinbounceright">
+            <h2 className="text-center scroll-m-20 border-b pb-2 text-3xl  font-alfa tracking-widest first:mt-2 border-white animate-fadeinbounceright">
+              <EffectScroll classname="animate-fadeinbounceright">
                 Tu marca hablará por sí sola.
-            </EffectScroll>
-              </h2>
+              </EffectScroll>
+            </h2>
 
             <div className="flex flex-col gap-5 items-center md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 ">
-                <div className="animate-slideindown">
-                  <EffectScroll>
+              <div className="animate-slideindown">
+                <EffectScroll>
                   <ButtonStyle1
                     str="Contactanos ahora"
                     onClick={() => navigate("/contactus")}
-                    />
-                  </EffectScroll>
-                </div>
-                <div className="animate-slideinup">
-                    <EffectScroll>
+                  />
+                </EffectScroll>
+              </div>
+              <div className="animate-slideinup">
+                <EffectScroll>
                   <ButtonStyle1
                     str="Trabajos pasados"
                     onClick={() => navigate("/pastworks")}
                   />
-              </EffectScroll>
-                </div>
+                </EffectScroll>
+              </div>
             </div>
           </div>
         </div>

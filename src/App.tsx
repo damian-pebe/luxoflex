@@ -24,6 +24,7 @@ function App() {
             <Route path="/vision" element={<Vision />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/pastworks" element={<PastWorks />} />
+            <Route path="/404" element={<NotFoundPage />} />
             <Route path="*" element={<NotFoundPage />} /> 
           </Routes>
           <Footer />
