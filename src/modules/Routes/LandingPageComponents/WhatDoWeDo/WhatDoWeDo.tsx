@@ -4,17 +4,22 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import background from "@/assets/background.jpg";
+import luxoImage1 from "@/assets/luxoflexImage1.jpeg";
+import luxoImage2 from "@/assets/luxoflexImage2.jpeg";
+import luxoImage3 from "@/assets/luxoflexImage3.jpeg";
+import luxoImage4 from "@/assets/luxoflexImage4.jpeg";
+import luxoImage5 from "@/assets/luxoflexImage5.jpeg";
+import luxoImage6 from "@/assets/luxoflexImage6.jpeg";
 
 import { BentoGrid, BentoGridItem } from "@/components/aceternity/bento-grid";
 import EffectScroll from "@/components/effectScroll";
 
 export default function WhatDoWeDo() {
-  const Body = () => (
+  const Body = ({ imgUrl }: { imgUrl?: string }) => (
     <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-white">
       <img
-        src={background}
-        className="object-cover opacity-60 rounded-lg w-full h-full"
+        src={imgUrl}
+        className="object-cover opacity-60 rounded-lg w-full max-h-64"
       />
       <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-white"></div>
     </div>
@@ -25,7 +30,7 @@ export default function WhatDoWeDo() {
       title: "Únete a la Excelencia",
       description:
         "Descubre productos de alta calidad respaldados por expertos apasionados. Tu satisfacción es nuestra prioridad.",
-      header: <Body />,
+      header: <Body imgUrl={luxoImage1} />,
       className: "md:col-span-2 hover:scale-[1.02] transition-all duration-300",
       icon: <IconClipboardCopy className="h-6 w-6 text-blue-400" />,
     },
@@ -33,7 +38,7 @@ export default function WhatDoWeDo() {
       title: "Servicio Personalizado",
       description:
         "Nuestro equipo dedicado te guiará en cada paso, asegurando que encuentres exactamente lo que necesitas.",
-      header: <Body />,
+      header: <Body imgUrl={luxoImage2}/>,
       className: "md:col-span-1 hover:scale-[1.02] transition-all duration-300",
       icon: <IconFileBroken className="h-6 w-6 text-purple-400" />,
     },
@@ -41,7 +46,7 @@ export default function WhatDoWeDo() {
       title: "Garantía de Calidad",
       description:
         "Respaldamos cada producto con nuestra garantía de satisfacción. Tu confianza es nuestro mayor valor.",
-      header: <Body />,
+      header: <Body imgUrl={luxoImage3}/>,
       className: "md:col-span-1 hover:scale-[1.02] transition-all duration-300",
       icon: <IconSignature className="h-6 w-6 text-green-400" />,
     },
@@ -49,7 +54,7 @@ export default function WhatDoWeDo() {
       title: "Experiencia Premium",
       description:
         "Disfruta de una experiencia de compra excepcional con atención personalizada y productos de primera clase.",
-      header: <Body />,
+      header: <Body imgUrl={luxoImage4}/>,
       className: "md:col-span-2 hover:scale-[1.02] transition-all duration-300",
       icon: <IconTableColumn className="h-6 w-6 text-amber-400" />,
     },
@@ -57,7 +62,7 @@ export default function WhatDoWeDo() {
       title: "Innovación Constante",
       description:
         "Siempre a la vanguardia con las últimas tendencias y tecnologías para ofrecerte lo mejor del mercado.",
-      header: <Body />,
+      header: <Body imgUrl={luxoImage5}/>,
       className: "md:col-span-2 hover:scale-[1.02] transition-all duration-300",
       icon: <IconClipboardCopy className="h-6 w-6 text-red-400" />,
     },
@@ -65,7 +70,7 @@ export default function WhatDoWeDo() {
       title: "Soporte Dedicado",
       description:
         "Estamos aquí para ayudarte antes, durante y después de tu compra. Tu satisfacción es nuestra misión.",
-      header: <Body />,
+      header: <Body imgUrl={luxoImage6}/>,
       className: "md:col-span-1 hover:scale-[1.02] transition-all duration-300",
       icon: <IconFileBroken className="h-6 w-6 text-indigo-400" />,
     },

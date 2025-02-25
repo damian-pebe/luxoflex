@@ -5,8 +5,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import FormContact from "./components/FormContact";
 import { PinContainer } from "@/components/ui/3d-pin";
 
-import ceo1 from "@/assets/rb_174457.png";
-import ceo2 from "@/assets/rb_176267.png";
 import Socials from "./components/Socials";
 import {
   Whatsapp,
@@ -24,48 +22,48 @@ import EffectScroll from "@/components/effectScroll";
 export default function Contactanos() {
   return (
     <div className=" bg-gradient-to-b from-black via-gray-950 to-black p-6 rounded-lg shadow-lg">
-      <EffectScroll>
+      <EffectScroll classname="animate-fadeindown duration-1000">
         <TitleSolidGradiant />
       </EffectScroll>
       <div className="group justify-evenly flex flex-col md:flex-row gap-10 ">
         <div className="md:w-[30%]">
-          <EffectScroll>
+          <EffectScroll classname="animate-fadeinleft duration-1000">
             <FormContact />
           </EffectScroll>
         </div>
-       
+
         <div className=" md:block hidden flex-1  transition-all duration-1000">
           <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
-          <EffectScroll>
-            <TrueFocus
-              sentence="Redes sociales"
-              manualMode={false}
-              blurAmount={5}
-              borderColor="rgba(29, 204, 206, 0.8)"
-              animationDuration={2}
-              pauseBetweenAnimations={0.5}
+            <EffectScroll classname="animate-fadein duration-1000">
+              <TrueFocus
+                sentence="Redes sociales"
+                manualMode={false}
+                blurAmount={5}
+                borderColor="rgba(29, 204, 206, 0.8)"
+                animationDuration={2}
+                pauseBetweenAnimations={0.5}
               />
-              </EffectScroll>
+            </EffectScroll>
           </div>
-          <EffectScroll>
-          <AnimatedPinDemo />
+          <EffectScroll classname="animate-fadein duration-1000">
+            <AnimatedPinDemo />
           </EffectScroll>
         </div>
         <div className="sm:block md:hidden py-2 flex flex-col justify-center w-full ">
           <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
-          <EffectScroll>
-          <TrueFocus
-              sentence="Redes sociales"
-              manualMode={false}
-              blurAmount={5}
-              borderColor="rgba(29, 204, 206, 0.8)"
-              animationDuration={2}
-              pauseBetweenAnimations={0.5}
+            <EffectScroll classname="animate-fadein duration-1000">
+              <TrueFocus
+                sentence="Redes sociales"
+                manualMode={false}
+                blurAmount={5}
+                borderColor="rgba(29, 204, 206, 0.8)"
+                animationDuration={2}
+                pauseBetweenAnimations={0.5}
               />
-              </EffectScroll>
+            </EffectScroll>
           </div>
           <EffectScroll classname="animate-fadeinbouncedown">
-          <Socials />
+            <Socials />
           </EffectScroll>
         </div>
       </div>
@@ -206,7 +204,6 @@ function ContactData() {
       hrefWhatsapp: "3311940001",
       hrefFacebook: "https://facebook.com/martin",
       hrefInstagram: "https://instagram.com/martin",
-      img: ceo1,
       description:
         "CEO y Fundador de LUXOFLEX\nCon más de 15 años de experiencia en la industria de etiquetas autoadheribles",
     },
@@ -217,7 +214,6 @@ function ContactData() {
       hrefWhatsapp: "3334626001",
       hrefFacebook: "https://facebook.com/mayra",
       hrefInstagram: "https://instagram.com/mayra",
-      img: ceo2,
       description:
         "CEO y Fundadora de LUXOFLEX\nCon más de 8 años de experiencia en etiquetas autoadheribles.",
     },
@@ -225,64 +221,64 @@ function ContactData() {
   return (
     <div>
       <EffectScroll>
-
-      <a className=" pt-5 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
-        CONTACTANOS PERSONALMENTE
-      </a>
+        <a className=" pt-5 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
+          CONTACTANOS PERSONALMENTE
+        </a>
       </EffectScroll>
       <div className=" flex flex-col lg:flex-row justify-center gap-6  ">
         {data.map((user) => (
-          <EffectScroll classname="flex justify-center items-center animate-fadein ">
+          <EffectScroll classname="flex justify-center items-center animate-fadein duration-1000">
+            <SpotlightCard
+              className="custom-spotlight-card w-96 h-72"
+              spotlightColor="rgba(255, 255, 255, 0.3)"
+            >
+              <div className="flex flex-col justify-between gap-5">
+                <span className="text-2xl font-audiowide">{user.name}</span>
+                <div className=" text-lg font-serif  overflow-hidden">
+                  {user.description}
+                </div>
 
-          <SpotlightCard
-            className="custom-spotlight-card w-96 h-72"
-            spotlightColor="rgba(255, 255, 255, 0.3)"
-          >
-            <div className="flex flex-col justify-between gap-5">
-              <span className="text-2xl font-audiowide">{user.name}</span>
-              <div className=" text-lg font-serif  overflow-hidden">
-                {user.description}
-              </div>
+                <div className="space-y-1 pb-1">
+                  <div className="flex flex-wrap justify-center gap-2">
+                    <i
+                      onClick={() =>
+                        (window.location.href = `tel:+52${user.hrefPhone}`)
+                      }
+                      className="hover:cursor-pointer bi bi-telephone-outbound text-lg  transition-all duration-1000 text-white hover:text-teal-600 hover:scale-150"
+                    ></i>
 
-              <div className="space-y-1 pb-1">
-                <div className="flex flex-wrap justify-center gap-2">
-                  <i
+                    <i
+                      onClick={() =>
+                        (window.location.href = `https://wa.me/+52${user.hrefWhatsapp}`)
+                      }
+                      className="hover:cursor-pointer bi bi-whatsapp text-lg  transition-all duration-1000 text-white hover:text-green-600 hover:scale-150"
+                    ></i>
+
+                    <i
+                      onClick={() => (window.location.href = user.hrefFacebook)}
+                      className="hover:cursor-pointer bi bi-facebook text-lg  transition-all duration-1000 text-white hover:text-blue-600 hover:scale-150"
+                    ></i>
+
+                    <i
+                      onClick={() =>
+                        (window.location.href = user.hrefInstagram)
+                      }
+                      className="hover:cursor-pointer bi bi-instagram text-lg  transition-all duration-1000 text-white hover:text-pink-600 hover:scale-150"
+                    ></i>
+                  </div>
+                  <Button
+                    variant="default"
+                    className="w-full hover:bg-black hover:text-white font-poppins font-light  transition-colors duration-1000"
                     onClick={() =>
                       (window.location.href = `tel:+52${user.hrefPhone}`)
                     }
-                    className="hover:cursor-pointer bi bi-telephone-outbound text-lg  transition-all duration-1000 text-white hover:text-teal-600 hover:scale-150"
-                  ></i>
-
-                  <i
-                    onClick={() =>
-                      (window.location.href = `https://wa.me/+52${user.hrefWhatsapp}`)
-                    }
-                    className="hover:cursor-pointer bi bi-whatsapp text-lg  transition-all duration-1000 text-white hover:text-green-600 hover:scale-150"
-                  ></i>
-
-                  <i
-                    onClick={() => (window.location.href = user.hrefFacebook)}
-                    className="hover:cursor-pointer bi bi-facebook text-lg  transition-all duration-1000 text-white hover:text-blue-600 hover:scale-150"
-                  ></i>
-
-                  <i
-                    onClick={() => (window.location.href = user.hrefInstagram)}
-                    className="hover:cursor-pointer bi bi-instagram text-lg  transition-all duration-1000 text-white hover:text-pink-600 hover:scale-150"
-                  ></i>
+                  >
+                    Contactame
+                  </Button>
                 </div>
-                <Button
-                  variant="default"
-                  className="w-full hover:bg-black hover:text-white font-poppins font-light  transition-colors duration-1000"
-                  onClick={() =>
-                    (window.location.href = `tel:+52${user.hrefPhone}`)
-                  }
-                >
-                  Contactame
-                </Button>
               </div>
-            </div>
-          </SpotlightCard>          </EffectScroll>
-
+            </SpotlightCard>{" "}
+          </EffectScroll>
         ))}
       </div>
     </div>
