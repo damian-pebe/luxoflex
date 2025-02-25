@@ -45,10 +45,10 @@ export default function StartPage() {
         <div className="absolute inset-0 flex justify-center items-center px-4">
           <div className="flex flex-col items-center gap-10 justify-center h-[40rem]">
             <EffectScroll classname="animate-flash ">
-            <div className="flex justify-center ">
-
-<img src={"logo"} className="py-2" alt="logo"/>
-</div>            </EffectScroll>
+              {/* <div className="flex justify-center ">
+                <img src={"logo"} className="py-2" alt="logo" />
+              </div> */}
+            </EffectScroll>
             <EffectScroll classname="animate-fadeinbounceup ">
               <TypewriterEffect words={words2} />
             </EffectScroll>

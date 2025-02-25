@@ -7,7 +7,7 @@ export default function NotFoundPage() {
       <div className="  flex flex-col justify-center items-center h-screen">
         <div className="flex justify-center ">
 
-        <img src={"logo"} className="py-2" alt="logo"/>
+        {/* <img src={"logo"} className="py-2" alt="logo"/> */}
         </div>
         <h1 className="text-5xl font-orbitron mb-5 text-center bg-gradient-to-r from-white via-gray-200 to-gray-100 text-transparent bg-clip-text  transform  transition-transform duration-300 ease-in-out">
           LUXOFLEX
