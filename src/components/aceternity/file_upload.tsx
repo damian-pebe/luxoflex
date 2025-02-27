@@ -53,7 +53,7 @@ export const FileUpload = ({
       <motion.div
         onClick={handleClick}
         whileHover="animate"
-        className="p-10 group/file block rounded-lg cursor-pointer w-full relative overflow-hidden"
+        className="pt-5 group/file block rounded-lg cursor-pointer w-full relative overflow-hidden"
       >
         <input
           ref={fileInputRef}
@@ -67,12 +67,10 @@ export const FileUpload = ({
         </div>
         <div className="flex flex-col items-center justify-center">
           <p className="relative z-20 font-sans font-bold text-neutral-700 dark:text-neutral-300 text-base">
-            Upload file
+            Sube tu Idea o Diseño 
           </p>
-          <p className="relative z-20 font-sans font-normal text-neutral-400 dark:text-neutral-400 text-base mt-2">
-            Drag or drop your files here or click to upload
-          </p>
-          <div className="relative w-full mt-10 max-w-xl mx-auto">
+         
+          <div className="relative w-full  max-w-xl mx-auto">
             {files.length > 0 &&
               files.map((file, idx) => (
                 <motion.div

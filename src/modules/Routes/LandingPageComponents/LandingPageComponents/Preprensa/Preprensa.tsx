@@ -69,118 +69,124 @@ const PREPRINTER_BENEFITS: CarouselItem[] = [
 
 export default function Preprensa() {
   return (
-    <div className="md:px-32 w-full flex flex-col bg-gradient-to-b  text-white">
-      <EffectScroll classname="duration-1000 animate-jiggle">
-        <div className="py-5 relative ">
-          <TextPressure
-            text="Preprensa"
-            flex={true}
-            alpha={false}
-            stroke={false}
-            width={true}
-            weight={true}
-            italic={true}
-            textColor="#f0f0f0"
-            strokeColor="#2563eb"
-            minFontSize={36}
-          />
+    <div className="w-full h-full flex flex-col">
+      <div className="h-20 bg-gradient-to-t from-[#FAFAFA] to-[#09090B]"></div>
+      <div className="md:px-32 w-full flex flex-col bg-[#FAFAFA]  text-[#09090B]">
+        <EffectScroll classname="duration-1000 animate-jiggle">
+          <div className="py-5 relative ">
+            <TextPressure
+              text="Preprensa"
+              flex={true}
+              alpha={false}
+              stroke={false}
+              width={true}
+              weight={true}
+              italic={true}
+              textColor="#09090B"
+              strokeColor="#FAFAFA"
+              minFontSize={36}
+            />
+          </div>
+        </EffectScroll>
+        <div className="px-5 h-full md:px-14 flex  items-center justify-center">
+          <div className="gap-6 flex h-full flex-col lg:flex-row w-full items-center text-center text-lg font-bold">
+            <EffectScroll classname="animate-fadeinleft duration-1000">
+              <div className="relative flex flex-col justify-center items-start w-full ">
+                <img
+                  src={background}
+                  className="object-cover opacity-80 rounded-2xl bg-black w-full h-full"
+                />
+                <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-[#09090B]">
+                  <h2 className="font-unica text-4xl font-extrabold mb-3">
+                    ¡Descubre las Ventajas de la{" "}
+                    <span className="text-blue-600">Preprensa en LUXOFLEX</span>
+                    !
+                  </h2>
+                  <p className="text-2xl mb-4">
+                    Lleva tus diseños al siguiente nivel con nuestro servicio de
+                    preprensa de calidad superior.
+                  </p>
+                </div>
+              </div>
+            </EffectScroll>
+
+            <EffectScroll classname="animate-fadeinright duration-1000">
+              <div className="flex flex-col justify-center items-start w-full  p-6">
+                <h3 className="font-unica text-3xl font-semibold mb-4 text-blue-600">
+                  Ventajas Clave
+                </h3>
+                <ul className="font-raleway text-xl text-left space-y-2 mx-auto w-fit">
+                  <li className="font-bold">
+                    - Calidad Impecable: Cada detalle se corrige y optimiza para
+                    garantizar un resultado final perfecto.
+                  </li>
+                  <li className="font-bold">
+                    - Colores Vibrantes: Ajustamos los colores y la resolución
+                    para que tu diseño destaque y atraiga miradas.
+                  </li>
+                  <li className="font-bold">
+                    - Pruebas Digitales: Realizamos pruebas exhaustivas para
+                    asegurar que todo esté en orden antes de la impresión.
+                  </li>
+                  <li className="font-bold">
+                    - Experiencia y Profesionalismo: Nuestro equipo experto te
+                    brinda un servicio confiable, asegurando que tu proyecto
+                    esté en las mejores manos.
+                  </li>
+                </ul>
+              </div>
+            </EffectScroll>
+          </div>
         </div>
-      </EffectScroll>
-      <div className="px-5 h-full md:px-14 flex  items-center justify-center">
-        <div className="gap-6 flex h-full flex-col lg:flex-row w-full items-center text-center text-lg font-bold">
-          <EffectScroll classname="animate-fadeinleft duration-1000">
-            <div className="relative flex flex-col justify-center items-start w-full ">
-              <img
-                src={background}
-                className="object-cover opacity-30 rounded-2xl w-full h-full"
-              />
-              <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-white">
-                <h2 className="font-unica text-4xl font-extrabold mb-3">
-                  ¡Descubre las Ventajas de la{" "}
-                  <span className="text-blue-600">Preprensa en LUXOFLEX</span>!
-                </h2>
-                <p className="text-2xl mb-4">
-                  Lleva tus diseños al siguiente nivel con nuestro servicio de
-                  preprensa de calidad superior.
-                </p>
+        <div className="px-5">
+          <EffectScroll classname="animate-fadeinbouncedown">
+            <p className="text-center font-flamenco text-6xl bg-gradient-to-tl from-black via-zinc-900  bg-clip-text text-transparent">
+              Con LUXOFLEX transforma tu visión en realidad
+            </p>
+          </EffectScroll>
+          <EffectScroll>
+            <p className="text-center font-mono text-2xl bg-gradient-to-br from-black via-zinc-900  bg-clip-text text-transparent">
+              No dejes al azar la calidad de tus impresiones.
+            </p>
+          </EffectScroll>
+        </div>
+        <EffectScroll classname="animate-fadeinbounceup duration-1000">
+          <div className="hidden lg:block sm:flex flex-col lg:flex-row items-center justify-center ">
+            <div className="py-10 flex flex-row w-full text-center text-lg font-bold ">
+              <div className="flex justify-center w-full h-full">
+                <Carousel
+                  baseWidth={1200}
+                  autoplay={true}
+                  autoplayDelay={1500}
+                  pauseOnHover={true}
+                  loop={true}
+                  round={false}
+                  items={PREPRINTER_BENEFITS}
+                />
               </div>
             </div>
-          </EffectScroll>
+          </div>
+        </EffectScroll>
+        <EffectScroll classname="animate-fadeinbounceup duration-1000">
+          <div className="md:hidden flex flex-col lg:flex-row items-center justify-center ">
+            <div className="py-10 flex flex-row w-full text-center text-lg font-bold ">
+              <div className="flex justify-center w-full h-full">
+                <Carousel
+                  baseWidth={500}
+                  autoplay={true}
+                  autoplayDelay={3000}
+                  pauseOnHover={true}
+                  loop={true}
+                  round={false}
+                  items={PREPRINTER_BENEFITS}
+                />
+              </div>
+            </div>
+          </div>
+        </EffectScroll>
+      </div>
+      <div className="h-20 bg-gradient-to-b from-[#FAFAFA] to-[#09090B]"></div>
 
-          <EffectScroll classname="animate-fadeinright duration-1000">
-            <div className="flex flex-col justify-center items-start w-full  p-6">
-              <h3 className="font-unica text-3xl font-semibold mb-4 text-blue-600">
-                Ventajas Clave
-              </h3>
-              <ul className="font-raleway text-xl text-left space-y-2 mx-auto w-fit">
-                <li className="font-bold">
-                  - Calidad Impecable: Cada detalle se corrige y optimiza para
-                  garantizar un resultado final perfecto.
-                </li>
-                <li className="font-bold">
-                  - Colores Vibrantes: Ajustamos los colores y la resolución
-                  para que tu diseño destaque y atraiga miradas.
-                </li>
-                <li className="font-bold">
-                  - Pruebas Digitales: Realizamos pruebas exhaustivas para
-                  asegurar que todo esté en orden antes de la impresión.
-                </li>
-                <li className="font-bold">
-                  - Experiencia y Profesionalismo: Nuestro equipo experto te
-                  brinda un servicio confiable, asegurando que tu proyecto esté
-                  en las mejores manos.
-                </li>
-              </ul>
-            </div>
-          </EffectScroll>
-        </div>
-      </div>
-      <div className="px-5">
-        <EffectScroll classname="animate-fadeinbouncedown">
-          <p className="text-center font-flamenco text-6xl bg-gradient-to-tl from-white via-zinc-300  bg-clip-text text-transparent">
-            Con LUXOFLEX transforma tu visión en realidad
-          </p>
-        </EffectScroll>
-        <EffectScroll>
-          <p className="text-center font-mono text-2xl bg-gradient-to-br from-white via-zinc-400  bg-clip-text text-transparent">
-            No dejes al azar la calidad de tus impresiones.
-          </p>
-        </EffectScroll>
-      </div>
-      <EffectScroll classname="animate-fadeinbounceup duration-1000">
-        <div className="hidden lg:block sm:flex flex-col lg:flex-row items-center justify-center ">
-          <div className="py-10 flex flex-row w-full text-center text-lg font-bold ">
-            <div className="flex justify-center w-full h-full">
-              <Carousel
-                baseWidth={1200}
-                autoplay={true}
-                autoplayDelay={3000}
-                pauseOnHover={true}
-                loop={true}
-                round={false}
-                items={PREPRINTER_BENEFITS}
-              />
-            </div>
-          </div>
-        </div>
-      </EffectScroll>
-      <EffectScroll classname="animate-fadeinbounceup duration-1000">
-        <div className="md:hidden flex flex-col lg:flex-row items-center justify-center ">
-          <div className="py-10 flex flex-row w-full text-center text-lg font-bold ">
-            <div className="flex justify-center w-full h-full">
-              <Carousel
-                baseWidth={500}
-                autoplay={true}
-                autoplayDelay={3000}
-                pauseOnHover={true}
-                loop={true}
-                round={false}
-                items={PREPRINTER_BENEFITS}
-              />
-            </div>
-          </div>
-        </div>
-      </EffectScroll>
     </div>
   );
 }
@@ -193,7 +199,6 @@ export default function Preprensa() {
           <FlowingMenu items={demoItems} />
         </div> */
 }
-
 
 // import { useState } from "react";
 // import { User, Check, Printer, PaintBucket, Zap, Shield } from "lucide-react";
@@ -292,7 +297,7 @@ export default function Preprensa() {
 //               ))}
 //               <div className="mt-8 pt-6 border-t border-gray-200">
 //                 <p className="text-lg text-gray-800">
-//                   Con <span className="font-bold">LUXOFLEX</span>, cada detalle importa. Nuestro equipo experto 
+//                   Con <span className="font-bold">LUXOFLEX</span>, cada detalle importa. Nuestro equipo experto
 //                   garantiza que tu visión se convierta en realidad con precisión y excelencia.
 //                 </p>
 //                 <button className="mt-6 bg-blue-600 hover:bg-blue-700 transition-all duration-300 text-white py-3 px-6 rounded-lg font-medium">
@@ -329,12 +334,12 @@ export default function Preprensa() {
 //                 </div>
 //               ))}
 //             </div>
-            
+
 //             {/* Results Section */}
 //             <div className="mt-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl p-8 text-white">
 //               <h3 className="text-2xl font-bold mb-4">Resultados que impresionan</h3>
 //               <p className="text-lg opacity-90 mb-6">
-//                 Nuestro servicio de preprensa garantiza impresiones de calidad superior que 
+//                 Nuestro servicio de preprensa garantiza impresiones de calidad superior que
 //                 elevan la percepción de tu marca y capturan la atención de tu audiencia.
 //               </p>
 //               <div className="grid grid-cols-2 gap-4 text-center">
@@ -358,7 +363,7 @@ export default function Preprensa() {
 //             Transforma tu visión en realidad con LUXOFLEX
 //           </h2>
 //           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-//             No dejes al azar la calidad de tus impresiones. Nuestro equipo experto está listo para 
+//             No dejes al azar la calidad de tus impresiones. Nuestro equipo experto está listo para
 //             llevar tus proyectos al siguiente nivel.
 //           </p>
 //           <div className="flex flex-col sm:flex-row gap-4 justify-center">

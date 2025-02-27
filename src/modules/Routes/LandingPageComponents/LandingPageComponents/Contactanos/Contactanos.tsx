@@ -22,15 +22,12 @@ import EffectScroll from "@/components/effectScroll";
 export default function Contactanos() {
   return (
     <div className=" bg-gradient-to-b from-black via-gray-950 to-black p-6 rounded-lg shadow-lg">
-      <EffectScroll classname="animate-fadeindown duration-1000">
+      <EffectScroll classname="animate-fadein duration-1000">
         <TitleSolidGradiant />
       </EffectScroll>
       <div className="group justify-evenly flex flex-col md:flex-row gap-10 ">
-        <div className="md:w-[30%]">
-          <EffectScroll classname="animate-fadeinleft duration-1000">
-            <FormContact />
-          </EffectScroll>
-        </div>
+          
+       
 
         <div className=" md:block hidden flex-1  transition-all duration-1000">
           <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
@@ -66,11 +63,18 @@ export default function Contactanos() {
             <Socials />
           </EffectScroll>
         </div>
+
+        {/* <EffectScroll classname="animate-fadeinleft duration-1000">
+            <FormContact />
+          </EffectScroll> */}
       </div>
       <div className="md:hidden block">
         <DividerNoSpacing />
       </div>
       <ContactData />
+      <EffectScroll classname="animate-fadeinleft duration-1000">
+            <FormContact />
+          </EffectScroll>
     </div>
   );
 }
@@ -221,11 +225,11 @@ function ContactData() {
   return (
     <div>
       <EffectScroll>
-        <a className=" pt-5 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
+        <a className=" pt-36 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
           CONTACTANOS PERSONALMENTE
         </a>
       </EffectScroll>
-      <div className=" flex flex-col lg:flex-row justify-center gap-6  ">
+      <div className=" pt-20 flex flex-col lg:flex-row justify-center gap-6  ">
         {data.map((user) => (
           <EffectScroll classname="flex justify-center items-center animate-fadein duration-1000">
             <SpotlightCard

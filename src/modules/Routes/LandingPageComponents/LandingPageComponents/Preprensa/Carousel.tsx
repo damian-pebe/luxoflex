@@ -110,7 +110,7 @@ export default function Carousel({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden p-4 ${
+      className={`relative overflow-hidden p-4 bg-black${
         round
           ? "rounded-full border border-white"
           : "rounded-[24px] border border-[#222]"
@@ -162,10 +162,10 @@ export default function Carousel({
               }}
               transition={effectiveTransition}
             >
-              <div className="absolute -z-10 top-0 left-0 w-full h-full">
+              <div className="absolute -z-10 top-0 left-0 w-full h-full bg-black">
                 <img
                   src={item.image}
-                  className="object-cover w-full h-full opacity-60"
+                  className="object-cover w-full h-full opacity-60 "
                 />
               </div>
               <div className="absolute z-0 top-0 left-0 w-full h-full"></div>

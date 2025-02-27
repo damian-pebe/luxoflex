@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -14,8 +13,20 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Textarea } from "@/components/ui/textarea";
-import {  ContactIcon, LucideNotebookPen, MailPlus, Phone, User } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import {
+  LucideNotebookPen,
+  MailPlus,
+  Phone,
+  User,
+} from "lucide-react";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+import styled from "styled-components";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -43,128 +54,120 @@ export default function FormContact() {
     },
   });
 
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+  
     console.log(values);
   }
 
   return (
-    <div className="">
+    <div className="py-20 max-w-[600px] flex justify-center items-center mx-auto">
       <Card className="backdrop-blur-sm bg-white/10 dark:bg-black/10 border-2 shadow-xl">
         <CardHeader className="space-y-2">
-          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+          <CardTitle className="text-3xl text-center font-bold font-orbitron text-white">
             Envíanos un mensaje
           </CardTitle>
-          <CardDescription className="text-lg">
+          <CardDescription className="text-lg text-center font-poppins">
             Completa el formulario y te responderemos lo antes posible
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem className="space-y-1">
-                    <FormLabel className="font-vt323 text-xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                      Nombre del contacto o empresa
-                    </FormLabel>
-                    <FormControl>
-                      <div className="relative">
-                        <Input 
-                          placeholder="Nombre..." 
-                          {...field} 
-                          className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500" 
-                        />
-                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-blue-500" />
-                      </div>
-                    </FormControl>
-                    <FormMessage className="text-red-400" />
-                  </FormItem>
-                )}
-              />
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <div className="space-y-2 gap-6 font-mono">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem className="space-y-1">
+                      <FormLabel className=" text-sm text-white">
+                        Nombre del contacto o empresa
+                      </FormLabel>
+                      <FormControl>
+                        <div className="relative">
+                          <Input
+                            placeholder="Nombre..."
+                            {...field}
+                            className="pl-10 h-12"
+                          />
+                          <User className="absolute left-3 bottom-3" />
+                        </div>
+                      </FormControl>
+                      <FormMessage className="text-red-400" />
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="space-y-1">
-                    <FormLabel className="font-vt323 text-xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                      Email
-                    </FormLabel>
-                    <FormControl>
-                      <div className="relative">
-                        <Input 
-                          placeholder="Correo electronico..." 
-                          {...field} 
-                          className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500" 
-                        />
-                        <MailPlus className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-blue-500" />
-                      </div>
-                    </FormControl>
-                    <FormMessage className="text-red-400" />
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem className="space-y-1">
+                      <FormLabel className=" text-sm text-white">
+                        Email
+                      </FormLabel>
+                      <FormControl>
+                        <div className="relative">
+                          <Input
+                            placeholder="Correo electronico..."
+                            {...field}
+                            className="pl-10 h-12  "
+                          />
+                          <MailPlus className="absolute left-3 bottom-3" />
+                        </div>
+                      </FormControl>
+                      <FormMessage className="text-red-400" />
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem className="space-y-1">
-                    <FormLabel className="font-vt323 text-xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                      Teléfono
-                    </FormLabel>
-                    <FormControl>
-                      <div className="relative">
-                        <Input 
-                          placeholder="Telefono..." 
-                          {...field} 
-                          className="pl-10 h-12 bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500" 
-                        />
-                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-blue-500" />
-                      </div>
-                    </FormControl>
-                    <FormMessage className="text-red-400" />
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem className="space-y-1">
+                      <FormLabel className=" text-sm text-white">
+                        Teléfono
+                      </FormLabel>
+                      <FormControl>
+                        <div className="relative">
+                          <Input
+                            placeholder="Telefono..."
+                            {...field}
+                            className="pl-10 h-12  "
+                          />
+                          <Phone className="absolute left-3 bottom-3" />
+                        </div>
+                      </FormControl>
+                      <FormMessage className="text-red-400" />
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="description"
-                render={({ field }) => (
-                  <FormItem className="space-y-1">
-                    <FormLabel className="font-vt323 text-xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                      Descripción
-                    </FormLabel>
-                    <FormControl>
-                      <div className="relative">
-                        <Textarea 
-                          placeholder="Descripcion..." 
-                          {...field} 
-                          className="pl-10 min-h-[150px] bg-white/5 backdrop-blur-sm border-2 focus-visible:ring-2 focus-visible:ring-blue-500" 
-                        />
-                        <LucideNotebookPen className="absolute left-3 top-3 h-5 w-5 text-blue-500" />
-                      </div>
-                    </FormControl>
-                    <FormMessage className="text-red-400" />
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="description"
+                  render={({ field }) => (
+                    <FormItem className="space-y-1">
+                      <FormLabel className=" text-sm text-white">
+                        Descripción
+                      </FormLabel>
+                      <FormControl>
+                        <div className="relative">
+                          <Textarea
+                            placeholder="Descripcion..."
+                            {...field}
+                            className="pl-10 min-h-[150px]  "
+                          />
+                          <LucideNotebookPen className="absolute left-3 top-3" />
+                        </div>
+                      </FormControl>
+                      <FormMessage className="text-red-400" />
+                    </FormItem>
+                  )}
+                />
+              </div>
 
-              <Button
-                type="submit"
-                className="w-full h-12 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold flex items-center justify-center gap-2 group transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <ContactIcon className="w-5 h-5 group-hover:animate-bounce transition-all duration-1000" />
-                <span className="group-hover:animate-bounce transition-all duration-200">
-                  Enviar Mensaje
-                </span>
-              </Button>
+              <ButtonContact/>
             </form>
           </Form>
         </CardContent>
@@ -172,3 +175,277 @@ export default function FormContact() {
     </div>
   );
 }
+
+
+
+const ButtonContact = () => {
+  return (
+    <StyledWrapper>
+      <div className="container">
+        <a href="#" className="button type--C">
+          <div className="button__line" />
+          <div className="button__line" />
+          <span className="button__text">ENTRY</span>
+          <div className="button__drow1" />
+          <div className="button__drow2" />
+        </a>
+      </div>
+    </StyledWrapper>
+  );
+}
+
+const StyledWrapper = styled.div`
+  .type--A {
+    --line_color: #555555;
+    --back_color: #ffecf6;
+  }
+  .type--B {
+    --line_color: #1b1919;
+    --back_color: #e9ecff;
+  }
+  .type--C {
+    --line_color: #00135c;
+    --back_color: #defffa;
+  }
+  .button {
+    position: relative;
+    z-index: 0;
+    width: 240px;
+    height: 56px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--line_color);
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+  }
+  .button__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .button::before,
+  .button::after,
+  .button__text::before,
+  .button__text::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--line_color);
+    transition: all 0.5s ease;
+  }
+  .button::before {
+    top: 0;
+    left: 54px;
+    width: calc(100% - 56px * 2 - 16px);
+  }
+  .button::after {
+    top: 0;
+    right: 54px;
+    width: 8px;
+  }
+  .button__text::before {
+    bottom: 0;
+    right: 54px;
+    width: calc(100% - 56px * 2 - 16px);
+  }
+  .button__text::after {
+    bottom: 0;
+    left: 54px;
+    width: 8px;
+  }
+  .button__line {
+    position: absolute;
+    top: 0;
+    width: 56px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .button__line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 300px;
+    border: solid 3px var(--line_color);
+  }
+  .button__line:nth-child(1),
+  .button__line:nth-child(1)::before {
+    left: 0;
+  }
+  .button__line:nth-child(2),
+  .button__line:nth-child(2)::before {
+    right: 0;
+  }
+  .button:hover {
+    letter-spacing: 6px;
+  }
+  .button:hover::before,
+  .button:hover .button__text::before {
+    width: 8px;
+  }
+  .button:hover::after,
+  .button:hover .button__text::after {
+    width: calc(100% - 56px * 2 - 16px);
+  }
+  .button__drow1,
+  .button__drow2 {
+    position: absolute;
+    z-index: -1;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+  }
+  .button__drow1 {
+    top: -16px;
+    left: 40px;
+    width: 32px;
+    height: 0;
+    transform: rotate(30deg);
+  }
+  .button__drow2 {
+    top: 44px;
+    left: 77px;
+    width: 32px;
+    height: 0;
+    transform: rotate(-127deg);
+  }
+  .button__drow1::before,
+  .button__drow1::after,
+  .button__drow2::before,
+  .button__drow2::after {
+    content: "";
+    position: absolute;
+  }
+  .button__drow1::before {
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-60deg);
+  }
+  .button__drow1::after {
+    top: -10px;
+    left: 45px;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(69deg);
+  }
+  .button__drow2::before {
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-146deg);
+  }
+  .button__drow2::after {
+    bottom: 26px;
+    left: -40px;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-262deg);
+  }
+  .button__drow1,
+  .button__drow1::before,
+  .button__drow1::after,
+  .button__drow2,
+  .button__drow2::before,
+  .button__drow2::after {
+    background: var(--back_color);
+  }
+  .button:hover .button__drow1 {
+    animation: drow1 ease-in 0.06s;
+    animation-fill-mode: forwards;
+  }
+  .button:hover .button__drow1::before {
+    animation: drow2 linear 0.08s 0.06s;
+    animation-fill-mode: forwards;
+  }
+  .button:hover .button__drow1::after {
+    animation: drow3 linear 0.03s 0.14s;
+    animation-fill-mode: forwards;
+  }
+  .button:hover .button__drow2 {
+    animation: drow4 linear 0.06s 0.2s;
+    animation-fill-mode: forwards;
+  }
+  .button:hover .button__drow2::before {
+    animation: drow3 linear 0.03s 0.26s;
+    animation-fill-mode: forwards;
+  }
+  .button:hover .button__drow2::after {
+    animation: drow5 linear 0.06s 0.32s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes drow1 {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100px;
+    }
+  }
+  @keyframes drow2 {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    10% {
+      opacity: 0;
+    }
+    11% {
+      opacity: 1;
+    }
+    100% {
+      width: 120px;
+    }
+  }
+  @keyframes drow3 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 80px;
+    }
+  }
+  @keyframes drow4 {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 120px;
+    }
+  }
+  @keyframes drow5 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 124px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .button:not(:last-child) {
+    margin-bottom: 64px;
+  }`;
+
