@@ -21,15 +21,20 @@ import EffectScroll from "@/components/effectScroll";
 
 export default function Contactanos() {
   return (
-    <div className=" bg-gradient-to-b from-black via-gray-950 to-black p-6 rounded-lg shadow-lg">
+    <div className="lg:px-24 bg-gradient-to-b space-y-6 from-black via-gray-950 to-black p-6 rounded-lg shadow-lg">
       <EffectScroll classname="animate-fadein duration-1000">
         <TitleSolidGradiant />
       </EffectScroll>
       <div className="group justify-evenly flex flex-col md:flex-row gap-10 ">
           
-       
+      <div className="md:block hidden  w-min  transition-all duration-1000">  
 
-        <div className=" md:block hidden flex-1  transition-all duration-1000">
+      <EffectScroll classname="animate-fadeinleft duration-1000">
+            <FormContact />
+          </EffectScroll>
+      </div>
+
+        <div className=" md:block hidden flex-1 w-full transition-all duration-1000">
           <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
             <EffectScroll classname="animate-fadein duration-1000">
               <TrueFocus
@@ -59,7 +64,7 @@ export default function Contactanos() {
               />
             </EffectScroll>
           </div>
-          <EffectScroll classname="animate-fadeinbouncedown">
+          <EffectScroll classname="animate-fadeinbouncedown pb-32 ">
             <Socials />
           </EffectScroll>
         </div>
@@ -72,26 +77,25 @@ export default function Contactanos() {
         <DividerNoSpacing />
       </div>
       <ContactData />
-      <EffectScroll classname="animate-fadeinleft duration-1000">
-            <FormContact />
-          </EffectScroll>
+      
     </div>
   );
 }
 
 function TitleSolidGradiant() {
   return (
-    <div className="flex items-center justify-center w-full flex-col px-4 ">
-      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-t  from-neutral-600 to-white text-7xl lg:text-8xl py-2 relative z-20 font-bold font-poppins tracking-tight">
-        Eleve su marca <br /> con <br />
-        LUXOFLEX.
-      </h2>
-      <p className=" mx-auto text-lg md:text-xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
+    <div className="flex items-center justify-center w-full flex-col px-4 pt-10">
+      
+      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-7xl lg:text-9xl  relative z-20 font-bold font-dancing tracking-tight hover:scale-110 transition-transform duration-1000 hover:cursor-grab">
+Contáctanos Personalmente
+</h2>
+      <p className=" mx-auto text-sm md:text-2xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
         ¡Cuéntanos tu idea, nosotros la haremos realidad!
       </p>
     </div>
   );
 }
+
 
 function AnimatedPinDemo() {
   return (
@@ -223,9 +227,9 @@ function ContactData() {
     },
   ];
   return (
-    <div>
+    <div className="pb-32">
       <EffectScroll>
-        <a className=" pt-36 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-4xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
+        <a className=" pt-36 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-6xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
           CONTACTANOS PERSONALMENTE
         </a>
       </EffectScroll>

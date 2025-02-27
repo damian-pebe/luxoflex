@@ -70,8 +70,8 @@ const PREPRINTER_BENEFITS: CarouselItem[] = [
 export default function Preprensa() {
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="h-20 bg-gradient-to-t from-[#FAFAFA] to-[#09090B]"></div>
-      <div className="md:px-32 w-full flex flex-col bg-[#FAFAFA]  text-[#09090B]">
+      
+      <div className="md:px-32 w-full flex flex-col bg-[#09090B]  text-[#FAFAFA]">
         <EffectScroll classname="duration-1000 animate-jiggle">
           <div className="py-5 relative ">
             <TextPressure
@@ -185,7 +185,6 @@ export default function Preprensa() {
           </div>
         </EffectScroll>
       </div>
-      <div className="h-20 bg-gradient-to-b from-[#FAFAFA] to-[#09090B]"></div>
 
     </div>
   );

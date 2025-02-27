@@ -8,9 +8,11 @@ import background from "@/assets/background.jpg";
 
 export function Materials() {
   return (
-    <div>
-      <TitleSolidGradiant />
-      <MaterialsCards />
+    <div className="bg-gradient-to-b  from-black via-zinc-900 to-black">
+<h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-5xl md:text-6xl lg:text-8xl font-sans py-2 relative z-20 font-bold tracking-tight">
+        Eleva tu experiencia <br /> con <br />
+        LUXOFLEX.
+      </h2>      <MaterialsCards />
     </div>
   );
 }
@@ -25,10 +27,10 @@ function MaterialsCards() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center bg-gradient-to-b  from-black via-zinc-900 to-black    p-6 rounded-lg shadow-lg">
+    <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center     p-6 rounded-lg shadow-lg">
       {materials.map((material, index) => (
         <CardContainer className="inter-var cursor-pointer" key={index}>
-          <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+          <CardBody className=" relative group/card  hover:shadow-2xl hover:shadow-emerald-500/[0.1]  dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
             <CardItem
               translateZ="50"
               className="text-xl font-bold text-white font-sigmar text-center"
@@ -54,20 +56,6 @@ function MaterialsCards() {
           </CardBody>
         </CardContainer>
       ))}
-    </div>
-  );
-}
-
- function TitleSolidGradiant() {
-  return (
-    <div className="flex items-center justify-center w-full flex-col px-4 ">
-      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-5xl md:text-6xl lg:text-8xl font-sans py-2 relative z-20 font-bold tracking-tight">
-        Eleva tu experiencia <br /> con <br />
-        LUXOFLEX.
-      </h2>
-      <p className=" mx-auto text-lg md:text-xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
-        Conoce los materiales que usamos para crear las mejores etiquetas.
-      </p>
     </div>
   );
 }

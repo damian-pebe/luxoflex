@@ -2,19 +2,21 @@ import StartPage from "./LandingPageComponents/StartPage/StartPage";
 import { ParallaxLuxoflex } from "./LandingPageComponents/Parallax/Parallax";
 import Contactanos from "./LandingPageComponents/Contactanos/Contactanos";
 import { PoweringTeams } from "./LandingPageComponents/PoweringTeams/PoweringTeams";
-import { Design } from "./LandingPageComponents/Design/Design";
 import Preprensa from "./LandingPageComponents/Preprensa/Preprensa";
+import { Materials } from "../PastWorks/Materials";
+import Products from "../PastWorks/Products/Products";
 
 export default function LandingPage() {
   return (
     <div className="bg-[#09090B] overflow-hidden">
-      {/* <ModeToggle/> */}
       <StartPage />
       <ParallaxLuxoflex />
-      <Design/>
       <Preprensa/>
       <PoweringTeams/>
       <Contactanos />
+      
+      <Materials />
+          <Products />
     </div>
   );
 }
