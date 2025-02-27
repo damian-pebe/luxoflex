@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Categories() {
   
     return (
-      <div className="py-5 md:grid grid-cols-4 gap-5 items-center hidden ">
+      <div className=" text-white py-5 md:grid grid-cols-4 gap-5 items-center hidden ">
             <Link
               to="/luxoflex"
               className="animate-slideinleft"

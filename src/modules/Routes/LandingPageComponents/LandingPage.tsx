@@ -9,6 +9,7 @@ import WhatDoWeDo from "./WhatDoWeDo/WhatDoWeDo";
 export default function LandingPage() {
   return (
     <div className="overflow-hidden">
+      {/* <ModeToggle/> */}
       <StartPage />
       <ParallaxLuxoflex />
       <Design/>
