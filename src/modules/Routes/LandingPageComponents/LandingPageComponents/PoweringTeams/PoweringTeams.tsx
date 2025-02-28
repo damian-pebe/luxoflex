@@ -5,20 +5,20 @@ import { Link } from "react-router-dom";
 
 export const PoweringTeams = () => {
   return (
-    <div className=" text-white h-screen flex flex-col justify-center items-center text-center px-2 md:px-28 py-32 ">
+    <div className="bg-black text-white h-screen flex flex-col justify-center items-center text-center px-2 md:px-28 py-14 ">
       <BlurText
         text="Impulsando las mejores empresas!!"
         delay={250}
         animateBy="words"
         direction="bottom"
-        className="text-9xl mb-8 font-flamenco text-gray-300 font-light drop-shadow-2xl shadow-white text-center justify-center"
+        className="text-9xl mb-8 font-dancing text-[#FAFAFA] font-light drop-shadow-2xl shadow-white text-center justify-center"
       />
       <EffectScroll>
         <ShinyText
           text="Desde startups de nueva generación hasta empresas consolidadas."
           disabled={false}
           speed={1}
-          className="custom-class text-2xl mb-8 text-muted-foreground font-playfair animate-pulse duration-1000"
+          className="custom-class text-2xl mb-8 text-muted-foreground font-playfair animate-pulse"
         />
       </EffectScroll>
 
@@ -26,7 +26,7 @@ export const PoweringTeams = () => {
         {teams.map((team, index) => (
           <Link
             to={team.link}
-            className="group rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-white p-4"
+            className="group rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-white/50 p-4"
           >
             <EffectScroll classname="animate-fadeinbouncedown">
               <img

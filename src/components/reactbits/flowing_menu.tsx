@@ -92,7 +92,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, image }) => {
 
   return (
     <div
-      className="flex-1 relative overflow-hidden text-center shadow-[0_-1px_0_0_#fff]"
+      className="flex-1 relative overflow-hidden text-center bg-black  shadow-[0_-1px_0_0_#fff]"
       ref={itemRef}
     >
       <a
@@ -103,7 +103,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, image }) => {
         {text}
       </a>
       <div
-        className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white translate-y-[101%]"
+        className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-[#FAFAFA] translate-y-[101%]"
         ref={marqueeRef}
       >
         <div className="h-full w-[200%] flex" ref={marqueeInnerRef}>

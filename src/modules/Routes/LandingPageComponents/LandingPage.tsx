@@ -11,12 +11,11 @@ export default function LandingPage() {
     <div className="bg-[#09090B] overflow-hidden">
       <StartPage />
       <ParallaxLuxoflex />
-      <Preprensa/>
-      <PoweringTeams/>
+      <PoweringTeams />
       <Contactanos />
-      
+      <Preprensa />
       <Materials />
-          <Products />
+      <Products />
     </div>
   );
 }

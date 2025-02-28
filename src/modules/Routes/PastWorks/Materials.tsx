@@ -8,10 +8,9 @@ import background from "@/assets/background.jpg";
 
 export function Materials() {
   return (
-    <div className="bg-gradient-to-b  from-black via-zinc-900 to-black">
+    <div className="bg-gradient-to-b  from-black via-zinc-900 to-black pt-20">
 <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-5xl md:text-6xl lg:text-8xl font-sans py-2 relative z-20 font-bold tracking-tight">
-        Eleva tu experiencia <br /> con <br />
-        LUXOFLEX.
+        Galeria <br/>LUXOFLEX
       </h2>      <MaterialsCards />
     </div>
   );
