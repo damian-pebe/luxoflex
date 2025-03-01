@@ -70,16 +70,14 @@ const demoItems = [
 export default function Preprensa() {
   return (
     <div>
-      <div className="w-full px-32 min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      <div className="w-full px-1 md:px-32 min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
         <div className="container mx-auto py-20 px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1 space-y-8">
-              <div className="inline-block">
-                <h1 className="text-5xl md:text-6xl font-dancing font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-3">
+            <div className="flex-1 space-y-8 ">
+                <h1 className="text-center text-6xl md:text-8xl font-dancing font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-3">
                   Preprensa Digital
                 </h1>
                 <div className="h-1 w-full bg-gradient-to-r from-pink-500 to-blue-500 rounded-full"></div>
-              </div>
 
               <p className="text-xl md:text-2xl leading-relaxed font-rajdhani text-gray-200">
                 En <span className="font-bold text-blue-400">LUXOFLEX</span>,
@@ -123,7 +121,7 @@ export default function Preprensa() {
         <EffectScroll classname="animate-fadein duration-1000">
           <div className="py-16 ">
             <div className="container mx-auto px-4">
-              <h2 className="text-center text-3xl md:text-4xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              <h2 className="text-center text-5xl md:text-7xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                 Beneficios de Nuestra Preprensa
               </h2>
 
@@ -139,9 +137,9 @@ export default function Preprensa() {
                 />
               </div>
 
-              <div className="lg:hidden">
+              <div className="lg:hidden flex justify-center">
                 <Carousel
-                  baseWidth={500}
+                  baseWidth={450}
                   autoplay={true}
                   autoplayDelay={3000}
                   pauseOnHover={true}

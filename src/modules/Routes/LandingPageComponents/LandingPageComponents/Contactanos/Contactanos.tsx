@@ -229,7 +229,7 @@ function ContactData() {
   return (
     <div className="pb-32">
       <EffectScroll>
-        <a className=" pt-36 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-2xl md:text-6xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
+        <a className=" pt-16 md:pt-28 bg-clip-text text-transparent text-center bg-gradient-to-r  from-neutral-600 to-white text-4xl md:text-6xl py-2 relative z-20 font-bold font-sigmar tracking-tight flex justify-center">
           CONTACTANOS PERSONALMENTE
         </a>
       </EffectScroll>

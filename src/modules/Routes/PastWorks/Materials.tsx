@@ -9,9 +9,11 @@ import background from "@/assets/background.jpg";
 export function Materials() {
   return (
     <div className="bg-gradient-to-b  from-black via-zinc-900 to-black pt-20">
-<h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-5xl md:text-6xl lg:text-8xl font-sans py-2 relative z-20 font-bold tracking-tight">
-        Galeria <br/>LUXOFLEX
-      </h2>      <MaterialsCards />
+      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-7xl md:text-8xl font-sans md:py-2 relative z-20 font-bold tracking-tight">
+        Galeria <br />
+        LUXOFLEX
+      </h2>
+      <MaterialsCards />
     </div>
   );
 }
@@ -22,7 +24,7 @@ function MaterialsCards() {
     { name: "Material 3", image: background, info: "Info about Material 3" },
     { name: "Material 4", image: background, info: "Info about Material 4" },
     { name: "Material 5", image: background, info: "Info about Material 5" },
-    { name: "Material 6", image: background, info: "Info about Material 6" }
+    { name: "Material 6", image: background, info: "Info about Material 6" },
   ];
 
   return (
@@ -58,5 +60,3 @@ function MaterialsCards() {
     </div>
   );
 }
-
-
