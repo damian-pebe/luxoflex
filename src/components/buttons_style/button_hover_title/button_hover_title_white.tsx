@@ -1,24 +1,32 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import logo from "@/assets/luxoflex.png";
 
 export default function Title() {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setIsActive(prev => !prev); // Toggle the state every second
+      setIsActive((prev) => !prev); 
     }, 1000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
+    return () => clearInterval(intervalId); 
   }, []);
 
   return (
-    <Link to="/" className="animate-slideinright">
+    <Link to="/" className="animate-slideinright flex">
+      <img src={logo} className="h-10" />
+
       <StyledWrapper>
-        <button className={`button ${isActive ? 'active' : ''}`} data-text="Awesome">
+        <button
+          className={`button ${isActive ? "active" : ""}`}
+          data-text="Awesome"
+        >
           <span className="actual-text">&nbsp;luxoflex&nbsp;</span>
-          <span aria-hidden="true" className="animated-text">&nbsp;luxoflex&nbsp;</span>
+          <span aria-hidden="true" className="animated-text">
+            &nbsp;luxoflex&nbsp;
+          </span>
         </button>
       </StyledWrapper>
     </Link>
