@@ -33,40 +33,40 @@ export default function Title() {
   );
 }
 
-const StyledWrapper = styled.div`
-  /* === removing default button style ===*/
-  .button {
-    margin: 0;
-    height: auto;
-    background: transparent;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
-    font-size: 2em;
-    letter-spacing: 3px;
-    font-family: "Arial";
-  }
+// const StyledWrapper = styled.div`
+//   /* === removing default button style ===*/
+//   .button {
+//     margin: 0;
+//     height: auto;
+//     background: transparent;
+//     padding: 0;
+//     border: none;
+//     cursor: pointer;
+//     position: relative;
+//     text-transform: uppercase;
+//     color: transparent;
+//     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+//     font-size: 2em;
+//     letter-spacing: 3px;
+//     font-family: "Arial";
+//   }
 
-  .animated-text {
-    position: absolute;
-    box-sizing: border-box;
-    content: attr(data-text);
-    color: white;
-    width: 0%;
-    inset: 0;
-    border-right: 6px solid white;
-    overflow: hidden;
-    transition: 0.5s;
-    -webkit-text-stroke: 1px white;
-  }
+//   .animated-text {
+//     position: absolute;
+//     box-sizing: border-box;
+//     content: attr(data-text);
+//     color: white;
+//     width: 0%;
+//     inset: 0;
+//     border-right: 6px solid white;
+//     overflow: hidden;
+//     transition: 0.5s;
+//     -webkit-text-stroke: 1px white;
+//   }
 
-  /* Active state for animation */
-  .button.active .animated-text {
-    width: 100%;
-    filter: drop-shadow(0 0 23px white);
-  }
-`;
+//   /* Active state for animation */
+//   .button.active .animated-text {
+//     width: 100%;
+//     filter: drop-shadow(0 0 23px white);
+//   }
+// `;
