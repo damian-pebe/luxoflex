@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+// import styled from "styled-components";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import logo from "@/assets/luxoflex.png";
 
 export default function Title() {
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setIsActive((prev) => !prev); 
-    }, 1000);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setIsActive((prev) => !prev); 
+  //   }, 1000);
 
-    return () => clearInterval(intervalId); 
-  }, []);
+  //   return () => clearInterval(intervalId); 
+  // }, []);
 
   return (
     <Link to="/" className="animate-slideinright flex">
