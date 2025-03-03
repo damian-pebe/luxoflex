@@ -18,7 +18,7 @@ export default function Title() {
     <Link to="/" className="animate-slideinright flex">
       <img src={logo} className="h-10" />
 
-      <StyledWrapper>
+      {/* <StyledWrapper>
         <button
           className={`button ${isActive ? "active" : ""}`}
           data-text="Awesome"
@@ -28,7 +28,7 @@ export default function Title() {
             &nbsp;luxoflex&nbsp;
           </span>
         </button>
-      </StyledWrapper>
+      </StyledWrapper> */}
     </Link>
   );
 }
