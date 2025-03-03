@@ -54,7 +54,7 @@ export const HoverEffect = ({
             <img
               src={item.image}
               alt={item.title}
-              className="flex-1 object-cover w-full h-52 mt-4 rounded-lg"
+              className="flex-1 object-cover w-full mt-4 rounded-lg"
             />
           </Card>
         </Link>

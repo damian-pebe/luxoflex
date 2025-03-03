@@ -31,55 +31,55 @@ const projects = [
   {
     title: "Bopp Plata",
     description:
-      "Integra códigos QR para rastreo, promociones o información interactiva. Conexión directa con el cliente.",
+      "Película de polipropileno biorientado metalizado que ofrece un acabado plateado brillante, ideal para etiquetas decorativas y empaques premium.",
     image: boppPlata,
   },
   {
     title: "Bopp Blanco",
     description:
-      "Perfectas para producción masiva. Fáciles de aplicar, adhesivo resistente y personalizables.",
+      "Película de polipropileno biorientado de color blanco, proporciona una excelente base para impresión y es ampliamente utilizada en etiquetas autoadhesivas.",
     image: boppBlanco,
   },
   {
     title: "Bopp transparente",
     description:
-      "Resistentes al frío extremo. Adhesión duradera en bajas temperaturas. Ideales para alimentos y logística.",
+      "Película de polipropileno biorientado transparente, versátil para etiquetas que requieren mostrar el producto subyacente.",
     image: boppTransparente,
   },
   {
     title: "Laminado mate",
     description:
-      "Protección contra agua y humedad. Perfectas para bebidas, cosméticos y productos químicos.",
+      "Acabado especial que proporciona una superficie no brillante y suave al tacto, ideal para etiquetas premium con aspecto sofisticado.",
     image: laminadoMate,
   },
   {
     title: "Laminado Brillante",
     description:
-      "Diseños únicos. Colores vibrantes, acabados metálicos y detalles premium para destacar tu marca.",
+      "Acabado que proporciona un alto brillo y claridad visual, mejorando la apariencia de las etiquetas y protegiéndolas contra la abrasión.",
     image: laminadoBrillante,
   },
   {
     title: "Pelicula de polipropileno sellable",
     description:
-      "Códigos de barras, resistentes y duraderas. Optimizan el manejo de inventarios y envíos.",
+      "Material especialmente diseñado para crear un sello hermético cuando se aplica calor, ideal para envases y empaques que requieren cierre.",
     image: PELICULA_DE_POLIPROPILENO_SELLABLE,
   },
   {
     title: "Bopp Holografico",
     description:
-      "Códigos de barras, resistentes y duraderas. Optimizan el manejo de inventarios y envíos.",
+      "Película de polipropileno biorientado con efectos holográficos que crean patrones visuales llamativos y efectos de luz únicos.",
     image: bopp_holografico,
   },
   {
     title: "Suajadas a Color",
     description:
-      "Códigos de barras, resistentes y duraderas. Optimizan el manejo de inventarios y envíos.",
+      "Etiquetas troqueladas con impresión a color, cortadas en formas específicas según los requerimientos del diseño.",
     image: suajadas_color,
   },
   {
     title: "Suajadas Termica",
     description:
-      "Códigos de barras, resistentes y duraderas. Optimizan el manejo de inventarios y envíos.",
+      "Etiquetas troqueladas en papel térmico que cambian de color con la temperatura, ideales para aplicaciones que requieren sensibilidad térmica.",
     image: suajada_termica,
   },
 ];
