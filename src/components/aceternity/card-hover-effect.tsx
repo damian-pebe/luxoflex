@@ -27,7 +27,7 @@ export const HoverEffect = ({
         <Link
           to={''}
           key={item.title}
-          className="relative group  block p-2 h-full w-full"
+          className="relative group  block p-2  w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -54,7 +54,7 @@ export const HoverEffect = ({
             <img
               src={item.image}
               alt={item.title}
-              className="flex-1 object-cover w-full mt-4 rounded-lg"
+              className="flex-1 object-cover w-full h-52 mt-4 rounded-lg"
             />
           </Card>
         </Link>

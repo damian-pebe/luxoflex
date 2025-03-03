@@ -19,7 +19,7 @@ export function Materials() {
 }
 function MaterialsCards() {
   const materials = [
-    { name: "Material 1", image: background, info: "Info about Material 1" },
+    { name: "Bopp Plata", image: background, info: "Info about Material 1" },
     { name: "Material 2", image: background, info: "Info about Material 2" },
     { name: "Material 3", image: background, info: "Info about Material 3" },
     { name: "Material 4", image: background, info: "Info about Material 4" },
