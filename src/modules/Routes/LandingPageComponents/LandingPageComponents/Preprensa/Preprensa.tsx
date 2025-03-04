@@ -1,69 +1,74 @@
 import Carousel from "./Carousel";
-import { PaintBucket, Layers, CheckCircle, Eye } from "lucide-react";
+import { Layers, CheckCircle, Upload, ThumbsUp, Printer } from "lucide-react";
 import { CarouselItem } from "./models/Models";
-import background from "@/assets/luxoflexImage5.jpeg";
+import recepcion_disenios from "@/assets/recepcion_disenios.jpg";
+import revision_coreccion from "@/assets/revision_coreccion.jpg";
+import final_preprensa from "@/assets/final_preprensa.png";
+import happy_customer from "@/assets/happy_customer.jpg";
+import grabados from "@/assets/rodillo1.webp";
 import EffectScroll from "@/components/effectScroll";
 import FlowingMenu from "@/components/reactbits/flowing_menu";
 
 const PREPRINTER_BENEFITS: CarouselItem[] = [
   {
-    title: "Calidad Visual Mejorada",
+    title: "Recepción de Archivos de Diseño",
     description:
-      "La preprensa optimiza imágenes y colores, haciendo que tu diseño se vea más profesional y atractivo.",
+      "Nos aseguramos de recibir y gestionar tus archivos correctamente, evitando problemas desde el inicio del proceso.",
     id: 1,
-    icon: <Eye className="h-6 w-6 text-white  p-1" />,
-    image: "https://picsum.photos/600/400?random=1",
+    icon: <Upload className="h-6 w-6 text-white p-1" />,
+    image: recepcion_disenios,
   },
   {
-    title: "Colores Vibrantes",
+    title: "Revisión y Corrección de Errores",
     description:
-      "Los ajustes de color garantizan que tus colores sean precisos y llamativos, captando la atención de los usuarios.",
+      "Nuestro equipo detecta y corrige errores antes de la impresión, garantizando calidad y evitando costosos reprocesos.",
     id: 2,
-    icon: <PaintBucket className="h-6 w-6 text-white  p-1" />,
-    image: "https://picsum.photos/600/400?random=2",
+    icon: <CheckCircle className="h-6 w-6 text-white p-1" />,
+    image: revision_coreccion,
   },
   {
-    title: "Diseño Pulido",
+    title: "Preparación para Impresión",
     description:
-      "La revisión en la preprensa asegura que cada elemento del diseño sea perfecto, generando confianza en los usuarios.",
+      "Optimizamos la disposición y separación de colores, asegurando una impresión nítida y de alta calidad.",
     id: 3,
-    icon: <Layers className="h-6 w-6 text-white  p-1" />,
-    image: "https://picsum.photos/600/400?random=3",
+    icon: <Layers className="h-6 w-6 text-white p-1" />,
+    image: final_preprensa,
   },
   {
-    title: "Impacto Visual Inmediato",
+    title: "Aprobación del Cliente",
     description:
-      "Un diseño atractivo y bien trabajado logra captar la atención de inmediato, mejorando la retención del usuario.",
-    id: 4,
-    icon: <Eye className="h-6 w-6 text-white  p-1" />,
-    image: "https://picsum.photos/600/400?random=4",
-  },
-  {
-    title: "Prevención de Errores",
-    description:
-      "Detectar y corregir problemas antes de imprimir ahorra tiempo y costos, asegurando un producto final exitoso.",
+      "Involucramos a nuestros clientes en cada paso, asegurándonos de que el producto final cumpla con sus expectativas.",
     id: 5,
-    icon: <CheckCircle className="h-6 w-6 text-white  p-1" />,
-    image: "https://picsum.photos/600/400?random=5",
+    icon: <ThumbsUp className="h-6 w-6 text-white p-1" />,
+    image: happy_customer,
+  },
+  {
+    title: "Generación de Grabados para Impresion",
+    description:
+      "Utilizamos tecnología avanzada para la filmación y generación de grabados, garantizando una impresión precisa y profesional.",
+    id: 6,
+    icon: <Printer className="h-6 w-6 text-white p-1" />,
+    image: grabados,
   },
 ];
+
 
 const demoItems = [
   {
     text: "Optimización de Color",
-    image: "https://picsum.photos/600/400?random=1",
+    image: recepcion_disenios,
   },
   {
     text: "Ajuste de Resolución",
-    image: "https://picsum.photos/600/400?random=2",
+    image: revision_coreccion,
   },
   {
     text: "Control de Calidad",
-    image: "https://picsum.photos/600/400?random=3",
+    image: final_preprensa,
   },
   {
-    text: "Pruebas Digitales",
-    image: "https://picsum.photos/600/400?random=4",
+    text: "Generacion de Grabados",
+    image: grabados,
   },
 ];
 
@@ -74,7 +79,7 @@ export default function Preprensa() {
         <div className="container mx-auto py-20 px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 space-y-8 ">
-                <h1 className="text-center text-6xl md:text-8xl font-dancing font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-3">
+                <h1 className="text-center text-6xl md:text-8xl font-dancing font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-600 mb-3">
                   Preprensa Digital
                 </h1>
                 <div className="h-1 w-full bg-gradient-to-r from-pink-500 to-blue-500 rounded-full"></div>
@@ -108,10 +113,10 @@ export default function Preprensa() {
             </div>
 
             <div className="flex-1 relative">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-pink-500 rounded-lg opacity-30 blur-lg"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-pink-400 rounded-lg opacity-30 blur-lg"></div>
               <img
-                src={background}
-                className="relative object-cover w-full h-full rounded-tl-3xl rounded-tr-sm rounded-bl-3xl rounded-br-3xl shadow-2xl transform transition-transform duration-500 hover:scale-105"
+                src={grabados}
+                className="relative object-cover w-full h-full opacity-90 bg-black rounded-tl-3xl rounded-tr-sm rounded-bl-3xl rounded-br-3xl shadow-2xl transform transition-transform duration-500 hover:scale-105"
                 alt="Preprensa Digital"
               />
             </div>
