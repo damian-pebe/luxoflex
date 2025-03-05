@@ -89,7 +89,7 @@ export default function Preprensa() {
                 nuestra preprensa digital garantiza que cada proyecto de
                 impresión alcance su máximo potencial. Utilizamos tecnología
                 avanzada para optimizar archivos, ajustar colores y asegurar que
-                cada detalle esté perfectamente preparado antes de la impresión.
+                cada detalle esté perfectamente preparado antes de la impresión de grabados.
               </p>
 
               <ul className="space-y-4">
