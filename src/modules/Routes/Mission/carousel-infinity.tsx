@@ -1,8 +1,6 @@
 "use client";
-
 import { InfiniteMovingCards } from "@/components/aceternity/infinite-moving-cards";
 import { customer1, customer2, customer3, customer4, customer5 } from "@/const";
-
 
 export function InfiniteMovingCardsDemo() {
   return (
@@ -15,7 +13,6 @@ export function InfiniteMovingCardsDemo() {
     </div>
   );
 }
-
 const testimonials = [
   {
     quote:
@@ -23,7 +20,7 @@ const testimonials = [
     name: "Carlos Ramírez",
     title: "Director de Producción",
     image: customer1,
-    description: "Industria de Lujo"
+    description: "Industria de Lujo",
   },
   {
     quote:
@@ -31,15 +28,15 @@ const testimonials = [
     name: "Ana María González",
     title: "Gerente de Operaciones",
     image: customer2,
-    description: "Sector Cosmético Premium"
+    description: "Sector Cosmético Premium",
   },
   {
-    quote: 
+    quote:
       "Los acabados holográficos y metalizados de LUXOFLEX han transformado nuestro empaque. La durabilidad es excepcional y el efecto visual que logran con sus técnicas especializadas realmente hace que nuestros productos destaquen.",
     name: "Roberto Méndez",
     title: "Gerente de Marca",
     image: customer3,
-    description: "Industria Vinícola Premium"
+    description: "Industria Vinícola Premium",
   },
   {
     quote:
@@ -47,7 +44,7 @@ const testimonials = [
     name: "Laura Sánchez",
     title: "Directora de Marketing",
     image: customer4,
-    description: "Sector de Perfumería"
+    description: "Sector de Perfumería",
   },
   {
     quote:
@@ -55,6 +52,6 @@ const testimonials = [
     name: "Miguel Ángel Torres",
     title: "Gerente General",
     image: customer5,
-    description: "Bebidas Premium"
+    description: "Bebidas Premium",
   },
 ];
