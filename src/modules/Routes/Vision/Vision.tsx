@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, Lightbulb, Target, Rocket } from "lucide-react";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import background from "@/assets/background.jpg";
+import { background } from "@/const";
 import { useNavigate } from "react-router-dom";
 
 export default function VisionPage() {

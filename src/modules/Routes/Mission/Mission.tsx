@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { Cards } from "./Cards";
 import { Brain, Rocket, Users } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import background from "@/assets/background.jpg";
+import { background } from "@/const";
 import { InfiniteMovingCardsDemo } from "./carousel-infinity";
 import { IconMoodHappy } from "@tabler/icons-react";
 export default function Mission() {

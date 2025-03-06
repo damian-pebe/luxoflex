@@ -1,11 +1,7 @@
 "use client";
-import customer1 from "@/assets/customer1.jpg"
-import customer2 from "@/assets/customer2.jpg"
-import customer3 from "@/assets/customer3.jpg"
-import customer4 from "@/assets/customer4.jpg"
-import customer5 from "@/assets/customer5.jpg"
 
 import { InfiniteMovingCards } from "@/components/aceternity/infinite-moving-cards";
+import { customer1, customer2, customer3, customer4, customer5 } from "@/const";
 
 
 export function InfiniteMovingCardsDemo() {

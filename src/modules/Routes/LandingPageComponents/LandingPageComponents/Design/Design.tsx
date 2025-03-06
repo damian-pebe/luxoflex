@@ -3,7 +3,7 @@ import RotatingText from "@/components/reactbits/rotating_text";
 import ShinyText from "@/components/reactbits/shiny_text";
 import Stepper, { Step } from "@/components/reactbits/stepper";
 import { useState } from "react";
-import background from "@/assets/background.jpg";
+import { background } from "@/const";
 import { Textarea } from "@/components/ui/textarea";
 import { Users } from "lucide-react";
 import EffectScroll from "@/components/effectScroll";

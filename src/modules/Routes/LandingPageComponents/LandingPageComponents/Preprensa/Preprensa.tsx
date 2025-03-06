@@ -1,11 +1,7 @@
 import Carousel from "./Carousel";
 import { Layers, CheckCircle, Upload, ThumbsUp, Printer } from "lucide-react";
 import { CarouselItem } from "./models/Models";
-import recepcion_disenios from "@/assets/recepcion_disenios.jpg";
-import revision_coreccion from "@/assets/revision_coreccion.jpg";
-import final_preprensa from "@/assets/final_preprensa.png";
-import happy_customer from "@/assets/happy_customer.jpg";
-import grabados from "@/assets/rodillo1.webp";
+import { recepcion_disenios, revision_coreccion, final_preprensa, happy_customer, grabados } from "@/const";
 import EffectScroll from "@/components/effectScroll";
 import FlowingMenu from "@/components/reactbits/flowing_menu";
 

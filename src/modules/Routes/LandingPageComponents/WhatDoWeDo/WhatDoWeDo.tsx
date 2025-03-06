@@ -4,15 +4,16 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import luxoImage1 from "@/assets/luxoflexImage1.jpeg";
-import luxoImage2 from "@/assets/luxoflexImage2.jpeg";
-import luxoImage3 from "@/assets/luxoflexImage3.jpeg";
-import luxoImage4 from "@/assets/luxoflexImage4.jpeg";
-import luxoImage5 from "@/assets/luxoflexImage5.jpeg";
-import luxoImage6 from "@/assets/luxoflexImage6.jpeg";
-
 import { BentoGrid, BentoGridItem } from "@/components/aceternity/bento-grid";
 import EffectScroll from "@/components/effectScroll";
+import {
+  luxoImage1,
+  luxoImage2,
+  luxoImage3,
+  luxoImage4,
+  luxoImage5,
+  luxoImage6,
+} from "@/const";
 
 export default function WhatDoWeDo() {
   const Body = ({ imgUrl }: { imgUrl?: string }) => (
@@ -38,7 +39,7 @@ export default function WhatDoWeDo() {
       title: "Servicio Personalizado",
       description:
         "Nuestro equipo dedicado te guiará en cada paso, asegurando que encuentres exactamente lo que necesitas.",
-      header: <Body imgUrl={luxoImage2}/>,
+      header: <Body imgUrl={luxoImage2} />,
       className: "md:col-span-1 hover:scale-[1.02] transition-all duration-300",
       icon: <IconFileBroken className="h-6 w-6 text-purple-400" />,
     },
@@ -46,7 +47,7 @@ export default function WhatDoWeDo() {
       title: "Garantía de Calidad",
       description:
         "Respaldamos cada producto con nuestra garantía de satisfacción. Tu confianza es nuestro mayor valor.",
-      header: <Body imgUrl={luxoImage3}/>,
+      header: <Body imgUrl={luxoImage3} />,
       className: "md:col-span-1 hover:scale-[1.02] transition-all duration-300",
       icon: <IconSignature className="h-6 w-6 text-green-400" />,
     },
@@ -54,7 +55,7 @@ export default function WhatDoWeDo() {
       title: "Experiencia Premium",
       description:
         "Disfruta de una experiencia de compra excepcional con atención personalizada y productos de primera clase.",
-      header: <Body imgUrl={luxoImage4}/>,
+      header: <Body imgUrl={luxoImage4} />,
       className: "md:col-span-2 hover:scale-[1.02] transition-all duration-300",
       icon: <IconTableColumn className="h-6 w-6 text-amber-400" />,
     },
@@ -62,7 +63,7 @@ export default function WhatDoWeDo() {
       title: "Innovación Constante",
       description:
         "Siempre a la vanguardia con las últimas tendencias y tecnologías para ofrecerte lo mejor del mercado.",
-      header: <Body imgUrl={luxoImage5}/>,
+      header: <Body imgUrl={luxoImage5} />,
       className: "md:col-span-2 hover:scale-[1.02] transition-all duration-300",
       icon: <IconClipboardCopy className="h-6 w-6 text-red-400" />,
     },
@@ -70,7 +71,7 @@ export default function WhatDoWeDo() {
       title: "Soporte Dedicado",
       description:
         "Estamos aquí para ayudarte antes, durante y después de tu compra. Tu satisfacción es nuestra misión.",
-      header: <Body imgUrl={luxoImage6}/>,
+      header: <Body imgUrl={luxoImage6} />,
       className: "md:col-span-1 hover:scale-[1.02] transition-all duration-300",
       icon: <IconFileBroken className="h-6 w-6 text-indigo-400" />,
     },
@@ -91,21 +92,20 @@ export default function WhatDoWeDo() {
           </p>
         </EffectScroll>
       </div>
-        <EffectScroll classname="animate-fadein duration-1000">
-      <BentoGrid className="gap-4">
-        {items.map((item, i) => (
-
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            className={item.className}
-            icon={item.icon}
+      <EffectScroll classname="animate-fadein duration-1000">
+        <BentoGrid className="gap-4">
+          {items.map((item, i) => (
+            <BentoGridItem
+              key={i}
+              title={item.title}
+              description={item.description}
+              header={item.header}
+              className={item.className}
+              icon={item.icon}
             />
           ))}
-      </BentoGrid>
-          </EffectScroll>
+        </BentoGrid>
+      </EffectScroll>
     </div>
   );
 }

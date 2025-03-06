@@ -2,13 +2,13 @@ import EffectScroll from "@/components/effectScroll";
 import BlurText from "@/components/reactbits/blur_text";
 import ShinyText from "@/components/reactbits/shiny_text";
 import { Link } from "react-router-dom";
-import background from "@/assets/luxoflex.png";
+import { logo } from "@/const";
 
 export const PoweringTeams = () => {
   return (
     <div className="bg-gradient-to-b from-black via-white/20 to-black text-white h-screen flex flex-col justify-center items-center text-center px-2 md:px-28 py-14 ">
       <EffectScroll classname="animate-fadeinbouncedown min-w min-h flex justify-center">
-                    <img src={background} className="h-20 md:h-36"/>
+                    <img src={logo} className="h-20 md:h-36"/>
                   </EffectScroll>
       <BlurText
         text="Impulsando las mejores empresas!!"

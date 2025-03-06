@@ -1,4 +1,4 @@
-import background from "@/assets/background.jpg";
+import { background } from "@/const";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { Materials } from "./Materials";
 import Products from "./Products/Products";

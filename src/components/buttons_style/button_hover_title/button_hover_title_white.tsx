@@ -1,7 +1,7 @@
 // import { useState, useEffect } from "react";
 // import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from "@/assets/luxoflex.png";
+import { logo } from "@/const";
 
 export default function Title() {
   // const [isActive, setIsActive] = useState(false);

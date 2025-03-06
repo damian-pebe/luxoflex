@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { TypeAnimation } from "react-type-animation";
-import background from "@/assets/background.jpg";
-import innovationImg from "@/assets/background.jpg";
-import experienceImg from "@/assets/background.jpg";
+import { TypeAnimation } from "react-type-animation";import { background } from "@/const";
+
+import {logo} from "@/const"; 
 import { WobbleCardDemo } from "./WobbleCard";
 
 const WhoWeAre = () => {
@@ -62,7 +61,7 @@ const WhoWeAre = () => {
                 <div className="animate-slideinup">
 
                 <ImageContainer >
-                  <StyledImage src={innovationImg} alt="Innovación"  />
+                  <StyledImage src={logo} alt="Innovación"  />
                 </ImageContainer>
                 </div>
               </TextImageGrid>
@@ -166,7 +165,7 @@ const WhoWeAre = () => {
 
             <FullWidthImageSection className="hover:cursor-cell">
               <StyledImage
-                src={experienceImg}
+                src={logo}
                 alt="Experiencia"
                 className="h-[50vh] md:h-[70vh] "
               />

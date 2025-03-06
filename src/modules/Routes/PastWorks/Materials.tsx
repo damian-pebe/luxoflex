@@ -4,8 +4,7 @@ import {
   CardContainer,
   CardItem,
 } from "@/components/aceternity/3d-card";
-import background from "@/assets/background.jpg";
-
+import { background } from "@/const";
 export function Materials() {
   return (
     <div className="bg-gradient-to-b  from-black via-zinc-900 to-black pt-20">

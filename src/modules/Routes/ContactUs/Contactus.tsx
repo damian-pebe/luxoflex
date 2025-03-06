@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import background from "@/assets/background.jpg";
+import { background } from "@/const";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import Socials from "../LandingPageComponents/LandingPageComponents/Contactanos/components/Socials";
 import { useForm } from "react-hook-form";
