@@ -6,7 +6,10 @@ import Preprensa from "./LandingPageComponents/Preprensa/Preprensa";
 import { Materials } from "../PastWorks/Materials";
 import Products from "../PastWorks/Products/Products";
 
+
+
 export default function LandingPage() {
+ 
   return (
     <div className="bg-[#09090B] overflow-hidden">
       <StartPage />
@@ -15,7 +18,7 @@ export default function LandingPage() {
       <Contactanos />
       <Preprensa />
       <Materials />
-      <Products />
+      {/* <Products /> */}
     </div>
   );
 }

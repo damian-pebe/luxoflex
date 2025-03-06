@@ -1,4 +1,3 @@
-import "./navbar.css";
 import { Sidebar } from "./options/sidebar";
 import Categories from "./options/categories";
 import Title from "@/components/buttons_style/button_hover_title/button_hover_title_white";
@@ -6,8 +5,9 @@ import Title from "@/components/buttons_style/button_hover_title/button_hover_ti
 function NavBar() {
   return (
     <>
-      <nav className="z-[100] group-hover:animate-bounce flex items-center gap-x-4 md:px-6 justify-between w-full navigation-bar pt-3">
-        <Title/>
+      <nav className="overflow-hidden absolute z-50 top-0 left-0 px-8 group-hover:animate-bounce flex flex-row gap-5  items-center justify-between w-full h-min navigation-bar ">
+        <Title />
+        {/* <ModeToggle /> */}
         <Categories />
         <div className="md:hidden block z-30">
           <Sidebar />
@@ -18,5 +18,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-

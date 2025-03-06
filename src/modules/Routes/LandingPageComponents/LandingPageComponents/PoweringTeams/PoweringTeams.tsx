@@ -2,16 +2,20 @@ import EffectScroll from "@/components/effectScroll";
 import BlurText from "@/components/reactbits/blur_text";
 import ShinyText from "@/components/reactbits/shiny_text";
 import { Link } from "react-router-dom";
+import background from "@/assets/luxoflex.png";
 
 export const PoweringTeams = () => {
   return (
-    <div className="bg-black text-white h-screen flex flex-col justify-center items-center text-center px-2 md:px-28 py-14 ">
+    <div className="bg-gradient-to-b from-black via-white/20 to-black text-white h-screen flex flex-col justify-center items-center text-center px-2 md:px-28 py-14 ">
+      <EffectScroll classname="animate-fadeinbouncedown min-w min-h flex justify-center">
+                    <img src={background} className="h-20 md:h-36"/>
+                  </EffectScroll>
       <BlurText
         text="Impulsando las mejores empresas!!"
         delay={250}
         animateBy="words"
         direction="bottom"
-        className="text-9xl mb-8 font-dancing text-[#FAFAFA] font-light drop-shadow-2xl shadow-white text-center justify-center"
+        className="text-6xl mb-8 font-vt323 text-[#FAFAFA] font-light  text-center justify-center"
       />
       <EffectScroll>
         <ShinyText
@@ -24,18 +28,18 @@ export const PoweringTeams = () => {
 
       <div className="flex justify-center gap-2 items-center flex-wrap">
         {teams.map((team, index) => (
-          <Link
-            to={team.link}
-            className="group rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-white/50 p-4"
-          >
-            <EffectScroll classname="animate-fadeinbouncedown">
-              <img
-                src={team.img}
-                alt={index.toString()}
-                className="h-8 mx-4 group-hover:scale-125 transition-transform duration-300"
-              />
-            </EffectScroll>
-          </Link>
+         <Link
+         to={team.link}
+         className="rounded-xl duration-1000 transition-all [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border-white/10 border p-4"
+       >
+         <EffectScroll classname="animate-fadeinbouncedown">
+           <img
+             src={team.img}
+             alt={index.toString()}
+             className="h-9 mx-4 hover:animate-wiggle"
+           />
+         </EffectScroll>
+       </Link>
         ))}
       </div>
     </div>

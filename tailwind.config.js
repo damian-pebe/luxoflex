@@ -835,6 +835,9 @@ export default {
           },
         },
         wiggle: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
           "5%": {
             transform: "rotate(-5deg)",
           },
@@ -847,6 +850,9 @@ export default {
           "80%": {
             transform: "rotate(5deg)",
           },
+          "100%": {
+            transform: "rotate(0deg)",
+          }
         },
         flip: {
           "0%": {
