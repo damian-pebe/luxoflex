@@ -150,12 +150,23 @@ export const ProductCard = ({
           src={product.thumbnail}
           height="600"
           width="600" 
-          className="object-cover object-left-top absolute h-full w-full inset-0 hover:opacity-60 transition-all duration-1000"
+          className=" hover:cursor-crosshair object-cover object-left-top absolute h-full w-full inset-0 hover:opacity-60 transition-all duration-1000"
           alt={product.title}
+          style={{
+            transform: "perspective(5000px) rotateY(0deg)",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform =
+              "perspective(5000px) rotateY(20deg) rotateX(20deg) scale(1.15)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform =
+              "perspective(5000px) rotateY(0deg)";
+          }}
         />
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0  bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <h2 className="absolute top-4 right-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
       </h2>
     </motion.div>

@@ -46,14 +46,27 @@ export default function StartPage() {
         />
         <div className="absolute inset-0 flex justify-center items-center px-4">
           <div className="flex flex-col items-center gap-10 justify-center h-[40rem]">
-            
-          <EffectScroll classname="animate-fadeinbouncedown min-w min-h flex justify-center">
-              <img src={logo} className="h-20 md:h-36"/>
+            <EffectScroll classname="[mask-image:radial-gradient(ellipse_at_center,white,transparent)] border-white/30 rounded-lg border-4 p-1 w-32 md:w-48 animate-fadeinbouncedown min-w min-h flex justify-center">
+              <img
+                className=" h-20 md:h-36 transition-transform duration-1000 hover:cursor-crosshair"
+                src={logo}
+                style={{
+                  transform: "perspective(5000px) rotateY(0deg)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform =
+                    "perspective(5000px) rotateY(40deg) rotateX(40deg) scale(1.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform =
+                    "perspective(5000px) rotateY(0deg)";
+                }}
+              />
             </EffectScroll>
             <EffectScroll classname="animate-fadeinbounceup ">
               <TypewriterEffect words={words2} />
             </EffectScroll>
-            
+
             <EffectScroll classname="animate-fadeinbounceleft">
               <div className="text-center text-4xl md:text-5xl mx-auto font-wire font-extrabold  text-foreground animate-fadeinbounceleft">
                 Ponemos alma y <FlipWords words={words} /> en cada etiqueta.
