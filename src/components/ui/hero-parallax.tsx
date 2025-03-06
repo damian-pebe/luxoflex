@@ -104,7 +104,7 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto pt-40 px-4 w-full left-0 top-0 group z-10 ">
-      <EffectScroll classname="animate-fadeinbouncedown">
+      <EffectScroll classname="animate-fadeinbouncedown duration-1000">
 
       <h1 className="text-4xl md:text-7xl text-white font-playfair font-light italic ">
         Para Hacer que Tu Marca Destaque <br />{" "}
@@ -114,7 +114,7 @@ export const Header = () => {
       </h1>
       </EffectScroll>
       
-      <EffectScroll classname="animate-fadeinbounceup">
+      <EffectScroll classname="animate-fadeinbounceup duration-1000">
 
       <h1 className="max-w-3xl text-base md:text-3xl mt-8 text-white font-poppins ">
         En Luxoflex, creamos etiquetas autoadheribles personalizadas de alta
