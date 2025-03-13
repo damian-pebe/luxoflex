@@ -15,7 +15,7 @@ export const PoweringTeams = () => {
         delay={250}
         animateBy="words"
         direction="bottom"
-        className="text-6xl mb-8 font-vt323 text-[#FAFAFA] font-light  text-center justify-center"
+        className="text-5xl md:text-8xl mb-8 font-dancing text-[#FAFAFA]  text-center justify-center"
       />
       <EffectScroll>
         <ShinyText

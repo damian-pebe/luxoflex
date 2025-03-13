@@ -57,7 +57,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[250vh] pt-20 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[200vh] pt-20 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -107,7 +107,7 @@ export const Header = () => {
       <EffectScroll classname="animate-fadeinbouncedown duration-1000">
 
       <h1 className="text-4xl md:text-7xl text-white font-playfair font-light italic ">
-        Para Hacer que Tu Marca Destaque <br />{" "}
+        Para Hacer que Tu Marca Destaque <br />
         <div className="font-audiowide text-4xl pt-1 md:text-7xl">
           Confía en Luxoflex
         </div>
@@ -150,19 +150,9 @@ export const ProductCard = ({
           src={product.thumbnail}
           height="600"
           width="600" 
-          className=" hover:cursor-crosshair object-cover object-left-top absolute h-full w-full inset-0 hover:opacity-60 transition-all duration-1000"
+          className="  object-cover object-left-top absolute h-full w-full inset-0  transition-all duration-1000"
           alt={product.title}
-          style={{
-            transform: "perspective(5000px) rotateY(0deg)",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform =
-              "perspective(5000px) rotateY(20deg) rotateX(20deg) scale(1.15)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform =
-              "perspective(5000px) rotateY(0deg)";
-          }}
+          
         />
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0  bg-black pointer-events-none"></div>

@@ -1,101 +1,115 @@
 "use client";
-
+import { background,
+    logo,
+    recepcion_disenios,
+    revision_coreccion,
+    final_preprensa,
+    happy_customer,
+    grabados,
+    luxoImage1,
+    luxoImage2,
+    luxoImage3,
+    luxoImage4,
+    luxoImage5,
+    luxoImage6,
+    customer1,
+    customer2 } from "@/const";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 
 export function ParallaxLuxoflex() {
   const products = [
     {
-      title: "Moonbeam",
+      title:"title",
       link: "https://gomoonbeam.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=1",
+      background,
     },
     {
-      title: "Cursor",
+      title:"title",
       link: "https://cursor.so",
       thumbnail:
-        "https://picsum.photos/600/400?random=2",
+      logo,
     },
     {
-      title: "Rogue",
+      title:"title",
       link: "https://userogue.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=3",
+      recepcion_disenios,
     },
 
     {
-      title: "Editorially",
+      title:"title",
       link: "https://editorially.org",
       thumbnail:
-        "https://picsum.photos/600/400?random=4",
+      revision_coreccion,
     },
     {
-      title: "Editrix AI",
+      title:"title",
       link: "https://editrix.ai",
       thumbnail:
-        "https://picsum.photos/600/400?random=5",
+      final_preprensa
     },
     {
-      title: "Pixel Perfect",
+      title:"title",
       link: "https://app.pixelperfect.quest",
       thumbnail:
-        "https://picsum.photos/600/400?random=6",
+      happy_customer
     },
 
     {
-      title: "Algochurn",
+      title:"title",
       link: "https://algochurn.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=7",
+      grabados
     },
     {
-      title: "Aceternity UI",
+      title:"title",
       link: "https://ui.aceternity.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=8",
+      luxoImage1
     },
     {
-      title: "Tailwind Master Kit",
+      title:"title",
       link: "https://tailwindmasterkit.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=9",
+      luxoImage2
     },
     {
-      title: "SmartBridge",
+      title:"title",
       link: "https://smartbridgetech.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=10",
+      luxoImage3
     },
     {
-      title: "Renderwork Studio",
+      title:"title",
       link: "https://renderwork.studio",
       thumbnail:
-        "https://picsum.photos/600/400?random=11",
+      luxoImage4
     },
 
     {
-      title: "Creme Digital",
+      title:"title",
       link: "https://cremedigital.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=12",
+      luxoImage5
     },
     {
-      title: "Golden Bells Academy",
+      title:"title",
       link: "https://goldenbellsacademy.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=13",
+      luxoImage6
     },
     {
-      title: "Invoker Labs",
+      title:"title",
       link: "https://invoker.lol",
       thumbnail:
-        "https://picsum.photos/600/400?random=14",
+      customer1
     },
     {
-      title: "E Free Invoice",
+      title:"title",
       link: "https://efreeinvoice.com",
       thumbnail:
-        "https://picsum.photos/600/400?random=15",
+      customer2
     },
   ];
   return (

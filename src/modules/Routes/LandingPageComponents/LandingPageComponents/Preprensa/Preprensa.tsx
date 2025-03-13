@@ -1,9 +1,17 @@
 import Carousel from "./Carousel";
 import { Layers, CheckCircle, Upload, ThumbsUp, Printer } from "lucide-react";
 import { CarouselItem } from "./models/Models";
-import { recepcion_disenios, revision_coreccion, final_preprensa, happy_customer, grabados } from "@/const";
+import {
+  recepcion_disenios,
+  revision_coreccion,
+  final_preprensa,
+  happy_customer,
+  grabados,
+  logo,
+} from "@/const";
 import EffectScroll from "@/components/effectScroll";
 import FlowingMenu from "@/components/reactbits/flowing_menu";
+import { Button } from "@/components/ui/button";
 
 const PREPRINTER_BENEFITS: CarouselItem[] = [
   {
@@ -48,7 +56,6 @@ const PREPRINTER_BENEFITS: CarouselItem[] = [
   },
 ];
 
-
 const demoItems = [
   {
     text: "Optimización de Color",
@@ -75,17 +82,18 @@ export default function Preprensa() {
         <div className="container mx-auto py-20 px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 space-y-8 ">
-                <h1 className="text-center text-6xl md:text-8xl font-dancing font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-600 mb-3">
-                  Preprensa Digital
-                </h1>
-                <div className="h-1 w-full bg-gradient-to-r from-pink-500 to-blue-500 rounded-full"></div>
+              <h1 className="text-center text-6xl md:text-8xl font-dancing font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-600 mb-3">
+                Preprensa Digital
+              </h1>
+              <div className="h-1 w-full bg-gradient-to-r from-pink-500 to-blue-500 rounded-full"></div>
 
               <p className="text-xl md:text-2xl leading-relaxed font-rajdhani text-gray-200">
                 En <span className="font-bold text-blue-400">LUXOFLEX</span>,
                 nuestra preprensa digital garantiza que cada proyecto de
                 impresión alcance su máximo potencial. Utilizamos tecnología
                 avanzada para optimizar archivos, ajustar colores y asegurar que
-                cada detalle esté perfectamente preparado antes de la impresión de grabados.
+                cada detalle esté perfectamente preparado antes de la impresión
+                de grabados.
               </p>
 
               <ul className="space-y-4">
@@ -108,15 +116,72 @@ export default function Preprensa() {
               </ul>
             </div>
 
-            <div className="flex-1 relative">
+            <div className="flex-1 relative gap-6">
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-pink-400 rounded-lg opacity-30 blur-lg"></div>
-              <img
-                src={grabados}
-                className="relative object-cover w-full h-full opacity-90 bg-black rounded-tl-3xl rounded-tr-sm rounded-bl-3xl rounded-br-3xl shadow-2xl transform transition-transform duration-500 hover:scale-105"
-                alt="Preprensa Digital"
-              />
+
+              <div>
+                <img
+                  src={grabados}
+                  className="relative object-cover w-full h-full opacity-90 bg-black rounded-tl-3xl rounded-tr-sm rounded-bl-3xl rounded-br-3xl shadow-2xl transform transition-all duration-1000"
+                  alt="Preprensa Digital"
+                />
+                <div className="md:hidden absolute bottom-0 right-0 p-4 bg-gradient-to-r from-blue-900/90 to-purple-900/90 rounded-2xl text-white backdrop-blur-md shadow-lg border border-white/10 transform transition-all duration-300">
+                  <div className="space-y-3"></div>
+                  <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    ¿Necesitas ayuda con tu diseño?
+                  </h3>
+                  <div className="flex items-center space-x-2">
+                    <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                      <span className="text-lg font-bold">TP</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-blue-200">
+                        Tomas Perez Hernandez
+                      </p>
+                      <p className="text-sm text-blue-100/80">
+                        +15 años de experiencia
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 pt-2">
+                    <div className="flex space-x-4">
+                      <i
+                        onClick={() => (window.location.href = "tel:+52")}
+                        className="hover:cursor-pointer bi bi-telephone-outbound text-xl transition-all duration-300 text-white/90 hover:text-teal-400 hover:scale-110"
+                      />
+                      <i
+                        onClick={() =>
+                          (window.location.href = "https://wa.me/+52")
+                        }
+                        className="hover:cursor-pointer bi bi-whatsapp text-xl transition-all duration-300 text-white/90 hover:text-green-400 hover:scale-110"
+                      />
+                      <i
+                        onClick={() =>
+                          (window.location.href = "user.hrefFacebook")
+                        }
+                        className="hover:cursor-pointer bi bi-facebook text-xl transition-all duration-300 text-white/90 hover:text-blue-400 hover:scale-110"
+                      />
+                      <i
+                        onClick={() =>
+                          (window.location.href = "user.hrefInstagram")
+                        }
+                        className="hover:cursor-pointer bi bi-instagram text-xl transition-all duration-300 text-white/90 hover:text-pink-400 hover:scale-110"
+                      />
+                    </div>
+                    <Button
+                      variant="default"
+                      className=" hover:bg-black bg-white rounded-[8px] hover:text-white text-black font-medium px-4 py-2 transition-all duration-300 shadow-md hover:shadow-lg"
+                      onClick={() => (window.location.href = "tel:+52")}
+                    >
+                      Contactame
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
+            <Card />
         </div>
 
         <EffectScroll classname="animate-fadein duration-1000">
@@ -171,3 +236,41 @@ export default function Preprensa() {
     </div>
   );
 }
+
+const Card = () => {
+  return (
+    <div className="flex flex-col w-min justify-center items-center gap-5 p-5 bg-gray-800 rounded-lg">
+      <div className="flex justify-center w-44 h-44 h-34 p-5 items-center border-gray-500 border rounded-lg  duration-700">
+      <img
+            className="object-cover w-full h-full hover:scale-105 duration-300 fill-white cursor-pointer"
+          src={logo}
+          />
+      </div>
+      <div className=" max-w-sm h-auto space-y-3">
+        <div className="flex justify-center items-center">
+          <h2 className="text-white text-2xl text-center justify-center items-center font-bold tracking-widest">
+            Tomas Perez
+          </h2>
+         
+        </div>
+        <div className="flex justify-center items-center space-x-2">
+          <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+            <span className="text-lg p-2 font-bold">TP</span>
+          </div>
+          <div className="text-center">
+            <p className="font-semibold text-center text-blue-200">
+              Necesitas ayuda con tus diseños?
+            </p>
+            <p className="text-sm text-blue-100/80">+15 años de experiencia</p>
+          </div>
+        </div>
+        <div className="flex justify-between flex-row items-center my-2 font-poppins">
+          <Button className="">Contactame</Button>
+          <Button variant="secondary" className="bg-blue-700 hover:bg-blue-500">
+            Contactanos
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};

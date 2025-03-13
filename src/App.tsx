@@ -13,9 +13,8 @@ import NotFoundPage from "./404";
 function App() {
   return (
     <>
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ThemeProvider storageKey="vite-ui-theme">
         <Router>
-         
           <Navbar />
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -28,7 +27,6 @@ function App() {
             <Route path="*" element={<NotFoundPage />} /> 
           </Routes>
           <Footer />
-          {/* <FloatButton.BackTop /> */}
         </Router>
       </ThemeProvider>
       <Toaster />
