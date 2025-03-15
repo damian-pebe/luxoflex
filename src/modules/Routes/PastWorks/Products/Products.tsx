@@ -1,5 +1,8 @@
+import { Button } from "@/components/ui/button";
 import { WavyTitle } from "./Components/WavyTitle";
 import { HoverEffect } from "@/components/aceternity/card-hover-effect";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 export default function Products() {
   return (
@@ -12,9 +15,51 @@ export default function Products() {
 }
 
 export function CardHoverEffectDemo() {
+  
+  const [sliceVariable, setSliceVariable] = useState(3);
+  const [open, setOpen] = useState<boolean>(true);
+  
   return (
     <div className="max-w-5xl mx-auto px-8">
-      <HoverEffect items={projects} />
+      <HoverEffect items={projects.slice(0,sliceVariable)} />
+      {open && (
+              <div className="group flex justify-center transition-all duration-1000  ">
+                <Button
+                  className="font-poppins text-3xl text-center"
+                  variant="link"
+                  onClick={() => {
+                    setOpen((prev) => !prev);
+                    setSliceVariable(projects.length);
+                  }}
+                >
+                  View More
+                </Button>
+                <ChevronDown
+                  className="group-hover:rotate-180 transition-all duration-1000"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            )}
+            {!open && (
+              <div className="group flex justify-center transition-all duration-1000  ">
+                <Button
+                  className="font-poppins text-3xl text-center"
+                  variant="link"
+                  onClick={() => {
+                    setOpen((prev) => !prev);
+                    setSliceVariable(3);
+                  }}
+                >
+                  View Less
+                </Button>
+                <ChevronDown
+                  className="group-hover:rotate-0 rotate-180 transition-all duration-1000"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            )}
     </div>
   );
 }
@@ -28,7 +73,7 @@ const projects = [
   {
     title: "Bopp Blanco",
     description:
-      "Película de polipropileno biorientado de color blanco, proporciona una excelente base para impresión y es ampliamente utilizada en etiquetas autoadhesivas.",
+      "Película de polipropileno biorientado de color blanco, proporciona una excelente base para impresión, es utilizada en etiquetas autoadhesivas.",
     image: "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//bopp_blanco.jpg",
   },
   {
@@ -52,7 +97,7 @@ const projects = [
   {
     title: "Pelicula de polipropileno sellable",
     description:
-      "Material especialmente diseñado para crear un sello hermético cuando se aplica calor, ideal para envases y empaques que requieren cierre.",
+      "Material especialmente diseñado para crear un sello hermético cuando se aplica calor.",
     image: "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//PELICULA_DE_POLIPROPILENO_SELLABLE.jpg",
   },
   {
@@ -70,7 +115,7 @@ const projects = [
   {
     title: "Suajadas Termica",
     description:
-      "Etiquetas troqueladas en papel térmico que cambian de color con la temperatura, ideales para aplicaciones que requieren sensibilidad térmica.",
+      "Etiquetas troqueladas en papel térmico que cambian de color con la temperatura, ideales para sensibilidad térmica.",
     image: "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//suajada_termica.jpg",
   },
 ];

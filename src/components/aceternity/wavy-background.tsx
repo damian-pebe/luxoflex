@@ -49,12 +49,12 @@ export const WavyBackground = ({
   const init = () => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
-    w = ctx.canvas.width =  window.innerWidth * 0.99;
+    w = ctx.canvas.width =  window.innerWidth * 0.96;
     h = ctx.canvas.height = window.innerHeight * 1;
     ctx.filter = `blur(${blur}px)`;
     nt = 0;
     window.onresize = function () {
-        w = ctx.canvas.width =  window.innerWidth * 0.99;
+        w = ctx.canvas.width =  window.innerWidth * 0.98;
         h = ctx.canvas.height = window.innerHeight * 1;
       ctx.filter = `blur(${blur}px)`;
     };
@@ -112,7 +112,7 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "h-screen flex flex-col items-center justify-center",
+        "h-screen flex flex-col items-center justify-center overflow-hidden",
         containerClassName
       )}
     >

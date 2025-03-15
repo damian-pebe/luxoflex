@@ -9,15 +9,16 @@ const SPRING_OPTIONS = { type: "spring", stiffness: 300, damping: 30 };
 
 export default function Carousel({
   items = [],
-  baseWidth = 300,
   autoplay = false,
   autoplayDelay = 3000,
   pauseOnHover = false,
   loop = false,
   round = false,
-}: CarouselProps): JSX.Element {
+}: Omit<CarouselProps, 'baseWidth'>): JSX.Element {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
   const containerPadding = 16;
-  const itemWidth = baseWidth - containerPadding * 2;
+  const itemWidth = containerWidth - containerPadding * 2;
   const trackItemOffset = itemWidth + GAP;
 
   const carouselItems = loop ? [...items, items[0]] : items;
@@ -26,7 +27,23 @@ export default function Carousel({
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isResetting, setIsResetting] = useState<boolean>(false);
 
-  const containerRef = useRef<HTMLDivElement>(null);
+  // Add resize observer to handle container width changes
+  useEffect(() => {
+    if (containerRef.current) {
+      const updateWidth = () => {
+        if (containerRef.current) {
+          setContainerWidth(containerRef.current.offsetWidth);
+        }
+      };
+
+      const resizeObserver = new ResizeObserver(updateWidth);
+      resizeObserver.observe(containerRef.current);
+      updateWidth(); // Initial width
+
+      return () => resizeObserver.disconnect();
+    }
+  }, []);
+
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
       const container = containerRef.current;
@@ -46,7 +63,7 @@ export default function Carousel({
       const timer = setInterval(() => {
         setCurrentIndex((prev) => {
           if (prev === items.length - 1 && loop) {
-            return prev + 1; // Animate to clone.
+            return prev + 1;
           }
           if (prev === carouselItems.length - 1) {
             return loop ? 0 : prev;
@@ -110,15 +127,12 @@ export default function Carousel({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden p-4 bg-black${
+      className={`relative overflow-hidden p-4 bg-black w-full${
         round
-          ? "rounded-full border border-white"
-          : "rounded-[24px] border border-[#222]"
+          ? " rounded-full border border-white"
+          : " rounded-[24px] border border-[#222]"
       }`}
-      style={{
-        width: `${baseWidth}px`,
-        ...(round && { height: `${baseWidth}px` }),
-      }}
+      style={round ? { aspectRatio: "1/1" } : undefined}
     >
       <motion.div
         className="flex"
@@ -165,7 +179,8 @@ export default function Carousel({
               <div className="absolute -z-10 top-0 left-0 w-full h-full bg-black">
                 <img
                   src={item.image}
-                  className="object-cover w-full h-full opacity-60 "
+                  className="object-cover w-full h-full opacity-60"
+                  alt=""
                 />
               </div>
               <div className="absolute z-0 top-0 left-0 w-full h-full"></div>

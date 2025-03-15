@@ -45,10 +45,10 @@ export default function StartPage() {
           src={background}
         />
         <div className="absolute inset-0 flex justify-center items-center px-4">
-          <div className="flex flex-col items-center gap-10 justify-center h-[40rem]">
-            <EffectScroll classname="[mask-image:radial-gradient(ellipse_at_center,white,transparent)] border-white/30 rounded-lg border-4 p-1 w-32 md:w-48 animate-fadeinbouncedown min-w min-h flex justify-center">
+          <div className=" flex flex-col items-center gap-10 justify-center h-[40rem]">
+            <EffectScroll classname=" min-w-min animate-fadeinbouncedown flex justify-center">
               <img
-                className=" h-20 md:h-36 transition-transform duration-1000 hover:cursor-crosshair"
+                className="  h-20 md:h-36 transition-transform duration-1000 hover:cursor-crosshair"
                 src={logo}
                 style={{
                   transform: "perspective(5000px) rotateY(0deg)",

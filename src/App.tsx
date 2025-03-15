@@ -12,7 +12,7 @@ import PastWorks from "./modules/Routes/PastWorks/PastWorks";
 import NotFoundPage from "./404";
 function App() {
   return (
-    <>
+    <div className="overflow-hidden">
       <ThemeProvider storageKey="vite-ui-theme">
         <Router>
           <Navbar />
@@ -30,7 +30,7 @@ function App() {
         </Router>
       </ThemeProvider>
       <Toaster />
-    </>
+    </div>
   );
 }
 

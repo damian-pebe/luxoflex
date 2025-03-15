@@ -26,7 +26,7 @@ export function Sidebar() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <div className="pt-5 pr-5 z-50">
+        <div className="pt-5 pr-5 z-50 hover:cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

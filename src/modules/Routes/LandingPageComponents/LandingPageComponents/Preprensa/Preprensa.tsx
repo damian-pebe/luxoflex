@@ -1,5 +1,5 @@
 import Carousel from "./Carousel";
-import { Layers, CheckCircle, Upload, ThumbsUp, Printer } from "lucide-react";
+import { Layers, CheckCircle, Upload, ThumbsUp, Printer, Phone } from "lucide-react";
 import { CarouselItem } from "./models/Models";
 import {
   recepcion_disenios,
@@ -12,6 +12,7 @@ import {
 import EffectScroll from "@/components/effectScroll";
 import FlowingMenu from "@/components/reactbits/flowing_menu";
 import { Button } from "@/components/ui/button";
+import { Whatsapp } from "react-bootstrap-icons";
 
 const PREPRINTER_BENEFITS: CarouselItem[] = [
   {
@@ -80,7 +81,7 @@ export default function Preprensa() {
     <div>
       <div className="w-full px-1 md:px-32 min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
         <div className="container mx-auto py-20 px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="pb-10 flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 space-y-8 ">
               <h1 className="text-center text-6xl md:text-8xl font-dancing font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-600 mb-3">
                 Preprensa Digital
@@ -116,7 +117,7 @@ export default function Preprensa() {
               </ul>
             </div>
 
-            <div className="flex-1 relative gap-6">
+            <div className=" flex-1 relative gap-6">
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-pink-400 rounded-lg opacity-30 blur-lg"></div>
 
               <div>
@@ -125,8 +126,7 @@ export default function Preprensa() {
                   className="relative object-cover w-full h-full opacity-90 bg-black rounded-tl-3xl rounded-tr-sm rounded-bl-3xl rounded-br-3xl shadow-2xl transform transition-all duration-1000"
                   alt="Preprensa Digital"
                 />
-                <div className="md:hidden absolute bottom-0 right-0 p-4 bg-gradient-to-r from-blue-900/90 to-purple-900/90 rounded-2xl text-white backdrop-blur-md shadow-lg border border-white/10 transform transition-all duration-300">
-                  <div className="space-y-3"></div>
+                <div className="hidden sm:block absolute bottom-0 right-0 p-4 bg-gradient-to-r from-blue-900/90 to-purple-900/90 rounded-2xl text-white backdrop-blur-md shadow-lg border border-white/10 transform transition-all duration-300">
                   <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                     ¿Necesitas ayuda con tu diseño?
                   </h3>
@@ -191,21 +191,8 @@ export default function Preprensa() {
                 Beneficios de Nuestra Preprensa
               </h2>
 
-              <div className="hidden lg:flex justify-center">
+                          <div className=" flex justify-center">
                 <Carousel
-                  baseWidth={1200}
-                  autoplay={true}
-                  autoplayDelay={2500}
-                  pauseOnHover={true}
-                  loop={true}
-                  round={false}
-                  items={PREPRINTER_BENEFITS}
-                />
-              </div>
-
-              <div className="lg:hidden flex justify-center">
-                <Carousel
-                  baseWidth={450}
                   autoplay={true}
                   autoplayDelay={3000}
                   pauseOnHover={true}
@@ -239,10 +226,10 @@ export default function Preprensa() {
 
 const Card = () => {
   return (
-    <div className="flex flex-col w-min justify-center items-center gap-5 p-5 bg-gray-800 rounded-lg">
-      <div className="flex justify-center w-44 h-44 h-34 p-5 items-center border-gray-500 border rounded-lg  duration-700">
+    <div className="font-poppins sm:hidden flex flex-col w-full md:w-min justify-center items-center gap-5 p-5 bg-gray-800 rounded-lg">
+      <div className="flex justify-center w-52 h-52S items-center rounded-lg  duration-700">
       <img
-            className="object-cover w-full h-full hover:scale-105 duration-300 fill-white cursor-pointer"
+            className=" w-44 h-44 hover:scale-105 duration-300 fill-white cursor-pointer"
           src={logo}
           />
       </div>
@@ -253,21 +240,24 @@ const Card = () => {
           </h2>
          
         </div>
-        <div className="flex justify-center items-center space-x-2">
-          <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
-            <span className="text-lg p-2 font-bold">TP</span>
+        <div className="flex justify-end items-start space-x-2">
+          <div className="hover:cursor-pointer h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+            <span className="text-2xl font-bold">TP</span>
           </div>
-          <div className="text-center">
-            <p className="font-semibold text-center text-blue-200">
+          <div className="text-right">
+            <p className="font-semibold text-right text-blue-200">
               Necesitas ayuda con tus diseños?
             </p>
             <p className="text-sm text-blue-100/80">+15 años de experiencia</p>
           </div>
         </div>
-        <div className="flex justify-between flex-row items-center my-2 font-poppins">
-          <Button className="">Contactame</Button>
-          <Button variant="secondary" className="bg-blue-700 hover:bg-blue-500">
-            Contactanos
+        <div className="flex justify-between flex-row items-center gap-2 my-2 font-poppins">
+          <Button className="w-full">Contactanos</Button>
+          <Button variant="secondary" className="w-min bg-blue-500 hover:bg-blue-600">
+            <Phone/>
+          </Button>
+          <Button variant="secondary" className="w-min bg-green-500 hover:bg-green-600">
+            <Whatsapp/>
           </Button>
         </div>
       </div>
