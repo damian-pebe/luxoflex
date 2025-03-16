@@ -1,45 +1,34 @@
+import { WavyBackground } from "@/components/aceternity/wavy-background";
 import EffectScroll from "@/components/effectScroll";
-import BlurText from "@/components/reactbits/blur_text";
-import ShinyText from "@/components/reactbits/shiny_text";
 import { Link } from "react-router-dom";
-import { logo } from "@/const";
 
 export const PoweringTeams = () => {
   return (
-    <div className="bg-gradient-to-b from-black via-white/20 to-black text-white h-screen flex flex-col justify-center items-center text-center px-2 md:px-28 py-14 ">
-      <EffectScroll classname="animate-fadeinbouncedown min-w min-h flex justify-center">
-                    <img src={logo} className="h-20 md:h-36"/>
-                  </EffectScroll>
-      <BlurText
-        text="Impulsando las mejores empresas!!"
-        delay={250}
-        animateBy="words"
-        direction="bottom"
-        className="text-5xl md:text-8xl mb-8 font-dancing text-[#FAFAFA]  text-center justify-center"
-      />
-      <EffectScroll>
-        <ShinyText
-          text="Desde startups de nueva generación hasta empresas consolidadas."
-          disabled={false}
-          speed={1}
-          className="custom-class text-2xl mb-8 text-muted-foreground font-playfair animate-pulse"
-        />
-      </EffectScroll>
+    <div className="bg-black flex flex-col items-center justify-center overflow-hidden pb-52">
+      <WavyBackground className="max-w-4xl pb-40 overflow-x-hidden">
+        <p className="text-xl md:text-4xl font-bold inter-var uppercase text-center text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-white to-stone-400 font-safira">
+        Impulsando las mejores marcas con etiquetas de calidad
+        </p>
+        <p className="text-sm mt-4 text-white font-normal uppercase font-rajdhani tracking-widest inter-var text-center">
+        Desde emprendimientos innovadores hasta grandes industrias
+        </p>
+      </WavyBackground>
+      <div className="z-50 mt-[-250px] left-0 w-full h-full"></div>
 
       <div className="flex justify-center gap-2 items-center flex-wrap">
         {teams.map((team, index) => (
-         <Link
-         to={team.link}
-         className="rounded-xl duration-1000 transition-all [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border-white/10 border p-4"
-       >
-         <EffectScroll classname="animate-fadeinbouncedown">
-           <img
-             src={team.img}
-             alt={index.toString()}
-             className="h-9 mx-4 hover:animate-wiggle"
-           />
-         </EffectScroll>
-       </Link>
+          <Link
+            to={team.link}
+            className="rounded-xl duration-1000 transition-all [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border-white/10 border p-4"
+          >
+            <EffectScroll classname="animate-fadeinbouncedown">
+              <img
+                src={team.img}
+                alt={index.toString()}
+                className="h-9 mx-4 hover:animate-wiggle"
+              />
+            </EffectScroll>
+          </Link>
         ))}
       </div>
     </div>
