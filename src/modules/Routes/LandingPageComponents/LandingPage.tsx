@@ -5,11 +5,13 @@ import { PoweringTeams } from "./LandingPageComponents/PoweringTeams/PoweringTea
 import Preprensa from "./LandingPageComponents/Preprensa/Preprensa";
 import { Materials } from "../PastWorks/Materials";
 import Products from "../PastWorks/Products/Products";
+import Services from "./Services/Services";
 export default function LandingPage() {
  
   return (
     <div className="bg-[#09090B] overflow-hidden">
       <StartPage />
+      <Services/>
       <ParallaxLuxoflex />
       <PoweringTeams />
       <Contactanos />
