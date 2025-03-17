@@ -14,7 +14,6 @@ import { background } from "@/const";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import Socials from "../LandingPageComponents/LandingPageComponents/Contactanos/components/Socials";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -36,31 +35,16 @@ import {
   Globe,
 } from "react-bootstrap-icons";
 import TrueFocus from "@/components/reactbits/true_focus";
-import z from "node_modules/zod/lib";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "name must be at least 2 characters.",
-  }),
-  email: z.string().min(2, {
-    message: "name must be at least 2 characters.",
-  }),
-  phone: z.string().min(2, {
-    message: "name must be at least 2 characters.",
-  }),
-  description: z
-    .string()
-    .min(10, { message: "La descripción es demasiado corta." }),
-});
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  description: string;
+}
+
 
 export default function ContactUs() {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   subject: "",
-  //   message: "",
-  // })
-
   const enterpriseInfo = {
     address:
       "C. Pedro García Conde 282 Col. Villa Hermosa, Guadalajara, Jalisco, Mexico",
@@ -69,8 +53,7 @@ export default function ContactUs() {
     schedule: "Lunes a Domingo: 08:00 - 20:00",
   };
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<FormData>({
     defaultValues: {
       name: "",
       email: "",
@@ -78,8 +61,8 @@ export default function ContactUs() {
       description: "",
     },
   });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  
+  function onSubmit(values: FormData) {
     console.log(values);
     toast({
       title: "¡Éxito!",
@@ -87,7 +70,6 @@ export default function ContactUs() {
         "Tu mensaje ha sido enviado. Nos pondremos en contacto pronto.",
     });
   }
-
   const words2 = [
     {
       text: "Estamos",
