@@ -1,5 +1,12 @@
 import Carousel from "./Carousel";
-import { Layers, CheckCircle, Upload, ThumbsUp, Printer, Phone } from "lucide-react";
+import {
+  Layers,
+  CheckCircle,
+  Upload,
+  ThumbsUp,
+  Printer,
+  Phone,
+} from "lucide-react";
 import { CarouselItem } from "./models/Models";
 import {
   recepcion_disenios,
@@ -135,9 +142,7 @@ export default function Preprensa() {
                       <span className="text-lg font-bold">TP</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-blue-200">
-                        Tomas Perez Hernandez
-                      </p>
+                      <p className="font-semibold text-blue-200">Tomas Perez</p>
                       <p className="text-sm text-blue-100/80">
                         +15 años de experiencia
                       </p>
@@ -179,9 +184,8 @@ export default function Preprensa() {
                 </div>
               </div>
             </div>
-
           </div>
-            <Card />
+          <Card />
         </div>
 
         <EffectScroll classname="animate-fadein duration-1000">
@@ -191,7 +195,7 @@ export default function Preprensa() {
                 Beneficios de Nuestra Preprensa
               </h2>
 
-                          <div className=" flex justify-center">
+              <div className=" flex justify-center">
                 <Carousel
                   autoplay={true}
                   autoplayDelay={3000}
@@ -217,7 +221,6 @@ export default function Preprensa() {
         </div>
       </div>
       <div className="relative h-[400px] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <FlowingMenu items={demoItems} />
       </div>
     </div>
@@ -228,17 +231,16 @@ const Card = () => {
   return (
     <div className="font-poppins sm:hidden flex flex-col w-full md:w-min justify-center items-center gap-5 p-5 bg-gray-800 rounded-lg">
       <div className="flex justify-center w-52 h-52S items-center rounded-lg  duration-700">
-      <img
-            className=" w-44 h-44 hover:scale-105 duration-300 fill-white cursor-pointer"
+        <img
+          className=" w-44 h-44 hover:scale-105 duration-300 fill-white cursor-pointer"
           src={logo}
-          />
+        />
       </div>
       <div className=" max-w-sm h-auto space-y-3">
         <div className="flex justify-center items-center">
           <h2 className="text-white text-2xl text-center justify-center items-center font-bold tracking-widest">
             Tomas Perez
           </h2>
-         
         </div>
         <div className="flex justify-end items-start space-x-2">
           <div className="hover:cursor-pointer h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
@@ -253,11 +255,17 @@ const Card = () => {
         </div>
         <div className="flex justify-between flex-row items-center gap-2 my-2 font-poppins">
           <Button className="w-full">Contactanos</Button>
-          <Button variant="secondary" className="w-min bg-blue-500 hover:bg-blue-600">
-            <Phone/>
+          <Button
+            variant="secondary"
+            className="w-min bg-blue-500 hover:bg-blue-600"
+          >
+            <Phone />
           </Button>
-          <Button variant="secondary" className="w-min bg-green-500 hover:bg-green-600">
-            <Whatsapp/>
+          <Button
+            variant="secondary"
+            className="w-min bg-green-500 hover:bg-green-600"
+          >
+            <Whatsapp />
           </Button>
         </div>
       </div>
