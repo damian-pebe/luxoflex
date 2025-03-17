@@ -2,7 +2,7 @@ import { DotsThreeOutline } from "@phosphor-icons/react";
 
 function ThreeDotsBlack() {
   return (
-    <div className="w-full">
+    <div className="w-full z-50">
       <DotsThreeOutline
         className="flex justify-center items-center w-full"
         color="#FFFFFF"
@@ -14,7 +14,7 @@ function ThreeDotsBlack() {
 }
 function ThreeDotsWhite() {
   return (
-    <div className="w-full">
+    <div className="w-full z-50">
       <DotsThreeOutline
         className="flex justify-center items-center w-full"
         color="#000000"
