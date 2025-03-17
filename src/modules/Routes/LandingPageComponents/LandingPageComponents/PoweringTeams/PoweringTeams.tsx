@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const PoweringTeams = () => {
   return (
     <div className="bg-black flex flex-col items-center justify-center overflow-hidden pb-52">
-      <WavyBackground className="max-w-4xl pb-40 overflow-x-hidden">
+      <WavyBackground className="max-w-4xl pb-40 overflow-x-hidden" blur={20} speed="fast">
         <p className="text-xl md:text-4xl font-bold inter-var uppercase text-center text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-white to-stone-400 font-safira">
         Impulsando las mejores marcas con etiquetas de calidad
         </p>
