@@ -6,9 +6,9 @@ import { ChevronDown } from "lucide-react";
 
 export default function Products() {
   return (
-    <div className="bg-black flex flex-col items-center justify-center overflow-hidden pb-52">
+    <div className="bg-black flex flex-col items-center justify-center overflow-hidden py-52">
       <WavyTitle />
-      <div className="z-50 mt-[-250px] left-0 w-full h-full"></div>
+      <div className="z-50 mt-[-150px] left-0 w-full h-full"></div>
       <CardHoverEffectDemo />
     </div>
   );
