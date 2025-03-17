@@ -10,8 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+
 import { Textarea } from "@/components/ui/textarea";
 import { LucideNotebookPen, MailPlus, Phone, User } from "lucide-react";
 import {
@@ -22,25 +21,18 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/hooks/use-toast";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "name must be at least 2 characters.",
-  }),
-  email: z.string().min(2, {
-    message: "name must be at least 2 characters.",
-  }),
-  phone: z.string().min(2, {
-    message: "name must be at least 2 characters.",
-  }),
-  description: z
-    .string()
-    .min(10, { message: "La descripción es demasiado corta." }),
-});
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  description: string;
+}
+
 
 export default function FormContact() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<FormData>({
     defaultValues: {
       name: "",
       email: "",
@@ -48,11 +40,15 @@ export default function FormContact() {
       description: "",
     },
   });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  
+  function onSubmit(values: FormData) {
     console.log(values);
+    toast({
+      title: "¡Éxito!",
+      description:
+        "Tu mensaje ha sido enviado. Nos pondremos en contacto pronto.",
+    });
   }
-
   return (
     <div className="pt-10 w-[450px] flex justify-center items-center mx-auto">
       <Card className="backdrop-blur-sm bg-white/10 dark:bg-black/10 border-2 shadow-xl">
