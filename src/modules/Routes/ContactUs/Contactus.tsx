@@ -15,7 +15,6 @@ import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import Socials from "../LandingPageComponents/LandingPageComponents/Contactanos/components/Socials";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import {
   Form,
   FormControl,
@@ -37,6 +36,7 @@ import {
   Globe,
 } from "react-bootstrap-icons";
 import TrueFocus from "@/components/reactbits/true_focus";
+import z from "node_modules/zod/lib";
 
 const formSchema = z.object({
   name: z.string().min(2, {
