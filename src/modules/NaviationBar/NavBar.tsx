@@ -2,6 +2,14 @@ import { Sidebar } from "./options/sidebar";
 import Categories from "./options/categories";
 import { Link } from "react-router-dom";
 import { logo } from "@/const";
+// import GooeyNav from "@/components/reactbits/GooeyNav";
+
+// // update with your own items
+// const items = [
+//   { label: "Home", href: "#" },
+//   { label: "About", href: "#" },
+//   { label: "Contact", href: "#" },
+// ];
 function NavBar() {
   return (
     <>
@@ -13,6 +21,15 @@ function NavBar() {
         <div className="md:hidden flexs z-30">
           <Sidebar />
         </div>
+        {/* <div style={{ height: '600px', position: 'relative' }}>
+  <GooeyNav
+    items={items}
+    animationTime={600}
+    particleCount={15}
+    colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+    timeVariance={300}
+  />
+</div> */}
       </nav>
     </>
   );

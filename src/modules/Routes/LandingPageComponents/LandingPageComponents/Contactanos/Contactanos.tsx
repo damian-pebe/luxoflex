@@ -13,11 +13,22 @@ import {
   Facebook,
   Instagram,
   Globe,
+  TwitterX,
 } from "react-bootstrap-icons";
 import TrueFocus from "@/components/reactbits/true_focus";
 import SpotlightCard from "@/components/reactbits/spotlight_card";
 import { Button } from "@/components/ui/button";
 import EffectScroll from "@/components/effectScroll";
+import GlassIcons from "@/components/reactbits/GlassIcons";
+
+const items = [
+  { icon: <Whatsapp />, color: 'green', label: 'Files' },
+  { icon: <Facebook />, color: 'blue', label: 'Books' },
+  { icon: <Instagram />, color: 'pink', label: 'Health' },
+  { icon: <TwitterX />, color: 'black', label: 'Weather' },
+  { icon: <EnvelopeFill  />, color: 'red', label: 'Notes' },
+  { icon: <TelephoneFill />, color: 'green', label: 'Stats' },
+];
 
 export default function Contactanos() {
   return (
@@ -25,14 +36,12 @@ export default function Contactanos() {
       <EffectScroll classname="animate-fadein duration-1000">
         <TitleSolidGradiant />
       </EffectScroll>
-      <div className="group justify-evenly flex flex-col md:flex-row gap-10 ">
-          
-      <div className="md:block hidden  w-min  transition-all duration-1000">  
-
-      <EffectScroll classname="animate-fadeinleft duration-1000">
+      <div className="group justify-evenly flex flex-col gap-10 ">
+        <div className="md:block hidden  w-min  transition-all duration-1000">
+          <EffectScroll classname="animate-fadeinleft duration-1000">
             <FormContact />
           </EffectScroll>
-      </div>
+        </div>
 
         <div className=" md:block hidden flex-1 w-full transition-all duration-1000">
           <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
@@ -49,6 +58,9 @@ export default function Contactanos() {
           </div>
           <EffectScroll classname="animate-fadein duration-1000">
             <AnimatedPinDemo />
+            <div className="relative h-full">
+  <GlassIcons items={items} className="custom-class"/>
+</div>
           </EffectScroll>
         </div>
         <div className="sm:block md:hidden py-2 flex flex-col justify-center w-full ">
@@ -68,34 +80,14 @@ export default function Contactanos() {
             <Socials />
           </EffectScroll>
         </div>
-
-        {/* <EffectScroll classname="animate-fadeinleft duration-1000">
-            <FormContact />
-          </EffectScroll> */}
       </div>
       <div className="md:hidden block">
         <DividerNoSpacing />
       </div>
       <ContactData />
-      
     </div>
   );
 }
-
-function TitleSolidGradiant() {
-  return (
-    <div className="flex items-center justify-center w-full flex-col px-4 pt-10">
-      
-      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-7xl lg:text-9xl  relative z-20 font-bold font-dancing tracking-tight hover:scale-110 transition-transform duration-1000 hover:cursor-grab">
-Contáctanos Personalmente
-</h2>
-      <p className=" mx-auto text-sm md:text-2xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
-        ¡Cuéntanos tu idea, nosotros la haremos realidad!
-      </p>
-    </div>
-  );
-}
-
 
 function AnimatedPinDemo() {
   return (
@@ -202,7 +194,18 @@ function AnimatedPinDemo() {
     </div>
   );
 }
-
+function TitleSolidGradiant() {
+  return (
+    <div className="flex items-center justify-center w-full flex-col px-4 pt-10">
+      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-7xl lg:text-9xl  relative z-20 font-bold font-dancing tracking-tight hover:scale-110 transition-transform duration-1000 hover:cursor-grab">
+        Contáctanos Personalmente
+      </h2>
+      <p className=" mx-auto text-sm md:text-2xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
+        ¡Cuéntanos tu idea, nosotros la haremos realidad!
+      </p>
+    </div>
+  );
+}
 function ContactData() {
   const data = [
     {
