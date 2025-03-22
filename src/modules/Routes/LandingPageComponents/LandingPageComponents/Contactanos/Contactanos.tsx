@@ -1,18 +1,13 @@
 "use client";
-import { DividerNoSpacing } from "@/components/divider";
 import "./Contactanos.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import FormContact from "./components/FormContact";
-import { PinContainer } from "@/components/ui/3d-pin";
-
-import Socials from "./components/Socials";
 import {
   Whatsapp,
   EnvelopeFill,
   TelephoneFill,
   Facebook,
   Instagram,
-  Globe,
   TwitterX,
 } from "react-bootstrap-icons";
 import TrueFocus from "@/components/reactbits/true_focus";
@@ -22,12 +17,12 @@ import EffectScroll from "@/components/effectScroll";
 import GlassIcons from "@/components/reactbits/GlassIcons";
 
 const items = [
-  { icon: <Whatsapp />, color: 'green', label: 'Files' },
-  { icon: <Facebook />, color: 'blue', label: 'Books' },
-  { icon: <Instagram />, color: 'pink', label: 'Health' },
-  { icon: <TwitterX />, color: 'black', label: 'Weather' },
-  { icon: <EnvelopeFill  />, color: 'red', label: 'Notes' },
-  { icon: <TelephoneFill />, color: 'green', label: 'Stats' },
+  { icon: <Whatsapp />, color: "green", label: "Files" },
+  { icon: <Facebook />, color: "blue", label: "Books" },
+  { icon: <Instagram />, color: "pink", label: "Health" },
+  { icon: <TwitterX />, color: "black", label: "Weather" },
+  { icon: <EnvelopeFill />, color: "red", label: "Notes" },
+  { icon: <TelephoneFill />, color: "green", label: "Stats" },
 ];
 
 export default function Contactanos() {
@@ -36,168 +31,147 @@ export default function Contactanos() {
       <EffectScroll classname="animate-fadein duration-1000">
         <TitleSolidGradiant />
       </EffectScroll>
-      <div className="group justify-evenly flex flex-col gap-10 ">
-        <div className="md:block hidden  w-min  transition-all duration-1000">
+      <div className="group justify-evenly flex flex-col lg:flex-row gap-10 ">
+        <div className="w-full flex justify-center items-center transition-all duration-1000">
           <EffectScroll classname="animate-fadeinleft duration-1000">
             <FormContact />
           </EffectScroll>
+          
         </div>
-
-        <div className=" md:block hidden flex-1 w-full transition-all duration-1000">
-          <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
+        <div className="flex flex-col w-full transition-all duration-1000 pt-32">
+            <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
+              <EffectScroll classname="animate-fadein duration-1000">
+                <TrueFocus
+                  sentence="Redes sociales"
+                  manualMode={false}
+                  blurAmount={5}
+                  borderColor="rgba(29, 204, 206, 0.8)"
+                  animationDuration={2}
+                  pauseBetweenAnimations={0.5}
+                />
+              </EffectScroll>
+            </div>
             <EffectScroll classname="animate-fadein duration-1000">
-              <TrueFocus
-                sentence="Redes sociales"
-                manualMode={false}
-                blurAmount={5}
-                borderColor="rgba(29, 204, 206, 0.8)"
-                animationDuration={2}
-                pauseBetweenAnimations={0.5}
-              />
+              <div className="relative h-full">
+                <GlassIcons items={items} className="custom-class" />
+              </div>
             </EffectScroll>
           </div>
-          <EffectScroll classname="animate-fadein duration-1000">
-            <AnimatedPinDemo />
-            <div className="relative h-full">
-  <GlassIcons items={items} className="custom-class"/>
-</div>
-          </EffectScroll>
-        </div>
-        <div className="sm:block md:hidden py-2 flex flex-col justify-center w-full ">
-          <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
-            <EffectScroll classname="animate-fadein duration-1000">
-              <TrueFocus
-                sentence="Redes sociales"
-                manualMode={false}
-                blurAmount={5}
-                borderColor="rgba(29, 204, 206, 0.8)"
-                animationDuration={2}
-                pauseBetweenAnimations={0.5}
-              />
-            </EffectScroll>
-          </div>
-          <EffectScroll classname="animate-fadeinbouncedown pb-32 ">
-            <Socials />
-          </EffectScroll>
-        </div>
-      </div>
-      <div className="md:hidden block">
-        <DividerNoSpacing />
       </div>
       <ContactData />
     </div>
   );
 }
 
-function AnimatedPinDemo() {
-  return (
-    <div>
-      <div className="">
-        <div className="grid grid-cols-3 gap-10 justify-center">
-          <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
-                PaginaWeb
-              </h3>
-              <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-gray-500 text-xs">
-                  LUXOFLEX tiene contacto por medio de Email
-                </span>
-              </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-purple-900 duration-300 rounded-lg mt-2  justify-center items-center">
-                <Globe className="h-12 w-12 text-purple-600" />
-              </div>
-            </div>
-          </PinContainer>
+// function AnimatedPinDemo() {
+//   return (
+//     <div>
+//       <div className="">
+//         <div className="grid grid-cols-3 gap-10 justify-center">
+//           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
+//             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
+//               <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
+//                 PaginaWeb
+//               </h3>
+//               <div className="text-xs !m-0 !p-0 font-normal">
+//                 <span className="text-gray-500 text-xs">
+//                   LUXOFLEX tiene contacto por medio de Email
+//                 </span>
+//               </div>
+//               <div className="flex flex-1 w-full bg-gray-800 hover:bg-purple-900 duration-300 rounded-lg mt-2  justify-center items-center">
+//                 <Globe className="h-12 w-12 text-purple-600" />
+//               </div>
+//             </div>
+//           </PinContainer>
 
-          <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
-                Email
-              </h3>
-              <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-gray-500 text-xs">
-                  LUXOFLEX tiene contacto por medio de Email
-                </span>
-              </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-red-900 duration-300 rounded-lg mt-2  justify-center items-center">
-                <EnvelopeFill className="h-12 w-12 text-red-600" />
-              </div>
-            </div>
-          </PinContainer>
+//           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
+//             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
+//               <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
+//                 Email
+//               </h3>
+//               <div className="text-xs !m-0 !p-0 font-normal">
+//                 <span className="text-gray-500 text-xs">
+//                   LUXOFLEX tiene contacto por medio de Email
+//                 </span>
+//               </div>
+//               <div className="flex flex-1 w-full bg-gray-800 hover:bg-red-900 duration-300 rounded-lg mt-2  justify-center items-center">
+//                 <EnvelopeFill className="h-12 w-12 text-red-600" />
+//               </div>
+//             </div>
+//           </PinContainer>
 
-          <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
-                Llamadas
-              </h3>
-              <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-gray-500 text-xs">
-                  LUXOFLEX tiene contacto por medio de telefono celular
-                </span>
-              </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-teal-900 duration-300 rounded-lg mt-2  justify-center items-center">
-                <TelephoneFill className="h-12 w-12 text-teal-600" />
-              </div>
-            </div>
-          </PinContainer>
+//           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
+//             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
+//               <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
+//                 Llamadas
+//               </h3>
+//               <div className="text-xs !m-0 !p-0 font-normal">
+//                 <span className="text-gray-500 text-xs">
+//                   LUXOFLEX tiene contacto por medio de telefono celular
+//                 </span>
+//               </div>
+//               <div className="flex flex-1 w-full bg-gray-800 hover:bg-teal-900 duration-300 rounded-lg mt-2  justify-center items-center">
+//                 <TelephoneFill className="h-12 w-12 text-teal-600" />
+//               </div>
+//             </div>
+//           </PinContainer>
 
-          <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
-                WhatsApp
-              </h3>
-              <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-gray-500 text-xs">
-                  LUXOFLEX tiene contacto por medio de WhatsApp
-                </span>
-              </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-green-900 duration-300 rounded-lg mt-2  justify-center items-center">
-                <Whatsapp className="h-12 w-12 text-green-600" />
-              </div>
-            </div>
-          </PinContainer>
+//           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
+//             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
+//               <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
+//                 WhatsApp
+//               </h3>
+//               <div className="text-xs !m-0 !p-0 font-normal">
+//                 <span className="text-gray-500 text-xs">
+//                   LUXOFLEX tiene contacto por medio de WhatsApp
+//                 </span>
+//               </div>
+//               <div className="flex flex-1 w-full bg-gray-800 hover:bg-green-900 duration-300 rounded-lg mt-2  justify-center items-center">
+//                 <Whatsapp className="h-12 w-12 text-green-600" />
+//               </div>
+//             </div>
+//           </PinContainer>
 
-          <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
-                Facebook
-              </h3>
-              <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-gray-500 text-xs">
-                  LUXOFLEX tiene contacto por medio de Facebook
-                </span>
-              </div>
-              <div className="flex flex-1 w-full bg-gray-800 hover:bg-blue-900 duration-300 rounded-lg mt-2  justify-center items-center">
-                <Facebook className="h-12 w-12 text-blue-600" />
-              </div>
-            </div>
-          </PinContainer>
+//           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
+//             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
+//               <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
+//                 Facebook
+//               </h3>
+//               <div className="text-xs !m-0 !p-0 font-normal">
+//                 <span className="text-gray-500 text-xs">
+//                   LUXOFLEX tiene contacto por medio de Facebook
+//                 </span>
+//               </div>
+//               <div className="flex flex-1 w-full bg-gray-800 hover:bg-blue-900 duration-300 rounded-lg mt-2  justify-center items-center">
+//                 <Facebook className="h-12 w-12 text-blue-600" />
+//               </div>
+//             </div>
+//           </PinContainer>
 
-          <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
-            <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
-              <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
-                Instagram
-              </h3>
-              <div className="text-xs !m-0 !p-0 font-normal">
-                <span className="text-gray-500 text-xs">
-                  LUXOFLEX tiene contacto por medio de Instagram
-                </span>
-              </div>
-              <div className="flex flex-1 w-full rounded-lg mt-2 bg-gray-800 hover:bg-pink-900 duration-300 justify-center items-center">
-                <Instagram className="h-12 w-12 text-pink-600" />
-              </div>
-            </div>
-          </PinContainer>
-        </div>
-      </div>
-    </div>
-  );
-}
+//           <PinContainer title="/luxoflex.vercel.app" href="luxoflex.vercel.app">
+//             <div className="flex basis-full flex-col p-2 tracking-tighter text-slate-100/50 text-center sm:basis-1/2 w-[10rem] h-[15rem]">
+//               <h3 className="text-lg max-w-xs !pb-1 !m-0 font-extralight font-zilla text-slate-100">
+//                 Instagram
+//               </h3>
+//               <div className="text-xs !m-0 !p-0 font-normal">
+//                 <span className="text-gray-500 text-xs">
+//                   LUXOFLEX tiene contacto por medio de Instagram
+//                 </span>
+//               </div>
+//               <div className="flex flex-1 w-full rounded-lg mt-2 bg-gray-800 hover:bg-pink-900 duration-300 justify-center items-center">
+//                 <Instagram className="h-12 w-12 text-pink-600" />
+//               </div>
+//             </div>
+//           </PinContainer>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 function TitleSolidGradiant() {
   return (
     <div className="flex items-center justify-center w-full flex-col px-4 pt-10">
-      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-7xl lg:text-9xl  relative z-20 font-bold font-dancing tracking-tight hover:scale-110 transition-transform duration-1000 hover:cursor-grab">
+      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-7xl lg:text-9xl  relative z-20 font-bold font-dancing tracking-tight transition-transform duration-1000 hover:cursor-grab">
         Contáctanos Personalmente
       </h2>
       <p className=" mx-auto text-sm md:text-2xl text-neutral-700 dark:text-neutral-400 text-center pb-5">
@@ -255,31 +229,31 @@ function ContactData() {
                       onClick={() =>
                         (window.location.href = `tel:+52${user.hrefPhone}`)
                       }
-                      className="hover:cursor-pointer bi bi-telephone-outbound text-lg  transition-all duration-1000 text-white hover:text-teal-600 hover:scale-150"
+                      className="hover:cursor-pointer bi bi-telephone-outbound text-lg  transition-all duration-700 text-white hover:text-teal-600"
                     ></i>
 
                     <i
                       onClick={() =>
                         (window.location.href = `https://wa.me/+52${user.hrefWhatsapp}`)
                       }
-                      className="hover:cursor-pointer bi bi-whatsapp text-lg  transition-all duration-1000 text-white hover:text-green-600 hover:scale-150"
+                      className="hover:cursor-pointer bi bi-whatsapp text-lg  transition-all duration-700 text-white hover:text-green-600"
                     ></i>
 
                     <i
                       onClick={() => (window.location.href = user.hrefFacebook)}
-                      className="hover:cursor-pointer bi bi-facebook text-lg  transition-all duration-1000 text-white hover:text-blue-600 hover:scale-150"
+                      className="hover:cursor-pointer bi bi-facebook text-lg  transition-all duration-700 text-white hover:text-blue-600"
                     ></i>
 
                     <i
                       onClick={() =>
                         (window.location.href = user.hrefInstagram)
                       }
-                      className="hover:cursor-pointer bi bi-instagram text-lg  transition-all duration-1000 text-white hover:text-pink-600 hover:scale-150"
+                      className="hover:cursor-pointer bi bi-instagram text-lg  transition-all duration-700 text-white hover:text-pink-600"
                     ></i>
                   </div>
                   <Button
                     variant="default"
-                    className="w-full hover:bg-black hover:text-white font-poppins font-light  transition-colors duration-1000"
+                    className="w-full hover:bg-black hover:text-white font-poppins font-light  transition-colors duration-700"
                     onClick={() =>
                       (window.location.href = `tel:+52${user.hrefPhone}`)
                     }
