@@ -17,13 +17,14 @@ import EffectScroll from "@/components/effectScroll";
 import GlassIcons from "@/components/reactbits/GlassIcons";
 
 const items = [
-  { icon: <Whatsapp />, color: "green", label: "Files" },
-  { icon: <Facebook />, color: "blue", label: "Books" },
-  { icon: <Instagram />, color: "pink", label: "Health" },
-  { icon: <TwitterX />, color: "black", label: "Weather" },
-  { icon: <EnvelopeFill />, color: "red", label: "Notes" },
-  { icon: <TelephoneFill />, color: "green", label: "Stats" },
+  { icon: <Whatsapp />, color: "whatsapp", label: "WhatsApp" },
+  { icon: <Facebook />, color: "facebook", label: "Facebook" },
+  { icon: <Instagram />, color: "instagram", label: "Instagram" },
+  { icon: <TwitterX />, color: "twitter", label: "X" },
+  { icon: <EnvelopeFill />, color: "gmail", label: "Gmail" },
+  { icon: <TelephoneFill />, color: "whatsapp", label: "Phone Call" },
 ];
+
 
 export default function Contactanos() {
   return (
