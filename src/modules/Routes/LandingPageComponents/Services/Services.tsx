@@ -3,6 +3,7 @@ import { ChevronRight, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
 import { logo } from "@/const";
 import { ThreeDotsWhite } from "@/components/ReusableIcons/ReusableIcons";
+import {flexo_img, manga_img, preprensa_img} from "@/const";
 export default function Services() {
   return (
     <div className="bg-[#FAFAFA] h-full flex flex-col space-y-14 py-5">
@@ -38,7 +39,7 @@ export default function Services() {
 
       <div className="flex justify-center gap-12 px-5">
         <div className="h-[330px] w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-6 text-black">
-          <img className="h-[250px] w-[200px] rounded-md" src="" />
+          <img className="h-[250px] w-[200px] rounded-md object-cover" src={flexo_img} />
           <div className="flex flex-roe justify-between items-center w-full">
             <div className="w-full font-serif font-light italic text-xs uppercase pl-5">
             Etiquetas autohaderibles de flexografia
@@ -47,7 +48,7 @@ export default function Services() {
           </div>
         </div>
         <div className="h-[330px] w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-6 text-black">
-          <img className="h-[250px] w-[200px] rounded-md" src="" />
+          <img className="h-[250px] w-[200px] rounded-md object-cover" src={manga_img} />
           <div className="flex flex-roe justify-between items-center w-full">
             <div className="w-full font-serif font-light italic text-xs uppercase pl-5">
             Mangas para tequilas y vinos
@@ -56,7 +57,7 @@ export default function Services() {
           </div>
         </div>
         <div className="h-[330px] w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-6 text-black">
-          <img className="h-[250px] w-[200px] rounded-md" src="" />
+          <img className="h-[250px] w-[200px] rounded-md object-cover" src={preprensa_img} />
           <div className="flex flex-roe justify-between items-center w-full">
             <div className="w-full font-serif font-light italic text-xs uppercase pl-5">
             Armado de preprensa profesional

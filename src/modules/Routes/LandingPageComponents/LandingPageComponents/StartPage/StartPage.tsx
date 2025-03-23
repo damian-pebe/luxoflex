@@ -1,6 +1,4 @@
-import { background } from "@/const";
-
-import { logo } from "@/const";
+import { logo, background } from "@/const";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import "./StartPage.css";

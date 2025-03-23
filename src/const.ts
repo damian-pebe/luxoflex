@@ -1,39 +1,27 @@
-const background =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//background.jpg";
-const logo =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//luxoflex.png";
-const recepcion_disenios =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//recepcion_disenios.jpg";
-const revision_coreccion =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//revision_coreccion.jpg";
-const final_preprensa =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//final_preprensa.png";
-const happy_customer =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//happy_customer.jpg";
-const grabados =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//rodillo1.webp";
-const luxoImage1 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//luxoflexImage1.jpeg";
-const luxoImage2 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//luxoflexImage2.jpeg";
-const luxoImage3 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//luxoflexImage3.jpeg";
-const luxoImage4 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//luxoflexImage4.jpeg";
-const luxoImage5 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//luxoflexImage5.jpeg";
-const luxoImage6 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//luxoflexImage6.jpeg";
-const customer1 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//customer1.jpg";
-const customer2 =
-  " https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//customer2.jpg";
-const customer3 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//customer3.jpg";
-const customer4 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//customer4.jpg";
-const customer5 =
-  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//customer5.jpg";
+const baseUrl =
+  "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//";
+
+const background = `${baseUrl}background.webp`;
+const logo = `${baseUrl}luxoflex.webp`;
+const recepcion_disenios = `${baseUrl}recepcion_disenios.webp`;
+const revision_coreccion = `${baseUrl}revision_coreccion.webp`;
+const final_preprensa = `${baseUrl}final_preprensa.webp`;
+const happy_customer = `${baseUrl}happy_customer.webp`;
+const grabados = `${baseUrl}rodillo1.webp`;
+const luxoImage1 = `${baseUrl}luxoflexImage1.webp`;
+const luxoImage2 = `${baseUrl}luxoflexImage2.webp`;
+const luxoImage3 = `${baseUrl}luxoflexImage3.webp`;
+const luxoImage4 = `${baseUrl}luxoflexImage4.webp`;
+const luxoImage5 = `${baseUrl}luxoflexImage5.webp`;
+const luxoImage6 = `${baseUrl}luxoflexImage6.webp`;
+const customer1 = `${baseUrl}customer1.webp`;
+const customer2 = ` ${baseUrl}customer2.webp`;
+const customer3 = `${baseUrl}customer3.webp`;
+const customer4 = `${baseUrl}customer4.webp`;
+const customer5 = `${baseUrl}customer5.webp`;
+const flexo_img = `${baseUrl}flexo_img.webp`;
+const preprensa_img = `${baseUrl}preprensa_img.webp`;
+const manga_img = `${baseUrl}manga_tequila.webp`;
 
 export {
   background,
@@ -54,4 +42,7 @@ export {
   customer3,
   customer4,
   customer5,
+  flexo_img,
+  preprensa_img,
+  manga_img,
 };
