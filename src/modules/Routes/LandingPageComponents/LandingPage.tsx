@@ -1,5 +1,5 @@
 import StartPage from "./LandingPageComponents/StartPage/StartPage";
-// import { ParallaxLuxoflex } from "./LandingPageComponents/Parallax/Parallax";
+import { ParallaxLuxoflex } from "./LandingPageComponents/Parallax/Parallax";
 import Contactanos from "./LandingPageComponents/Contactanos/Contactanos";
 import { PoweringTeams } from "./LandingPageComponents/PoweringTeams/PoweringTeams";
 import Preprensa from "./LandingPageComponents/Preprensa/Preprensa";
@@ -12,7 +12,7 @@ export default function LandingPage() {
     <div className="bg-[#09090B] overflow-hidden">
       <StartPage />
       <Services/>
-      {/* <ParallaxLuxoflex /> */}
+      <ParallaxLuxoflex />
       <PoweringTeams />
       <Contactanos />
       <Preprensa />
