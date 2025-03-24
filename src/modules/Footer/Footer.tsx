@@ -12,7 +12,6 @@ import { CookiesPolicy } from "./components/CookiesPolicy";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { TermsOfService } from "./components/TermsOfService";
 import { Link } from "react-router-dom";
-import Divider from "@/components/divider";
 import EffectScroll from "@/components/effectScroll";
 
 const Footer = () => {
@@ -21,11 +20,6 @@ const Footer = () => {
       <CardContent className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="text-center sm:text-left">
-            <div className="md:hidden">
-              <EffectScroll classname="duration-1000 animate-fadein">
-                <Divider />
-              </EffectScroll>
-            </div>
             <EffectScroll classname="duration-1000 animate-fadein">
               <h3 className="text-foreground font-semibold mb-4 text-lg">
                 Empresa
@@ -61,11 +55,6 @@ const Footer = () => {
           </div>
 
           <div className="text-center sm:text-left">
-            <div className="md:hidden">
-              <EffectScroll classname="duration-1000 animate-fadein">
-                <Divider />
-              </EffectScroll>
-            </div>
             <EffectScroll classname="duration-1000 animate-fadein">
               <h3 className="foreground font-semibold mb-4 text-lg">
                 Servicios
@@ -101,11 +90,6 @@ const Footer = () => {
           </div>
 
           <div className="text-center sm:text-left">
-            <div className="md:hidden">
-              <EffectScroll classname="duration-1000 animate-fadein">
-                <Divider />
-              </EffectScroll>
-            </div>
             <EffectScroll classname="duration-1000 animate-fadein">
               <h3 className="foreground font-semibold mb-4 text-lg">
                 Recursos
@@ -135,11 +119,6 @@ const Footer = () => {
                 >
                   Centro de Ayuda
                 </Link>
-              </EffectScroll>
-            </div>
-            <div className="md:hidden">
-              <EffectScroll classname="duration-1000 animate-fadein">
-                <Divider />
               </EffectScroll>
             </div>
           </div>
@@ -196,9 +175,6 @@ const Footer = () => {
                 </a>
               </div>
             </EffectScroll>
-          </div>
-          <div className="md:hidden">
-            <Divider />
           </div>
         </div>
 
