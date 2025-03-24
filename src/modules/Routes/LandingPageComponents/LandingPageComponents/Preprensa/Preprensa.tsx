@@ -1,4 +1,3 @@
-import Carousel from "./Carousel";
 import {
   Layers,
   CheckCircle,
@@ -7,7 +6,6 @@ import {
   Printer,
   Phone,
 } from "lucide-react";
-import { CarouselItem } from "./models/Models";
 import {
   recepcion_disenios,
   revision_coreccion,
@@ -20,70 +18,68 @@ import EffectScroll from "@/components/effectScroll";
 import { Button } from "@/components/ui/button";
 import { Whatsapp } from "react-bootstrap-icons";
 import FlowingMenu from "@/components/reactbits/flowing_menu";
-
-const PREPRINTER_BENEFITS: CarouselItem[] = [
-  {
-    title: "Recepción de Archivos de Diseño",
-    description:
-      "Nos aseguramos de recibir y gestionar tus archivos correctamente, evitando problemas desde el inicio del proceso.",
-    id: 1,
-    icon: <Upload className="h-6 w-6 text-white p-1" />,
-    image: recepcion_disenios,
-  },
-  {
-    title: "Revisión y Corrección de Errores",
-    description:
-      "Nuestro equipo detecta y corrige errores antes de la impresión, garantizando calidad y evitando costosos reprocesos.",
-    id: 2,
-    icon: <CheckCircle className="h-6 w-6 text-white p-1" />,
-    image: revision_coreccion,
-  },
-  {
-    title: "Preparación para Impresión",
-    description:
-      "Optimizamos la disposición y separación de colores, asegurando una impresión nítida y de alta calidad.",
-    id: 3,
-    icon: <Layers className="h-6 w-6 text-white p-1" />,
-    image: final_preprensa,
-  },
-  {
-    title: "Aprobación del Cliente",
-    description:
-      "Involucramos a nuestros clientes en cada paso, asegurándonos de que el producto final cumpla con sus expectativas.",
-    id: 5,
-    icon: <ThumbsUp className="h-6 w-6 text-white p-1" />,
-    image: happy_customer,
-  },
-  {
-    title: "Generación de Grabados para Impresion",
-    description:
-      "Utilizamos tecnología avanzada para la filmación y generación de grabados, garantizando una impresión precisa y profesional.",
-    id: 6,
-    icon: <Printer className="h-6 w-6 text-white p-1" />,
-    image: grabados,
-  },
-];
-
-const demoItems = [
-  {
-    text: "Optimización de Color",
-    image: recepcion_disenios,
-  },
-  {
-    text: "Ajuste de Resolución",
-    image: revision_coreccion,
-  },
-  {
-    text: "Control de Calidad",
-    image: final_preprensa,
-  },
-  {
-    text: "Generacion de Grabados",
-    image: grabados,
-  },
-];
+import { Carousel } from "@/components/aceternity/carousel";
 
 export default function Preprensa() {
+
+  const slideData = [
+    {
+      title: "Recepción de Archivos de Diseño",
+      description:
+        "Nos aseguramos de recibir y gestionar tus archivos correctamente, evitando problemas desde el inicio del proceso.",
+      icon: <Upload className="h-6 w-6 text-white p-1" />,
+      src: recepcion_disenios,
+    },
+    {
+      title: "Revisión y Corrección de Errores",
+      description:
+        "Nuestro equipo detecta y corrige errores antes de la impresión, garantizando calidad y evitando costosos reprocesos.",
+
+      icon: <CheckCircle className="h-6 w-6 text-white p-1" />,
+      src: revision_coreccion,
+    },
+    {
+      title: "Preparación para Impresión",
+      description:
+        "Optimizamos la disposición y separación de colores, asegurando una impresión nítida y de alta calidad.",
+
+      icon: <Layers className="h-6 w-6 text-white p-1" />,
+      src: final_preprensa,
+    },
+    {
+      title: "Aprobación del Cliente",
+      description:
+        "Involucramos a nuestros clientes en cada paso, asegurándonos de que el producto final cumpla con sus expectativas.",
+      icon: <ThumbsUp className="h-6 w-6 text-white p-1" />,
+      src: happy_customer,
+    },
+    {
+      title: "Generación de Grabados para Impresion",
+      description:
+        "Utilizamos tecnología avanzada para la filmación y generación de grabados, garantizando una impresión precisa y profesional.",
+      icon: <Printer className="h-6 w-6 text-white p-1" />,
+      src: grabados,
+    },
+  ];
+  
+  const demoItems = [
+    {
+      text: "Optimización de Color",
+      image: recepcion_disenios,
+    },
+    {
+      text: "Ajuste de Resolución",
+      image: revision_coreccion,
+    },
+    {
+      text: "Control de Calidad",
+      image: final_preprensa,
+    },
+    {
+      text: "Generacion de Grabados",
+      image: grabados,
+    },
+  ];
   return (
     <div>
       <div className="w-full px-1 md:px-32 min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
@@ -196,14 +192,13 @@ export default function Preprensa() {
               </h2>
 
               <div className=" flex justify-center">
-                <Carousel
-                  autoplay={true}
-                  autoplayDelay={3000}
-                  pauseOnHover={true}
-                  loop={true}
-                  round={false}
-                  items={PREPRINTER_BENEFITS}
-                />
+               
+
+    <div className="relative overflow-hidden w-full h-full pb-20">
+      <Carousel slides={slideData} />
+    </div>
+  
+
               </div>
             </div>
           </div>

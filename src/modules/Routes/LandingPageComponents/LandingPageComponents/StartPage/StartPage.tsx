@@ -1,7 +1,6 @@
 import { logo, background } from "@/const";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import "./StartPage.css";
 import ButtonStyle1 from "@/components/style1/button_style1";
 import { useNavigate } from "react-router-dom";
 import EffectScroll from "@/components/effectScroll";
