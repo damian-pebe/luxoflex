@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "lucide-react";
-import "./button_link1.css";
+import "./button_link.css";
 
 interface ButtonProps {
   str: string;
