@@ -5,10 +5,10 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Cards } from "./Cards";
 import { Brain, Rocket, Users } from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
 import { background } from "@/const";
 import { InfiniteMovingCardsDemo } from "./carousel-infinity";
 import { IconMoodHappy } from "@tabler/icons-react";
+import Skeleton from "antd/es/skeleton";
 export default function Mission() {
   const [isLoading] = useState(false);
   const title = useTypewriter("  Nuestra Misión");

@@ -5,6 +5,7 @@ import { Materials } from "../PastWorks/Materials";
 import Products from "../PastWorks/Products/Products";
 import Services from "./Services/Services";
 import { ThreeDMarqueeLuxoflex } from "./LandingPageComponents/ThreeDMarquee/ThreeDMarquee";
+import Contactanos from "./LandingPageComponents/Contactanos/Contactanos";
 export default function LandingPage() {
  
   return (

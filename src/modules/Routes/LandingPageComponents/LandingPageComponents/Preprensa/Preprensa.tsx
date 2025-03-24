@@ -17,9 +17,9 @@ import {
   logo,
 } from "@/const";
 import EffectScroll from "@/components/effectScroll";
-import FlowingMenu from "@/components/reactbits/flowing_menu";
 import { Button } from "@/components/ui/button";
 import { Whatsapp } from "react-bootstrap-icons";
+import FlowingMenu from "@/components/reactbits/flowing_menu";
 
 const PREPRINTER_BENEFITS: CarouselItem[] = [
   {

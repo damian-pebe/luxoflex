@@ -12,7 +12,6 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Link } from "react-router-dom";
-import ButtonLink1 from "@/components/buttons_style/button_link_style1/button_link1";
 import {
   EyeIcon,
   HeartHandshakeIcon,
@@ -21,6 +20,7 @@ import {
   Users2Icon,
   UsersIcon,
 } from "lucide-react";
+import ButtonLink1 from "@/components/style1/button_link/button_link";
 
 export function Sidebar() {
   return (

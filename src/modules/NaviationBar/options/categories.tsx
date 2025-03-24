@@ -1,4 +1,4 @@
-import ButtonLink1 from "@/components/buttons_style/button_link_style1/button_link1";
+import ButtonLink1 from "@/components/style1/button_link/button_link";
 import { Link } from "react-router-dom";
 
 export default function Categories() {
