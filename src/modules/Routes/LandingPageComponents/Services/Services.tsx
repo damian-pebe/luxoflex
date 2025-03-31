@@ -3,11 +3,11 @@ import { ChevronRight, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
 import { logo } from "@/const";
 import { ThreeDotsWhite } from "@/components/ReusableIcons/ReusableIcons";
-import {flexo_img, manga_img, preprensa_img} from "@/const";
+import { flexo_img, manga_img, preprensa_img } from "@/const";
 export default function Services() {
   return (
-    <div className="bg-[#FAFAFA] h-full flex flex-col space-y-14 py-5">
-<ThreeDotsWhite/>
+    <div className="bg-[#FAFAFA] h-full flex flex-col space-y-14 py-8">
+      <ThreeDotsWhite />
       <h1 className="uppercase text-black text-5xl flex justify-center w-full italic font-dancing font-semibold pt-10">
         Nuestros Servicios
       </h1>
@@ -39,28 +39,37 @@ export default function Services() {
 
       <div className="flex justify-center gap-12 px-5">
         <div className="h-[330px] w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-6 text-black">
-          <img className="h-[250px] w-[200px] rounded-md object-cover" src={flexo_img} />
+          <img
+            className="h-[250px] w-[200px] rounded-md object-cover"
+            src={flexo_img}
+          />
           <div className="flex flex-roe justify-between items-center w-full">
             <div className="w-full font-serif font-light italic text-xs uppercase pl-5">
-            Etiquetas autohaderibles de flexografia
+              Etiquetas autohaderibles de flexografia
             </div>
             <Plus className="w-36 text-black font-black hover:cursor-pointer hover:rotate-180 transition-all duration-1000" />
           </div>
         </div>
         <div className="h-[330px] w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-6 text-black">
-          <img className="h-[250px] w-[200px] rounded-md object-cover" src={manga_img} />
+          <img
+            className="h-[250px] w-[200px] rounded-md object-cover"
+            src={manga_img}
+          />
           <div className="flex flex-roe justify-between items-center w-full">
             <div className="w-full font-serif font-light italic text-xs uppercase pl-5">
-            Mangas para tequilas y vinos
+              Mangas para tequilas y vinos
             </div>
             <Plus className="w-36 text-black font-black hover:cursor-pointer hover:rotate-180 transition-all duration-1000" />
           </div>
         </div>
         <div className="h-[330px] w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-6 text-black">
-          <img className="h-[250px] w-[200px] rounded-md object-cover" src={preprensa_img} />
+          <img
+            className="h-[250px] w-[200px] rounded-md object-cover"
+            src={preprensa_img}
+          />
           <div className="flex flex-roe justify-between items-center w-full">
             <div className="w-full font-serif font-light italic text-xs uppercase pl-5">
-            Armado de preprensa profesional
+              Armado de preprensa profesional
             </div>
             <Plus className="w-36 text-black font-black hover:cursor-pointer hover:rotate-180 transition-all duration-1000" />
           </div>
@@ -79,8 +88,7 @@ export default function Services() {
         </div>
       </div>
 
-      <ThreeDotsWhite/>
-
+      <ThreeDotsWhite />
     </div>
   );
 }

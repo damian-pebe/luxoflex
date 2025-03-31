@@ -14,14 +14,12 @@ import {
   grabados,
   logo,
 } from "@/const";
-import EffectScroll from "@/components/effectScroll";
 import { Button } from "@/components/ui/button";
 import { Whatsapp } from "react-bootstrap-icons";
 import FlowingMenu from "@/components/reactbits/flowing_menu";
 import { Carousel } from "@/components/aceternity/carousel";
 
 export default function Preprensa() {
-
   const slideData = [
     {
       title: "Recepción de Archivos de Diseño",
@@ -61,7 +59,7 @@ export default function Preprensa() {
       src: grabados,
     },
   ];
-  
+
   const demoItems = [
     {
       text: "Optimización de Color",
@@ -184,7 +182,7 @@ export default function Preprensa() {
           <Card />
         </div>
 
-        <EffectScroll classname="animate-fadein duration-1000">
+        <div className="animate-fadein duration-1000">
           <div className="py-16 ">
             <div className="container mx-auto px-4">
               <h2 className="text-center text-5xl md:text-7xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
@@ -192,17 +190,13 @@ export default function Preprensa() {
               </h2>
 
               <div className=" flex justify-center">
-               
-
-    <div className="relative overflow-hidden w-full h-full pb-20">
-      <Carousel slides={slideData} />
-    </div>
-  
-
+                <div className="relative overflow-hidden w-full h-full pb-20">
+                  <Carousel slides={slideData} />
+                </div>
               </div>
             </div>
           </div>
-        </EffectScroll>
+        </div>
 
         <div className="pt-16 pb-5 container mx-auto px-4">
           <div className="text-center mb-16 space-y-4">

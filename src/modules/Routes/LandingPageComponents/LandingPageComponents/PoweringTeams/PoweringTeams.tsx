@@ -1,5 +1,4 @@
 import { WavyBackground } from "@/components/aceternity/wavy-background";
-import EffectScroll from "@/components/effectScroll";
 import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { Link } from "react-router-dom";
 
@@ -27,13 +26,13 @@ export const PoweringTeams = () => {
         <div className="transition-all duration-700 z-0 flex flex-wrap justify-center gap-x-5 gap-y-32 px-20 items-center relative py-5">
           {teams.map((team, index) => (
             <Link to={team.link} key={index}>
-              <EffectScroll classname="animate-fadeinbouncedown">
+              <div className="animate-fadeinbouncedown">
                 <img
                   src={team.img}
                   alt={index.toString()}
                   className="h-9 hover:animate-wiggle transition-all duration-300 "
                 />
-              </EffectScroll>
+              </div>
             </Link>
           ))}
         </div>
