@@ -449,8 +449,8 @@ const Contactanos = () => {
                     <Phone className="h-5 w-5 text-black mr-3 mt-1" />
                     <div>
                       <h3 className="font-medium text-black">Teléfono</h3>
-                      <p className="text-gray-600">+52 (555) 123-4567</p>
-                      <p className="text-gray-500 text-sm">Lun-Vie, 9am-5pm</p>
+                      <p className="text-gray-600">+52 33 2205 2692</p>
+                      <p className="text-gray-500 text-sm">Lun-Dom, 8am-10pm</p>
                     </div>
                   </div>
 
@@ -458,7 +458,7 @@ const Contactanos = () => {
                     <Mail className="h-5 w-5 text-black mr-3 mt-1" />
                     <div>
                       <h3 className="font-medium text-black">Correo</h3>
-                      <p className="text-gray-600">contacto@luxoflex.com</p>
+                      <p className="text-gray-600">luxoflex@gmail.com</p>
                       <p className="text-gray-500 text-sm">
                         Responderemos en 24 horas
                       </p>
@@ -472,7 +472,7 @@ const Contactanos = () => {
                         Ubicación de la Oficina
                       </h3>
                       <p className="text-gray-600">
-                        Calle Etiquetas 123, Interior 101
+                        Calle Pedro Garcia Conde, Numero 282, Colonia Villahermosa
                       </p>
                       <p className="text-gray-600">Guadalajara, Jalisco</p>
                     </div>
@@ -481,47 +481,47 @@ const Contactanos = () => {
               </div>
 
               {/* FAQ Section */}
-              <div className="bg-white p-6 rounded-lg shadow-2xl animate-fadeInUp animate-delay-400">
+                <div className="bg-white p-6 rounded-lg shadow-2xl animate-fadeInUp animate-delay-400">
                 <div className="flex items-center mb-4">
                   <MessageSquare className="h-5 w-5 text-black mr-2" />
                   <h3 className="text-xl font-bold text-black">
-                    Frequently Asked Questions
+                  Preguntas Frecuentes
                   </h3>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-medium text-black">
-                      What types of labels do you offer?
-                    </h4>
-                    <p className="text-gray-600 text-sm mt-1">
-                      We offer a wide range of premium labels including
-                      waterproof, thermal, adhesive, removable, and
-                      custom-shaped labels for various applications.
-                    </p>
+                  <h4 className="font-medium text-black">
+                    ¿Qué tipos de etiquetas ofrecen?
+                  </h4>
+                  <p className="text-gray-600 text-sm mt-1">
+                    Ofrecemos una amplia gama de etiquetas premium incluyendo
+                    impermeables, térmicas, adhesivas, removibles y
+                    etiquetas con formas personalizadas para diversas aplicaciones.
+                  </p>
                   </div>
 
                   <div>
-                    <h4 className="font-medium text-black">
-                      What is your minimum order quantity?
-                    </h4>
-                    <p className="text-gray-600 text-sm mt-1">
-                      Our minimum order quantities vary depending on the type of
-                      label. Please contact us for specific details.
-                    </p>
+                  <h4 className="font-medium text-black">
+                    ¿Cuál es la cantidad mínima de pedido?
+                  </h4>
+                  <p className="text-gray-600 text-sm mt-1">
+                    Nuestras cantidades mínimas de pedido varían según el tipo de
+                    etiqueta. Por favor contáctenos para detalles específicos.
+                  </p>
                   </div>
 
                   <div>
-                    <h4 className="font-medium text-black">
-                      Do you offer rush services?
-                    </h4>
-                    <p className="text-gray-600 text-sm mt-1">
-                      Yes, we offer expedited production and shipping for urgent
-                      orders at an additional cost.
-                    </p>
+                  <h4 className="font-medium text-black">
+                    ¿Ofrecen servicios urgentes?
+                  </h4>
+                  <p className="text-gray-600 text-sm mt-1">
+                    Sí, ofrecemos producción y envío acelerados para pedidos
+                    urgentes con un costo adicional.
+                  </p>
                   </div>
                 </div>
-              </div>
+                </div>
             </div>
           </div>
         </div>
