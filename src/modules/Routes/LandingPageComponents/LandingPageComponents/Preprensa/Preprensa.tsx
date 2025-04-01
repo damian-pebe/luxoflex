@@ -57,9 +57,9 @@ export default function Preprensa() {
   ];
 
   return (
-    <div>
+    <div className="bg-black py-8">
       {/* Hero Section */}
-      <div className="w-full min-h-screen bg-black/95 text-white overflow-hidden py-8">
+      <div className="w-full min-h-screen bg-black/95 text-white overflow-hidden ">
         <ThreeDotsBlack top={true}/>
 
         {/* Animated background particles */}
@@ -108,7 +108,7 @@ export default function Preprensa() {
           </div>
 
           {/* Main content with animation */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-8 pb-32">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}

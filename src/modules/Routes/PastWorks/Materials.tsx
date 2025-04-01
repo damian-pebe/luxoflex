@@ -19,7 +19,6 @@ export function Materials() {
         LUXOFLEX
       </h2>
       <MaterialsCards />
-      <ThreeDotsBlack />
     </div>
   );
 }

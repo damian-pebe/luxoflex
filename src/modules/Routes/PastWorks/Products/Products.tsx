@@ -3,13 +3,19 @@ import { WavyTitle } from "./Components/WavyTitle";
 import { HoverEffect } from "@/components/aceternity/card-hover-effect";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 
 export default function Products() {
   return (
+    <div className="pb-8 bg-black">
+
     <div className="bg-black flex flex-col items-center justify-center overflow-hidden py-52">
       <WavyTitle />
       <div className="z-50 mt-[-150px] left-0 w-full h-full"></div>
       <CardHoverEffectDemo />
+
+    </div>
+      <ThreeDotsBlack />
     </div>
   );
 }
