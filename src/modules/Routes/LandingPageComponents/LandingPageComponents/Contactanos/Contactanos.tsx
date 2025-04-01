@@ -323,9 +323,9 @@ const Contactanos = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAFAFA] font-poppins py-8">
-      <ThreeDotsWhite />
+      <ThreeDotsWhite top={true}/>
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-8">
         <div className="text-center relative bg-[#FAFAFA] text-black placeholder:text-gray-700 py-16 overflow-hidden">
           <div
             className="absolute inset-0 opacity-10"

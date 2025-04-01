@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const PoweringTeams = () => {
   return (
     <div className="bg-black flex flex-col items-center justify-center overflow-hidden py-8 -z-20">
-      <ThreeDotsBlack />
+      <ThreeDotsBlack top={true} />
 
       <WavyBackground
         className="max-w-4xl mb-72  overflow-hidden"

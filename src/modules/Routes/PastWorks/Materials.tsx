@@ -4,18 +4,22 @@ import {
   CardContainer,
   CardItem,
 } from "@/components/aceternity/3d-card";
+import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { Button } from "@/components/ui/button";
 import { background } from "@/const";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 export function Materials() {
   return (
-    <div className="bg-gradient-to-b  from-black via-zinc-900 to-black pt-20">
-      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-7xl md:text-8xl font-sans md:py-2 relative z-20 font-bold tracking-tight">
+    <div className="bg-gradient-to-b  from-black via-zinc-900 to-black py-8">
+      <ThreeDotsBlack top={true} />
+
+      <h2 className=" pt-20 bg-clip-text text-transparent text-center bg-gradient-to-b  from-neutral-600 to-white text-7xl md:text-8xl font-sans md:py-2 relative z-20 font-bold tracking-tight">
         Galeria <br />
         LUXOFLEX
       </h2>
       <MaterialsCards />
+      <ThreeDotsBlack />
     </div>
   );
 }

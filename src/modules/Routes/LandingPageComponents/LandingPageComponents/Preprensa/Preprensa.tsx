@@ -60,7 +60,7 @@ export default function Preprensa() {
     <div>
       {/* Hero Section */}
       <div className="w-full min-h-screen bg-black/95 text-white overflow-hidden py-8">
-        <ThreeDotsBlack />
+        <ThreeDotsBlack top={true}/>
 
         {/* Animated background particles */}
         <div className="absolute inset-0 overflow-hidden">

@@ -7,7 +7,7 @@ import { flexo_img, manga_img, preprensa_img } from "@/const";
 export default function Services() {
   return (
     <div className="bg-[#FAFAFA] h-full flex flex-col space-y-14 py-8">
-      <ThreeDotsWhite />
+      <ThreeDotsWhite top={true}/>
       <h1 className="uppercase text-black text-5xl flex justify-center w-full italic font-dancing font-semibold pt-10">
         Nuestros Servicios
       </h1>
