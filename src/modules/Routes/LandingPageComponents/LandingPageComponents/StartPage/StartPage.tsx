@@ -42,23 +42,7 @@ export default function StartPage() {
         />
         <div className="absolute inset-0 flex justify-center items-center px-4">
           <div className=" flex flex-col items-center gap-10 justify-center h-[40rem]">
-            <div className=" min-w-min animate-fadeinbouncedown flex justify-center">
-              <img
-                className="  h-20 md:h-36 transition-transform duration-1000 hover:cursor-crosshair"
-                src={logo}
-                style={{
-                  transform: "perspective(5000px) rotateY(0deg)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform =
-                    "perspective(5000px) rotateY(40deg) rotateX(40deg) scale(1.15)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform =
-                    "perspective(5000px) rotateY(0deg)";
-                }}
-              />
-            </div>
+            <img className="  h-20 md:h-36" src={logo} />
             <div className="animate-fadeinbounceup ">
               <TypewriterEffect words={words2} />
             </div>
@@ -76,21 +60,17 @@ export default function StartPage() {
             </h2>
 
             <div className="flex flex-col gap-5 items-center md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 ">
-              <div className="animate-slideindown">
-                <div>
-                  <ButtonStyle1
-                    str="Contactanos ahora"
-                    onClick={() => navigate("/contactus")}
-                  />
-                </div>
+              <div>
+                <ButtonStyle1
+                  str="Contactanos ahora"
+                  onClick={() => navigate("/contactus")}
+                />
               </div>
-              <div className="animate-slideinup">
-                <div>
-                  <ButtonStyle1
-                    str="Trabajos pasados"
-                    onClick={() => navigate("/pastworks")}
-                  />
-                </div>
+              <div>
+                <ButtonStyle1
+                  str="Trabajos pasados"
+                  onClick={() => navigate("/pastworks")}
+                />
               </div>
             </div>
           </div>
