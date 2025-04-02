@@ -1,3 +1,7 @@
+
+const backendUrl = "https://luxoflex-backend.onrender.com/"
+// const backendUrl = "http://localhost:8080/"
+
 const baseUrl =
   "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//";
 
@@ -45,4 +49,5 @@ export {
   flexo_img,
   preprensa_img,
   manga_img,
+  backendUrl,
 };
