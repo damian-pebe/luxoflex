@@ -19,7 +19,7 @@ export default function Socials() {
         </a>
         
         <a 
-          href="https://wa.me/525551234567" 
+          href="https://wa.me/523322052692" 
           target="_blank"
           rel="noopener noreferrer"
           className="p-3 rounded-full bg-gray-100 hover:bg-green-100 dark:bg-gray-800 dark:hover:bg-green-900 transition-all duration-300 transform hover:scale-110"
