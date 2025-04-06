@@ -161,7 +161,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="mailto:luxoflex@gmail.com"
+                  href="mailto:luxoflex1ventas@gmail.com"
                   className="p-3 rounded-full bg-gray-100 hover:bg-red-100 dark:bg-gray-800 dark:hover:bg-red-900 transition-all duration-300 transform hover:scale-110"
                 >
                   <EnvelopeFill className="h-6 w-6 text-red-600" />

@@ -76,8 +76,8 @@ export function TermsOfService() {
                 Al utilizar nuestros servicios, acepta nuestras prácticas de privacidad descritas en esta política.
               </p>
               <div className="text-xs text-gray-400">
-                <p>Contacto: luxoflex@gmail.com</p>
-                <p>DPO: luxoflex@gmail.com</p>
+                <p>Contacto: luxoflex1ventas@gmail.com</p>
+                <p>DPO: luxoflex1ventas@gmail.com</p>
               </div>
             </div>
           </DrawerFooter>

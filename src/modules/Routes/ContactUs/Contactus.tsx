@@ -28,7 +28,7 @@ export default function ContactUs() {
     address:
       "C. Pedro García Conde 282 Col. Villa Hermosa, Guadalajara, Jalisco, Mexico",
     phone: "+52 33 34626001",
-    email: "luxoflex@gmail.com",
+    email: "luxoflex1ventas@gmail.com",
     schedule: "Lunes a Domingo: 08:00 - 20:00",
   };
 

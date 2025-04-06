@@ -156,7 +156,7 @@ export default function Preprensa() {
                 <Button
                   size="lg"
                   className="bg-white text-black hover:bg-gray-200 text-lg  py-6 px-8 rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-1"
-                  onClick={() => (window.location.href = "tel:+52")}
+                  onClick={() => (window.location.href = "mailto:ventasluxoflex@gmail.com")}
                 >
                   Solicitar Cotización
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -212,7 +212,7 @@ export default function Preprensa() {
                       <div
                         className="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 cursor-pointer hover:-translate-y-1"
                         onClick={() =>
-                          (window.location.href = "https://wa.me/+52")
+                          (window.location.href = "https://wa.me/+523322052692")
                         }
                       >
                         <Whatsapp className="h-5 w-5 text-white" />
@@ -221,7 +221,7 @@ export default function Preprensa() {
                     <Button
                       variant="default"
                       className="bg-white hover:bg-gray-200 rounded-xl text-black font-medium px-5 py-3 transition-all duration-300 hover:-translate-y-1"
-                      onClick={() => (window.location.href = "tel:+52")}
+                      onClick={() => (window.location.href = "tel:+523322052692")}
                     >
                       Contactar Ahora
                     </Button>

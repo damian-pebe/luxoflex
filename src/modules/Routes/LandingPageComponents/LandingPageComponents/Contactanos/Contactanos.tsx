@@ -203,7 +203,7 @@ const Contactanos = () => {
                     <Mail className="h-5 w-5 text-black mr-3 mt-1" />
                     <div>
                       <h3 className="font-medium text-black">Correo</h3>
-                      <p className="text-gray-600">luxoflex@gmail.com</p>
+                      <p className="text-gray-600">luxoflex1ventas@gmail.com</p>
                       <p className="text-gray-500 text-sm">
                         Responderemos en 24 horas
                       </p>
