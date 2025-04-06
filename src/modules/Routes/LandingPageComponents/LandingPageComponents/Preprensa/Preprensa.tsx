@@ -205,7 +205,7 @@ export default function Preprensa() {
                     <div className="flex space-x-4">
                       <div
                         className="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 cursor-pointer hover:-translate-y-1"
-                        onClick={() => (window.location.href = "tel:+52")}
+                        onClick={() => (window.location.href = "tel:+523322052692")}
                       >
                         <Phone className="h-5 w-5 text-white" />
                       </div>
