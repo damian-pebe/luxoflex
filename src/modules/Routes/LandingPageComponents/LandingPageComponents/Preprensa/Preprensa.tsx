@@ -165,7 +165,7 @@ export default function Preprensa() {
                   size="lg"
                   variant="outline"
                   className="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg  py-6 px-8 rounded-xl transition-all duration-300 hover:-translate-y-1"
-                  onClick={() => (window.location.href = "https://wa.me/+52")}
+                  onClick={() => (window.location.href = "https://wa.me/+523322052692")}
                 >
                   <Whatsapp className="mr-2 h-5 w-5" />
                   WhatsApp
