@@ -58,34 +58,11 @@ export default function Preprensa() {
 
   return (
     <div className="bg-black py-8">
-      {/* Hero Section */}
-      <div className="w-full min-h-screen bg-black/95 text-white overflow-hidden ">
+      <div className="w-full min-h-screen bg-black text-white overflow-hidden ">
         <ThreeDotsBlack top={true}/>
 
-        {/* Animated background particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-full h-full">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full bg-blue-500/20"
-                style={{
-                  width: `${Math.random() * 10 + 5}px`,
-                  height: `${Math.random() * 10 + 5}px`,
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  animation: `float ${
-                    Math.random() * 10 + 10
-                  }s linear infinite`,
-                  opacity: Math.random() * 0.5 + 0.3,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
+        
         <div className="container mx-auto py-16 px-6 lg:px-8 relative">
-          {/* Header with animated gradient text */}
           <div className="text-center mb-12">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
@@ -165,7 +142,7 @@ export default function Preprensa() {
                   size="lg"
                   variant="outline"
                   className="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg  py-6 px-8 rounded-xl transition-all duration-300 hover:-translate-y-1"
-                  onClick={() => (window.location.href = "https://wa.me/+523322052692")}
+                  onClick={() => (window.location.href = "https://wa.me/523334626001")}
                 >
                   <Whatsapp className="mr-2 h-5 w-5" />
                   WhatsApp
@@ -205,14 +182,14 @@ export default function Preprensa() {
                     <div className="flex space-x-4">
                       <div
                         className="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 cursor-pointer hover:-translate-y-1"
-                        onClick={() => (window.location.href = "tel:+523322052692")}
+                        onClick={() => (window.location.href = "tel:+523334626001")}
                       >
                         <Phone className="h-5 w-5 text-white" />
                       </div>
                       <div
                         className="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 cursor-pointer hover:-translate-y-1"
                         onClick={() =>
-                          (window.location.href = "https://wa.me/+523322052692")
+                          (window.location.href = "https://wa.me/523334626001")
                         }
                       >
                         <Whatsapp className="h-5 w-5 text-white" />
@@ -221,7 +198,7 @@ export default function Preprensa() {
                     <Button
                       variant="default"
                       className="bg-white hover:bg-gray-200 rounded-xl text-black font-medium px-5 py-3 transition-all duration-300 hover:-translate-y-1"
-                      onClick={() => (window.location.href = "tel:+523322052692")}
+                      onClick={() => (window.location.href = "tel:+523334626001")}
                     >
                       Contactar Ahora
                     </Button>
@@ -231,7 +208,6 @@ export default function Preprensa() {
             </motion.div>
           </div>
 
-          {/* Stats Section */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -255,13 +231,11 @@ export default function Preprensa() {
                   }}
                   className="group relative bg-gray-800 rounded-lg overflow-hidden border border-gray-700"
                 >
-                  {/* Subtle gradient glow effect */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5`}
                   ></div>
 
                   <div className="relative z-10 p-6">
-                    {/* Top section with label and icon */}
                     <div className="flex items-start justify-between mb-5">
                       <div>
                         <div className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
@@ -295,7 +269,6 @@ export default function Preprensa() {
                       </div>
                     </div>
 
-                    {/* Description with accent border */}
                     <div className="flex flex-col mt-4 pt-4">
                       <motion.div
                         className="w-full border-t border-gray-700"
@@ -318,7 +291,6 @@ export default function Preprensa() {
                     </div>
                   </div>
 
-                  {/* Bottom accent line with gradient */}
                   <div
                     className={`h-1 w-full bg-gradient-to-r group-hover:bg-gradient-to-l group-hover:animate-fadeinleft1s transition-all duration-1000 ${stat.color}`}
                   ></div>
