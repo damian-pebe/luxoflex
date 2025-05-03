@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "./components/theme-provider";
-import Navbar from "./modules/NaviationBar/NavBar";
+import { NavbarDemo } from "./modules/NaviationBar/NavBar";
 import { Toaster } from "./components/ui/toaster";
 import LandingPage from "./modules/Routes/LandingPageComponents/LandingPage";
 import Contactus from "./modules/Routes/ContactUs/Contactus";
@@ -15,7 +15,8 @@ function App() {
     <div className="overflow-hidden">
       <ThemeProvider storageKey="vite-ui-theme">
         <Router>
-          <Navbar />
+          {/* <Navbar /> */}
+          <NavbarDemo/>
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/contactus" element={<Contactus />} />
