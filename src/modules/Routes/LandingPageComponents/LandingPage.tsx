@@ -3,9 +3,9 @@ import { PoweringTeams } from "./LandingPageComponents/PoweringTeams/PoweringTea
 import Preprensa from "./LandingPageComponents/Preprensa/Preprensa";
 // import { Materials } from "../PastWorks/Materials";
 // import Products from "../PastWorks/Products/Products";
-import Services from "./Services/Services";
 import Contactanos from "./LandingPageComponents/Contactanos/Contactanos";
 import CarouselComponent from "./LandingPageComponents/Carousel/Carousel";
+import Services from "./LandingPageComponents/Services/Services";
 export default function LandingPage() {
  
   return (
