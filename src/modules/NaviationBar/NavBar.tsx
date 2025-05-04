@@ -7,24 +7,24 @@ import {
   NavbarButton,
 } from "@/components/aceternity/resizable-navbar";
 import { Sidebar } from "./options/sidebar";
+import { useNavigate } from "react-router-dom";
 
-export function NavbarDemo() {
+export function NavbarLuxoflex() {
   const navItems = [
     {
-      name: "Features",
-      link: "/features",
+      name: "Luxoflex",
+      link: "/luxoflex",
     },
     {
-      name: "Pricing",
-      link: "/pricing",
+      name: "Vision",
+      link: "/vision",
     },
     {
-      name: "Contact",
-      link: "/contact",
+      name: "Mision",
+      link: "/mission",
     },
   ];
-
-
+  const navigate = useNavigate();
   return (
     <div className="fixed top-0 z-50 w-full">
       <Navbar>
@@ -32,21 +32,28 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            <NavbarButton
+              onClick={() => navigate("/pastworks")}
+              variant="secondary"
+            >
+              Trabajos
+            </NavbarButton>
+            <NavbarButton
+              onClick={() => navigate("/contactus")}
+              variant="primary"
+            >
+              Contactanos
+            </NavbarButton>
           </div>
         </NavBody>
 
         <div className="md:hidden flex z-30">
-           <Sidebar />
+          <Sidebar />
         </div>
       </Navbar>
     </div>
   );
 }
-
-
-
 
 //import { Sidebar } from "./options/sidebar";
 // import Categories from "./options/categories";
