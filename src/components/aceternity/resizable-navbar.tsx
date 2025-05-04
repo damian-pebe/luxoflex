@@ -98,8 +98,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       transition={{
         type: "spring",
-        stiffness: 200,
-        damping: 50,
+        stiffness: 100,
+        damping: 30,
       }}
       style={{
         minWidth: "900px",

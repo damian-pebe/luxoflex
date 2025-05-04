@@ -5,6 +5,8 @@ import {
   NavItems,
   NavbarLogo,
   NavbarButton,
+  MobileNav,
+  MobileNavHeader,
 } from "@/components/aceternity/resizable-navbar";
 import { Sidebar } from "./options/sidebar";
 import { useNavigate } from "react-router-dom";
@@ -46,10 +48,14 @@ export function NavbarLuxoflex() {
             </NavbarButton>
           </div>
         </NavBody>
-
-        <div className="md:hidden flex z-30">
-          <Sidebar />
-        </div>
+        <MobileNav>
+          <MobileNavHeader>
+            <NavbarLogo />
+            <div className="md:hidden flex z-30">
+              <Sidebar />
+            </div>
+          </MobileNavHeader>
+        </MobileNav>
       </Navbar>
     </div>
   );

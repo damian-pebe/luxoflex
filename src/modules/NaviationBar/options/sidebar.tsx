@@ -26,11 +26,11 @@ export function Sidebar() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <div className="pt-5 pr-5 z-50 hover:cursor-pointer">
+        <div className="pr-2 z-50 hover:cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="16"
+            height="16"
             viewBox="0 0 16 16"
           >
             <path
