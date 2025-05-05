@@ -22,6 +22,7 @@ import TrueFocus from "@/components/reactbits/true_focus";
 import FormContact from "../LandingPageComponents/LandingPageComponents/Contactanos/components/FormContact";
 import EffectScroll from "@/components/effectScroll";
 import GlassIcons from "@/components/reactbits/GlassIcons";
+import { useScrollToTop } from "@/hooks/scrollToTop";
 
 export default function ContactUs() {
   const enterpriseInfo = {
@@ -71,7 +72,7 @@ export default function ContactUs() {
     { icon: <EnvelopeFill />, color: "gmail", label: "Gmail" },
     { icon: <TelephoneFill />, color: "whatsapp", label: "Phone Call" },
   ];
-  
+  useScrollToTop();
   return (
     <div className="container pb-12 overflow-hidden">
       <div className="relative h-[300px] rounded-b-xl overflow-hidden opacity-0 animate-fadeinbouncedown hover:scale-105 transition-all duration-1000 ">
@@ -144,29 +145,28 @@ export default function ContactUs() {
           </Card>
         </div>
 
-        <FormContact/>
+        <FormContact />
       </div>
 
-     <div className="flex flex-col w-full transition-all duration-1000 pt-32">
-                 <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
-                   <EffectScroll classname="animate-fadein duration-1000">
-                     <TrueFocus
-                       sentence="Redes sociales"
-                       manualMode={false}
-                       blurAmount={5}
-                       borderColor="rgba(29, 204, 206, 0.8)"
-                       animationDuration={2}
-                       pauseBetweenAnimations={0.5}
-                     />
-                   </EffectScroll>
-                 </div>
-                 <EffectScroll classname="animate-fadein duration-1000">
-                   <div className="relative h-full">
-                     <GlassIcons items={items} className="custom-class" />
-                   </div>
-                 </EffectScroll>
-               </div>
+      <div className="flex flex-col w-full transition-all duration-1000 pt-32">
+        <div className="pb-8 justify-center flex items-center  text-4xl font-extralight font-raleway">
+          <EffectScroll classname="animate-fadein duration-1000">
+            <TrueFocus
+              sentence="Redes sociales"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="rgba(29, 204, 206, 0.8)"
+              animationDuration={2}
+              pauseBetweenAnimations={0.5}
+            />
+          </EffectScroll>
+        </div>
+        <EffectScroll classname="animate-fadein duration-1000">
+          <div className="relative h-full">
+            <GlassIcons items={items} className="custom-class" />
+          </div>
+        </EffectScroll>
+      </div>
     </div>
   );
 }
-

@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
-import { TypeAnimation } from "react-type-animation";import { background } from "@/const";
+import { TypeAnimation } from "react-type-animation";
+import { background } from "@/const";
 
-import {logo} from "@/const"; 
+import { logo } from "@/const";
 import { WobbleCardDemo } from "./WobbleCard";
+import { useScrollToTop } from "@/hooks/scrollToTop";
 
 const WhoWeAre = () => {
+  useScrollToTop();
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -49,22 +52,20 @@ const WhoWeAre = () => {
         <BackgroundOverlay />
         <ContentWrapper ref={ref}>
           <div className=" pb-12 ">
-           
-              <TextImageGrid>
-                <ContentBlock className="animate-slideinup">
-                  <SectionTitle>Innovación y Diseño</SectionTitle>
-                  <Text>
-                    Cada proyecto representa una oportunidad para crear soluciones
-                    únicas que transforman espacios ordinarios en extraordinarios.
-                  </Text>
-                </ContentBlock>
-                <div className="animate-slideinup">
-
-                <ImageContainer >
-                  <StyledImage src={logo} alt="Innovación"  />
+            <TextImageGrid>
+              <ContentBlock className="animate-slideinup">
+                <SectionTitle>Innovación y Diseño</SectionTitle>
+                <Text>
+                  Cada proyecto representa una oportunidad para crear soluciones
+                  únicas que transforman espacios ordinarios en extraordinarios.
+                </Text>
+              </ContentBlock>
+              <div className="animate-slideinup">
+                <ImageContainer>
+                  <StyledImage src={logo} alt="Innovación" />
                 </ImageContainer>
-                </div>
-              </TextImageGrid>
+              </div>
+            </TextImageGrid>
 
             <ThreeColumnSection>
               <motion.div

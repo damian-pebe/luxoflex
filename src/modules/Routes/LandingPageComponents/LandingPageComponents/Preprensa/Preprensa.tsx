@@ -1,16 +1,14 @@
 import {
-  CheckCircle,
-  Phone,
   ArrowRight,
   Clock,
   Shield,
   Award,
   Star,
   TrendingUp,
+  CheckSquareIcon,
 } from "lucide-react";
 import { grabados } from "@/const";
-import { Button } from "@/components/ui/button";
-import { Whatsapp } from "react-bootstrap-icons";
+import { TelephoneFill, Whatsapp } from "react-bootstrap-icons";
 import { motion } from "framer-motion";
 import React from "react";
 import CountUp from "@/components/reactbits/count_up";
@@ -24,7 +22,7 @@ export default function Preprensa() {
       label: "Satisfacción del cliente",
       icon: <Star className="h-8 w-8 text-yellow-400" />,
       color: "from-yellow-400 to-yellow-600",
-      description: "YoY Growth +12.4%",
+      description: "Basado en encuestas a clientes",
       trend: "up",
     },
     {
@@ -33,7 +31,7 @@ export default function Preprensa() {
       label: "Tiempo de respuesta",
       icon: <Clock className="h-8 w-8 text-blue-400" />,
       color: "from-blue-400 to-blue-600",
-      description: "Last 30 days",
+      description: "Servicio disponible 24/7",
       trend: "up",
     },
     {
@@ -42,16 +40,16 @@ export default function Preprensa() {
       label: "Años de experiencia",
       icon: <Award className="h-8 w-8 text-purple-400" />,
       color: "from-purple-400 to-purple-600",
-      description: "Q1 2025",
+      description: "En todos nuestros servicios",
       trend: "up",
     },
     {
-      value: 1000,
+      value: 999,
       value2: "+",
       label: "Proyectos completados",
       icon: <Shield className="h-8 w-8 text-green-400" />,
       color: "from-green-400 to-green-600",
-      description: "Daily average",
+      description: "Clientes satisfechos",
       trend: "up",
     },
   ];
@@ -59,9 +57,8 @@ export default function Preprensa() {
   return (
     <div className="bg-black py-8">
       <div className="w-full min-h-screen bg-black text-white overflow-hidden ">
-        <ThreeDotsBlack top={true}/>
+        <ThreeDotsBlack top={true} />
 
-        
         <div className="container mx-auto py-16 px-6 lg:px-8 relative">
           <div className="text-center mb-12">
             <motion.h1
@@ -78,9 +75,9 @@ export default function Preprensa() {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="text-xl md:text-2xl pt- leading-relaxed font-poppins text-gray-200 max-w-4xl mx-auto"
             >
-              <span className=" text-blue-400">LUXOFLEX</span> lleva tu visión
-              al siguiente nivel con nuestra tecnología de preprensa digital de
-              vanguardia.
+              <span className=" text-blue-400 font-bold">LUXOFLEX</span> Lleva
+              tu Visión al Siguiente Nivel con Nuestra Tecnología de PREPRENSA
+              DIGITAL
             </motion.p>
           </div>
 
@@ -92,14 +89,15 @@ export default function Preprensa() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-8"
             >
-              <p className="text-xl md:text-2xl leading-relaxed font-poppins text-gray-300">
-                En <span className="font-bold text-white">LUXOFLEX</span>,
-                nuestra preprensa digital garantiza que cada proyecto de
-                impresión alcance su{" "}
-                <span className=" text-gray-200">máximo potencial</span>.
-                Utilizamos tecnología avanzada para optimizar archivos, ajustar
-                colores y asegurar que cada detalle esté perfectamente preparado
-                antes de la impresión de grabados.
+              <p className="text-xl md:text-2xl leading-relaxed font-poppins font-light text-gray-300">
+                En <span className="font-black text-blue-500">LUXOFLEX</span>,
+                Nuestra Preprensa Digital Garantiza que Cada Proyecto de
+                Impresión Alcance su{" "}
+                <span className="uppercase">máximo potencial</span>
+                {" \n"}
+                Utilizamos Tecnología Avanzada para Optimizar Archivos, Ajustar
+                Colores y Asegurar que Cada Detalle esté Perfectamente Preparado
+                Antes de su Producción.
               </p>
 
               <ul className="space-y-6">
@@ -116,8 +114,8 @@ export default function Preprensa() {
                     transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                     className="flex items-center text-lg font-mono text-gray-300"
                   >
-                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-gray-800 mr-4 shadow-lg">
-                      <CheckCircle className="h-5 w-5 text-white" />
+                    <div className="flex items-center justify-center h-8 w-8 rounded-full mr-4 shadow-lg">
+                      <CheckSquareIcon className="h-5 w-5 text-white" />
                     </div>
                     <span className="text-xl">{item}</span>
                   </motion.li>
@@ -130,23 +128,31 @@ export default function Preprensa() {
                 transition={{ duration: 0.8, delay: 1 }}
                 className="flex items-center space-x-4 pt-6"
               >
-                <Button
-                  size="lg"
-                  className="bg-white text-black hover:bg-gray-200 text-lg  py-6 px-8 rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-1"
-                  onClick={() => (window.location.href = "mailto:ventasluxoflex@gmail.com")}
-                >
-                  Solicitar Cotización
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg  py-6 px-8 rounded-xl transition-all duration-300 hover:-translate-y-1"
-                  onClick={() => (window.location.href = "https://wa.me/523334626001")}
-                >
-                  <Whatsapp className="mr-2 h-5 w-5" />
-                  WhatsApp
-                </Button>
+                <div className="animate-slideinup duration-1000 flex">
+                  <button
+                    onClick={() =>
+                      (window.location.href = "mailto:ventasluxoflex@gmail.com")
+                    }
+                    className="group flex items-center gap-x-3 font-poppins bg-white text-black hover:bg-gray-200 text-lg py-4 px-8 rounded-xl shadow-lg transform transition-all duration-700 hover:-translate-y-[5px]"
+                  >
+                    Solicitar Cotización
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </button>
+                </div>
+
+                <div className="animate-slideinup duration-1000 flex">
+                  <button
+                    onClick={() => {
+                      window.location.href = "https://wa.me/523334626001";
+                    }}
+                    className="group flex items-center gap-x-3 font-poppins border-2 border-green-600 font-semibold bg-green-600 text-white px-14 py-4 rounded-full transform hover:-translate-y-[5px] transition-all duration-700 shadow-xl hover:bg-green-700"
+                  >
+                    <Whatsapp className="mr-2 h-5 w-5 transition-all duration-500 ease-in-out group-hover:text-white" />
+                    <span className="transition-all duration-500 ease-in-out group-hover:text-white">
+                      WhatsApp
+                    </span>
+                  </button>
+                </div>
               </motion.div>
             </motion.div>
 
@@ -164,10 +170,10 @@ export default function Preprensa() {
                   alt="Preprensa Digital de Alta Calidad"
                 />
                 <div className="hidden sm:block absolute bottom-6 right-6 p-6 bg-black/70 rounded-2xl text-white backdrop-blur-md shadow-xl border border-gray-800 transform transition-all duration-300 max-w-sm z-20 hover:-translate-y-1">
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold font-safira text-white">
                     ¿Necesitas ayuda con tu diseño?
                   </h3>
-                  <div className="flex items-center space-x-3 mt-3">
+                  <div className="flex items-center space-x-3 mt-3 font-poppins">
                     <div className="h-12 w-12 rounded-full bg-gray-800 flex items-center justify-center shadow-lg">
                       <span className="text-xl font-bold">TP</span>
                     </div>
@@ -181,27 +187,33 @@ export default function Preprensa() {
                   <div className="flex items-center justify-between gap-3 pt-4">
                     <div className="flex space-x-4">
                       <div
-                        className="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 cursor-pointer hover:-translate-y-1"
-                        onClick={() => (window.location.href = "tel:+523334626001")}
+                        onClick={() =>
+                          (window.location.href = "tel:+523334626001")
+                        }
+                        className=" hover:cursor-pointer p-3 rounded-full bg-gray-100 hover:bg-teal-100 dark:bg-gray-800 dark:hover:bg-teal-900 transition-all duration-700 transform hover:scale-110"
                       >
-                        <Phone className="h-5 w-5 text-white" />
+                        <TelephoneFill className="h-6 w-6 text-teal-600" />
                       </div>
                       <div
-                        className="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 cursor-pointer hover:-translate-y-1"
                         onClick={() =>
                           (window.location.href = "https://wa.me/523334626001")
                         }
+                        className="hover:cursor-pointer p-3 rounded-full bg-gray-100 hover:bg-green-100 dark:bg-gray-800 dark:hover:bg-green-900 transition-all duration-700 transform hover:scale-110"
                       >
-                        <Whatsapp className="h-5 w-5 text-white" />
+                        <Whatsapp className="h-6 w-6 text-green-600" />
                       </div>
                     </div>
-                    <Button
-                      variant="default"
-                      className="bg-white hover:bg-gray-200 rounded-xl text-black font-medium px-5 py-3 transition-all duration-300 hover:-translate-y-1"
-                      onClick={() => (window.location.href = "tel:+523334626001")}
-                    >
-                      Contactar Ahora
-                    </Button>
+
+                    <div className="animate-slideinup duration-1000 flex">
+                      <button
+                        onClick={() =>
+                          (window.location.href = "tel:+523334626001")
+                        }
+                        className="group flex items-center gap-x-3 font-poppins bg-white text-black hover:bg-gray-200 text-sm py-2 px-8 rounded-xl shadow-lg transform transition-all duration-700 hover:-translate-y-[5px]"
+                      >
+                        Contactar Ahora
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

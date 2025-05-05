@@ -186,7 +186,7 @@
 //     </div>
 //   );
 // }
-  // 
+//
 
 "use client";
 import "../../../index.css";
@@ -198,8 +198,10 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { background } from "@/const";
 import { useNavigate } from "react-router-dom";
+import { useScrollToTop } from "@/hooks/scrollToTop";
 
 export default function VisionPage() {
+  useScrollToTop();
   const title = useTypewriter(" Nuestra Visión del Futuro");
   const subtitle = useTypewriter(" Construyendo el mañana, hoy");
   const navigate = useNavigate();

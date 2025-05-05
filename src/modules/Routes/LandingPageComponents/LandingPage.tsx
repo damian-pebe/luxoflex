@@ -6,16 +6,19 @@ import Preprensa from "./LandingPageComponents/Preprensa/Preprensa";
 import Contactanos from "./LandingPageComponents/Contactanos/Contactanos";
 import CarouselComponent from "./LandingPageComponents/Carousel/Carousel";
 import Services from "./LandingPageComponents/Services/Services";
+import Banner from "./LandingPageComponents/Banner/Banner";
+import { useScrollToTop } from "@/hooks/scrollToTop";
 export default function LandingPage() {
- 
+  useScrollToTop();
   return (
     <div className="bg-[#09090B] overflow-hidden">
       <StartPage />
-      <Services/>
+      <Services />
       <PoweringTeams />
       <Contactanos />
       <Preprensa />
-      <CarouselComponent/>
+      <CarouselComponent />
+      <Banner />
       {/* <Materials />
       <Products /> */}
     </div>

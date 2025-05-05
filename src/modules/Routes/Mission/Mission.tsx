@@ -9,7 +9,9 @@ import { background } from "@/const";
 import { InfiniteMovingCardsDemo } from "./carousel-infinity";
 import { IconMoodHappy } from "@tabler/icons-react";
 import Skeleton from "antd/es/skeleton";
+import { useScrollToTop } from "@/hooks/scrollToTop";
 export default function Mission() {
+  useScrollToTop();
   const [isLoading] = useState(false);
   const title = useTypewriter("  Nuestra Misión");
   const subtitle = useTypewriter(" Innovación en Etiquetas Autoadheribles");
@@ -79,21 +81,21 @@ export default function Mission() {
 
       <div className="w-full">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-5">
-            {isLoading ? (
+          {isLoading ? (
             <>
               <div className="space-y-4 w-full">
-              <Skeleton className="h-12 w-3/4 mx-auto" />
-              <Skeleton className="h-[200px] w-full" />
+                <Skeleton className="h-12 w-3/4 mx-auto" />
+                <Skeleton className="h-[200px] w-full" />
               </div>
             </>
-            ) : (
+          ) : (
             <>
               <h3 className="text-5xl text-center font-bungee font-extralight text-gray-200 mb-8">
-              Lo que dicen nuestros clientes
+                Lo que dicen nuestros clientes
               </h3>
               <InfiniteMovingCardsDemo />
             </>
-            )}
+          )}
           <h2 className="w-full font-russo pt-5 flex justify-center  text-5xl md:text-7xl font-bold text-center tracking-widest">
             Lo Que Nos Impulsa
           </h2>
