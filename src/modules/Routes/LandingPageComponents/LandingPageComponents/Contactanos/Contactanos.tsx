@@ -92,10 +92,13 @@ const Contactanos = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-20 py-16">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="container mx-auto px-6 md:px-10 lg:px-20 py-16">
+          {" "}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {" "}
             <Card className="p-6 shadow-2xl animate-fadeInUp animate-delay-200 bg-[#FAFAFA] ">
-              <div className="w-full flex flex-row justify-between items-center gap-4">
+              <div className="w-full flex justify-between items-start sm:items-center gap-4">
+                {" "}
                 <h2 className=" text-4xl font-dancing text-black">
                   Envíanos un Mensaje
                 </h2>
@@ -182,7 +185,6 @@ const Contactanos = () => {
                 </Button>
               </form>
             </Card>
-
             <div className="space-y-8">
               <div className="animate-fadeInUp animate-delay-300">
                 <h2 className="text-2xl font-bold mb-6 text-black border-b pb-2">
@@ -194,7 +196,7 @@ const Contactanos = () => {
                     <Phone className="h-5 w-5 text-black mr-3 mt-1" />
                     <div>
                       <h3 className="font-medium text-black">Teléfono</h3>
-                      <p className="text-gray-600">+52 33 2205 2692</p>
+                      <p className="text-gray-600">+52 33 3462 6001</p>
                       <p className="text-gray-500 text-sm">Lun-Dom, 8am-10pm</p>
                     </div>
                   </div>

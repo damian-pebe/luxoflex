@@ -52,7 +52,7 @@ export default function FormContact() {
   return (
     <div className="pt-10 w-[450px] flex justify-center items-center mx-auto">
       <Card className="backdrop-blur-sm bg-white/10 dark:bg-black/10 border-2 shadow-xl">
-        <CardHeader className="space-y-2">
+        <CardHeader className="flex justify-between">
           <CardTitle className="text-3xl text-center font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
             Envíanos un mensaje
           </CardTitle>
