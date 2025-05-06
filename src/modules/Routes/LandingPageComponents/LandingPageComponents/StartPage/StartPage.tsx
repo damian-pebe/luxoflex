@@ -42,7 +42,7 @@ export default function StartPage() {
         />
         <div className="absolute inset-0 flex justify-center items-center px-4">
           <div className=" flex flex-col items-center gap-10 justify-center h-[40rem]">
-            <img className="  h-20 md:h-36" src={logo} />
+            <img className="animate-fadeinbouncedown h-20 md:h-36" src={logo} />
             <div className="animate-fadeinbounceup ">
               <TypewriterEffect words={words2} />
             </div>
@@ -60,13 +60,13 @@ export default function StartPage() {
             </h2>
 
             <div className="flex flex-col gap-5 items-center md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 ">
-              <div>
+              <div className="animate-fadeinbounceup">
                 <ButtonStyle1
                   str="Contactanos ahora"
                   onClick={() => navigate("/contactus")}
                 />
               </div>
-              <div>
+              <div className="animate-fadeinbouncedown">
                 <ButtonStyle1
                   str="Trabajos pasados"
                   onClick={() => navigate("/pastworks")}
