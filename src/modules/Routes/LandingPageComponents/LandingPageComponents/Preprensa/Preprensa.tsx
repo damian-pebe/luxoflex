@@ -128,31 +128,34 @@ export default function Preprensa() {
                 transition={{ duration: 0.8, delay: 1 }}
                 className="flex items-center space-x-4 pt-6"
               >
-                <div className="animate-slideinup duration-1000 flex">
-                  <button
-                    onClick={() =>
-                      (window.location.href = "mailto:ventasluxoflex@gmail.com")
-                    }
-                    className="group flex items-center gap-x-3 font-poppins bg-white text-black hover:bg-gray-200 text-lg py-4 px-8 rounded-xl shadow-lg transform transition-all duration-700 hover:-translate-y-[5px]"
-                  >
-                    Solicitar Cotización
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </button>
-                </div>
+               <div className="flex flex-col sm:flex-row gap-4 w-full">
+  <div className="animate-slideinup duration-1000 flex w-full">
+    <button
+      onClick={() =>
+        (window.location.href = "mailto:ventasluxoflex@gmail.com")
+      }
+      className="group w-full flex items-center justify-center gap-x-3 font-poppins bg-white text-black hover:bg-gray-200 text-lg py-4 px-8 rounded-xl shadow-lg transform transition-all duration-700 hover:-translate-y-[5px]"
+    >
+      Solicitar Cotización
+      <ArrowRight className="ml-2 h-5 w-5" />
+    </button>
+  </div>
 
-                <div className="animate-slideinup duration-1000 flex">
-                  <button
-                    onClick={() => {
-                      window.location.href = "https://wa.me/523334626001";
-                    }}
-                    className="group flex items-center gap-x-3 font-poppins border-2 border-green-600 font-semibold bg-green-600 text-white px-14 py-4 rounded-full transform hover:-translate-y-[5px] transition-all duration-700 shadow-xl hover:bg-green-700"
-                  >
-                    <Whatsapp className="mr-2 h-5 w-5 transition-all duration-500 ease-in-out group-hover:text-white" />
-                    <span className="transition-all duration-500 ease-in-out group-hover:text-white">
-                      WhatsApp
-                    </span>
-                  </button>
-                </div>
+  <div className="animate-slideinup duration-1000 flex w-full">
+    <button
+      onClick={() => {
+        window.location.href = "https://wa.me/523334626001";
+      }}
+      className="group w-full flex items-center justify-center gap-x-3 font-poppins border-2 border-green-600 font-semibold bg-green-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-[5px] transition-all duration-700 shadow-xl hover:bg-green-700"
+    >
+      <Whatsapp className="h-5 w-5 transition-all duration-500 ease-in-out group-hover:text-white" />
+      <span className="transition-all duration-500 ease-in-out group-hover:text-white">
+        WhatsApp
+      </span>
+    </button>
+  </div>
+</div>
+
               </motion.div>
             </motion.div>
 
@@ -169,7 +172,7 @@ export default function Preprensa() {
                   className="w-full h-full object-cover rounded-tl-3xl rounded-tr-sm rounded-bl-3xl rounded-br-3xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500 z-10"
                   alt="Preprensa Digital de Alta Calidad"
                 />
-                <div className="hidden sm:block absolute bottom-6 right-6 p-6 bg-black/70 rounded-2xl text-white backdrop-blur-md shadow-xl border border-gray-800 transform transition-all duration-300 max-w-sm z-20 hover:-translate-y-1">
+                <div className=" absolute bottom-6 right-6 p-6 bg-black/70 rounded-2xl text-white backdrop-blur-md shadow-xl border border-gray-800 transform transition-all duration-300 max-w-sm z-20 hover:-translate-y-1">
                   <h3 className="text-2xl font-bold font-safira text-white">
                     ¿Necesitas ayuda con tu diseño?
                   </h3>
