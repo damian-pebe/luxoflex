@@ -1,932 +1,148 @@
-import { motion } from "framer-motion";
-import styled from "styled-components";
-import { useInView } from "react-intersection-observer";
-import { TypeAnimation } from "react-type-animation";
-import { background } from "@/const";
-
-import { logo } from "@/const";
-import { WobbleCardDemo } from "./WobbleCard";
+import {
+  ThreeDotsBlack,
+  ThreeDotsWhite,
+} from "@/components/ReusableIcons/ReusableIcons";
+import { background, flexo_img } from "@/const";
 import { useScrollToTop } from "@/hooks/scrollToTop";
 
 const WhoWeAre = () => {
   useScrollToTop();
-  const [ref, inView] = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  });
 
   return (
-    <div>
-      <div className="relative h-[300px] rounded-b-xl overflow-hidden opacity-0 animate-fadeinbouncedown">
-        <img
-          src={background}
-          alt="Imagen de contacto"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <FullWidthSection>
-            <Title className="font-playfair text-4xl md:text-5xl lg:text-6xl tracking-wider text-white">
-              <TypeAnimation
-                sequence={[
-                  "Quiénes Somos",
-                  1000,
-                  "Nuestra Historia",
-                  1000,
-                  "LUXOFLEX",
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
-            </Title>
-            <Text className="text-center max-w-3xl mx-auto font-exo text-lg md:text-xl tracking-wide text-white/80 mt-6">
-              En LUXOFLEX, transformamos ideas en realidades. Nuestra pasión por
-              la innovación y el compromiso con la excelencia nos define en cada
-              proyecto que emprendemos.
-            </Text>
-          </FullWidthSection>
-        </div>
-      </div>
-      <Container className="px-5">
-        <BackgroundOverlay />
-        <ContentWrapper ref={ref}>
-          <div className=" pb-12 ">
-            <TextImageGrid>
-              <ContentBlock className="animate-slideinup">
-                <SectionTitle>Innovación y Diseño</SectionTitle>
-                <Text>
-                  Cada proyecto representa una oportunidad para crear soluciones
-                  únicas que transforman espacios ordinarios en extraordinarios.
-                </Text>
-              </ContentBlock>
-              <div className="animate-slideinup">
-                <ImageContainer>
-                  <StyledImage src={logo} alt="Innovación" />
-                </ImageContainer>
-              </div>
-            </TextImageGrid>
-
-            <ThreeColumnSection>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="group"
-              >
-                <div className="hover:cursor-grab">
-                  <ValueCard
-                    title="Visión"
-                    description="Ser líderes en soluciones innovadoras y sostenibles, transformando la industria con excelencia y creatividad."
-                    icon={
-                      <svg
-                        className="w-8 h-8 text-blue-300"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                        />
-                      </svg>
-                    }
-                  />
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="group"
-              >
-                {" "}
-                <div className="hover:cursor-grab">
-                  <ValueCard
-                    title="Misión"
-                    description="Transformar espacios con diseños únicos y funcionales, superando las expectativas de nuestros clientes."
-                    icon={
-                      <svg
-                        className="w-8 h-8 text-purple-300"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                        />
-                      </svg>
-                    }
-                  />{" "}
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="group"
-              >
-                {" "}
-                <div className="hover:cursor-grab">
-                  <ValueCard
-                    title="Valores"
-                    description="Excelencia, innovación y compromiso inquebrantable con la satisfacción de nuestros clientes."
-                    icon={
-                      <svg
-                        className="w-8 h-8 text-emerald-300"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                        />
-                      </svg>
-                    }
-                  />{" "}
-                </div>
-              </motion.div>
-            </ThreeColumnSection>
-
-            <FullWidthImageSection className="hover:cursor-cell">
-              <StyledImage
-                src={logo}
-                alt="Experiencia"
-                className="h-[50vh] md:h-[70vh] "
-              />
-              <OverlayText>
-                <SectionTitle>Experiencia Comprobada</SectionTitle>
-                <Text>
-                  Más de 1000 proyectos exitosos respaldan nuestra trayectoria
-                </Text>
-              </OverlayText>
-            </FullWidthImageSection>
+    <div className="flex flex-col">
+      <div className="pb-5 h-full w-full bg-[#FAFAFA] flex flex-col justify-center items-center">
+        {/* HERO */}
+        <div className="relative h-full w-full bg-[#FAFAFA] mb-5">
+          <img
+            src={background}
+            alt="Equipo de coaching"
+            className="w-full h-[80vh] object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end">
+            <div className="p-6 md:p-12 text-white max-w-4xl">
+              <h1 className="text-3xl md:text-5xl font-semibold leading-snug">
+                Nos apasiona ayudarte a crecer <br /> y lograr un{" "}
+                <span className="border-b-4 border-yellow-400">cambio.</span>
+              </h1>
+            </div>
           </div>
-        </ContentWrapper>
+        </div>
+        <ThreeDotsWhite top={true} />
+        {/* ABOUT LUXOFLEX SECTION */}
+        <div className="w-full max-w-6xl px-6 py-5 grid md:grid-cols-2 gap-10 items-center text-black bg-white rounded-lg mt-5">
+          <div className="w-full flex flex-col items-center md:items-start justify-center font-rajdhani text-2xl font-light text-white/90 hover:font-bold transition-all duration-700 hover:translate-y-[5px]">
+            <img
+              src={background}
+              alt="Etiquetas personalizadas"
+              className="object-cover w-full rounded-lg shadow-2xl transform hover:cursor-crosshair hover:-rotate-1 hover:-translate-y-[10px] transition-transform duration-700"
+            />
+            <div className="text-center text-black w-full">Nuestro equipo</div>
+          </div>
+          <div className="group">
+            <h2 className="text-4xl font-raleway font-semibold mb-4 group-hover:cursor-pointer group-hover:-rotate-1 group-hover:-translate-y-[10px] transition-transform duration-700">
+              Somos Luxoflex
+            </h2>
+            <p className="text-lg font-poppins text-gray-800 leading-relaxed group-hover:cursor-pointer group-hover:rotate-1 group-hover:translate-y-[10px] transition-transform duration-700">
+              En Luxoflex, nos dedicamos a transformar ideas en etiquetas que
+              marcan la diferencia. Nos especializamos en impresión de alta
+              calidad con un enfoque en innovación, precisión y eficiencia. Ya
+              sea que necesites etiquetas autoadheribles, mangas envolventes o
+              preprensa profesional, estamos aquí para ayudarte a destacar.
+              <br />
+              <br />
+              Trabajamos con marcas que buscan sobresalir y sabemos cómo
+              convertir cada detalle en valor visual. Nuestro compromiso es
+              claro: entregar resultados que eleven la imagen de tu producto.
+            </p>
+          </div>
+        </div>
 
-        <WobbleCardDemo />
-      </Container>{" "}
+        {/* LUXOFLEX SERVICES SECTION */}
+        <div className="w-full max-w-6xl px-6 py-16 text-black text-center">
+          <div className="font-poppins font-normal italic text-3xl md:text-5xl text-center mb-4">
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <div className="flex gap-2 items-center">
+                CREAMOS ETIQUETAS{" "}
+                <span className="font-extralight font-flamenco">para</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                EMPRESAS <span className="font-black">SOBRESALIENTES</span>
+              </div>
+            </div>
+          </div>
+          <p className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-10">
+            LUXOFLEX está impulsado por la innovación y la excelencia en
+            impresión. Nos enfocamos en precisión, rapidez y calidad para
+            ofrecer etiquetas que destacan.
+            <br className="hidden md:block" />
+            <span className="font-semibold font-rajdhani text-black underline mb-2 block mt-2">
+              ¡Haz el cambio!
+            </span>
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-md transition">
+              <img
+                src={flexo_img}
+                className="flex items-center justify-center h-[200px] w-[150px] rounded-md object-cover"
+              />
+              <h3 className="text-xl font-semibold mb-2">
+                Etiquetas autoadheribles de flexografía
+              </h3>
+              <p className="text-gray-600">
+                Impresión de alta calidad para todo tipo de productos.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-md transition">
+              <h3 className="text-xl font-semibold mb-2">
+                Mangas para tequilas y vinos
+              </h3>
+              <p className="text-gray-600">
+                Diseños envolventes que elevan la presentación de tus botellas.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-md transition">
+              <h3 className="text-xl font-semibold mb-2">
+                Armado de preprensa profesional
+              </h3>
+              <p className="text-gray-600">
+                Optimización técnica para resultados impecables en producción.
+              </p>
+            </div>
+          </div>
+        </div>
+        <ThreeDotsWhite />
+      </div>
+      <div className="py-5 h-full w-full bg-black text-white flex flex-col justify-center items-center">
+        <ThreeDotsBlack top={true} />
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          Nuestros productos
+        </h2>
+        <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+          Una selección de etiquetas y empaques que han ayudado a destacar
+          marcas sobresalientes.
+        </p>
+        <div className="grid md:grid-cols-3 gap-6 pb-5">
+          <img
+            src={background}
+            alt="Producto 1"
+            className="w-full h-64 object-cover rounded-lg shadow -rotate-1"
+          />
+          <img
+            src={background}
+            alt="Producto 2"
+            className="w-full h-64 object-cover rounded-lg shadow"
+          />
+          <img
+            src={background}
+            alt="Producto 3"
+            className="w-full h-64 object-cover rounded-lg shadow rotate-1"
+          />
+        </div>
+        <ThreeDotsBlack />
+      </div>
     </div>
   );
 };
-
-const Container = styled.div`
-  position: relative;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
-  overflow: hidden;
-  z-index: 0;
-`;
-
-const BackgroundOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-`;
-
-const ContentWrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-`;
-
-const Title = styled.h1`
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-`;
-
-const SectionTitle = styled.h2`
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  color: #f0f0f0;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  font-family: "Orbitron", sans-serif;
-  letter-spacing: 0.05em;
-`;
-
-const Text = styled.p`
-  line-height: 1.6;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-`;
-
-const TextImageGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
-  margin: 6rem 0;
-  align-items: center;
-  padding: 0 2rem;
-
-  .card {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    background-image: url(${background});
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.5s ease;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      transition: all 0.5s ease;
-    }
-
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-
-      &::before {
-        background: rgba(0, 0, 0, 0.7);
-      }
-    }
-  }
-
-  .card__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-    z-index: 2;
-  }
-
-  .card:hover .card__content {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .card__title {
-    font-size: 2.2rem;
-    color: #ffffff;
-    font-weight: 600;
-    font-family: "Playfair Display", serif;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .card__description {
-    color: #f0f0f0;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    max-width: 80%;
-    font-family: "Exo 2", sans-serif;
-  }
-
-  .card__features {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-
-    span {
-      color: #a0a0ff;
-      font-size: 1rem;
-      font-family: "Exo 2", sans-serif;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: #ffffff;
-        transform: translateX(5px);
-      }
-    }
-  }
-
-  .hover-indicator {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    opacity: 0.7;
-    animation: bounce 3s infinite ease-in-out;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-  }
-
-  .cursor-icon {
-    width: 24px;
-    height: 24px;
-    transform: rotate(-20deg);
-    animation: wiggle 1s infinite ease-in-out;
-  }
-
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translate(-50%, -50%);
-    }
-    50% {
-      transform: translate(-50%, -70%);
-    }
-  }
-
-  @keyframes wiggle {
-    0%,
-    100% {
-      transform: rotate(-20deg);
-    }
-    50% {
-      transform: rotate(-30deg);
-    }
-  }
-
-  .card:hover .hover-indicator {
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-
-  .card__title {
-    margin: 0;
-    font-size: 2rem;
-    color: #ffffff;
-    font-weight: 700;
-    font-family: "Playfair Display", serif;
-    text-align: center;
-    background: linear-gradient(45deg, #ffffff, #a0a0ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-  }
-
-  .card__description {
-    margin: 0;
-    font-size: 1rem;
-    color: #e0e0e0;
-    line-height: 1.6;
-    text-align: center;
-    font-family: "Exo 2", sans-serif;
-    margin-bottom: 1.5rem;
-  }
-
-  .card__features {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-
-    span {
-      color: #a0a0ff;
-      font-size: 0.9rem;
-      font-family: "Exo 2", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: #ffffff;
-        transform: translateX(5px);
-      }
-    }
-  }
-
-  .hover-indicator {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    opacity: 0.9;
-    transition: all 0.3s ease;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-  }
-
-  .cursor-icon {
-    width: 24px;
-    height: 24px;
-    animation: float 2s infinite ease-in-out;
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0) rotate(-20deg);
-    }
-    50% {
-      transform: translateY(-5px) rotate(-25deg);
-    }
-  }
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-`;
-
-const ContentBlock = styled.div`
-  direction: ltr;
-  padding: 3rem;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.95) 0%,
-    rgba(10, 10, 10, 0.8) 100%
-  );
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  &:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.98) 0%,
-      rgba(10, 10, 10, 0.9) 100%
-    );
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  }
-
-  @media (max-width: 768px) {
-    padding: 2rem;
-  }
-`;
-
-const ImageContainer = ({}: { children: React.ReactNode }) => (
-  <div>
-    <div className="card">
-      <div className="card__content">
-        <h3 className="card__title">Innovación LUXOFLEX</h3>
-        <p className="card__description">
-          Creamos espacios excepcionales que reflejan elegancia y sofisticación.
-          Nuestra pasión por el diseño y la innovación nos distingue en cada
-          proyecto.
-        </p>
-        <div className="card__features">
-          <span>✧ Diseños Exclusivos</span>
-          <span>✧ Tecnología de Vanguardia</span>
-          <span>✧ Elegancia Atemporal</span>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
-
-const FullWidthSection = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  text-align: center;
-`;
-
-const ThreeColumnSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 6rem 0;
-  padding: 0 2rem;
-
-  .card {
-    overflow: visible;
-    width: 100%;
-    height: 254px;
-  }
-
-  .content {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 300ms;
-    box-shadow: 0px 0px 10px 1px #000000ee;
-    border-radius: 5px;
-  }
-
-  .front,
-  .back {
-    background-color: #000000;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-
-  .back {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .back::before {
-    position: absolute;
-    content: " ";
-    display: block;
-    width: 160px;
-    height: 160%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      #ff9966,
-      #ff9966,
-      #ff9966,
-      #ff9966,
-      transparent
-    );
-    animation: rotation_481 5000ms infinite linear;
-  }
-
-  .back-content {
-    position: absolute;
-    width: 99%;
-    height: 99%;
-    background-color: #000000;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-
-    strong {
-      font-family: "Playfair Display", serif;
-      font-size: 2rem;
-    }
-  }
-
-  .card:hover .content {
-    transform: rotateY(180deg);
-  }
-
-  @keyframes rotation_481 {
-    0% {
-      transform: rotateZ(0deg);
-    }
-
-    0% {
-      transform: rotateZ(360deg);
-    }
-  }
-
-  .front {
-    transform: rotateY(180deg);
-    color: white;
-  }
-
-  .front .front-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .front-content .badge {
-    background-color: #00000055;
-    padding: 2px 10px;
-    border-radius: 10px;
-    backdrop-filter: blur(2px);
-    width: fit-content;
-    font-family: "Playfair Display", serif;
-    font-size: 1.2rem;
-  }
-
-  .description {
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(5px);
-    border-radius: 5px;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
-    font-family: "Playfair Display", serif;
-  }
-
-  .title p {
-    width: 50%;
-  }
-
-  .card-footer {
-    color: #ffffff88;
-    margin-top: 5px;
-    font-size: 1rem;
-  }
-
-  .front .img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .circle {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-color: #ffbb66;
-    position: relative;
-    filter: blur(15px);
-    animation: floating 2600ms infinite linear;
-  }
-
-  #bottom {
-    background-color: #ff8866;
-    left: 50px;
-    top: 0px;
-    width: 150px;
-    height: 150px;
-    animation-delay: -800ms;
-  }
-
-  #right {
-    background-color: #ff2233;
-    left: 160px;
-    top: -80px;
-    width: 30px;
-    height: 30px;
-    animation-delay: -1800ms;
-  }
-
-  @keyframes floating {
-    0% {
-      transform: translateY(0px);
-    }
-
-    50% {
-      transform: translateY(10px);
-    }
-
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ValueCard = ({
-  title,
-  description,
-  icon,
-}: {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-}) => (
-  <div className="card">
-    <div className="content">
-      <div className="back">
-        <div className="back-content">
-          {icon}
-          <strong>{title}</strong>
-        </div>
-      </div>
-      <div className="front">
-        <div className="img">
-          <div className="circle"></div>
-          <div className="circle" id="right"></div>
-          <div className="circle" id="bottom"></div>
-        </div>
-        <div className="front-content">
-          <small className="badge">{title}</small>
-          <div className="description">
-            <div className="title">
-              <p className="title">
-                <strong>{title}</strong>
-              </p>
-            </div>
-            <p className="card-footer">{description}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const FullWidthImageSection = styled.div`
-  position: relative;
-  width: 100%;
-  margin: 2rem 0;
-  height: 70vh;
-  overflow: hidden;
-  border-radius: 20px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.8),
-      rgba(18, 18, 32, 0.9)
-    );
-    z-index: 1;
-  }
-
-  &:hover img {
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 768px) {
-    height: 50vh;
-  }
-`;
-
-const OverlayText = styled.div`
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  z-index: 2;
-  backdrop-filter: blur(3px);
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-  }
-
-  ${SectionTitle} {
-    color: #f0f8ff; // Alice Blue
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    font-family: "Playfair Display", serif;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 150px;
-      height: 3px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #e6e6fa,
-        transparent
-      ); // Lavender
-    }
-  }
-
-  ${Text} {
-    color: #f0ffff; // Azure
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    font-size: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
-    opacity: 0.95;
-    position: relative;
-    padding: 30px;
-    line-height: 1.8;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border: 2px solid rgba(230, 230, 250, 0.4); // Lavender with opacity
-    }
-
-    &::before {
-      top: 0;
-      left: 0;
-      border-right: none;
-      border-bottom: none;
-    }
-
-    &::after {
-      bottom: 0;
-      right: 0;
-      border-left: none;
-      border-top: none;
-    }
-  }
-
-  .values {
-    display: flex;
-    gap: 4rem;
-    margin-top: 3rem;
-
-    .value-item {
-      text-align: center;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: translateY(-5px);
-      }
-
-      .icon {
-        font-size: 2.5rem;
-        color: #e0ffff; // Light Cyan
-        margin-bottom: 1rem;
-      }
-
-      .label {
-        font-size: 1.2rem;
-        color: #f0f8ff; // Alice Blue
-        font-family: "Playfair Display", serif;
-        margin-bottom: 0.5rem;
-      }
-
-      .description {
-        font-size: 0.9rem;
-        color: rgba(240, 248, 255, 0.8); // Alice Blue with opacity
-        max-width: 200px;
-      }
-    }
-  }
-`;
 
 export default WhoWeAre;

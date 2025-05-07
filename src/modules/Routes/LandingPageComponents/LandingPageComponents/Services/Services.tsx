@@ -40,10 +40,15 @@ export default function Services() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-12 px-2 md:px-5 items-center">
-        {[{ img: flexo_img, text: "Etiquetas autohaderibles de flexografia" },
+        {[
+          { img: flexo_img, text: "Etiquetas autohaderibles de flexografia" },
           { img: manga_img, text: "Mangas para tequilas y vinos" },
-          { img: preprensa_img, text: "Armado de preprensa profesional" }].map((item, index) => (
-          <div key={index} className="h-[370px] w-full md:w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-4 text-black px-4">
+          { img: preprensa_img, text: "Armado de preprensa profesional" },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="h-[370px] w-full md:w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-4 text-black px-4 transform hover:cursor-pointer hover:-translate-y-[10px] transition-transform duration-700"
+          >
             <img
               className="h-[250px] w-[200px] rounded-md object-cover"
               src={item.img}
