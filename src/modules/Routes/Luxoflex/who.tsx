@@ -2,7 +2,7 @@ import {
   ThreeDotsBlack,
   ThreeDotsWhite,
 } from "@/components/ReusableIcons/ReusableIcons";
-import { background, flexo_img } from "@/const";
+import { background, flexo_img, manga_img, preprensa_img } from "@/const";
 import { useScrollToTop } from "@/hooks/scrollToTop";
 
 const WhoWeAre = () => {
@@ -18,7 +18,7 @@ const WhoWeAre = () => {
             alt="Equipo de coaching"
             className="w-full h-[80vh] object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end">
+          <div className="font-daric absolute inset-0 bg-black bg-opacity-30 flex items-end">
             <div className="p-6 md:p-12 text-white max-w-4xl">
               <h1 className="text-3xl md:text-5xl font-semibold leading-snug">
                 Nos apasiona ayudarte a crecer <br /> y lograr un{" "}
@@ -81,31 +81,39 @@ const WhoWeAre = () => {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-md transition">
-              <img
-                src={flexo_img}
-                className="flex items-center justify-center h-[200px] w-[150px] rounded-md object-cover"
-              />
-              <h3 className="text-xl font-semibold mb-2">
+            <div className="rotate-1 flex flex-col justify-center items-center bg-[#f0f0f0] gap-5 p-10 rounded-lg shadow hover:shadow-md transform hover:cursor-pointer hover:-translate-y-[10px] transition-transform duration-700">
+              <h3 className="text-xl font-semibold mb-2 font-playfair ">
                 Etiquetas autoadheribles de flexografía
               </h3>
-              <p className="text-gray-600">
+              <img
+                src={flexo_img}
+                className="flex items-center justify-center h-[200px] rounded-md object-cover shadow-2xl"
+              />
+              <p className="text-gray-900 font-rajdhani font-light">
                 Impresión de alta calidad para todo tipo de productos.
               </p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-md transition">
-              <h3 className="text-xl font-semibold mb-2">
+            <div className="flex flex-col justify-center items-center bg-[#f0f0f0] gap-5 p-10 rounded-lg shadow hover:shadow-md transform hover:cursor-pointer hover:-translate-y-[10px] transition-transform duration-700">
+              <h3 className="text-xl font-semibold mb-2 font-playfair">
                 Mangas para tequilas y vinos
               </h3>
-              <p className="text-gray-600">
+              <img
+                src={manga_img}
+                className="flex items-center justify-center h-[200px] rounded-md object-cover shadow-2xl"
+              />
+              <p className="text-gray-900 font-rajdhani font-light">
                 Diseños envolventes que elevan la presentación de tus botellas.
               </p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-md transition">
-              <h3 className="text-xl font-semibold mb-2">
+            <div className="-rotate-1 flex flex-col justify-center items-center bg-[#f0f0f0] gap-5 p-10 rounded-lg shadow hover:shadow-md transform hover:cursor-pointer hover:-translate-y-[10px] transition-transform duration-700">
+              <h3 className="text-xl font-semibold mb-2 font-playfair">
                 Armado de preprensa profesional
               </h3>
-              <p className="text-gray-600">
+              <img
+                src={preprensa_img}
+                className="flex items-center justify-center h-[200px] rounded-md object-cover shadow-2xl"
+              />
+              <p className="text-gray-900 font-rajdhani font-light">
                 Optimización técnica para resultados impecables en producción.
               </p>
             </div>
