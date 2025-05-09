@@ -78,23 +78,28 @@ const Feature = ({
   index: number;
 }) => {
   return (
-    <div
-      className={cn(
-        "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800",
-        (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
-        index < 4 && "lg:border-b dark:border-neutral-800"
-      )}
-    >
-      <div className="absolute inset-0 bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900 opacity-0 group-hover/feature:opacity-100 transition duration-200 z-[-2]" />
-      <div className="text-lg font-bold mb-2 relative z-[-1] px-10 font-heading">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100 tracking-tight">
-          {title}
-        </span>
-      </div>
-      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-[-1] px-10 font-normal leading-relaxed">
-        {description}
-      </p>
-    </div>
+   <div
+  className={cn(
+    "group flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800 transition-all duration-1000 hover:cursor-crosshair",
+    (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
+    index < 4 && "lg:border-b dark:border-neutral-800"
+  )}
+>
+  <div className="absolute inset-0 bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900 opacity-0 group-hover/feature:opacity-100 transition duration-200 z-[-2]" />
+
+  <div className="text-lg font-bold mb-2 relative z-[-1] px-10 font-heading">
+    <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
+
+    <span className="font-poppins inline-block text-neutral-800 dark:text-neutral-100 tracking-tight transition-all duration-700 ease-in-out transform group-hover/feature:translate-x-2 group-hover/feature:uppercase group-hover/feature:tracking-widest">
+      {title}
+    </span>
+  </div>
+
+  <p className="font-rajdhani font-light group-hover/feature:font-semibold text-sm group-hover:text-base text-neutral-300 max-w-xs relative z-[-1] px-10 leading-relaxed transition-all duration-700 ease-in-out">
+    {description}
+  </p>
+</div>
+
+
   );
 };
