@@ -19,7 +19,7 @@ export default function Joinus() {
       <div className="flex justify-center pb-10">
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <button
-            className="px-6 py-3 text-lg text-white rounded-lg tracking-wider font-bold uppercase transition-all duration-500 bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-[0_0_5px_rgb(0,140,255),0_0_25px_rgb(0,140,255),0_0_50px_rgb(0,140,255),0_0_100px_rgb(0,140,255)] flex items-center gap-2"
+            className="px-6 py-3 text-lg text-white rounded-lg tracking-wider font-bold uppercase transition-all duration-1000 bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-[0_0_5px_rgb(0,140,255),0_0_25px_rgb(0,140,255),0_0_50px_rgb(0,140,255),0_0_100px_rgb(0,140,255)] flex items-center gap-2"
             onClick={() => navigate("/contactus")}
           >
             Participa con Nosotros

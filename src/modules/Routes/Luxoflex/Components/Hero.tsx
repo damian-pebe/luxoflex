@@ -11,9 +11,9 @@ export default function HeroLuxoflex() {
             alt="Equipo de coaching"
             className="w-full h-[80vh] object-cover object-center"
           />
-          <div className="font-daric absolute inset-0 bg-black bg-opacity-30 flex items-end">
+          <div className="font-daric absolute inset-0 bg-black bg-opacity-40 flex items-end">
             <div className="p-6 md:p-12 text-white max-w-4xl">
-              <h1 className="text-3xl md:text-5xl font-doric font-semibold leading-snug">
+              <h1 className="text-3xl md:text-5xl font-orbitron font-light tracking-widest leading-snug">
                 Nos apasiona ayudarte a crecer <br /> y lograr un{" "}
                 <span className="border-b-4 border-yellow-400">cambio.</span>
               </h1>
