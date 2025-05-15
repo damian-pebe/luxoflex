@@ -131,9 +131,8 @@ export default function Preprensa() {
                <div className="flex flex-col sm:flex-row gap-4 w-full">
   <div className="animate-slideinup duration-1000 flex w-full">
     <button
-      onClick={() =>
-        (window.location.href = "mailto:ventasluxoflex@gmail.com")
-      }
+            onClick={() => window.open("mailto:ventasluxoflex@gmail.com", "_blank")}
+
       className="group w-full flex items-center justify-center gap-x-3 font-poppins bg-white text-black hover:bg-gray-200 text-lg py-4 px-8 rounded-xl shadow-lg transform transition-all duration-700 hover:-translate-y-[5px]"
     >
       Solicitar Cotización
@@ -143,9 +142,9 @@ export default function Preprensa() {
 
   <div className="animate-slideinup duration-1000 flex w-full">
     <button
-      onClick={() => {
-        window.location.href = "https://wa.me/523334626001";
-      }}
+      
+                  onClick={() => window.open("https://wa.me/523334626001", "_blank")}
+
       className="group w-full flex items-center justify-center gap-x-3 font-poppins border-2 border-green-600 font-semibold bg-green-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-[5px] transition-all duration-700 shadow-xl hover:bg-green-700"
     >
       <Whatsapp className="h-5 w-5 transition-all duration-500 ease-in-out group-hover:text-white" />
@@ -190,17 +189,17 @@ export default function Preprensa() {
                   <div className="flex items-center justify-between gap-3 pt-4">
                     <div className="flex space-x-4">
                       <div
-                        onClick={() =>
-                          (window.location.href = "tel:+523334626001")
-                        }
+                        
+
+                                          onClick={() => window.open("tel:+523334626001", "_blank")}
+
                         className=" hover:cursor-pointer p-3 rounded-full bg-gray-100 hover:bg-teal-100 dark:bg-gray-800 dark:hover:bg-teal-900 transition-all duration-700 transform hover:scale-110"
                       >
                         <TelephoneFill className="h-6 w-6 text-teal-600" />
                       </div>
                       <div
-                        onClick={() =>
-                          (window.location.href = "https://wa.me/523334626001")
-                        }
+                                                                  onClick={() => window.open("https://wa.me/523334626001", "_blank")}
+
                         className="hover:cursor-pointer p-3 rounded-full bg-gray-100 hover:bg-green-100 dark:bg-gray-800 dark:hover:bg-green-900 transition-all duration-700 transform hover:scale-110"
                       >
                         <Whatsapp className="h-6 w-6 text-green-600" />
@@ -209,9 +208,9 @@ export default function Preprensa() {
 
                     <div className="animate-slideinup duration-1000 flex">
                       <button
-                        onClick={() =>
-                          (window.location.href = "tel:+523334626001")
-                        }
+                        
+                                                                                          onClick={() => window.open("v", "_blank")}
+
                         className="group flex items-center gap-x-3 font-poppins bg-white text-black hover:bg-gray-200 text-sm py-2 px-8 rounded-xl shadow-lg transform transition-all duration-700 hover:-translate-y-[5px]"
                       >
                         Contactar Ahora
