@@ -40,6 +40,7 @@ export default {
         heading: ["Inter", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
         doric: ['"DoricCondensed Condensed Regular"', "sans-serif"],
+        lobster: ['"Lobster"', "cursive"],
       },
       borderRadius: {
         lg: "var(--radius)",

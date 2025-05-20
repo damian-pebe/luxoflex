@@ -10,7 +10,7 @@ export default function Services() {
     <div className="bg-[#FAFAFA] min-h-screen flex flex-col space-y-14 py-8 px-3 md:px-10">
       <ThreeDotsWhite top={true} />
 
-      <h1 className="uppercase text-black text-5xl md:text-7xl flex justify-center w-full italic font-dancing font-semibold pt-10 text-center">
+      <h1 className="uppercase text-black text-5xl md:text-7xl flex justify-center w-full font-lobster font-light pt-10 text-center">
         Nuestros Servicios
       </h1>
 
@@ -31,15 +31,14 @@ export default function Services() {
         >
           <div className="text-xs md:text-sm px-4 md:px-0">
             LUXOFLEX está impulsado por la innovación y la excelencia en
-            impresión. Nos enfocamos en precisión, rapidez y calidad para
-            ofrecer etiquetas que destacan.
+            impresión.
             <div className="font-black mt-1">¡Haz el cambio!</div>
           </div>
           <ChevronRight className="w-10 md:w-56 group-hover:rotate-180 transition-all duration-1000 mt-4 md:mt-0" />
         </Link>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-12 px-2 md:px-5 items-center">
+      <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-12 px-2 md:px-5 items-center">
         {[
           { img: flexo_img, text: "Etiquetas autohaderibles de flexografia" },
           { img: manga_img, text: "Mangas para tequilas y vinos" },
@@ -50,12 +49,12 @@ export default function Services() {
             className="h-[370px] w-full md:w-[300px] bg-white rounded-lg drop-shadow-xl flex flex-col justify-center items-center gap-4 text-black px-4 transform hover:cursor-pointer hover:-translate-y-[10px] transition-transform duration-700"
           >
             <img
-              className="h-[250px] w-[200px] rounded-md object-cover"
+              className="h-[200px] w-[200px] rounded-md object-cover"
               src={item.img}
               alt={`service-${index}`}
             />
             <div className="flex justify-between items-center w-full">
-              <div className="w-full font-serif font-light italic text-xs uppercase">
+              <div className="w-full font-rajdhani text-lg uppercase">
                 {item.text}
               </div>
               <Plus className="w-6 md:w-36 text-black font-black hover:cursor-pointer hover:rotate-180 transition-all duration-1000" />

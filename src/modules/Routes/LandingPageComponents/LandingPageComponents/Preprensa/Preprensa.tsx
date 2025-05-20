@@ -65,7 +65,7 @@ export default function Preprensa() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-6xl md:text-8xl font-dancing  text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-600 pb-3 tracking-widest"
+              className="text-6xl md:text-8xl font-lobster  text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-600 pb-3 duration-1000 hover:tracking-widest tracking-wide hover:cursor-crosshair"
             >
               Preprensa Digital
             </motion.h1>
@@ -117,7 +117,7 @@ export default function Preprensa() {
                     <div className="flex items-center justify-center h-8 w-8 rounded-full mr-4 shadow-lg">
                       <CheckSquareIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-xl">{item}</span>
+                    <span className="text-xl duration-1000 hover:tracking-wider hover:cursor-pointer">{item}</span>
                   </motion.li>
                 ))}
               </ul>

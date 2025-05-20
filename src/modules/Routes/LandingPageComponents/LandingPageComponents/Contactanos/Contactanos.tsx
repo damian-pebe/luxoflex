@@ -228,8 +228,7 @@ const Contactanos = () => {
                 </div>
               </div>
 
-              {/* FAQ Section */}
-              <div className="bg-white p-6 rounded-lg shadow-2xl animate-fadeInUp animate-delay-400">
+              <div className="hidden md:block bg-white p-6 rounded-lg shadow-2xl animate-fadeInUp animate-delay-400">
                 <div className="flex items-center mb-4">
                   <MessageSquare className="h-5 w-5 text-black mr-2" />
                   <h3 className="text-xl font-bold text-black">

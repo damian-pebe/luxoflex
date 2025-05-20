@@ -14,9 +14,9 @@ export default function LandingPage() {
     <div className="bg-[#09090B] overflow-hidden">
       <StartPage />
       <Services />
-      <PoweringTeams />
-      <Contactanos />
       <Preprensa />
+      <Contactanos />
+      <PoweringTeams />
       <CarouselComponent />
       <Banner />
       {/* <Materials />
