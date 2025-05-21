@@ -197,6 +197,7 @@ const Contactanos = () => {
                     <div>
                       <h3 className="font-medium text-black">Teléfono</h3>
                       <p className="text-gray-600">+52 33 3462 6001</p>
+                      <p className="text-gray-600">+52 33 1363 5333</p>
                       <p className="text-gray-500 text-sm">Lun-Dom, 8am-10pm</p>
                     </div>
                   </div>
