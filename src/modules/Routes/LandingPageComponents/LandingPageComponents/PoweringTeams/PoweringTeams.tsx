@@ -58,27 +58,27 @@ interface Team {
 }
 const teams: Team[] = [
   {
-    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    img: "/LOGO-CON-FRANJA-BLANCA.png",
     link: "https://lacoculence.com",
   },
   {
-    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    img: "/LOGO-CON-FRANJA-BLANCA.png",
     link: "https://lacoculence.com",
   },
   {
-    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    img: "/LOGO-CON-FRANJA-BLANCA.png",
     link: "https://lacoculence.com",
   },
   {
-    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    img: "/LOGO-CON-FRANJA-BLANCA.png",
     link: "https://lacoculence.com",
   },
   {
-    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    img: "/LOGO-CON-FRANJA-BLANCA.png",
     link: "https://lacoculence.com",
   },
   {
-    img: "https://static.wixstatic.com/media/770576_efbe706aeee34b17933cc0c3ee802407~mv2.png/v1/fill/w_540,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-CON-FRANJA-BLANCA.png",
+    img: "/LOGO-CON-FRANJA-BLANCA.png",
     link: "https://lacoculence.com",
   },
 ];

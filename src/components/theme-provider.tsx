@@ -21,6 +21,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({
   children,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {

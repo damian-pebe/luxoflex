@@ -74,62 +74,62 @@ const projects = [
     description:
       "Película de polipropileno biorientado metalizado que ofrece un acabado plateado brillante, ideal para etiquetas decorativas y empaques premium.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//bopp_plata.webp",
+      "/bopp_plata.webp",
   },
   {
     title: "Bopp Blanco",
     description:
       "Película de polipropileno biorientado de color blanco, proporciona una excelente base para impresión, es utilizada en etiquetas autoadhesivas.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//bopp_blanco.webp",
+      "/bopp_blanco.webp",
   },
   {
     title: "Bopp transparente",
     description:
       "Película de polipropileno biorientado transparente, versátil para etiquetas que requieren mostrar el producto subyacente.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//bopp_transparente.webp",
+      "/bopp_transparente.webp",
   },
   {
     title: "Laminado mate",
     description:
       "Acabado especial que proporciona una superficie no brillante y suave al tacto, ideal para etiquetas premium con aspecto sofisticado.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//laminadoMate.webp",
+      "/laminadoMate.webp",
   },
   {
     title: "Laminado Brillante",
     description:
       "Acabado que proporciona un alto brillo y claridad visual, mejorando la apariencia de las etiquetas y protegiéndolas contra la abrasión.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//laminadoBrillante.webp",
+      "/laminadoBrillante.webp",
   },
   {
     title: "Pelicula de polipropileno sellable",
     description:
       "Material especialmente diseñado para crear un sello hermético cuando se aplica calor.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//PELICULA_DE_POLIPROPILENO_SELLABLE.webp",
+      "/PELICULA_DE_POLIPROPILENO_SELLABLE.webp",
   },
   {
     title: "Bopp Holografico",
     description:
       "Película de polipropileno biorientado con efectos holográficos que crean patrones visuales llamativos y efectos de luz únicos.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//bopp_holografico.webp",
+      "/bopp_holografico.webp",
   },
   {
     title: "Suajadas a Color",
     description:
       "Etiquetas troqueladas con impresión a color, cortadas en formas específicas según los requerimientos del diseño.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//suajadas_color.webp",
+      "/suajadas_color.webp",
   },
   {
     title: "Suajadas Termica",
     description:
       "Etiquetas troqueladas en papel térmico que cambian de color con la temperatura, ideales para sensibilidad térmica.",
     image:
-      "https://ckohvdglovpgbuqwrkpd.supabase.co/storage/v1/object/public/luxoflex//suajada_termica.webp",
+      "/suajada_termica.webp",
   },
 ];

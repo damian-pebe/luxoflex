@@ -14,6 +14,79 @@ import React from "react";
 import CountUp from "@/components/reactbits/count_up";
 import { useInView } from "react-intersection-observer";
 import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
+type Stat = {
+  value: number;
+  value2: string;
+  label: string;
+  icon: React.ReactElement;
+  color: string;
+  description: string;
+  trend: string;
+};
+
+function StatCard({ stat, index }: { stat: Stat; index: number }) {
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: false });
+  return (
+    <motion.div
+      key={index}
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative bg-gray-800 rounded-lg overflow-hidden border border-gray-700"
+    >
+      <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5`}></div>
+      <div className="relative z-10 p-6">
+        <div className="flex items-start justify-between mb-5">
+          <div>
+            <div className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
+              {stat.label}
+            </div>
+            <div className="flex flex-row items-center gap-2">
+              <CountUp
+                from={0}
+                to={stat.value}
+                separator=","
+                direction="up"
+                duration={2}
+                className="count-up-text text-3xl font-bold text-white"
+                startWhen={inView}
+              />
+              <div className="text-3xl font-bold text-white">{stat.value2}</div>
+            </div>
+          </div>
+          <div className={`p-3 rounded-lg bg-gradient-to-br ${stat.color}`}>
+            {React.cloneElement(stat.icon, {
+              className: "transition-transform duration-700 group-hover:rotate-[360deg]",
+              size: 28,
+              color: "white",
+            })}
+          </div>
+        </div>
+        <div className="flex flex-col mt-4 pt-4">
+          <motion.div
+            className="w-full border-t border-gray-700"
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: "100%", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          />
+          <div className="flex items-center mt-4">
+            <div className="text-sm text-gray-300 font-medium">{stat.description}</div>
+            {stat.trend === "up" && (
+              <div className="ml-auto flex items-center text-emerald-400 text-sm font-medium">
+                <TrendingUp size={16} className="mr-1" />
+                <span>+4.3%</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+      <div className={`h-1 w-full bg-gradient-to-r group-hover:bg-gradient-to-l group-hover:animate-fadeinleft1s transition-all duration-1000 ${stat.color}`}></div>
+    </motion.div>
+  );
+}
+
 export default function Preprensa() {
   const stats = [
     {
@@ -228,89 +301,9 @@ export default function Preprensa() {
             transition={{ duration: 0.6 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 bg-zinc-900 rounded-xl"
           >
-            {stats.map((stat, index) => {
-              const { ref, inView } = useInView({
-                threshold: 0.1,
-                triggerOnce: false,
-              });
-              return (
-                <motion.div
-                  key={index}
-                  ref={ref}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                  }}
-                  className="group relative bg-gray-800 rounded-lg overflow-hidden border border-gray-700"
-                >
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5`}
-                  ></div>
-
-                  <div className="relative z-10 p-6">
-                    <div className="flex items-start justify-between mb-5">
-                      <div>
-                        <div className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
-                          {stat.label}
-                        </div>
-
-                        <div className="flex flex-row items-center gap-2">
-                          <CountUp
-                            from={0}
-                            to={stat.value}
-                            separator=","
-                            direction="up"
-                            duration={2}
-                            className="count-up-text text-3xl font-bold text-white"
-                            startWhen={inView}
-                          />
-                          <div className="text-3xl font-bold text-white">
-                            {stat.value2}
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className={`p-3 rounded-lg bg-gradient-to-br ${stat.color}`}
-                      >
-                        {React.cloneElement(stat.icon, {
-                          className:
-                            "transition-transform duration-700 group-hover:rotate-[360deg]",
-                          size: 28,
-                          color: "white",
-                        })}
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col mt-4 pt-4">
-                      <motion.div
-                        className="w-full border-t border-gray-700"
-                        initial={{ width: 0, opacity: 0 }}
-                        whileInView={{ width: "100%", opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                      />
-                      <div className="flex items-center mt-4">
-                        <div className="text-sm text-gray-300 font-medium">
-                          {stat.description}
-                        </div>
-                        {stat.trend === "up" && (
-                          <div className="ml-auto flex items-center text-emerald-400 text-sm font-medium">
-                            <TrendingUp size={16} className="mr-1" />
-                            <span>+4.3%</span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className={`h-1 w-full bg-gradient-to-r group-hover:bg-gradient-to-l group-hover:animate-fadeinleft1s transition-all duration-1000 ${stat.color}`}
-                  ></div>
-                </motion.div>
-              );
-            })}
+            {stats.map((stat, index) => (
+              <StatCard key={index} stat={stat} index={index} />
+            ))}
           </motion.div>
         </div>
       </div>
