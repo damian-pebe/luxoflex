@@ -81,6 +81,7 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "postcss": "^8.4.49",
+    "shadcn": "^4.4.0",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.0.1",
