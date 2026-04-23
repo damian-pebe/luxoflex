@@ -1,10 +1,8 @@
-import { ThreeDotsBlack } from '@/components/ReusableIcons/ReusableIcons'
 import { background } from "@/const";
 
 export default function OurProducts() {
   return (
 <div className="py-5 h-full w-full bg-black text-white flex flex-col justify-center items-center">
-        <ThreeDotsBlack top={true} />
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Nuestros productos
         </h2>
@@ -29,6 +27,5 @@ export default function OurProducts() {
             className="w-full h-64 object-cover rounded-lg shadow rotate-1"
           />
         </div>
-        <ThreeDotsBlack />
       </div>  )
 }

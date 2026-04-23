@@ -1,5 +1,4 @@
 import { WavyBackground } from "@/components/aceternity/wavy-background";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { Link, useNavigate } from "react-router-dom";
 import { GlowButton } from "@/components/ui/glow-button";
 
@@ -20,8 +19,6 @@ export const PoweringTeams = () => {
 
   return (
     <div className="bg-black flex flex-col items-center justify-center overflow-hidden py-8 -z-20">
-      <ThreeDotsBlack top={true} />
-
       <WavyBackground
         className="max-w-4xl mb-40 overflow-hidden"
         blur={20}
@@ -70,7 +67,6 @@ export const PoweringTeams = () => {
         </GlowButton>
       </div>
 
-      <ThreeDotsBlack />
     </div>
   );
 };

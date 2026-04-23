@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Brain, Rocket, Users } from "lucide-react";
 import { IconMoodHappy } from "@tabler/icons-react";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 export default function Reviews() {
   return (
     <div
@@ -39,7 +38,6 @@ export default function Reviews() {
           </motion.div>
         ))}
       </div>
-      <ThreeDotsBlack top={true} />
     </div>
   );
 }

@@ -13,7 +13,6 @@ import { motion } from "framer-motion";
 import React from "react";
 import CountUp from "@/components/reactbits/count_up";
 import { useInView } from "react-intersection-observer";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 
 type Stat = {
   value: number;
@@ -160,7 +159,6 @@ export default function Preprensa() {
       <div className="absolute bottom-40 right-1/4 w-96 h-96 rounded-full bg-yellow-500/8 blur-[100px] pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-72 h-72 rounded-full bg-blue-600/6 blur-[80px] pointer-events-none" />
 
-      <ThreeDotsBlack top={true} />
 
       <section className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto">
         {/* Header */}
@@ -318,7 +316,6 @@ export default function Preprensa() {
         </div>
       </section>
 
-      <ThreeDotsBlack />
     </div>
   );
 }

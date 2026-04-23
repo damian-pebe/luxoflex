@@ -2,7 +2,6 @@ import { Cards } from "./Cards";
 import { useState } from "react";
 import { InfiniteMovingCardsDemo } from "./carousel-infinity";
 import Skeleton from "antd/es/skeleton";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 export default function Impulsa() {
   const [isLoading] = useState(false);
 
@@ -32,7 +31,6 @@ export default function Impulsa() {
         Nos dedicamos a revolucionar la industria de etiquetas autoadheribles
       </p>
       <Cards />
-      <ThreeDotsBlack />
     </div>
   );
 }

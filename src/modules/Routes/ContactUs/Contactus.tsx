@@ -13,7 +13,6 @@ import EffectScroll from "@/components/effectScroll";
 import GlassIcons from "@/components/reactbits/GlassIcons";
 import { useScrollToTop } from "@/hooks/scrollToTop";
 import Contactanos from "../LandingPageComponents/LandingPageComponents/Contactanos/Contactanos";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 
 export default function ContactUs() {
   const words2 = [
@@ -69,7 +68,6 @@ export default function ContactUs() {
       <Contactanos />
 
       <div className="flex flex-col w-full py-5">
-        <ThreeDotsBlack top={true} />
 
         <div className="flex flex-col w-full transition-all duration-1000 py-20">
           <div className="pb-20 justify-center flex items-center text-4xl font-extralight font-raleway">
@@ -90,7 +88,6 @@ export default function ContactUs() {
             </div>
           </EffectScroll>
         </div>
-        <ThreeDotsBlack />
       </div>
     </div>
   );

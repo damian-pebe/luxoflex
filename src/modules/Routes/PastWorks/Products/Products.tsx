@@ -3,7 +3,6 @@ import { WavyTitle } from "./Components/WavyTitle";
 import { HoverEffect } from "@/components/aceternity/card-hover-effect";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 
 export default function Products() {
   return (
@@ -15,7 +14,6 @@ export default function Products() {
       <CardHoverEffectDemo />
 
     </div>
-      <ThreeDotsBlack />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { background } from "@/const";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -43,7 +42,6 @@ export default function Banner() {
       <div className="absolute top-0 right-0 w-87.5 h-87.5 rounded-full bg-blue-600/8 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/3 w-62.5 h-62.5 rounded-full bg-amber-500/6 blur-[100px] pointer-events-none" />
 
-      <ThreeDotsBlack top={true} />
 
       <section className="relative py-16 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -194,7 +192,6 @@ export default function Banner() {
         </div>
       </section>
 
-      <ThreeDotsBlack />
     </div>
   );
 }

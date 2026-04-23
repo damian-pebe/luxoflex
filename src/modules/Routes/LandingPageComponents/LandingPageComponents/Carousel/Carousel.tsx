@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Upload, CheckCircle, Layers, ThumbsUp, Printer } from "lucide-react";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import {
   recepcion_disenios,
   revision_coreccion,
@@ -125,7 +124,6 @@ export function FeatureCarousel() {
     <div className="relative bg-[#09090B] overflow-hidden py-8">
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-64 rounded-full bg-blue-600/8 blur-[100px] pointer-events-none" />
 
-      <ThreeDotsBlack top={true} />
 
       <section className="relative py-10 px-6 md:px-12 max-w-7xl mx-auto">
         {/* Header */}
@@ -318,7 +316,6 @@ export function FeatureCarousel() {
         </motion.div>
       </section>
 
-      <ThreeDotsBlack />
     </div>
   );
 }

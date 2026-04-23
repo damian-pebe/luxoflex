@@ -7,7 +7,6 @@ import { Mail, Phone, MapPin, ArrowRight, MessageCircle, Send } from "lucide-rea
 import { Whatsapp } from "react-bootstrap-icons";
 import { useToast } from "@/hooks/use-toast";
 import { backendUrl } from "@/const";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { motion } from "framer-motion";
 
 interface ContactFormValues {
@@ -89,7 +88,6 @@ const Contactanos = () => {
       <div className="absolute bottom-1/4 right-0 w-80 h-80 rounded-full bg-violet-600/8 blur-[100px] pointer-events-none" />
       <div className="absolute top-3/4 left-1/2 w-72 h-72 rounded-full bg-blue-500/5 blur-[90px] pointer-events-none" />
 
-      <ThreeDotsBlack top={true} />
 
       <section className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto">
         {/* Header */}
@@ -296,7 +294,6 @@ const Contactanos = () => {
         </div>
       </section>
 
-      <ThreeDotsBlack />
     </div>
   );
 };

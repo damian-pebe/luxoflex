@@ -1,4 +1,3 @@
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { motion } from "framer-motion";
 import {
   Eye,
@@ -46,7 +45,6 @@ export default function Valores() {
 
   return (
     <div className="py-5">
-        <ThreeDotsBlack top={true}/>
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -72,8 +70,7 @@ export default function Valores() {
             <p className="text-white/70">{item.description}</p>
           </motion.div>
         ))}
-      </div>        <ThreeDotsBlack/>
-
+      </div>
     </div>
   );
 }

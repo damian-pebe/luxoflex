@@ -2,7 +2,6 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { logo } from "@/const";
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { flexo_img, manga_img, preprensa_img } from "@/const";
 import { useRef, MouseEvent } from "react";
 
@@ -138,7 +137,6 @@ export default function Services() {
       <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-yellow-500/5 blur-[100px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-violet-600/5 blur-[100px] pointer-events-none" />
 
-      <ThreeDotsBlack top={true} />
 
       <section className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto">
         {/* Header */}
@@ -219,7 +217,6 @@ export default function Services() {
         </motion.div>
       </section>
 
-      <ThreeDotsBlack />
     </div>
   );
 }

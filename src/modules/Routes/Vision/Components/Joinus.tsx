@@ -1,4 +1,3 @@
-import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +7,6 @@ export default function Joinus() {
 
   return (
     <div className="text-center py-5">
-      <ThreeDotsBlack top={true} />
       <h2 className="text-3xl font-semibold mb-6 font-serif text-white pt-10">
         Únete a Nuestro Viaje
       </h2>
@@ -32,7 +30,6 @@ export default function Joinus() {
           </button>
         </motion.div>
       </div>{" "}
-      <ThreeDotsBlack />
     </div>
   );
 }
