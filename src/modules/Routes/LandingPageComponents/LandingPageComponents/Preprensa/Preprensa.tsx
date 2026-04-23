@@ -1,150 +1,15 @@
 import {
   ArrowRight,
-  Clock,
   Shield,
   Award,
   Star,
-  TrendingUp,
   CheckCircle2,
 } from "lucide-react";
-import { grabados } from "@/const";
-import { Whatsapp, TelephoneFill } from "react-bootstrap-icons";
+import { Whatsapp } from "react-bootstrap-icons";
 import { motion } from "framer-motion";
 import React from "react";
-import CountUp from "@/components/reactbits/count_up";
-import { useInView } from "react-intersection-observer";
-
-type Stat = {
-  value: number;
-  value2: string;
-  label: string;
-  icon: React.ReactElement;
-  color: string;
-  glowColor: string;
-  description: string;
-  trend: string;
-};
-
-function StatCard({ stat, index }: { stat: Stat; index: number }) {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative rounded-2xl overflow-hidden"
-    >
-      {/* Gradient border */}
-      <div
-        className="absolute inset-0 rounded-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500"
-        style={{ background: `linear-gradient(135deg, ${stat.glowColor}, transparent 70%)` }}
-      />
-      {/* Ambient glow */}
-      <div
-        className="absolute -inset-6 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl -z-10"
-        style={{ background: `${stat.glowColor}30` }}
-      />
-
-      <div className="relative bg-zinc-900 border border-zinc-800 group-hover:border-zinc-700 rounded-2xl p-6 transition-colors duration-300">
-        <div className="flex items-start justify-between mb-5">
-          <div>
-            <div className="font-rajdhani text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">
-              {stat.label}
-            </div>
-            <div className="flex items-end gap-1">
-              <CountUp
-                from={0}
-                to={stat.value}
-                separator=","
-                direction="up"
-                duration={2}
-                className="count-up-text text-4xl font-bold text-white font-poppins"
-                startWhen={inView}
-              />
-              <span
-                className="text-3xl font-bold font-poppins pb-0.5"
-                style={{ color: stat.glowColor }}
-              >
-                {stat.value2}
-              </span>
-            </div>
-          </div>
-          <div
-            className="p-3 rounded-xl"
-            style={{ background: `${stat.glowColor}20`, border: `1px solid ${stat.glowColor}30` }}
-          >
-            {React.cloneElement(stat.icon, {
-              size: 20,
-              style: { color: stat.glowColor },
-              className: "transition-transform duration-700 group-hover:scale-110",
-            })}
-          </div>
-        </div>
-
-        <div className="pt-4 border-t border-zinc-800">
-          <div className="flex items-center justify-between">
-            <span className="font-poppins text-zinc-500 text-xs">{stat.description}</span>
-            {stat.trend === "up" && (
-              <div className="flex items-center gap-1 text-emerald-400 text-xs font-poppins font-medium">
-                <TrendingUp size={12} />
-                +4.3%
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Bottom accent line */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-0.5 opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-          style={{ background: `linear-gradient(90deg, transparent, ${stat.glowColor}, transparent)` }}
-        />
-      </div>
-    </motion.div>
-  );
-}
 
 export default function Preprensa() {
-  const stats: Stat[] = [
-    {
-      value: 98, value2: "%",
-      label: "Satisfacción del cliente",
-      icon: <Star />,
-      color: "from-yellow-500 to-yellow-700",
-      glowColor: "#F59E0B",
-      description: "Basado en encuestas a clientes",
-      trend: "up",
-    },
-    {
-      value: 24, value2: "h",
-      label: "Tiempo de respuesta",
-      icon: <Clock />,
-      color: "from-blue-500 to-blue-700",
-      glowColor: "#3B82F6",
-      description: "Servicio disponible 24/7",
-      trend: "up",
-    },
-    {
-      value: 15, value2: "+",
-      label: "Años de experiencia",
-      icon: <Award />,
-      color: "from-violet-500 to-violet-700",
-      glowColor: "#8B5CF6",
-      description: "En todos nuestros servicios",
-      trend: "up",
-    },
-    {
-      value: 999, value2: "+",
-      label: "Proyectos completados",
-      icon: <Shield />,
-      color: "from-emerald-500 to-emerald-700",
-      glowColor: "#10B981",
-      description: "Clientes satisfechos",
-      trend: "up",
-    },
-  ];
-
   const benefits = [
     "Optimización de archivos y resolución perfecta",
     "Ajuste profesional de color para resultados vibrantes",
@@ -247,7 +112,7 @@ export default function Preprensa() {
             </div>
           </motion.div>
 
-          {/* Right: image + glassmorphism contact card */}
+          {/* Right: image + subtle process badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -255,65 +120,152 @@ export default function Preprensa() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="relative"
           >
-            {/* Image glow */}
+            {/* Violet glow behind image */}
             <div className="absolute -inset-3 rounded-3xl bg-violet-500/10 blur-2xl" />
+
+            {/* Pantone / color proofing image — represents preprensa visually */}
             <img
-              src={grabados}
-              className="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl border border-zinc-800"
-              alt="Preprensa Digital"
+              src="https://images.pexels.com/photos/9421350/pexels-photo-9421350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              className="relative w-full h-105 object-cover rounded-2xl shadow-2xl border border-white/8"
+              alt="Guías de color Pantone para preprensa digital"
               loading="lazy"
             />
 
-            {/* Glassmorphism contact card */}
-            <div className="absolute bottom-5 right-5 p-5 rounded-2xl max-w-xs border border-white/10 shadow-2xl"
-              style={{ background: "rgba(9,9,11,0.75)", backdropFilter: "blur(20px)" }}
+            {/* Subtle color-process badge — top-left, non-competing */}
+            <div
+              className="absolute top-4 left-4 flex items-center gap-2 px-3 py-2 rounded-xl border border-white/10"
+              style={{ background: "rgba(9,9,11,0.72)", backdropFilter: "blur(16px)" }}
             >
-              {/* Subtle inner glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-500/5 to-transparent pointer-events-none" />
+              <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse shrink-0" />
+              <span className="font-poppins text-xs font-medium text-zinc-300">
+                Gestión de color profesional
+              </span>
+            </div>
 
-              <p className="relative font-poppins font-semibold text-white text-sm mb-3">
-                ¿Necesitas ayuda con tu diseño?
-              </p>
-              <div className="relative flex items-center gap-3 mb-4">
-                <div className="relative h-10 w-10 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0">
-                  <span className="text-xs font-bold text-white font-poppins">TP</span>
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-zinc-900" />
+            {/* Process steps — bottom overlay */}
+            <div
+              className="absolute bottom-0 inset-x-0 rounded-b-2xl px-5 py-4 flex items-center gap-4 border-t border-white/8"
+              style={{ background: "linear-gradient(to top, rgba(9,9,11,0.9) 0%, rgba(9,9,11,0.5) 100%)", backdropFilter: "blur(8px)" }}
+            >
+              {["Digitalización", "Separación CMYK", "Prueba de color", "Preflight"].map((step, i) => (
+                <div key={i} className="flex items-center gap-1.5 shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-violet-400/70" />
+                  <span className="font-poppins text-[11px] text-zinc-400">{step}</span>
                 </div>
-                <div>
-                  <p className="font-semibold text-white text-sm font-poppins">Tomas Perez</p>
-                  <p className="text-zinc-500 text-xs font-poppins">+15 años de experiencia</p>
-                </div>
-              </div>
-              <div className="relative flex items-center gap-2">
-                <button
-                  onClick={() => window.open("tel:+523334626001", "_blank")}
-                  className="cursor-pointer p-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 transition-colors duration-200"
-                >
-                  <TelephoneFill className="h-3.5 w-3.5 text-zinc-300" />
-                </button>
-                <button
-                  onClick={() => window.open("https://wa.me/523334626001", "_blank")}
-                  className="cursor-pointer p-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 transition-colors duration-200"
-                >
-                  <Whatsapp className="h-3.5 w-3.5 text-emerald-400" />
-                </button>
-                <button
-                  onClick={() => window.open("tel:+523334626001", "_blank")}
-                  className="cursor-pointer flex-1 bg-yellow-500 hover:bg-yellow-400 text-black font-poppins font-bold text-xs py-2.5 px-4 rounded-xl transition-all duration-200 shadow-[0_0_15px_rgba(234,179,8,0.2)]"
-                >
-                  Contactar ahora
-                </button>
-              </div>
+              ))}
             </div>
           </motion.div>
         </div>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {stats.map((stat, index) => (
-            <StatCard key={index} stat={stat} index={index} />
+        {/* Process steps — bento editorial */}
+        <div className="mb-8 grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {[
+            {
+              num: "01",
+              title: "Recepción",
+              desc: "Analizamos tus archivos y revisamos resolución, perfiles de color y formato antes de cualquier proceso.",
+              icon: <CheckCircle2 className="h-5 w-5" />,
+              accent: "#8B5CF6",
+            },
+            {
+              num: "02",
+              title: "Separación CMYK",
+              desc: "Convertimos y optimizamos cada canal de color para garantizar fidelidad exacta en la impresión final.",
+              icon: <Star className="h-5 w-5" />,
+              accent: "#3B82F6",
+            },
+            {
+              num: "03",
+              title: "Prueba de color",
+              desc: "Generamos una prueba digital calibrada para validar colores y composición antes de ir a prensa.",
+              icon: <Award className="h-5 w-5" />,
+              accent: "#EC4899",
+            },
+            {
+              num: "04",
+              title: "Preflight",
+              desc: "Verificación final: trapping, marcas de corte, sangrado y resolución — cero errores en producción.",
+              icon: <Shield className="h-5 w-5" />,
+              accent: "#10B981",
+            },
+          ].map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="group relative rounded-2xl overflow-hidden cursor-default"
+            >
+              {/* Gradient border */}
+              <div
+                className="absolute inset-0 rounded-2xl opacity-30 group-hover:opacity-70 transition-opacity duration-500"
+                style={{ background: `linear-gradient(135deg, ${step.accent}50, transparent 60%)` }}
+              />
+              {/* Glow on hover */}
+              <div
+                className="absolute -inset-4 opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-2xl pointer-events-none"
+                style={{ background: step.accent }}
+              />
+
+              <div
+                className="relative h-full rounded-2xl p-5 border border-white/6 overflow-hidden"
+                style={{
+                  background: "rgba(255,255,255,0.03)",
+                  backdropFilter: "blur(20px)",
+                }}
+              >
+                {/* Giant watermark number */}
+                <span
+                  className="absolute -bottom-3 -right-1 font-poppins font-black text-8xl leading-none select-none pointer-events-none transition-opacity duration-500"
+                  style={{ color: `${step.accent}12`, opacity: 1 }}
+                >
+                  {step.num}
+                </span>
+                <span
+                  className="absolute -bottom-3 -right-1 font-poppins font-black text-8xl leading-none select-none pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ color: `${step.accent}25` }}
+                >
+                  {step.num}
+                </span>
+
+                {/* Icon */}
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110"
+                  style={{
+                    background: `linear-gradient(135deg, ${step.accent}30, ${step.accent}10)`,
+                    border: `1px solid ${step.accent}35`,
+                    color: step.accent,
+                  }}
+                >
+                  {step.icon}
+                </div>
+
+                {/* Step label */}
+                <p className="font-rajdhani text-[10px] uppercase tracking-widest mb-1" style={{ color: `${step.accent}99` }}>
+                  Paso {step.num}
+                </p>
+
+                {/* Title */}
+                <h3 className="font-poppins font-semibold text-white text-base mb-2 leading-snug">
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="font-poppins text-zinc-500 text-xs leading-relaxed relative z-10">
+                  {step.desc}
+                </p>
+
+                {/* Top accent line */}
+                <div
+                  className="absolute top-0 inset-x-0 h-px opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: `linear-gradient(90deg, transparent, ${step.accent}, transparent)` }}
+                />
+              </div>
+            </motion.div>
           ))}
         </div>
+
       </section>
 
     </div>

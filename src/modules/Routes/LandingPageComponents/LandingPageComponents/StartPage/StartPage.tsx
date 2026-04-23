@@ -1,145 +1,230 @@
 import { logo, background } from "@/const";
-import { FlipWords } from "@/components/ui/flip-words";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, MessageCircle, Star, Zap, Award } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { useRef } from "react";
+
+// Stagger container for headline words
+const headlineContainer = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.4 },
+  },
+};
+
+const wordVariant = {
+  hidden: { opacity: 0, y: 48, filter: "blur(10px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 32 },
+  initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.7, delay, ease: [0.25, 0.46, 0.45, 0.94] },
 });
 
 const stats = [
-  { icon: Star, value: "98%", label: "Satisfacción" },
-  { icon: Award, value: "15+", label: "Años de exp." },
-  { icon: Zap, value: "999+", label: "Proyectos" },
+  { icon: Star,  value: "98%",  label: "Satisfacción" },
+  { icon: Award, value: "15+",  label: "Años de exp." },
+  { icon: Zap,   value: "999+", label: "Proyectos" },
 ];
 
+// Headline split: line 1 words, line 2 accented words
+const line1 = ["Transformamos", "ideas", "en"];
+const line2 = ["etiquetas", "inolvidables."];
+
 export default function StartPage() {
-  const words = ["color", "arte", "magia", "diseño", "pasión"];
   const navigate = useNavigate();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Parallax on background image
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 600], [0, 80]);
 
   return (
-    <div className="relative h-screen overflow-hidden bg-[#050505]">
-      {/* Background image */}
-      <img
-        className="absolute inset-0 w-full h-full object-cover opacity-25"
+    <div ref={containerRef} className="relative h-screen overflow-hidden bg-[#050505]">
+
+      {/* Parallax background image */}
+      <motion.img
+        style={{ y: bgY }}
+        className="absolute inset-0 w-full h-full object-cover opacity-25 scale-110"
         src={background}
         alt=""
         loading="eager"
       />
 
-      {/* Gradient overlay - vignette */}
+      {/* Gradient overlays */}
       <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/20 to-black/90" />
       <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-black/60" />
 
-      {/* Glow orb — gold center */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-yellow-500/10 blur-[120px] pointer-events-none" />
-      {/* Glow orb — amber top-right */}
-      <div className="absolute -top-20 right-0 w-100 h-100 rounded-full bg-amber-600/10 blur-[100px] pointer-events-none" />
-      {/* Glow orb — purple bottom-left */}
-      <div className="absolute -bottom-20 -left-20 w-87.5 h-87.5 rounded-full bg-violet-700/10 blur-[100px] pointer-events-none" />
+      {/* Breathing glow orbs */}
+      <motion.div
+        animate={{ scale: [1, 1.15, 1], opacity: [0.08, 0.14, 0.08] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-yellow-500 blur-[130px] pointer-events-none"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.2, 1], opacity: [0.07, 0.12, 0.07] }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute -top-20 right-0 w-100 h-100 rounded-full bg-amber-600 blur-[100px] pointer-events-none"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.1, 1], opacity: [0.06, 0.11, 0.06] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        className="absolute -bottom-20 -left-20 w-87.5 h-87.5 rounded-full bg-violet-700 blur-[100px] pointer-events-none"
+      />
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
 
-        {/* Logo */}
-        <motion.img {...fadeUp(0)} className="h-14 md:h-20 mb-8" src={logo} alt="Luxoflex" />
+        {/* Logo — floats gently */}
+        <motion.img
+          initial={{ opacity: 0, y: -16, scale: 0.92 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="h-14 md:h-20 mb-8 drop-shadow-[0_0_30px_rgba(234,179,8,0.3)]"
+          src={logo}
+          alt="Luxoflex"
+        />
 
-        {/* Badge */}
-        <motion.div {...fadeUp(0.1)} className="mb-6">
-          <span className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs font-poppins font-medium px-4 py-1.5 rounded-full backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
+        {/* Badge — floats up and down */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-8"
+        >
+          <motion.span
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs font-poppins font-medium px-4 py-1.5 rounded-full backdrop-blur-sm"
+          >
+            <motion.span
+              animate={{ opacity: [1, 0.3, 1] }}
+              transition={{ duration: 1.4, repeat: Infinity }}
+              className="w-1.5 h-1.5 rounded-full bg-yellow-400"
+            />
             Impresión premium desde 2009
-          </span>
+          </motion.span>
         </motion.div>
 
-        {/* Main headline */}
+        {/* Headline — word-by-word stagger with blur */}
         <motion.h1
-          {...fadeUp(0.2)}
-          className="font-audiowide font-extralight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] max-w-5xl tracking-tight"
+          variants={headlineContainer}
+          initial="hidden"
+          animate="show"
+          className="font-audiowide font-extralight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.15] max-w-5xl tracking-tight"
         >
-          Transformamos ideas en{" "}
-          <span className="relative inline-block">
-            <span
-              className="font-zilla font-bold italic"
-              style={{
-                background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 40%, #F97316 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              etiquetas
-            </span>
+          {/* Line 1 */}
+          <span className="flex flex-wrap justify-center gap-x-4 mb-1">
+            {line1.map((w) => (
+              <motion.span key={w} variants={wordVariant}>
+                {w}
+              </motion.span>
+            ))}
           </span>
-          {" "}
-          <span
+
+          {/* Line 2 — gradient accent */}
+          <span className="flex flex-wrap justify-center gap-x-4">
+            {line2.map((w) => (
+              <motion.span
+                key={w}
+                variants={wordVariant}
+                className="font-zilla font-bold italic"
+                style={{
+                  background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 45%, #F97316 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                {w}
+              </motion.span>
+            ))}
+          </span>
+        </motion.h1>
+
+        {/* Tagline — static, clean, no typewriter */}
+        <motion.p
+          {...fadeUp(0.9)}
+          className="mt-6 text-lg md:text-xl text-zinc-400 font-poppins font-light"
+        >
+          Ponemos alma y{" "}
+          <motion.span
             className="font-zilla font-bold italic"
             style={{
-              background: "linear-gradient(135deg, #FBBF24 0%, #F59E0B 60%, #D97706 100%)",
+              background: "linear-gradient(90deg, #F59E0B, #FBBF24, #F97316, #F59E0B)",
+              backgroundSize: "200% auto",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
             }}
+            animate={{ backgroundPosition: ["0% center", "200% center"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
           >
-            inolvidables.
-          </span>
-        </motion.h1>
-
-        {/* Tagline */}
-        <motion.div
-          {...fadeUp(0.35)}
-          className="mt-5 text-lg md:text-2xl text-zinc-400 font-poppins font-light"
-        >
-          Ponemos alma y{" "}
-          <span className="text-yellow-400 font-medium">
-            <FlipWords words={words} />
-          </span>{" "}
+            magia
+          </motion.span>{" "}
           en cada etiqueta.
-        </motion.div>
+        </motion.p>
 
         {/* CTAs */}
         <motion.div
-          {...fadeUp(0.5)}
+          initial={{ opacity: 0, y: 24, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, delay: 1.05, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="mt-10 flex flex-col sm:flex-row gap-4 items-center"
         >
-          <button
+          <motion.button
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.97 }}
             onClick={() => navigate("/contactus")}
-            className="cursor-pointer group relative flex items-center gap-2.5 bg-yellow-500 hover:bg-yellow-400 text-black font-poppins font-bold px-8 py-4 rounded-xl transition-all duration-300 text-base shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_50px_rgba(234,179,8,0.5)] hover:-translate-y-0.5"
+            className="cursor-pointer group relative flex items-center gap-2.5 bg-yellow-500 hover:bg-yellow-400 text-black font-poppins font-bold px-8 py-4 rounded-xl transition-colors duration-300 text-base shadow-[0_0_30px_rgba(234,179,8,0.35)] hover:shadow-[0_0_50px_rgba(234,179,8,0.55)]"
           >
             <MessageCircle className="h-4 w-4" />
             Contáctanos ahora
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-          </button>
-          <LiquidButton
-            onClick={() => navigate("/pastworks")}
-            size="xl"
-            className="font-poppins font-medium text-white/90 px-8"
-          >
-            Ver trabajos
-            <ArrowRight className="h-4 w-4" />
-          </LiquidButton>
+          </motion.button>
+          <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
+            <LiquidButton
+              onClick={() => navigate("/pastworks")}
+              size="xl"
+              className="font-poppins font-medium text-white/90 px-8"
+            >
+              Ver trabajos
+              <ArrowRight className="h-4 w-4" />
+            </LiquidButton>
+          </motion.div>
         </motion.div>
 
-        {/* Stats bar */}
+        {/* Stats bar — staggered chips */}
         <motion.div
-          {...fadeUp(0.65)}
-          className="mt-12 flex items-center gap-1 md:gap-2"
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.1, delayChildren: 1.3 } },
+          }}
+          className="mt-12 flex items-center gap-2"
         >
           {stats.map(({ icon: Icon, value, label }, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl px-4 py-2.5">
-                <Icon className="h-3.5 w-3.5 text-yellow-400" />
-                <span className="font-poppins font-bold text-white text-sm">{value}</span>
-                <span className="font-poppins text-zinc-500 text-xs hidden sm:inline">{label}</span>
-              </div>
-              {i < stats.length - 1 && (
-                <div className="w-px h-4 bg-white/10 mx-1" />
-              )}
-            </div>
+            <motion.div
+              key={i}
+              variants={{
+                hidden: { opacity: 0, y: 16, scale: 0.9 },
+                show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
+              }}
+              className="flex items-center gap-2 bg-white/5 border border-white/10 backdrop-blur-sm rounded-xl px-4 py-2.5"
+            >
+              <Icon className="h-3.5 w-3.5 text-yellow-400" />
+              <span className="font-poppins font-bold text-white text-sm">{value}</span>
+              <span className="font-poppins text-zinc-500 text-xs hidden sm:inline">{label}</span>
+            </motion.div>
           ))}
         </motion.div>
       </div>
