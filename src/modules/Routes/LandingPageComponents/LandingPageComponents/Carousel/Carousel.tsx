@@ -12,6 +12,7 @@ import {
   grabados,
 } from "@/const";
 import { cn } from "@/lib/utils";
+import { GlassChip } from "@/components/ui/glass-chip";
 
 const FEATURES = [
   {
@@ -281,16 +282,10 @@ export function FeatureCarousel() {
                             exit={{ opacity: 0, y: 10 }}
                             className="absolute inset-x-0 bottom-0 p-8 pt-28 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end pointer-events-none"
                           >
-                            <div
-                              className="px-4 py-1.5 rounded-full text-[10px] font-semibold uppercase tracking-[0.2em] w-fit mb-3 border"
-                              style={{
-                                background: "rgba(30,64,175,0.85)",
-                                borderColor: "rgba(96,165,250,0.4)",
-                                color: "#93C5FD",
-                              }}
-                            >
-                              {feature.step} · {feature.label}
-                            </div>
+                            <GlassChip
+                              label={`${feature.step} · ${feature.label}`}
+                              className="mb-3 uppercase tracking-[0.2em] text-blue-200 text-[10px]"
+                            />
                             <p className="text-white font-normal text-lg md:text-xl leading-snug drop-shadow-md tracking-tight">
                               {feature.description}
                             </p>
@@ -299,13 +294,15 @@ export function FeatureCarousel() {
                       </AnimatePresence>
 
                       <div className={cn(
-                        "absolute top-6 left-6 flex items-center gap-2.5 transition-opacity duration-300",
+                        "absolute top-5 left-5 transition-opacity duration-300",
                         isActive ? "opacity-100" : "opacity-0"
                       )}>
-                        <div className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_#60A5FA]" />
-                        <span className="text-white/70 text-[10px] font-normal uppercase tracking-[0.25em] font-mono">
-                          En proceso
-                        </span>
+                        <GlassChip
+                          dot
+                          dotColor="bg-blue-400 shadow-[0_0_8px_#60A5FA]"
+                          label="En proceso"
+                          className="uppercase tracking-[0.2em] text-[10px] font-mono text-white/80"
+                        />
                       </div>
                     </motion.div>
                   );

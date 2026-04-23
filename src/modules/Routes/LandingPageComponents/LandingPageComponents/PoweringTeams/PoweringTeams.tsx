@@ -1,84 +1,76 @@
 import { WavyBackground } from "@/components/aceternity/wavy-background";
 import { ThreeDotsBlack } from "@/components/ReusableIcons/ReusableIcons";
 import { Link, useNavigate } from "react-router-dom";
+import { GlowButton } from "@/components/ui/glow-button";
+
+const teams = [
+  { img: "/LOGO-CON-FRANJA-BLANCA.png", link: "https://lacoculence.com" },
+  { img: "/LOGO-CON-FRANJA-BLANCA.png", link: "https://lacoculence.com" },
+  { img: "/LOGO-CON-FRANJA-BLANCA.png", link: "https://lacoculence.com" },
+  { img: "/LOGO-CON-FRANJA-BLANCA.png", link: "https://lacoculence.com" },
+  { img: "/LOGO-CON-FRANJA-BLANCA.png", link: "https://lacoculence.com" },
+  { img: "/LOGO-CON-FRANJA-BLANCA.png", link: "https://lacoculence.com" },
+];
+
+// Duplicate for seamless loop
+const loopedTeams = [...teams, ...teams];
 
 export const PoweringTeams = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
   return (
     <div className="bg-black flex flex-col items-center justify-center overflow-hidden py-8 -z-20">
       <ThreeDotsBlack top={true} />
 
       <WavyBackground
-        className="max-w-4xl mb-72  overflow-hidden"
+        className="max-w-4xl mb-40 overflow-hidden"
         blur={20}
         speed="fast"
       >
-        <div className="flex flex-col items-center justify-center pt-40">
-          <p className="text-5xl md:text-7xl font-bold inter-var uppercase text-center text-transparent bg-clip-text bg-gradient-to-r from-stone-300 via-white to-stone-400 font-safira">
+        <div className="flex flex-col items-center justify-center pt-28">
+          <p className="text-4xl md:text-6xl font-bold inter-var uppercase text-center text-transparent bg-clip-text bg-linear-to-r from-stone-300 via-white to-stone-400 font-safira">
             Impulsando las mejores marcas
           </p>
-          <p className="text-lg md:text-3xl mt-4 text-white font-normal uppercase font-rajdhani tracking-widest inter-var text-center">
+          <p className="text-sm md:text-base mt-3 text-white/60 font-normal uppercase font-rajdhani tracking-widest inter-var text-center max-w-lg">
             Desde emprendimientos innovadores hasta grandes industrias
           </p>
         </div>
       </WavyBackground>
 
-      <div className="mt-[-180px] relative w-full h-full  group flex flex-col items-center justify-center transition-all duration-700  py-5 ">
-        <div className="transition-all duration-700 z-0 flex flex-wrap justify-center gap-x-5 gap-y-16 px-20 items-center relative py-5">
-          {teams.map((team, index) => (
-            <Link to={team.link} key={index}>
-              <div className="animate-fadeinbouncedown">
-                <img
-                  src={team.img}
-                  alt={index.toString()}
-                  className="h-9 transform hover:-translate-y-[5px] transition-all duration-700 "
-                />
-              </div>
+      {/* Infinity logo carousel */}
+      <div className="-mt-30 relative w-full overflow-hidden py-6">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
+
+        <div className="flex animate-marquee gap-12 items-center w-max">
+          {loopedTeams.map((team, index) => (
+            <Link
+              to={team.link}
+              key={index}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0"
+            >
+              <img
+                src={team.img}
+                alt={`client-${index}`}
+                className="h-9 opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
             </Link>
           ))}
         </div>
       </div>
 
-      <div className="py-10 scale-95 hover:scale-100 z-50 justify-center items-center transition-all duration-700">
-        <button
-          onClick={() => navigate("/contactus")}
-          className="font-rajdhani hover:before:duration-500 hover:after:duration-500 after:duration-500 hover:border-rose-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-rose-300 relative bg-neutral-800 h-16 w-64 border text-left p-3 text-gray-50 text-base font-bold rounded-lg overflow-hidden before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg after:absolute after:z-10 after:w-20 after:h-20 after:content[''] after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg"
-        >
-          Unete a LUXOFLEX
-        </button>
+      {/* CTA */}
+      <div className="py-10 z-50 flex justify-center">
+        <GlowButton onClick={() => navigate("/contactus")}>
+          Quiero mi primera etiqueta
+        </GlowButton>
       </div>
 
       <ThreeDotsBlack />
     </div>
   );
 };
-interface Team {
-  img: string;
-  link: string;
-}
-const teams: Team[] = [
-  {
-    img: "/LOGO-CON-FRANJA-BLANCA.png",
-    link: "https://lacoculence.com",
-  },
-  {
-    img: "/LOGO-CON-FRANJA-BLANCA.png",
-    link: "https://lacoculence.com",
-  },
-  {
-    img: "/LOGO-CON-FRANJA-BLANCA.png",
-    link: "https://lacoculence.com",
-  },
-  {
-    img: "/LOGO-CON-FRANJA-BLANCA.png",
-    link: "https://lacoculence.com",
-  },
-  {
-    img: "/LOGO-CON-FRANJA-BLANCA.png",
-    link: "https://lacoculence.com",
-  },
-  {
-    img: "/LOGO-CON-FRANJA-BLANCA.png",
-    link: "https://lacoculence.com",
-  },
-];

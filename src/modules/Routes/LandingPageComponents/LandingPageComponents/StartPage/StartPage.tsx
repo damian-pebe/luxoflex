@@ -3,6 +3,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Star, Zap, Award } from "lucide-react";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -31,15 +32,15 @@ export default function StartPage() {
       />
 
       {/* Gradient overlay - vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/90" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/20 to-black/90" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-black/60" />
 
       {/* Glow orb — gold center */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-yellow-500/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-yellow-500/10 blur-[120px] pointer-events-none" />
       {/* Glow orb — amber top-right */}
-      <div className="absolute -top-20 right-0 w-[400px] h-[400px] rounded-full bg-amber-600/10 blur-[100px] pointer-events-none" />
+      <div className="absolute -top-20 right-0 w-100 h-100 rounded-full bg-amber-600/10 blur-[100px] pointer-events-none" />
       {/* Glow orb — purple bottom-left */}
-      <div className="absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full bg-violet-700/10 blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-87.5 h-87.5 rounded-full bg-violet-700/10 blur-[100px] pointer-events-none" />
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
@@ -113,13 +114,14 @@ export default function StartPage() {
             Contáctanos ahora
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
           </button>
-          <button
+          <LiquidButton
             onClick={() => navigate("/pastworks")}
-            className="cursor-pointer flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-poppins font-medium px-8 py-4 rounded-xl transition-all duration-300 text-base backdrop-blur-sm"
+            size="xl"
+            className="font-poppins font-medium text-white/90 px-8"
           >
             Ver trabajos
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </LiquidButton>
         </motion.div>
 
         {/* Stats bar */}
@@ -143,7 +145,7 @@ export default function StartPage() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#09090B] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#09090B] to-transparent pointer-events-none" />
     </div>
   );
 }
