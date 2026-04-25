@@ -46,19 +46,19 @@ export default function HeroLuxoflex() {
         {/* Parallax bg */}
         <motion.img
           style={{ y: bgY }}
-          className="absolute inset-0 w-full h-full object-cover opacity-20 scale-110"
+          className="absolute inset-0 w-full h-full object-cover opacity-35 scale-110"
           src={background}
           alt=""
           loading="eager"
         />
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-[#09090B]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-[#09090B]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
 
         {/* Glow orbs */}
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.07, 0.13, 0.07] }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.18, 0.1] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow-500 blur-[140px] pointer-events-none"
         />
