@@ -7,7 +7,7 @@ const WhoWeAre = () => {
   useScrollToTop();
 
   return (
-    <div className="bg-[#09090B] overflow-hidden">
+    <div className="bg-[#09090B]">
       <HeroLuxoflex />
       <OurProducts />
       <History />
