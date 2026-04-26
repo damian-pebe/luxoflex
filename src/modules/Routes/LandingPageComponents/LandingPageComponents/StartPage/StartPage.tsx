@@ -41,22 +41,23 @@ const line2 = ["etiquetas", "inolvidables."];
 
 export default function StartPage() {
   const navigate = useNavigate();
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   // Parallax on background image
   const { scrollY } = useScroll();
   const bgY = useTransform(scrollY, [0, 600], [0, 80]);
 
   return (
-    <div ref={containerRef} className="relative h-screen overflow-hidden bg-[#050505]">
+    <main ref={containerRef} className="relative h-screen overflow-hidden bg-[#050505]">
 
       {/* Parallax background image */}
       <motion.img
         style={{ y: bgY }}
         className="absolute inset-0 w-full h-full object-cover opacity-25 scale-110"
         src={background}
-        alt=""
+        alt="Etiquetas premium fabricadas por Luxoflex en Guadalajara"
         loading="eager"
+        fetchPriority="high"
       />
 
       {/* Gradient overlays */}
@@ -184,6 +185,7 @@ export default function StartPage() {
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => navigate("/contactus")}
+            aria-label="Contáctanos para solicitar cotización de etiquetas"
             className="cursor-pointer group relative flex items-center gap-2.5 bg-yellow-500 hover:bg-yellow-400 text-black font-poppins font-bold px-8 py-4 rounded-xl transition-colors duration-300 text-base shadow-[0_0_30px_rgba(234,179,8,0.35)] hover:shadow-[0_0_50px_rgba(234,179,8,0.55)]"
           >
             <MessageCircle className="h-4 w-4" />
@@ -231,6 +233,6 @@ export default function StartPage() {
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#09090B] to-transparent pointer-events-none" />
-    </div>
+    </main>
   );
 }

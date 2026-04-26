@@ -76,7 +76,10 @@ export default function Services() {
       <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-yellow-500/5 blur-[100px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-violet-600/5 blur-[100px] pointer-events-none" />
 
-      <section className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      <section
+        aria-labelledby="services-heading"
+        className="relative py-20 px-6 md:px-12 max-w-7xl mx-auto"
+      >
         {/* Header */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <motion.div
@@ -88,7 +91,10 @@ export default function Services() {
             <p className="font-rajdhani uppercase tracking-widest text-yellow-500 text-sm mb-3">
               Lo que hacemos
             </p>
-            <h2 className="font-audiowide font-extralight text-4xl md:text-6xl text-white leading-tight">
+            <h2
+              id="services-heading"
+              className="font-audiowide font-extralight text-4xl md:text-6xl text-white leading-tight"
+            >
               Nuestros{" "}
               <span style={{
                 background: "linear-gradient(135deg, #F59E0B, #FBBF24, #F97316)",
@@ -124,7 +130,7 @@ export default function Services() {
           </motion.div>
         </div>
 
-        {/* Cards grid */}
+        {/* Cards grid — Dark Grid pattern from 21st.dev: corner squares reveal on hover */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((svc, i) => (
             <motion.div
@@ -137,20 +143,28 @@ export default function Services() {
             >
               <button
                 onClick={() => setOpen(i)}
-                className="cursor-pointer group relative w-full h-full text-left rounded-2xl overflow-hidden focus:outline-none"
+                aria-label={`Ver detalles de ${svc.title}`}
+                className="cursor-pointer group relative w-full h-full text-left rounded-2xl overflow-visible focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
               >
-                {/* Hover glow border */}
-                <div
-                  className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: `linear-gradient(135deg, ${svc.accent}70, transparent 60%)` }}
-                />
+                {/* Corner squares — 21st.dev Dark Grid pattern */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                  <div className="absolute -left-1.5 -top-1.5 h-3 w-3" style={{ background: svc.accent }} />
+                  <div className="absolute -right-1.5 -top-1.5 h-3 w-3" style={{ background: svc.accent }} />
+                  <div className="absolute -left-1.5 -bottom-1.5 h-3 w-3" style={{ background: svc.accent }} />
+                  <div className="absolute -right-1.5 -bottom-1.5 h-3 w-3" style={{ background: svc.accent }} />
+                </div>
+
                 {/* Ambient glow */}
                 <div
                   className="absolute -inset-4 rounded-3xl opacity-0 group-hover:opacity-80 transition-opacity duration-500 blur-xl -z-10"
                   style={{ background: `${svc.accent}18` }}
                 />
 
-                <div className="relative h-full bg-zinc-900 border border-zinc-800 group-hover:border-zinc-700 rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col">
+                <div className="relative h-full bg-zinc-900/60 border border-zinc-800 group-hover:border-zinc-600 rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col">
+                  {/* Inner gradient on hover — 21st.dev Dark Grid pattern */}
+                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                    style={{ background: `linear-gradient(135deg, ${svc.accent}08, transparent 60%)` }} />
+
                   {/* Number */}
                   <div className="absolute top-4 left-4 z-10">
                     <span className="font-poppins font-bold text-xs text-zinc-600 bg-zinc-800/80 backdrop-blur-sm border border-zinc-700 rounded-md px-2 py-1">
@@ -178,8 +192,10 @@ export default function Services() {
                     <img
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       src={svc.img}
-                      alt={svc.title}
+                      alt={`${svc.title} — Luxoflex`}
                       loading="lazy"
+                      width="400"
+                      height="224"
                     />
                   </div>
 

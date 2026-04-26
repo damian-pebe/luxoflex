@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { GlowButton } from "@/components/ui/glow-button";
 import { useState } from "react";
 
-// Logo URLs — replace with real client logos when ready
 const teams = [
   { name: "Heineken",      img: "https://logo.clearbit.com/heineken.com" },
   { name: "Red Bull",      img: "https://logo.clearbit.com/redbull.com" },
@@ -19,15 +18,15 @@ const teams = [
   { name: "José Cuervo",   img: "https://logo.clearbit.com/cuervo.com" },
 ];
 
-// Triple-duplicate for seamless infinite loop
-const loopedTeams = [...teams, ...teams, ...teams];
+// Double for seamless loop (BlurredInfiniteSlider pattern from 21st.dev)
+const loopedTeams = [...teams, ...teams];
 
 function LogoItem({ name, img }: { name: string; img: string }) {
   const [failed, setFailed] = useState(false);
 
   if (failed) {
     return (
-      <span className="font-rajdhani font-bold text-sm text-white/35 uppercase tracking-[0.2em] whitespace-nowrap select-none">
+      <span className="font-rajdhani font-bold text-sm text-white/35 uppercase tracking-[0.2em] whitespace-nowrap select-none px-4">
         {name}
       </span>
     );
@@ -36,18 +35,15 @@ function LogoItem({ name, img }: { name: string; img: string }) {
   return (
     <img
       src={img}
-      alt={name}
+      alt={`${name} — cliente de Luxoflex`}
       title={name}
-      className="h-9 w-auto max-w-28 object-contain select-none"
-      style={{
-        filter: "brightness(0) invert(1)",
-        opacity: 0.45,
-        transition: "opacity 0.3s",
-      }}
-      onMouseEnter={e => (e.currentTarget.style.opacity = "0.9")}
-      onMouseLeave={e => (e.currentTarget.style.opacity = "0.45")}
+      width="112"
+      height="36"
+      className="h-9 w-auto max-w-28 object-contain select-none transition-opacity duration-300 opacity-40 hover:opacity-85"
+      style={{ filter: "brightness(0) invert(1)" }}
       onError={() => setFailed(true)}
       draggable={false}
+      loading="lazy"
     />
   );
 }
@@ -56,8 +52,10 @@ export const PoweringTeams = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-black flex flex-col items-center justify-center overflow-hidden md:min-h-screen py-8 md:py-0">
-
+    <section
+      aria-label="Marcas que confían en Luxoflex"
+      className="bg-black flex flex-col items-center justify-center overflow-hidden md:min-h-screen py-8 md:py-0"
+    >
       <WavyBackground
         className="max-w-4xl w-full mb-32 md:mb-48 overflow-hidden"
         blur={14}
@@ -68,29 +66,38 @@ export const PoweringTeams = () => {
         backgroundFill="black"
       >
         <div className="flex flex-col items-center justify-center pt-24 md:pt-32 px-6 text-center">
-          <p className="text-4xl md:text-6xl font-bold uppercase text-center text-transparent bg-clip-text bg-linear-to-r from-stone-300 via-white to-stone-400 font-safira leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold uppercase text-center text-transparent bg-clip-text bg-linear-to-r from-stone-300 via-white to-stone-400 font-safira leading-tight">
             Impulsando las<br className="hidden md:block" /> mejores marcas
-          </p>
+          </h2>
           <p className="text-sm md:text-base mt-4 text-white/50 font-normal uppercase font-rajdhani tracking-widest text-center max-w-lg">
             Desde emprendimientos innovadores hasta grandes industrias
           </p>
         </div>
       </WavyBackground>
 
-      {/* Infinite logo carousel */}
-      <div className="-mt-24 md:-mt-36 relative w-full overflow-hidden py-8">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
-
+      {/*
+        Infinite logo carousel — BlurredInfiniteSlider pattern from 21st.dev:
+        CSS mask for edge fade + [animation-play-state:paused] on hover
+      */}
+      <div className="-mt-24 md:-mt-36 relative w-full py-8">
+        {/* CSS mask fade at edges — 21st.dev BlurredInfiniteSlider technique */}
         <div
-          className="flex items-center gap-20 w-max"
-          style={{ animation: "marquee 30s linear infinite" }}
+          className="w-full overflow-hidden"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          }}
         >
-          {loopedTeams.map((team, i) => (
-            <div key={i} className="shrink-0 flex items-center justify-center">
-              <LogoItem name={team.name} img={team.img} />
-            </div>
-          ))}
+          <div
+            className="flex items-center gap-20 w-max hover:paused transition-all duration-300"
+            style={{ animation: "marquee 30s linear infinite" }}
+          >
+            {loopedTeams.map((team, i) => (
+              <div key={i} className="shrink-0 flex items-center justify-center">
+                <LogoItem name={team.name} img={team.img} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -100,6 +107,6 @@ export const PoweringTeams = () => {
           Quiero mi primera etiqueta
         </GlowButton>
       </div>
-    </div>
+    </section>
   );
 };
