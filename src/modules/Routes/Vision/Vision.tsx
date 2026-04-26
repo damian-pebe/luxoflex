@@ -1,9 +1,10 @@
 "use client";
 import { useScrollToTop } from "@/hooks/scrollToTop";
-import Valores from "./Components/Valores";
-import Joinus from "./Components/Joinus";
 import Hero from "./Components/Hero";
+import VisionStatement from "./Components/VisionStatement";
+import Valores from "./Components/Valores";
 import LookingFor from "./Components/LookingFor";
+import Joinus from "./Components/Joinus";
 
 export default function VisionPage() {
   useScrollToTop();
@@ -11,6 +12,7 @@ export default function VisionPage() {
   return (
     <main className="bg-[#09090B] text-white min-h-screen overflow-hidden">
       <Hero />
+      <VisionStatement />
       <Valores />
       <LookingFor />
       <Joinus />
