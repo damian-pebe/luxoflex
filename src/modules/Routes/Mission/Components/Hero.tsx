@@ -1,49 +1,53 @@
 import { motion } from "framer-motion";
-import FloatingLines from "@/components/FloatingLines";
+import LaserFlow from "@/components/LaserFlow";
 
 export default function Hero() {
   return (
     <div
-      className="relative h-72 md:h-96 overflow-hidden"
-      style={{ backgroundColor: "#0a0a12" }}
+      className="relative overflow-hidden"
+      style={{ backgroundColor: "#0a0f1a", minHeight: "85vh" }}
     >
-      {/* FloatingLines background from react-bits */}
       <div className="absolute inset-0">
-        <FloatingLines
-          enabledWaves={["top", "middle", "bottom"]}
-          lineCount={8}
-          lineDistance={8}
-          bendRadius={8}
-          bendStrength={-2}
-          interactive
-          parallax={true}
-          animationSpeed={1}
-          gradientStart="#3B82F6"
-          gradientMid="#6366f1"
-          gradientEnd="#4f4f7a"
+        <LaserFlow
+          horizontalBeamOffset={-0.1}
+          verticalBeamOffset={0.05}
+          color="#3B82F6"
+          horizontalSizing={0.5}
+          verticalSizing={2}
+          wispDensity={1}
+          wispSpeed={15}
+          wispIntensity={5}
+          flowSpeed={0.35}
+          flowStrength={0.25}
+          fogIntensity={0.45}
+          fogScale={0.3}
+          fogFallSpeed={0.6}
+          decay={1.1}
+          falloffStart={1.2}
         />
       </div>
 
-      {/* Bottom fade to page bg */}
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#09090B] pointer-events-none" />
-      <div className="absolute inset-0 bg-linear-to-r from-black/40 via-transparent to-black/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/50 via-transparent to-black/50 pointer-events-none" />
 
-      <div className="absolute inset-0 flex flex-col items-start justify-end px-6 md:px-16 pb-10 max-w-7xl mx-auto left-0 right-0">
+      <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-20 pb-16 max-w-7xl mx-auto left-0 right-0">
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -16 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-rajdhani uppercase tracking-widest text-yellow-500 text-sm mb-3"
+          className="font-rajdhani uppercase tracking-[0.3em] text-blue-400 text-xs mb-5"
         >
-          Luxoflex
+          Luxoflex — Nuestra razón de ser
         </motion.p>
+
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="font-audiowide font-extralight text-5xl md:text-7xl text-white leading-tight"
+          transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="font-audiowide font-extralight leading-none mb-6"
+          style={{ fontSize: "clamp(3.5rem, 10vw, 8rem)" }}
         >
-          Nuestra{" "}
+          <span className="text-white block">Nuestra</span>
           <span
             style={{
               background: "linear-gradient(135deg, #3B82F6, #60A5FA, #93C5FD)",
@@ -55,6 +59,18 @@ export default function Hero() {
             Misión
           </span>
         </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="flex items-center gap-4"
+        >
+          <div className="h-px w-10 bg-blue-500/60" />
+          <p className="font-poppins text-zinc-400 text-sm">
+            El socio confiable detrás de cada etiqueta premium
+          </p>
+        </motion.div>
       </div>
     </div>
   );

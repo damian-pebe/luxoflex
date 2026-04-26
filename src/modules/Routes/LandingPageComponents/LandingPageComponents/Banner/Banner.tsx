@@ -3,14 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Eye, CheckCircle2 } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { GlassChip } from "@/components/ui/glass-chip";
-
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.7, delay, ease: [0.25, 0.46, 0.45, 0.94] },
-});
 
 const fadeLeft = (delay = 0) => ({
   initial: { opacity: 0, x: -32 },

@@ -26,94 +26,108 @@ export const InfiniteMovingCards = ({
     addAnimation();
   }, []);
   const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
-
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
         if (scrollerRef.current) {
           scrollerRef.current.appendChild(duplicatedItem);
         }
       });
-
       getDirection();
       getSpeed();
       setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
-      }
+      containerRef.current.style.setProperty(
+        "--animation-direction",
+        direction === "left" ? "forwards" : "reverse"
+      );
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
+      const duration =
+        speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s";
+      containerRef.current.style.setProperty("--animation-duration", duration);
     }
   };
+
   return (
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 max-w-7xl overflow-hidden mask-[linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll "
+          "flex min-w-full shrink-0 gap-5 py-4 w-max flex-nowrap",
+          start && "animate-scroll"
         )}
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px] overflow-hidden"
-            style={{
-              background: item.image 
-                ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${item.image})`
-                : "linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9))",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
             key={idx}
+            className="w-95 max-w-full relative rounded-2xl border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm shrink-0 px-7 py-6 hover:border-zinc-600 transition-colors duration-300 overflow-hidden group"
           >
+            {/* Top accent line */}
+            <div
+              className="absolute top-0 left-6 right-6 h-px"
+              style={{ background: "linear-gradient(90deg, transparent, #3B82F6, transparent)" }}
+            />
+
+            {/* Quote mark */}
+            <div
+              className="text-5xl font-serif leading-none mb-3 select-none"
+              style={{ color: "#3B82F6", opacity: 0.35 }}
+            >
+              &ldquo;
+            </div>
+
             <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className="relative z-20 text-sm leading-[1.6] text-white font-normal">
+              <p className="font-poppins text-zinc-300 text-sm leading-relaxed mb-6">
                 {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] text-white font-normal">
+              </p>
+
+              <div className="flex items-center gap-3">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-10 h-10 rounded-full object-cover border-2 border-zinc-700 shrink-0"
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center shrink-0">
+                    <span className="font-rajdhani font-bold text-blue-400 text-sm">
+                      {item.name.charAt(0)}
+                    </span>
+                  </div>
+                )}
+                <div>
+                  <p className="font-rajdhani font-bold uppercase tracking-wide text-white text-sm">
                     {item.name}
-                  </span>
-                  <span className="text-sm leading-[1.6] text-white font-normal">
+                  </p>
+                  <p className="font-poppins text-zinc-500 text-xs">
                     {item.title}
-                  </span>
-                </span>
+                  </p>
+                </div>
               </div>
             </blockquote>
+
+            {/* Bottom hover line */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{ background: "linear-gradient(90deg, transparent, #3B82F6, transparent)" }}
+            />
           </li>
         ))}
       </ul>

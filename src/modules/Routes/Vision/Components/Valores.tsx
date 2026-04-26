@@ -1,94 +1,132 @@
 import { motion } from "framer-motion";
 import { Eye, Lightbulb, Target, ShieldCheck, Brush, Sparkles } from "lucide-react";
-import Particles from "@/components/Particles";
 
 const valores = [
-  { title: "Calidad",               icon: ShieldCheck, description: "Cuidamos cada detalle para entregar un producto impecable.",                                    accent: "#F59E0B" },
-  { title: "Innovación",            icon: Lightbulb,   description: "Aplicamos diseño y tecnología para mejorar continuamente.",                                    accent: "#3B82F6" },
-  { title: "Compromiso",            icon: Target,       description: "Cumplimos con tiempos, atención y expectativas.",                                              accent: "#F59E0B" },
-  { title: "Confianza",             icon: Eye,          description: "Creamos relaciones sólidas y transparentes con nuestros clientes.",                            accent: "#3B82F6" },
-  { title: "Pasión por el diseño",  icon: Brush,        description: "Creemos en el poder visual para transformar una marca.",                                      accent: "#F59E0B" },
-  { title: "Atención personalizada",icon: Sparkles,     description: "Nos adaptamos a cada cliente para brindar soluciones únicas y efectivas.",                    accent: "#3B82F6" },
+  { title: "Calidad",                icon: ShieldCheck, description: "Cuidamos cada detalle para entregar un producto impecable.",                         accent: "#F59E0B", num: "01" },
+  { title: "Innovación",             icon: Lightbulb,   description: "Aplicamos diseño y tecnología para mejorar continuamente.",                         accent: "#3B82F6", num: "02" },
+  { title: "Compromiso",             icon: Target,       description: "Cumplimos con tiempos, atención y expectativas.",                                   accent: "#F59E0B", num: "03" },
+  { title: "Confianza",              icon: Eye,          description: "Creamos relaciones sólidas y transparentes con nuestros clientes.",                 accent: "#3B82F6", num: "04" },
+  { title: "Pasión por el diseño",   icon: Brush,        description: "Creemos en el poder visual para transformar una marca.",                           accent: "#F59E0B", num: "05" },
+  { title: "Atención personalizada", icon: Sparkles,     description: "Nos adaptamos a cada cliente para brindar soluciones únicas y efectivas.",         accent: "#3B82F6", num: "06" },
 ];
+
+const FeaturedIcon = valores[0].icon;
+const featured = valores[0];
 
 export default function Valores() {
   return (
-    <section aria-labelledby="valores-heading" className="relative overflow-hidden bg-[#09090B]">
-      {/* Particles background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Particles
-          particleCount={120}
-          particleSpread={8}
-          speed={0.06}
-          particleColors={["#F59E0B", "#FBBF24", "#F97316", "#ffffff"]}
-          alphaParticles
-          particleBaseSize={80}
-          sizeRandomness={0.8}
-          cameraDistance={22}
-          disableRotation={false}
-          moveParticlesOnHover={false}
-        />
-      </div>
+    <section aria-labelledby="valores-heading" className="bg-[#09090B] py-24 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto">
 
-      <div className="relative z-10 py-20 px-6 md:px-16 max-w-7xl mx-auto">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14"
+          className="mb-20"
         >
-          <p className="font-rajdhani uppercase tracking-widest text-yellow-500 text-sm mb-3">
+          <p className="font-rajdhani uppercase tracking-[0.3em] text-yellow-500 text-xs mb-4">
             En qué creemos
           </p>
           <h2
             id="valores-heading"
-            className="font-audiowide font-extralight text-4xl md:text-5xl text-white leading-tight"
+            className="font-audiowide font-extralight text-white leading-tight"
+            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
           >
             Nuestros{" "}
-            <span style={{ background: "linear-gradient(135deg, #F59E0B, #FBBF24, #F97316)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span
+              style={{
+                background: "linear-gradient(135deg, #F59E0B, #FBBF24, #F97316)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
               Valores
             </span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {valores.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="group relative rounded-2xl border border-zinc-800 bg-zinc-900/70 backdrop-blur-sm p-6 hover:border-zinc-600 transition-colors duration-300 overflow-visible"
-            >
-              {/* Corner squares — 21st.dev Dark Grid pattern */}
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute -left-1.5 -top-1.5 h-3 w-3" style={{ background: item.accent }} />
-                <div className="absolute -right-1.5 -top-1.5 h-3 w-3" style={{ background: item.accent }} />
-                <div className="absolute -left-1.5 -bottom-1.5 h-3 w-3" style={{ background: item.accent }} />
-                <div className="absolute -right-1.5 -bottom-1.5 h-3 w-3" style={{ background: item.accent }} />
-              </div>
-              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: `linear-gradient(135deg, ${item.accent}08, transparent 60%)` }} />
+        {/* Featured first value — image card */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          className="group relative rounded-2xl border border-zinc-800 overflow-hidden mb-4 hover:border-zinc-600 transition-colors duration-500"
+          style={{ minHeight: "260px" }}
+        >
+          {/* Background image */}
+          <img
+            src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Equipo Luxoflex garantizando calidad"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.18) 0%, transparent 60%)" }} />
+          <div className="absolute top-0 left-8 right-8 h-px" style={{ background: "linear-gradient(90deg, transparent, #F59E0B44, transparent)" }} />
 
-              <div className="relative z-10 flex items-start gap-4">
-                <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center border border-zinc-700 group-hover:border-zinc-500 transition-colors duration-300"
-                  style={{ background: `${item.accent}12` }}>
-                  <item.icon className="h-5 w-5" style={{ color: item.accent }} />
+          <div className="relative z-10 p-8 flex flex-col md:flex-row md:items-end gap-6 h-full" style={{ minHeight: "260px" }}>
+            <div className="flex-1 flex flex-col justify-end">
+              <span className="font-rajdhani text-yellow-500/50 text-xs font-bold tracking-widest mb-4">{featured.num}</span>
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
+                style={{ background: `${featured.accent}20`, border: `1px solid ${featured.accent}40` }}
+              >
+                <FeaturedIcon className="h-7 w-7" style={{ color: featured.accent }} />
+              </div>
+              <h3 className="font-rajdhani font-bold uppercase tracking-widest text-white text-2xl md:text-3xl mb-3 group-hover:text-yellow-100 transition-colors duration-300">
+                {featured.title}
+              </h3>
+              <p className="font-poppins text-zinc-400 text-base leading-relaxed max-w-lg">
+                {featured.description}
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{ background: `linear-gradient(90deg, transparent, ${featured.accent}, transparent)` }}
+          />
+        </motion.div>
+
+        {/* Remaining 5 values — 2-col divider list */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
+          {valores.slice(1).map((item, i) => {
+            const ItemIcon = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                className="group flex items-start gap-5 border-t border-zinc-800 py-8 hover:border-zinc-600 transition-colors duration-300 cursor-default"
+              >
+                <div className="shrink-0 pt-0.5">
+                  <span className="font-rajdhani text-zinc-700 text-xs font-bold group-hover:text-zinc-500 transition-colors duration-300 block mb-3">
+                    {item.num}
+                  </span>
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300"
+                    style={{ background: `${item.accent}12`, border: `1px solid ${item.accent}25` }}
+                  >
+                    <ItemIcon className="h-5 w-5" style={{ color: item.accent }} />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="font-rajdhani font-bold uppercase tracking-wider text-white text-base mb-1 group-hover:text-yellow-100 transition-colors duration-200">
+                  <h3 className="font-rajdhani font-bold uppercase tracking-wider text-white text-base mb-2 group-hover:text-yellow-100 transition-colors duration-200">
                     {item.title}
                   </h3>
-                  <p className="font-poppins text-zinc-500 text-sm leading-relaxed">{item.description}</p>
+                  <p className="font-poppins text-zinc-500 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-              </div>
-
-              <div className="absolute bottom-0 left-0 right-0 h-px rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: `linear-gradient(90deg, transparent, ${item.accent}, transparent)` }} />
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -59,9 +59,6 @@ const FEATURES = [
 const AUTO_PLAY_INTERVAL = 3500;
 const ITEM_HEIGHT = 72;
 
-// Luxoflex brand blue
-const BRAND_BLUE = "#1E40AF";
-const BRAND_BLUE_LIGHT = "#3B82F6";
 
 const wrap = (min: number, max: number, v: number) => {
   const rangeSize = max - min;

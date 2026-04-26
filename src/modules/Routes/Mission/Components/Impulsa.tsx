@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Aurora from "@/components/Aurora";
 import { ShieldCheck, Lightbulb, Target, Eye, Leaf, Handshake, ArrowUpRight, MessageCircle } from "lucide-react";
 import { InfiniteMovingCardsDemo } from "./carousel-infinity";
 import { useNavigate } from "react-router-dom";
@@ -39,15 +38,7 @@ export default function Impulsa() {
 
   return (
     <div className="relative bg-[#09090B] overflow-hidden">
-      {/* Aurora across both sections */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <Aurora
-          colorStops={["#1E3A8A", "#312E81", "#1E3A8A"]}
-          amplitude={1.0}
-          blend={0.5}
-          speed={0.4}
-        />
-      </div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-zinc-800 pointer-events-none" />
 
       {/* Testimonials */}
       <section aria-labelledby="testimonios-heading" className="relative z-10 py-16 px-6 md:px-16 max-w-7xl mx-auto">
