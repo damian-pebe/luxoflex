@@ -290,11 +290,10 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
       if (giantTextRef.current) {
         gsap.fromTo(
           giantTextRef.current,
-          { y: "8vh", scale: 0.92, opacity: 0 },
+          { y: "4vh", scale: 0.96 },
           {
             y: "0vh",
             scale: 1,
-            opacity: 1,
             ease: "power1.out",
             scrollTrigger: {
               trigger: wrapperRef.current,
@@ -313,20 +312,17 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
 
       gsap.fromTo(
         revealTargets,
-        { y: 42, opacity: 0 },
+        { y: 24 },
         {
           y: 0,
-          opacity: 1,
+          duration: 0.7,
           stagger: 0.12,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: wrapperRef.current,
-            start: "top 55%",
-            end: "bottom 88%",
-            scrub: 1,
-          },
+          clearProps: "transform",
         }
       );
+
+      requestAnimationFrame(() => ScrollTrigger.refresh());
     }, wrapperRef);
 
     return () => ctx.revert();

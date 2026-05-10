@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, Gauge, Layers3 } from "lucide-react";
 import { Link } from "react-router-dom";
-import LaserFlow from "@/components/LaserFlow";
+import ColorBends from "@/components/ColorBends";
 
 const proofPoints = [
   { icon: Layers3, label: "Etiquetas a medida", value: "Diseño + producción" },
@@ -15,36 +15,31 @@ export default function Hero() {
       className="relative isolate overflow-hidden bg-[#080A0F]"
       style={{
         backgroundImage:
-          "radial-gradient(circle at 12% 76%, rgba(245,158,11,0.14), transparent 27%), radial-gradient(circle at 82% 24%, rgba(59,130,246,0.18), transparent 30%), linear-gradient(180deg, #080A0F 0%, #09090B 100%)",
+          "radial-gradient(circle at 14% 74%, rgba(0,255,209,0.14), transparent 29%), radial-gradient(circle at 84% 22%, rgba(138,92,255,0.24), transparent 33%), linear-gradient(180deg, #080A0F 0%, #09090B 100%)",
       }}
     >
-      <div
-        className="absolute inset-x-[-14vw] -top-16 h-[330px] md:-top-20 md:h-[470px] pointer-events-none"
-        aria-hidden="true"
-      >
-        <div className="luxoflex-laserflow-fallback luxoflex-laserflow-fallback--blue" />
-        <LaserFlow
-          className="relative z-10"
-          horizontalBeamOffset={-0.1}
-          verticalBeamOffset={0.05}
-          color="#3B82F6"
-          horizontalSizing={0.5}
-          verticalSizing={2}
-          wispDensity={1}
-          wispSpeed={15}
-          wispIntensity={5}
-          flowSpeed={0.35}
-          flowStrength={0.25}
-          fogIntensity={0.45}
-          fogScale={0.3}
-          fogFallSpeed={0.6}
-          decay={1.1}
-          falloffStart={1.2}
+      <div className="absolute inset-0 z-0 opacity-100" aria-hidden="true">
+        <ColorBends
+          colors={["#FF5C7A", "#8A5CFF", "#00FFD1"]}
+          rotation={90}
+          speed={0.2}
+          scale={1}
+          frequency={1}
+          warpStrength={1}
+          mouseInfluence={0.45}
+          noise={0.15}
+          parallax={0.45}
+          iterations={1}
+          intensity={1.55}
+          bandWidth={6}
+          transparent
+          autoRotate={0}
         />
       </div>
 
-      <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#080A0F]/20 to-[#09090B] pointer-events-none" />
-      <div className="absolute inset-0 bg-linear-to-r from-black/70 via-transparent to-black/70 pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_58%_42%,transparent_0%,rgba(8,10,15,0.06)_44%,rgba(9,9,11,0.58)_100%)] pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-linear-to-b from-[#080A0F]/10 via-[#080A0F]/24 to-[#09090B] pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-linear-to-r from-black/82 via-black/30 to-black/32 pointer-events-none" />
       <div className="absolute inset-x-6 md:inset-x-16 top-0 h-px bg-linear-to-r from-transparent via-blue-400/50 to-transparent" />
 
       <div className="relative z-10 flex min-h-[520px] md:min-h-[620px] flex-col justify-end px-6 md:px-16 pb-14 md:pb-20 pt-36 max-w-7xl mx-auto">
