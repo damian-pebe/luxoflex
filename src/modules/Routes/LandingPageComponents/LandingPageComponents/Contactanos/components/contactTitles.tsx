@@ -3,7 +3,7 @@ export default function ContactTitles() {
     return (
       <div className="  justify-center flex items-center flex-col px-2 md:px-5 gap-10">
         <h2 className="scroll-m-20 border-b pb-2 text-3xl md:text-4xl font-light font-flamenco tracking-tight first:mt-0">
-           Contactanos,
+           Contáctanos,
           <a
             className="font-extrabold font-zilla "
             href="https://luxoflex.vercel.app"
