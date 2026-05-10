@@ -1,52 +1,24 @@
 import { WavyBackground } from "@/components/aceternity/wavy-background";
 import { useNavigate } from "react-router-dom";
 import { GlowButton } from "@/components/ui/glow-button";
-import { useState } from "react";
 
 const teams = [
-  { name: "Heineken",      img: "https://logo.clearbit.com/heineken.com" },
-  { name: "Red Bull",      img: "https://logo.clearbit.com/redbull.com" },
-  { name: "Bacardí",       img: "https://logo.clearbit.com/bacardi.com" },
-  { name: "Jack Daniel's", img: "https://logo.clearbit.com/jackdaniels.com" },
-  { name: "Absolut",       img: "https://logo.clearbit.com/absolut.com" },
-  { name: "Smirnoff",      img: "https://logo.clearbit.com/smirnoff.com" },
-  { name: "Patrón",        img: "https://logo.clearbit.com/patrontequila.com" },
-  { name: "Don Julio",     img: "https://logo.clearbit.com/donjulio.com" },
-  { name: "Budweiser",     img: "https://logo.clearbit.com/budweiser.com" },
-  { name: "Corona",        img: "https://logo.clearbit.com/corona.com" },
-  { name: "Modelo",        img: "https://logo.clearbit.com/modelousa.com" },
-  { name: "José Cuervo",   img: "https://logo.clearbit.com/cuervo.com" },
+  { name: "Heineken",      tone: "from-emerald-300/16 via-white/[0.06] to-emerald-500/10" },
+  { name: "Red Bull",      tone: "from-red-400/18 via-white/[0.06] to-blue-500/12" },
+  { name: "Bacardí",       tone: "from-rose-400/18 via-white/[0.06] to-red-700/10" },
+  { name: "Jack Daniel's", tone: "from-zinc-200/14 via-white/[0.07] to-zinc-500/10" },
+  { name: "Absolut",       tone: "from-sky-300/16 via-white/[0.06] to-blue-500/10" },
+  { name: "Smirnoff",      tone: "from-red-300/16 via-white/[0.06] to-cyan-400/10" },
+  { name: "Patrón",        tone: "from-yellow-300/18 via-white/[0.06] to-amber-700/10" },
+  { name: "Don Julio",     tone: "from-amber-200/18 via-white/[0.06] to-stone-500/10" },
+  { name: "Budweiser",     tone: "from-red-400/18 via-white/[0.06] to-blue-700/10" },
+  { name: "Corona",        tone: "from-yellow-200/18 via-white/[0.06] to-sky-400/10" },
+  { name: "Modelo",        tone: "from-amber-300/18 via-white/[0.06] to-blue-800/10" },
+  { name: "José Cuervo",   tone: "from-yellow-300/18 via-white/[0.06] to-green-700/10" },
 ];
 
 // Double for seamless loop (BlurredInfiniteSlider pattern from 21st.dev)
 const loopedTeams = [...teams, ...teams];
-
-function LogoItem({ name, img }: { name: string; img: string }) {
-  const [failed, setFailed] = useState(false);
-
-  if (failed) {
-    return (
-      <span className="font-rajdhani font-bold text-sm text-white/35 uppercase tracking-[0.2em] whitespace-nowrap select-none px-4">
-        {name}
-      </span>
-    );
-  }
-
-  return (
-    <img
-      src={img}
-      alt={`${name} — cliente de Luxoflex`}
-      title={name}
-      width="112"
-      height="36"
-      className="h-9 w-auto max-w-28 object-contain select-none transition-opacity duration-300 opacity-40 hover:opacity-85"
-      style={{ filter: "brightness(0) invert(1)" }}
-      onError={() => setFailed(true)}
-      draggable={false}
-      loading="lazy"
-    />
-  );
-}
 
 export const PoweringTeams = () => {
   const navigate = useNavigate();
@@ -76,7 +48,7 @@ export const PoweringTeams = () => {
       </WavyBackground>
 
       {/*
-        Infinite logo carousel — BlurredInfiniteSlider pattern from 21st.dev:
+        Infinite brand carousel — BlurredInfiniteSlider pattern from 21st.dev:
         CSS mask for edge fade + [animation-play-state:paused] on hover
       */}
       <div className="-mt-24 md:-mt-36 relative w-full py-8">
@@ -93,8 +65,13 @@ export const PoweringTeams = () => {
             style={{ animation: "marquee 30s linear infinite" }}
           >
             {loopedTeams.map((team, i) => (
-              <div key={i} className="shrink-0 flex items-center justify-center">
-                <LogoItem name={team.name} img={team.img} />
+              <div
+                key={`${team.name}-${i}`}
+                className={`shrink-0 rounded-full border border-white/10 bg-linear-to-r ${team.tone} px-7 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-sm`}
+              >
+                <span className="font-rajdhani text-sm font-bold uppercase tracking-[0.18em] text-white/62 transition-colors duration-300 hover:text-white whitespace-nowrap select-none">
+                  {team.name}
+                </span>
               </div>
             ))}
           </div>

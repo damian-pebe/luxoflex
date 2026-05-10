@@ -57,7 +57,6 @@ export default function StartPage() {
         src={background}
         alt="Etiquetas premium fabricadas por Luxoflex en Guadalajara"
         loading="eager"
-        fetchPriority="high"
       />
 
       {/* Gradient overlays */}
