@@ -289,7 +289,7 @@ export default function Impulsa() {
             <motion.button
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => navigate("/contactus")}
+              onClick={() => navigate("/contacto")}
               className="group flex cursor-pointer items-center gap-2.5 rounded-full bg-yellow-500 px-8 py-4 font-poppins text-base font-bold text-black shadow-[0_0_30px_rgba(234,179,8,0.35)] transition-colors duration-300 hover:bg-yellow-400 hover:shadow-[0_0_50px_rgba(234,179,8,0.55)]"
             >
               <MessageCircle className="h-4 w-4" />

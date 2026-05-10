@@ -114,7 +114,7 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="shrink-0"
           >
-            <Link to="/luxoflex" className="group relative inline-flex items-center gap-2.5 cursor-pointer">
+            <Link to="/nosotros" className="group relative inline-flex items-center gap-2.5 cursor-pointer">
               <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg"
                 style={{ background: "linear-gradient(135deg, #F59E0B30, #F9731630)" }} />
               <span className="relative inline-flex items-center gap-2.5 font-poppins font-semibold text-sm px-5 py-3 rounded-xl border transition-all duration-300"
@@ -384,7 +384,7 @@ export default function Services() {
               >
                 {/* Primary CTA — springs in with glow pulse */}
                 <motion.button
-                  onClick={() => { setOpen(null); navigate("/contactus"); }}
+                  onClick={() => { setOpen(null); navigate("/contacto"); }}
                   initial={{ opacity: 0, y: 12, scale: 0.97 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.45, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}

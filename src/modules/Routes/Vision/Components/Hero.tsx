@@ -87,14 +87,14 @@ export default function Hero() {
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <Link
-                to="/contactus"
+                to="/contacto"
                 className="group inline-flex items-center gap-2 rounded-full bg-yellow-400 px-5 py-3 font-poppins text-sm font-bold text-black transition-colors duration-200 hover:bg-yellow-300"
               >
                 Hablar con Luxoflex
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
-                to="/pastworks"
+                to="/proyectos"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 font-poppins text-sm font-semibold text-white backdrop-blur transition-colors duration-200 hover:border-yellow-300/60 hover:bg-yellow-400/10"
               >
                 Ver capacidades

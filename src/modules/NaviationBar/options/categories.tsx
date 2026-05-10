@@ -6,28 +6,28 @@ export default function Categories() {
     return (
       <div className="gap-5 text-white py-5 md:flex flex-row items-center hidden ">
             <Link
-              to="/luxoflex"
+              to="/nosotros"
               className="animate-slideinleft"
             >
-              <ButtonLink1 str="¿Quienes somos?" />
+              <ButtonLink1 str="¿Quiénes somos?" />
             </Link>
             <Link
-              to="/contactus"
+              to="/contacto"
               className="animate-slideinleft2"
             >
-              <ButtonLink1 str="Contactanos" />
+              <ButtonLink1 str="Contáctanos" />
             </Link>
             <Link
-              to="/mission"
+              to="/mision"
               className="animate-slideinright2"
             >
-              <ButtonLink1 str="Mision" />
+              <ButtonLink1 str="Misión" />
             </Link>
             <Link
               to="/vision"
               className="animate-slideinright"
             >
-              <ButtonLink1 str="Vision" />
+              <ButtonLink1 str="Visión" />
             </Link>
           </div>
     )

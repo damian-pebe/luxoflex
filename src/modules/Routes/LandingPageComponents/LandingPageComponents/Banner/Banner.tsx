@@ -161,7 +161,7 @@ export default function Banner() {
               className="flex flex-col sm:flex-row gap-3 pt-1"
             >
               <button
-                onClick={() => navigate("/pastworks")}
+                onClick={() => navigate("/proyectos")}
                 className="cursor-pointer group flex items-center justify-center gap-2.5 text-white font-poppins font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 text-sm hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)]"
                 style={{
                   background: "linear-gradient(135deg, #1E40AF 0%, #2563EB 60%, #3B82F6 100%)",
@@ -172,7 +172,7 @@ export default function Banner() {
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <LiquidButton
-                onClick={() => navigate("/contactus")}
+                onClick={() => navigate("/contacto")}
                 size="lg"
                 className="font-poppins font-medium text-white/90 px-7"
               >

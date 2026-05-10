@@ -65,7 +65,7 @@ export default function Joinus() {
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => navigate("/contactus")}
+            onClick={() => navigate("/contacto")}
             className="cursor-pointer group inline-flex items-center gap-2.5 bg-yellow-500 hover:bg-yellow-400 text-black font-poppins font-bold px-8 py-4 rounded-full transition-colors duration-300 text-base shadow-[0_0_30px_rgba(234,179,8,0.4)] hover:shadow-[0_0_55px_rgba(234,179,8,0.6)]"
           >
             <MessageCircle className="h-4 w-4" />

@@ -14,16 +14,16 @@ import { useNavigate } from "react-router-dom";
 export function NavbarLuxoflex() {
   const navItems = [
     {
-      name: "Luxoflex",
-      link: "/luxoflex",
+      name: "Nosotros",
+      link: "/nosotros",
     },
     {
-      name: "Vision",
+      name: "Visión",
       link: "/vision",
     },
     {
-      name: "Mision",
-      link: "/mission",
+      name: "Misión",
+      link: "/mision",
     },
   ];
   const navigate = useNavigate();
@@ -35,16 +35,16 @@ export function NavbarLuxoflex() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton
-              onClick={() => navigate("/pastworks")}
+              onClick={() => navigate("/proyectos")}
               variant="secondary"
             >
-              Trabajos
+              Proyectos
             </NavbarButton>
             <NavbarButton
-              onClick={() => navigate("/contactus")}
+              onClick={() => navigate("/contacto")}
               variant="primary"
             >
-              Contactanos
+              Contáctanos
             </NavbarButton>
           </div>
         </NavBody>

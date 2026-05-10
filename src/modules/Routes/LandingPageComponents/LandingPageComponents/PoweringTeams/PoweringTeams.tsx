@@ -103,7 +103,7 @@ export const PoweringTeams = () => {
 
       {/* CTA */}
       <div className="py-12 z-50 flex justify-center">
-        <GlowButton onClick={() => navigate("/contactus")}>
+        <GlowButton onClick={() => navigate("/contacto")}>
           Quiero mi primera etiqueta
         </GlowButton>
       </div>

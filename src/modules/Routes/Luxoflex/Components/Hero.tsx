@@ -124,14 +124,14 @@ export default function HeroLuxoflex() {
             className="mt-8 flex gap-3"
           >
             <button
-              onClick={() => navigate("/contactus")}
+              onClick={() => navigate("/contacto")}
               className="cursor-pointer group flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-black font-poppins font-bold px-6 py-3 rounded-xl transition-colors duration-300 text-sm shadow-[0_0_30px_rgba(234,179,8,0.3)]"
             >
               Trabajar con nosotros
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
             </button>
             <button
-              onClick={() => navigate("/pastworks")}
+              onClick={() => navigate("/proyectos")}
               className="cursor-pointer flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/15 font-poppins font-medium px-6 py-3 rounded-xl transition-all duration-300 text-sm"
             >
               Ver trabajos

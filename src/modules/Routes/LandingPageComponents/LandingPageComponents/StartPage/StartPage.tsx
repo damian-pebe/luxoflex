@@ -184,7 +184,7 @@ export default function StartPage() {
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => navigate("/contactus")}
+            onClick={() => navigate("/contacto")}
             aria-label="Contáctanos para solicitar cotización de etiquetas"
             className="cursor-pointer group relative flex items-center gap-2.5 bg-yellow-500 hover:bg-yellow-400 text-black font-poppins font-bold px-8 py-4 rounded-xl transition-colors duration-300 text-base shadow-[0_0_30px_rgba(234,179,8,0.35)] hover:shadow-[0_0_50px_rgba(234,179,8,0.55)]"
           >
@@ -194,7 +194,7 @@ export default function StartPage() {
           </motion.button>
           <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
             <LiquidButton
-              onClick={() => navigate("/pastworks")}
+              onClick={() => navigate("/proyectos")}
               size="xl"
               className="font-poppins font-medium text-white/90 px-8"
             >

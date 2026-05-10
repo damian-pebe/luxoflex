@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp, Layers3, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { ChevronLeft, ChevronRight, Layers3, Sparkles } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { materialLibrary, type MaterialCardData } from "../pastWorksData";
 
 const fadeUp = (delay = 0) => ({
@@ -28,12 +27,58 @@ const materialShapes = [
 const getPatternClass = (classes: string[], index: number) =>
   classes[index % classes.length];
 
-export default function Products() {
-  const [expanded, setExpanded] = useState(false);
-  const visibleMaterials = expanded
-    ? materialLibrary
-    : materialLibrary.slice(0, 6);
+const materialLayouts = [
+  "sm:col-span-1 md:col-span-3",
+  "sm:col-span-1 md:col-span-3",
+  "sm:col-span-1 md:col-span-2",
+  "sm:col-span-1 md:col-span-2",
+  "sm:col-span-1 md:col-span-2",
+  "sm:col-span-2 md:col-span-4",
+  "sm:col-span-1 md:col-span-2",
+  "sm:col-span-1 md:col-span-3",
+  "sm:col-span-1 md:col-span-3",
+];
 
+const clampIndex = (index: number, length: number) =>
+  Math.max(0, Math.min(length - 1, index));
+
+function useMobileCarouselMetrics(maxWidth: number) {
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const [cardWidth, setCardWidth] = useState(maxWidth);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      const viewportWidth =
+        viewportRef.current?.clientWidth || window.innerWidth || maxWidth;
+      setCardWidth(Math.min(viewportWidth * 0.84, maxWidth));
+    };
+
+    updateWidth();
+    const resizeObserver =
+      typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(updateWidth)
+        : null;
+
+    if (viewportRef.current) {
+      resizeObserver?.observe(viewportRef.current);
+    }
+
+    window.addEventListener("resize", updateWidth);
+
+    return () => {
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", updateWidth);
+    };
+  }, [maxWidth]);
+
+  return {
+    viewportRef,
+    cardWidth,
+    peekOffset: cardWidth * 0.72,
+  };
+}
+
+export default function Products() {
   return (
     <section className="relative overflow-hidden bg-[#050505] px-5 pb-24 text-white md:px-10">
       <div className="relative mx-auto max-w-7xl border-t border-white/10 pt-20">
@@ -61,8 +106,10 @@ export default function Products() {
           </motion.p>
         </div>
 
-        <div className="grid auto-rows-[240px] grid-cols-1 gap-5 md:grid-cols-6">
-          {visibleMaterials.map((material, index) => (
+        <MobileMaterialsCarousel />
+
+        <div className="hidden auto-rows-[240px] grid-cols-2 gap-5 sm:grid md:grid-cols-6">
+          {materialLibrary.map((material, index) => (
             <MaterialTile
               key={material.title}
               material={material}
@@ -70,25 +117,180 @@ export default function Products() {
             />
           ))}
         </div>
-
-        {materialLibrary.length > 6 && (
-          <div className="mt-9 flex justify-center">
-            <Button
-              variant="ghost"
-              onClick={() => setExpanded((value) => !value)}
-              className="h-12 rounded-full border border-white/10 bg-white/[0.04] px-6 font-poppins text-sm font-semibold text-white hover:bg-white/10 hover:text-white"
-            >
-              {expanded ? "Ver menos materiales" : "Ver mas materiales"}
-              {expanded ? (
-                <ChevronUp className="h-4 w-4" />
-              ) : (
-                <ChevronDown className="h-4 w-4" />
-              )}
-            </Button>
-          </div>
-        )}
       </div>
     </section>
+  );
+}
+
+function MobileMaterialsCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { viewportRef, cardWidth, peekOffset } = useMobileCarouselMetrics(380);
+
+  const scrollToIndex = (index: number) => {
+    setActiveIndex(clampIndex(index, materialLibrary.length));
+  };
+
+  return (
+    <div className="sm:hidden">
+      <div className="mb-4 flex items-end justify-between gap-4">
+        <div>
+          <p className="font-rajdhani text-xs font-bold uppercase tracking-[0.28em] text-zinc-500">
+            Biblioteca completa
+          </p>
+          <p className="mt-1 font-poppins text-sm font-semibold text-white/80">
+            {String(activeIndex + 1).padStart(2, "0")} /{" "}
+            {String(materialLibrary.length).padStart(2, "0")}
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            onClick={() => scrollToIndex(activeIndex - 1)}
+            disabled={activeIndex === 0}
+            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-35"
+            aria-label="Material anterior"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToIndex(activeIndex + 1)}
+            disabled={activeIndex === materialLibrary.length - 1}
+            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-35"
+            aria-label="Siguiente material"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+
+      <motion.div
+        ref={viewportRef}
+        className="-mx-5 overflow-hidden px-5 pb-5"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.16}
+        onDragEnd={(_, info) => {
+          if (info.offset.x < -54) scrollToIndex(activeIndex + 1);
+          if (info.offset.x > 54) scrollToIndex(activeIndex - 1);
+        }}
+      >
+        <div className="relative h-[390px] max-h-[70vh]">
+          {materialLibrary.map((material, index) => {
+            const offset = index - activeIndex;
+            const distance = Math.abs(offset);
+            const isActive = offset === 0;
+
+            return (
+              <motion.div
+                key={material.title}
+                className="absolute left-1/2 top-0 h-full"
+                style={{
+                  width: cardWidth,
+                  zIndex: 30 - distance,
+                }}
+                animate={{
+                  x: -cardWidth / 2 + offset * peekOffset,
+                  scale: isActive ? 1 : 0.9,
+                  opacity: distance <= 1 ? 1 : distance === 2 ? 0.28 : 0,
+                  filter: isActive ? "blur(0px)" : "blur(0.4px)",
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 34,
+                  mass: 0.85,
+                }}
+              >
+                <MobileMaterialCard material={material} index={index} />
+              </motion.div>
+            );
+          })}
+        </div>
+      </motion.div>
+
+      <div className="mt-1 flex justify-center gap-1.5">
+        {materialLibrary.map((material, index) => (
+          <button
+            key={`${material.title}-dot`}
+            type="button"
+            onClick={() => scrollToIndex(index)}
+            className={cn(
+              "h-1.5 rounded-full transition-all",
+              activeIndex === index
+                ? "w-6 bg-white"
+                : "w-1.5 bg-white/20 hover:bg-white/45"
+            )}
+            aria-label={`Ir al material ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MobileMaterialCard({
+  material,
+  index,
+}: {
+  material: MaterialCardData;
+  index: number;
+}) {
+  return (
+    <motion.article
+      {...fadeUp(index * 0.03)}
+      className="group relative isolate h-full overflow-hidden rounded-[1.55rem] rounded-tr-[3.5rem] border border-white/12 bg-zinc-950 shadow-[0_24px_80px_rgba(0,0,0,0.48)]"
+    >
+      <div className="absolute inset-0 overflow-hidden rounded-[inherit]">
+        <img
+          src={material.image}
+          alt={material.title}
+          className="absolute inset-0 h-full w-full rounded-[inherit] object-cover transition duration-700 group-active:scale-[1.02]"
+          loading={index < 2 ? "eager" : "lazy"}
+          width="760"
+          height="900"
+        />
+        <div className="absolute inset-0 rounded-[inherit] bg-linear-to-t from-black/88 via-black/24 to-black/8" />
+        <div
+          className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-80"
+          style={{
+            boxShadow: `inset 0 -122px 84px -92px ${material.accent}88`,
+          }}
+        />
+        <div className="absolute inset-[1px] rounded-[inherit] border border-white/[0.06]" />
+      </div>
+
+      <div className="absolute left-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-black/42 shadow-lg shadow-black/20 backdrop-blur-md">
+        <Sparkles
+          className="h-4.5 w-4.5"
+          style={{
+            color: material.accent,
+          }}
+        />
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 z-10 p-5">
+        <p className="font-rajdhani text-xs font-semibold uppercase tracking-[0.28em] text-zinc-300">
+          {material.subtitle}
+        </p>
+        <h3 className="mt-2 font-poppins text-[2rem] font-semibold leading-[1.02] text-white">
+          {material.title}
+        </h3>
+        <p className="mt-3 line-clamp-2 font-poppins text-sm leading-relaxed text-zinc-300">
+          {material.bestFor}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {material.tags.slice(0, 3).map((tag) => (
+            <span
+              key={`${material.title}-mobile-${tag}`}
+              className="rounded-full border border-white/12 bg-black/34 px-3 py-1.5 font-poppins text-xs text-zinc-200 backdrop-blur-md"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.article>
   );
 }
 
@@ -100,12 +302,7 @@ function MaterialTile({
   index: number;
 }) {
   const shapeClass = getPatternClass(materialShapes, index);
-  const sizeClass =
-    index === 0 || index === 4
-      ? "md:col-span-3"
-      : index === 1
-        ? "md:col-span-3"
-        : "md:col-span-2";
+  const sizeClass = materialLayouts[index % materialLayouts.length];
 
   return (
     <motion.article {...fadeUp(index * 0.04)} className={cn("min-h-0", sizeClass)}>

@@ -13,11 +13,11 @@ import {
 } from "@/components/ui/drawer";
 import { Link } from "react-router-dom";
 import {
+  BriefcaseBusiness,
   EyeIcon,
   HeartHandshakeIcon,
   HomeIcon,
   PhoneForwarded,
-  Users2Icon,
   UsersIcon,
 } from "lucide-react";
 import ButtonLink1 from "@/components/style1/button_link/button_link";
@@ -43,7 +43,7 @@ export function Sidebar() {
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
-            <DrawerTitle>Categorias en Luxoflex</DrawerTitle>
+            <DrawerTitle>Categorías Luxoflex</DrawerTitle>
             <DrawerDescription>
               Convertimos sueños e ideas en etiquetas
             </DrawerDescription>
@@ -66,7 +66,7 @@ export function Sidebar() {
 
             <DrawerClose asChild>
               <Link
-                to="/luxoflex"
+                to="/nosotros"
                 className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
               >
                 <ButtonLink1 str="Nosotros" />
@@ -79,10 +79,10 @@ export function Sidebar() {
 
             <DrawerClose asChild>
               <Link
-                to="/contactus"
+                to="/contacto"
                 className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
               >
-                <ButtonLink1 str="Contactanos" />
+                <ButtonLink1 str="Contáctanos" />
 
                 <div className="flex justify-end">
                   <PhoneForwarded />
@@ -92,10 +92,10 @@ export function Sidebar() {
 
             <DrawerClose asChild>
               <Link
-                to="/mission"
+                to="/mision"
                 className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
               >
-                <ButtonLink1 str="Mision" />
+                <ButtonLink1 str="Misión" />
 
                 <div className="flex justify-end">
                   <HeartHandshakeIcon />
@@ -108,7 +108,7 @@ export function Sidebar() {
                 to="/vision"
                 className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
               >
-                <ButtonLink1 str="Vision" />
+                <ButtonLink1 str="Visión" />
 
                 <div className="flex justify-end">
                   <EyeIcon />
@@ -118,13 +118,13 @@ export function Sidebar() {
 
             <DrawerClose asChild>
               <Link
-                to="/pastworks"
+                to="/proyectos"
                 className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
               >
-                <ButtonLink1 str="Trabajos" />
+                <ButtonLink1 str="Proyectos" />
 
                 <div className="flex justify-end">
-                  <Users2Icon />
+                  <BriefcaseBusiness />
                 </div>
               </Link>
             </DrawerClose>
