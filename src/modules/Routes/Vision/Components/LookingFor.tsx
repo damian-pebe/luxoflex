@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Layers, Paintbrush, Printer, ThumbsUp } from "lucide-react";
+import { final_preprensa, flexo_img, preprensa_img, recepcion_disenios } from "@/const";
 
 const steps = [
   {
@@ -7,7 +8,7 @@ const steps = [
     title: "Convertimos tus ideas en realidad",
     description: "Partimos de tu concepto y lo llevamos a un diseño listo para producción.",
     number: "01",
-    img: "https://images.pexels.com/photos/19843566/pexels-photo-19843566/free-photo-of-man-looking-at-new-printed-papers.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: recepcion_disenios,
     imgAlt: "Persona revisando materiales impresos en taller",
   },
   {
@@ -15,7 +16,7 @@ const steps = [
     title: "Diseñamos con precisión",
     description: "Cada trazo, color y tipografía es cuidadosamente calibrado para tu marca.",
     number: "02",
-    img: "https://images.pexels.com/photos/6620992/pexels-photo-6620992.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: preprensa_img,
     imgAlt: "Aplicación de tinta en prensa de impresión profesional",
   },
   {
@@ -23,7 +24,7 @@ const steps = [
     title: "Imprimimos con calidad",
     description: "Tecnología flexográfica de última generación para resultados impecables.",
     number: "03",
-    img: "https://images.pexels.com/photos/19316517/pexels-photo-19316517/free-photo-of-machinery-in-factory.png?auto=compress&cs=tinysrgb&w=800",
+    img: flexo_img,
     imgAlt: "Maquinaria industrial de impresión flexográfica",
   },
   {
@@ -31,15 +32,19 @@ const steps = [
     title: "Entregamos excelencia",
     description: "Revisamos cada lote antes de entregarlo. Sin errores, sin compromisos.",
     number: "04",
-    img: "https://images.pexels.com/photos/5532718/pexels-photo-5532718.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: final_preprensa,
     imgAlt: "Sistema automatizado de etiquetado de productos en planta",
   },
 ];
 
 export default function LookingFor() {
   return (
-    <section aria-labelledby="enfoque-heading" className="bg-[#09090B] py-24 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto">
+    <section aria-labelledby="enfoque-heading" className="relative overflow-hidden bg-[#09090B] py-24 px-6 md:px-20">
+      <div
+        className="absolute inset-x-0 top-0 h-56 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.13),transparent_66%)]"
+        aria-hidden="true"
+      />
+      <div className="relative max-w-7xl mx-auto">
 
         {/* Header — left aligned for editorial feel */}
         <motion.div
@@ -47,28 +52,34 @@ export default function LookingFor() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 border-t border-zinc-800 pt-16"
+          className="mb-16 grid gap-5 border-t border-zinc-800 pt-16 md:grid-cols-[0.78fr_1fr] md:items-end"
         >
-          <p className="font-rajdhani uppercase tracking-[0.3em] text-yellow-500 text-xs mb-4">
-            Cómo trabajamos
-          </p>
-          <h2
-            id="enfoque-heading"
-            className="font-audiowide font-extralight text-white leading-tight"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
-          >
-            Nuestro{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #F59E0B, #FBBF24, #F97316)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+          <div>
+            <p className="font-rajdhani uppercase tracking-[0.3em] text-yellow-500 text-xs mb-4">
+              Cómo trabajamos
+            </p>
+            <h2
+              id="enfoque-heading"
+              className="font-audiowide font-extralight text-white leading-tight"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
             >
-              Enfoque
-            </span>
-          </h2>
+              Nuestro{" "}
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #F59E0B, #FBBF24, #60A5FA)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Enfoque
+              </span>
+            </h2>
+          </div>
+          <p className="font-poppins text-sm md:text-base leading-relaxed text-zinc-500 md:max-w-2xl md:justify-self-end">
+            Una ruta simple para que el cliente no cargue con lo técnico: nosotros
+            traducimos intención, material, color y producción en una etiqueta lista para entregar.
+          </p>
         </motion.div>
 
         {/* Step cards — 4 cols, tall image area */}
@@ -80,7 +91,7 @@ export default function LookingFor() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.65, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative rounded-2xl border border-zinc-800 bg-zinc-900/60 hover:border-zinc-600 transition-colors duration-500 overflow-hidden flex flex-col"
+              className="group relative rounded-lg border border-zinc-800 bg-zinc-900/60 hover:border-zinc-600 transition-colors duration-500 overflow-hidden flex flex-col"
             >
               {/* Corner squares */}
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">

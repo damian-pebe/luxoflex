@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
 import { Eye, Lightbulb, Target, ShieldCheck, Brush, Sparkles } from "lucide-react";
+import {
+  final_preprensa,
+  flexo_img,
+  happy_customer,
+  luxoImage1,
+  preprensa_img,
+  revision_coreccion,
+} from "@/const";
 
 const valores = [
   {
@@ -8,7 +16,7 @@ const valores = [
     description: "Cuidamos cada detalle para entregar un producto impecable.",
     accent: "#F59E0B",
     num: "01",
-    img: "https://images.pexels.com/photos/6620992/pexels-photo-6620992.jpeg?auto=compress&cs=tinysrgb&w=900",
+    img: flexo_img,
     span: "lg:col-span-2",
     tall: true,
   },
@@ -18,7 +26,7 @@ const valores = [
     description: "Aplicamos diseño y tecnología para mejorar continuamente.",
     accent: "#3B82F6",
     num: "02",
-    img: "https://images.pexels.com/photos/5532716/pexels-photo-5532716.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: preprensa_img,
     span: "lg:col-span-1",
     tall: true,
   },
@@ -28,7 +36,7 @@ const valores = [
     description: "Cumplimos con tiempos, atención y expectativas.",
     accent: "#F59E0B",
     num: "03",
-    img: "https://images.pexels.com/photos/5532718/pexels-photo-5532718.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: revision_coreccion,
     span: "lg:col-span-1",
     tall: false,
   },
@@ -38,7 +46,7 @@ const valores = [
     description: "Creamos relaciones sólidas y transparentes con nuestros clientes.",
     accent: "#3B82F6",
     num: "04",
-    img: "https://images.pexels.com/photos/19843566/pexels-photo-19843566/free-photo-of-man-looking-at-new-printed-papers.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: final_preprensa,
     span: "lg:col-span-1",
     tall: false,
   },
@@ -48,7 +56,7 @@ const valores = [
     description: "Creemos en el poder visual para transformar una marca.",
     accent: "#F59E0B",
     num: "05",
-    img: "https://images.pexels.com/photos/19316517/pexels-photo-19316517/free-photo-of-machinery-in-factory.png?auto=compress&cs=tinysrgb&w=600",
+    img: luxoImage1,
     span: "lg:col-span-1",
     tall: false,
   },
@@ -58,7 +66,7 @@ const valores = [
     description: "Nos adaptamos a cada cliente para brindar soluciones únicas y efectivas.",
     accent: "#3B82F6",
     num: "06",
-    img: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=900",
+    img: happy_customer,
     span: "lg:col-span-2",
     tall: false,
   },
@@ -66,8 +74,12 @@ const valores = [
 
 export default function Valores() {
   return (
-    <section aria-labelledby="valores-heading" className="bg-[#09090B] py-24 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto">
+    <section aria-labelledby="valores-heading" className="relative overflow-hidden bg-[#09090B] py-24 px-6 md:px-20">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-yellow-400/35 to-transparent"
+        aria-hidden="true"
+      />
+      <div className="relative max-w-7xl mx-auto">
 
         {/* Header */}
         <motion.div
@@ -75,28 +87,35 @@ export default function Valores() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-16 grid gap-5 md:grid-cols-[0.78fr_1fr] md:items-end"
         >
-          <p className="font-rajdhani uppercase tracking-[0.3em] text-yellow-500 text-xs mb-4">
-            En qué creemos
-          </p>
-          <h2
-            id="valores-heading"
-            className="font-audiowide font-extralight text-white leading-tight"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
-          >
-            Nuestros{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #F59E0B, #FBBF24, #F97316)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+          <div>
+            <p className="font-rajdhani uppercase tracking-[0.3em] text-yellow-500 text-xs mb-4">
+              En qué creemos
+            </p>
+            <h2
+              id="valores-heading"
+              className="font-audiowide font-extralight text-white leading-tight"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
             >
-              Valores
-            </span>
-          </h2>
+              Nuestros{" "}
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #F59E0B, #FBBF24, #60A5FA)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Valores
+              </span>
+            </h2>
+          </div>
+          <p className="font-poppins text-sm md:text-base leading-relaxed text-zinc-500 md:max-w-2xl md:justify-self-end">
+            La visión solo funciona cuando se traduce en decisiones diarias:
+            revisar mejor, producir con intención y resolver cada proyecto con
+            claridad técnica.
+          </p>
         </motion.div>
 
         {/* Bento grid — row 1: 2+1, row 2: 1+1+2 */}
@@ -111,7 +130,7 @@ export default function Valores() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className={`group relative rounded-2xl overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-colors duration-500 ${item.span}`}
+                className={`group relative rounded-lg overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-colors duration-500 ${item.span}`}
                 style={{ minHeight: height }}
               >
                 {/* Background image */}

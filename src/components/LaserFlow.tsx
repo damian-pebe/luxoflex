@@ -272,6 +272,8 @@ function hexToRGB(hex: string) {
   return { r: ((n >> 16) & 255) / 255, g: ((n >> 8) & 255) / 255, b: (n & 255) / 255 };
 }
 
+const VISIBLE_START_TIME = 7.0;
+
 export const LaserFlow: React.FC<Props> = ({
   className,
   style,
@@ -297,7 +299,6 @@ export const LaserFlow: React.FC<Props> = ({
   const mountRef = useRef<HTMLDivElement | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const uniformsRef = useRef<any>(null);
-  const hasFadedRef = useRef(false);
   const rectRef = useRef<DOMRect | null>(null);
   const baseDprRef = useRef<number>(1);
   const currentDprRef = useRef<number>(1);
@@ -317,11 +318,11 @@ export const LaserFlow: React.FC<Props> = ({
     const mount = mountRef.current!;
     const renderer = new THREE.WebGLRenderer({
       antialias: false,
-      alpha: false,
+      alpha: true,
       depth: false,
       stencil: false,
       powerPreference: 'high-performance',
-      premultipliedAlpha: false,
+      premultipliedAlpha: true,
       preserveDrawingBuffer: false,
       failIfMajorPerformanceCaveat: false,
       logarithmicDepthBuffer: false
@@ -334,7 +335,7 @@ export const LaserFlow: React.FC<Props> = ({
     renderer.setPixelRatio(currentDprRef.current);
     renderer.shadowMap.enabled = false;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.setClearColor(0x000000, 1);
+    renderer.setClearColor(0x000000, 0);
     const canvas = renderer.domElement;
     canvas.style.width = '100%';
     canvas.style.height = '100%';
@@ -347,14 +348,16 @@ export const LaserFlow: React.FC<Props> = ({
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array([-1, -1, 0, 3, -1, 0, -1, 3, 0]), 3));
 
+    const initialColor = hexToRGB(color || '#FFFFFF');
+
     const uniforms = {
-      iTime: { value: 0 },
+      iTime: { value: VISIBLE_START_TIME },
       iResolution: { value: new THREE.Vector3(1, 1, 1) },
       iMouse: { value: new THREE.Vector4(0, 0, 0, 0) },
       uWispDensity: { value: wispDensity },
       uTiltScale: { value: mouseTiltStrength },
-      uFlowTime: { value: 0 },
-      uFogTime: { value: 0 },
+      uFlowTime: { value: VISIBLE_START_TIME },
+      uFogTime: { value: VISIBLE_START_TIME },
       uBeamXFrac: { value: horizontalBeamOffset },
       uBeamYFrac: { value: verticalBeamOffset },
       uFlowSpeed: { value: flowSpeed },
@@ -368,8 +371,8 @@ export const LaserFlow: React.FC<Props> = ({
       uDecay: { value: decay },
       uFalloffStart: { value: falloffStart },
       uFogFallSpeed: { value: fogFallSpeed },
-      uColor: { value: new THREE.Vector3(1, 1, 1) },
-      uFade: { value: hasFadedRef.current ? 1 : 0 }
+      uColor: { value: new THREE.Vector3(initialColor.r, initialColor.g, initialColor.b) },
+      uFade: { value: 1 }
     };
     uniformsRef.current = uniforms;
 
@@ -377,7 +380,7 @@ export const LaserFlow: React.FC<Props> = ({
       vertexShader: VERT,
       fragmentShader: FRAG,
       uniforms,
-      transparent: false,
+      transparent: true,
       depthTest: false,
       depthWrite: false,
       blending: THREE.NormalBlending
@@ -389,7 +392,6 @@ export const LaserFlow: React.FC<Props> = ({
 
     const clock = new THREE.Clock();
     let prevTime = 0;
-    let fade = hasFadedRef.current ? 1 : 0;
 
     const mouseTarget = new THREE.Vector2(0, 0);
     const mouseSmooth = new THREE.Vector2(0, 0);
@@ -517,18 +519,13 @@ export const LaserFlow: React.FC<Props> = ({
       const instFps = 1000 / Math.max(1, emaDtRef.current);
       fpsSamplesRef.current.push(instFps);
 
-      uniforms.iTime.value = t;
+      uniforms.iTime.value = t + VISIBLE_START_TIME;
 
       const cdt = Math.min(0.033, Math.max(0.001, dt));
       (uniforms.uFlowTime.value as number) += cdt;
       (uniforms.uFogTime.value as number) += cdt;
 
-      if (!hasFadedRef.current) {
-        const fadeDur = 1.0;
-        fade = Math.min(1, fade + cdt / fadeDur);
-        uniforms.uFade.value = fade;
-        if (fade >= 1) hasFadedRef.current = true;
-      }
+      uniforms.uFade.value = 1;
 
       const tau = Math.max(1e-3, mouseSmoothTimeRef.current);
       const alpha = 1 - Math.exp(-cdt / tau);

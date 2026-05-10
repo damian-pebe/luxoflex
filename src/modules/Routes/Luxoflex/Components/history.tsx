@@ -1,4 +1,4 @@
-import { background } from "@/const";
+import { background, logo } from "@/const";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -74,6 +74,52 @@ function MilestoneCarousel() {
   );
 }
 
+function HistoryBrandReveal() {
+  return (
+    <div className="pointer-events-none absolute inset-x-0 top-20 z-10 flex justify-center px-5 md:top-[22vh]">
+      <div className="relative w-full max-w-[680px] text-center">
+        <div
+          aria-hidden="true"
+          className="absolute left-1/2 top-9 h-px w-[min(72vw,620px)] -translate-x-1/2 bg-gradient-to-r from-transparent via-yellow-300/40 to-transparent"
+        />
+
+        <div className="relative mx-auto flex w-fit items-center gap-4 rounded-lg border border-white/14 bg-black/40 px-5 py-3 shadow-[0_24px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+          <img
+            src={logo}
+            alt="Luxoflex"
+            className="h-14 w-16 shrink-0 object-contain md:h-16 md:w-20"
+          />
+          <div aria-hidden="true" className="h-12 w-px bg-white/14" />
+          <div className="text-left">
+            <span className="block font-poppins text-xs font-semibold text-yellow-300">
+              Desde 2009
+            </span>
+            <span className="mt-0.5 block font-audiowide text-xl font-extralight text-white md:text-3xl">
+              LUXOFLEX
+            </span>
+          </div>
+        </div>
+
+        <p className="mx-auto mt-6 max-w-xl px-2 font-poppins text-sm leading-relaxed text-zinc-200 md:text-base">
+          15+ años convirtiendo diseño, color y precisión en etiquetas premium
+          para marcas que tienen que verse impecables.
+        </p>
+
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+          {["Diseño", "Preprensa", "Flexografía"].map((label) => (
+            <span
+              key={label}
+              className="rounded-lg border border-white/12 bg-white/[0.06] px-3 py-1.5 font-poppins text-xs font-semibold text-white/85 backdrop-blur-md"
+            >
+              {label}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function History() {
   const navigate = useNavigate();
 
@@ -86,7 +132,8 @@ export default function History() {
         subtitle="Más de 15 años construyendo excelencia"
       >
         {/* Shown after image fully expands — pinned at bottom of sticky viewport */}
-        <div className="w-full bg-gradient-to-t from-[#09090B] via-[#09090B]/95 to-transparent pt-16">
+        <div className="relative flex min-h-screen w-full flex-col justify-end bg-gradient-to-t from-[#09090B] via-[#09090B]/92 to-transparent pt-16">
+          <HistoryBrandReveal />
           <MilestoneCarousel />
         </div>
       </ScrollExpandMedia>

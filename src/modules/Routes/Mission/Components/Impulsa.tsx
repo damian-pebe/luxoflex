@@ -1,47 +1,114 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Lightbulb, Target, Eye, Leaf, Handshake, ArrowUpRight, MessageCircle } from "lucide-react";
-import { InfiniteMovingCardsDemo } from "./carousel-infinity";
+import {
+  ArrowUpRight,
+  Eye,
+  Handshake,
+  Leaf,
+  Lightbulb,
+  MessageCircle,
+  ShieldCheck,
+  Target,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import {
+  final_preprensa,
+  flexo_img,
+  grabados,
+  happy_customer,
+  manga_img,
+  preprensa_img,
+  recepcion_disenios,
+  revision_coreccion,
+} from "@/const";
+import { InfiniteMovingCardsDemo } from "./carousel-infinity";
 
-// Two hero/bento feature cards with real images
 const featuredPillars = [
   {
-    title: "Nuestra Visión",
-    description: "Ser líderes en la industria de etiquetas autoadheribles, con soluciones innovadoras que superen las expectativas de nuestros clientes en cada proyecto.",
+    title: "Diseño que vende",
+    description:
+      "Aterrizamos tu idea en una etiqueta lista para anaquel: legible, memorable y pensada para el material correcto.",
     icon: Eye,
     accent: "#F59E0B",
-    img: "https://images.pexels.com/photos/13741245/pexels-photo-13741245.jpeg?auto=compress&cs=tinysrgb&w=800",
-    imgAlt: "Empaque premium con etiquetas vibrantes de Luxoflex",
+    img: recepcion_disenios,
+    imgAlt: "Revisión de diseños personalizados para etiquetas Luxoflex",
   },
   {
-    title: "Nuestros Servicios",
-    description: "Etiquetas flexográficas, mangas termocontraíbles para tequila y vino, y preprensa profesional con tecnología de punta.",
+    title: "Producción confiable",
+    description:
+      "Preprensa, flexografía, mangas y acabados especiales unidos en un proceso claro de principio a fin.",
     icon: Target,
     accent: "#3B82F6",
-    img: "https://images.pexels.com/photos/5532716/pexels-photo-5532716.jpeg?auto=compress&cs=tinysrgb&w=800",
-    imgAlt: "Sistema automatizado de etiquetado industrial",
+    img: flexo_img,
+    imgAlt: "Proceso flexográfico de Luxoflex para etiquetas premium",
   },
 ];
 
-// Regular 6 info cards
 const pillars = [
-  { title: "Quiénes Somos",         description: "Empresa especializada en fabricación de etiquetas de alta calidad con más de 15 años sirviendo a diversas industrias.",      icon: ShieldCheck, accent: "#F59E0B" },
-  { title: "Calidad Garantizada",    description: "Materiales premium y tecnología de vanguardia para garantizar etiquetas duraderas con excelente acabado.",                   icon: ShieldCheck, accent: "#3B82F6" },
-  { title: "Innovación Continua",    description: "Actualizamos procesos y materiales constantemente para ofrecer soluciones modernas al mercado.",                             icon: Lightbulb,   accent: "#F59E0B" },
-  { title: "Sustentabilidad",        description: "Comprometidos con el medio ambiente, ofrecemos opciones eco-amigables y procesos de producción responsables.",               icon: Leaf,        accent: "#3B82F6" },
-  { title: "Alianzas Estratégicas",  description: "Desarrollamos relaciones comerciales duraderas, siendo el socio confiable que tu empresa necesita.",                         icon: Handshake,   accent: "#F59E0B" },
-  { title: "Contáctanos",            description: "Permítenos asesorarte para encontrar la mejor solución en etiquetas para tu negocio. ¡Solicita una cotización hoy!",        icon: MessageCircle, accent: "#3B82F6" },
+  {
+    title: "Preprensa exacta",
+    description:
+      "Archivos, color y suajes revisados antes de imprimir para reducir errores y acelerar aprobaciones.",
+    icon: ShieldCheck,
+    accent: "#F59E0B",
+  },
+  {
+    title: "Material correcto",
+    description: "Elegimos película, adhesivo y acabado según el uso real del producto.",
+    icon: ShieldCheck,
+    accent: "#3B82F6",
+  },
+  {
+    title: "Innovación continua",
+    description:
+      "Probamos acabados, tintas y soluciones visuales para que cada marca tenga una presencia distinta.",
+    icon: Lightbulb,
+    accent: "#F59E0B",
+  },
+  {
+    title: "Producción responsable",
+    description: "Cuidamos merma, tiempos y materiales para producir con mejor control operativo.",
+    icon: Leaf,
+    accent: "#3B82F6",
+  },
+  {
+    title: "Relación cercana",
+    description: "Acompañamos el proyecto con comunicación clara desde la primera muestra.",
+    icon: Handshake,
+    accent: "#F59E0B",
+  },
+  {
+    title: "Cotización guiada",
+    description: "Te ayudamos a definir medida, material, acabado y volumen sin vueltas innecesarias.",
+    icon: MessageCircle,
+    accent: "#3B82F6",
+  },
+];
+
+const processImages = [
+  preprensa_img,
+  revision_coreccion,
+  final_preprensa,
+  manga_img,
+  happy_customer,
+  grabados,
 ];
 
 export default function Impulsa() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative bg-[#09090B] overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-zinc-800 pointer-events-none" />
+    <div className="relative overflow-hidden bg-[#09090B]">
+      <div className="absolute left-0 right-0 top-0 h-px bg-zinc-800 pointer-events-none" />
+      <div
+        className="pointer-events-none absolute right-[-18rem] top-40 h-[38rem] w-[38rem] rounded-full border border-yellow-400/10"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute bottom-20 left-[-16rem] h-[34rem] w-[34rem] rounded-full border border-blue-400/10"
+        aria-hidden="true"
+      />
 
-      {/* Testimonials */}
-      <section aria-labelledby="testimonios-heading" className="relative z-10 py-16 px-6 md:px-16 max-w-7xl mx-auto">
+      <section aria-labelledby="testimonios-heading" className="relative z-10 mx-auto max-w-7xl px-6 py-16 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,20 +116,31 @@ export default function Impulsa() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <p className="font-rajdhani uppercase tracking-widest text-yellow-500 text-sm mb-3">Nuestros clientes hablan</p>
-          <h2 id="testimonios-heading" className="font-audiowide font-extralight text-4xl md:text-5xl text-white leading-tight">
-            Lo que dicen{" "}
-            <span style={{ background: "linear-gradient(135deg, #F59E0B, #FBBF24, #F97316)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              nuestros clientes
+          <p className="font-rajdhani text-sm uppercase tracking-widest text-yellow-500">
+            Confianza en producción
+          </p>
+          <h2
+            id="testimonios-heading"
+            className="mt-3 font-audiowide text-4xl font-extralight leading-tight text-white md:text-5xl"
+          >
+            Marcas que vuelven{" "}
+            <span
+              style={{
+                background: "linear-gradient(135deg, #F59E0B, #FBBF24, #60A5FA)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              por el resultado
             </span>
           </h2>
         </motion.div>
         <InfiniteMovingCardsDemo />
       </section>
 
-      {/* Mission pillars */}
-      <section aria-labelledby="impulsa-heading" className="relative z-10 py-16 px-6 md:px-16">
-        <div className="max-w-7xl mx-auto">
+      <section aria-labelledby="impulsa-heading" className="relative z-10 px-6 py-16 md:px-16">
+        <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,17 +148,28 @@ export default function Impulsa() {
             transition={{ duration: 0.6 }}
             className="mb-14 text-center"
           >
-            <p className="font-rajdhani uppercase tracking-widest text-yellow-500 text-sm mb-3">Por qué existimos</p>
-            <h2 id="impulsa-heading" className="font-audiowide font-extralight text-4xl md:text-5xl text-white leading-tight">
-              Lo que nos{" "}
-              <span style={{ background: "linear-gradient(135deg, #F59E0B, #FBBF24, #F97316)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                impulsa
+            <p className="font-rajdhani text-sm uppercase tracking-widest text-yellow-500">
+              Cómo cumplimos la misión
+            </p>
+            <h2
+              id="impulsa-heading"
+              className="mt-3 font-audiowide text-4xl font-extralight leading-tight text-white md:text-5xl"
+            >
+              Sistema de{" "}
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #F59E0B, #FBBF24, #60A5FA)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                trabajo
               </span>
             </h2>
           </motion.div>
 
-          {/* Bento row — 2 large feature cards with images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+          <div className="mb-5 grid grid-cols-1 gap-5 md:grid-cols-2">
             {featuredPillars.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -88,53 +177,60 @@ export default function Impulsa() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="group relative rounded-2xl border border-zinc-800 bg-zinc-900/70 backdrop-blur-sm hover:border-zinc-600 transition-colors duration-300 overflow-hidden flex flex-col"
-                style={{ minHeight: "320px" }}
+                className="group relative flex min-h-80 flex-col overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/70 backdrop-blur-sm transition-colors duration-300 hover:border-zinc-600"
               >
-                {/* Corner squares */}
-                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                <div className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <div className="absolute -left-1.5 -top-1.5 h-3 w-3" style={{ background: item.accent }} />
                   <div className="absolute -right-1.5 -top-1.5 h-3 w-3" style={{ background: item.accent }} />
-                  <div className="absolute -left-1.5 -bottom-1.5 h-3 w-3" style={{ background: item.accent }} />
-                  <div className="absolute -right-1.5 -bottom-1.5 h-3 w-3" style={{ background: item.accent }} />
+                  <div className="absolute -bottom-1.5 -left-1.5 h-3 w-3" style={{ background: item.accent }} />
+                  <div className="absolute -bottom-1.5 -right-1.5 h-3 w-3" style={{ background: item.accent }} />
                 </div>
 
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden shrink-0">
-                  <div className="absolute inset-0 z-10" style={{ background: `linear-gradient(to bottom, ${item.accent}20, transparent 40%, rgba(24,24,27,0.95) 100%)` }} />
+                <div className="relative h-52 shrink-0 overflow-hidden">
+                  <div
+                    className="absolute inset-0 z-10"
+                    style={{
+                      background: `linear-gradient(to bottom, ${item.accent}20, transparent 40%, rgba(24,24,27,0.95) 100%)`,
+                    }}
+                  />
                   <img
                     src={item.img}
                     alt={item.imgAlt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 right-4 z-20">
-                    <div className="w-9 h-9 rounded-xl flex items-center justify-center border border-white/10 backdrop-blur-sm" style={{ background: `${item.accent}25` }}>
+                  <div className="absolute right-4 top-4 z-20">
+                    <div
+                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 backdrop-blur-sm"
+                      style={{ background: `${item.accent}25` }}
+                    >
                       <item.icon className="h-4 w-4" style={{ color: item.accent }} />
                     </div>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 p-6 flex-1">
-                  <div className="pointer-events-none absolute inset-0 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: `linear-gradient(135deg, ${item.accent}06, transparent 60%)` }} />
-                  <h3 className="font-rajdhani font-bold uppercase tracking-wider text-white text-lg mb-2 group-hover:text-yellow-100 transition-colors duration-200 relative z-10">
+                <div className="relative z-10 flex-1 p-6">
+                  <div
+                    className="pointer-events-none absolute inset-0 rounded-b-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{ background: `linear-gradient(135deg, ${item.accent}06, transparent 60%)` }}
+                  />
+                  <h3 className="relative z-10 mb-2 font-rajdhani text-lg font-bold uppercase tracking-wider text-white transition-colors duration-200 group-hover:text-yellow-100">
                     {item.title}
                   </h3>
-                  <p className="font-poppins text-zinc-500 text-sm leading-relaxed relative z-10">
+                  <p className="relative z-10 font-poppins text-sm leading-relaxed text-zinc-500">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(90deg, transparent, ${item.accent}, transparent)` }} />
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: `linear-gradient(90deg, transparent, ${item.accent}, transparent)` }}
+                />
               </motion.div>
             ))}
           </div>
 
-          {/* Regular 6 info cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -142,35 +238,47 @@ export default function Impulsa() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: i * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="group relative rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm p-6 hover:border-zinc-600 transition-colors duration-300 overflow-visible"
+                className="group relative overflow-visible rounded-lg border border-zinc-800 bg-zinc-900/60 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-zinc-600"
               >
-                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <img
+                  src={processImages[i]}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-x-0 top-0 h-16 w-full rounded-t-lg object-cover opacity-20 grayscale transition-opacity duration-300 group-hover:opacity-35"
+                  loading="lazy"
+                />
+                <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <div className="absolute -left-1.5 -top-1.5 h-3 w-3" style={{ background: item.accent }} />
                   <div className="absolute -right-1.5 -top-1.5 h-3 w-3" style={{ background: item.accent }} />
-                  <div className="absolute -left-1.5 -bottom-1.5 h-3 w-3" style={{ background: item.accent }} />
-                  <div className="absolute -right-1.5 -bottom-1.5 h-3 w-3" style={{ background: item.accent }} />
+                  <div className="absolute -bottom-1.5 -left-1.5 h-3 w-3" style={{ background: item.accent }} />
+                  <div className="absolute -bottom-1.5 -right-1.5 h-3 w-3" style={{ background: item.accent }} />
                 </div>
-                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(135deg, ${item.accent}08, transparent 60%)` }} />
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: `linear-gradient(135deg, ${item.accent}08, transparent 60%)` }}
+                />
 
-                <div className="relative z-10">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center border border-zinc-700 group-hover:border-zinc-500 transition-colors duration-300 mb-4"
-                    style={{ background: `${item.accent}12` }}>
+                <div className="relative z-10 pt-10">
+                  <div
+                    className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-700 transition-colors duration-300 group-hover:border-zinc-500"
+                    style={{ background: `${item.accent}12` }}
+                  >
                     <item.icon className="h-5 w-5" style={{ color: item.accent }} />
                   </div>
-                  <h3 className="font-rajdhani font-bold uppercase tracking-wide text-white text-base mb-2 group-hover:text-yellow-100 transition-colors duration-200">
+                  <h3 className="mb-2 font-rajdhani text-base font-bold uppercase tracking-wide text-white transition-colors duration-200 group-hover:text-yellow-100">
                     {item.title}
                   </h3>
-                  <p className="font-poppins text-zinc-500 text-sm leading-relaxed">{item.description}</p>
+                  <p className="font-poppins text-sm leading-relaxed text-zinc-500">{item.description}</p>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-px rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(90deg, transparent, ${item.accent}, transparent)` }} />
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-px rounded-b-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: `linear-gradient(90deg, transparent, ${item.accent}, transparent)` }}
+                />
               </motion.div>
             ))}
           </div>
 
-          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -182,11 +290,11 @@ export default function Impulsa() {
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => navigate("/contactus")}
-              className="cursor-pointer group flex items-center gap-2.5 bg-yellow-500 hover:bg-yellow-400 text-black font-poppins font-bold px-8 py-4 rounded-xl transition-colors duration-300 text-base shadow-[0_0_30px_rgba(234,179,8,0.35)] hover:shadow-[0_0_50px_rgba(234,179,8,0.55)]"
+              className="group flex cursor-pointer items-center gap-2.5 rounded-full bg-yellow-500 px-8 py-4 font-poppins text-base font-bold text-black shadow-[0_0_30px_rgba(234,179,8,0.35)] transition-colors duration-300 hover:bg-yellow-400 hover:shadow-[0_0_50px_rgba(234,179,8,0.55)]"
             >
               <MessageCircle className="h-4 w-4" />
               Solicitar cotización
-              <ArrowUpRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </motion.button>
           </motion.div>
         </div>

@@ -50,7 +50,6 @@ export function InfiniteMovingCardsDemo() {
   const [progress, setProgress] = useState(0);
   const total = testimonials.length;
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const progressRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const goTo = (idx: number) => {
     setActive(idx);

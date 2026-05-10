@@ -9,10 +9,19 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 
-import React, { useRef, useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 import { Link } from "react-router-dom";
 
 const NavVisibleContext = createContext(false);
+const SCROLLED_NAV_OFFSET = 24;
+const NAV_GLASS_FILTER = "blur(40px) saturate(200%) brightness(0.9)";
+const NAV_GLASS_SHADOW = [
+  "inset 0 1px 0 rgba(255, 255, 255, 0.18)",
+  "inset 0 -1px 0 rgba(0, 0, 0, 0.15)",
+  "0 0 0 1px rgba(255, 255, 255, 0.08)",
+  "0 8px 40px rgba(0, 0, 0, 0.5)",
+  "0 2px 12px rgba(0, 0, 0, 0.3)",
+].join(", ");
 
 
 interface NavbarProps {
@@ -55,25 +64,18 @@ interface MobileNavMenuProps {
 }
 
 export const Navbar = ({ children, className }: NavbarProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const [visible, setVisible] = useState<boolean>(false);
+  const { scrollY } = useScroll();
+  const [visible, setVisible] = useState<boolean>(() =>
+    typeof window !== "undefined" ? window.scrollY > SCROLLED_NAV_OFFSET : false,
+  );
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 100) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
+    setVisible(latest > SCROLLED_NAV_OFFSET);
   });
 
   return (
     <NavVisibleContext.Provider value={visible}>
       <motion.div
-        ref={ref}
         className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}
       >
         {React.Children.map(children, (child) =>
@@ -90,24 +92,17 @@ export const Navbar = ({ children, className }: NavbarProps) => {
 };
 
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
+  const isFloating = Boolean(visible);
+
   return (
     <motion.div
+      initial={{
+        width: "100%",
+        y: 0,
+      }}
       animate={{
-        backdropFilter: visible
-          ? "blur(40px) saturate(200%) brightness(0.9)"
-          : "none",
-        boxShadow: visible
-          ? [
-              "inset 0 1px 0 rgba(255, 255, 255, 0.18)",
-              "inset 0 -1px 0 rgba(0, 0, 0, 0.15)",
-              "0 0 0 1px rgba(255, 255, 255, 0.08)",
-              "0 8px 40px rgba(0, 0, 0, 0.5)",
-              "0 2px 12px rgba(0, 0, 0, 0.3)",
-            ].join(", ")
-          : "none",
-        width: visible ? "55%" : "100%",
-        y: visible ? 16 : 0,
-        backgroundColor: visible ? "rgba(12, 12, 12, 0.38)" : "transparent",
+        width: isFloating ? "55%" : "100%",
+        y: isFloating ? 16 : 0,
       }}
       transition={{
         type: "spring",
@@ -117,15 +112,17 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       style={{
         minWidth: "860px",
         borderRadius: "9999px",
-        border: visible
+        backgroundColor: isFloating ? "rgba(12, 12, 12, 0.38)" : "transparent",
+        backdropFilter: isFloating ? NAV_GLASS_FILTER : "none",
+        boxShadow: isFloating ? NAV_GLASS_SHADOW : "none",
+        border: isFloating
           ? "1px solid rgba(255, 255, 255, 0.1)"
-          : "1px solid transparent",
-        WebkitBackdropFilter: visible
-          ? "blur(40px) saturate(200%) brightness(0.9)"
-          : "none",
+          : "1px solid rgba(255, 255, 255, 0)",
+        WebkitBackdropFilter: isFloating ? NAV_GLASS_FILTER : "none",
       }}
       className={cn(
         "relative z-60 mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start px-5 py-2.5 lg:flex",
+        !isFloating && "!bg-transparent !shadow-none",
         className,
       )}
     >
@@ -178,27 +175,23 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 };
 
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
+  const isFloating = Boolean(visible);
+
   return (
     <motion.div
+      initial={{
+        width: "100%",
+        paddingRight: "0px",
+        paddingLeft: "0px",
+        borderRadius: "9999px",
+        y: 0,
+      }}
       animate={{
-        backdropFilter: visible
-          ? "blur(40px) saturate(200%) brightness(0.9)"
-          : "none",
-        boxShadow: visible
-          ? [
-              "inset 0 1px 0 rgba(255, 255, 255, 0.18)",
-              "inset 0 -1px 0 rgba(0, 0, 0, 0.15)",
-              "0 0 0 1px rgba(255, 255, 255, 0.08)",
-              "0 8px 40px rgba(0, 0, 0, 0.5)",
-              "0 2px 12px rgba(0, 0, 0, 0.3)",
-            ].join(", ")
-          : "none",
-        width: visible ? "92%" : "100%",
-        paddingRight: visible ? "16px" : "0px",
-        paddingLeft: visible ? "16px" : "0px",
-        borderRadius: visible ? "20px" : "9999px",
-        y: visible ? 16 : 0,
-        backgroundColor: visible ? "rgba(12, 12, 12, 0.38)" : "transparent",
+        width: isFloating ? "92%" : "100%",
+        paddingRight: isFloating ? "16px" : "0px",
+        paddingLeft: isFloating ? "16px" : "0px",
+        borderRadius: isFloating ? "20px" : "9999px",
+        y: isFloating ? 16 : 0,
       }}
       transition={{
         type: "spring",
@@ -206,15 +199,17 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 50,
       }}
       style={{
-        border: visible
+        backgroundColor: isFloating ? "rgba(12, 12, 12, 0.38)" : "transparent",
+        backdropFilter: isFloating ? NAV_GLASS_FILTER : "none",
+        boxShadow: isFloating ? NAV_GLASS_SHADOW : "none",
+        border: isFloating
           ? "1px solid rgba(255, 255, 255, 0.1)"
-          : "1px solid transparent",
-        WebkitBackdropFilter: visible
-          ? "blur(40px) saturate(200%) brightness(0.9)"
-          : "none",
+          : "1px solid rgba(255, 255, 255, 0)",
+        WebkitBackdropFilter: isFloating ? NAV_GLASS_FILTER : "none",
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
+        !isFloating && "!bg-transparent !shadow-none",
         className,
       )}
     >
