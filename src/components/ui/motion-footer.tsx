@@ -114,13 +114,18 @@ const STYLES = `
 }
 
 .footer-giant-bg-text {
-  font-size: clamp(6rem, 25vw, 21rem);
+  font-size: clamp(7.25rem, 31vw, 21rem);
   line-height: 0.75;
   font-weight: 900;
   letter-spacing: 0;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.075);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, transparent 70%);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.105);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.08) 46%,
+    transparent 78%
+  );
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -349,20 +354,20 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
 
           <div
             ref={giantTextRef}
-            className="footer-giant-bg-text pointer-events-none absolute -bottom-[3vh] left-1/2 z-0 -translate-x-1/2 select-none whitespace-nowrap"
+            className="footer-giant-bg-text pointer-events-none absolute bottom-5 left-1/2 z-0 -translate-x-1/2 select-none whitespace-nowrap md:-bottom-[3vh]"
           >
             LUXOFLEX
           </div>
 
-          <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 pb-14 pt-14 text-center md:px-10">
-            <div className="mb-5 flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.045] px-4 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl">
+          <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 pb-24 pt-20 text-center md:px-10 md:pb-14 md:pt-14">
+            <div className="mb-5 hidden items-center gap-3 rounded-full border border-white/12 bg-white/[0.045] px-4 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl md:flex">
               <img
                 src="/luxoflex.webp"
                 alt="Luxoflex"
                 className="h-8 w-8 rounded-full border border-white/15 object-cover"
               />
               <span className="font-rajdhani text-xs font-bold uppercase tracking-[0.24em] text-white/72">
-                Flexografia y etiquetas premium
+                Flexografía y etiquetas premium
               </span>
             </div>
 

@@ -118,10 +118,10 @@ export function Sidebar() {
 
             <DrawerClose asChild>
               <Link
-                to="/proyectos"
+                to="/galeria"
                 className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
               >
-                <ButtonLink1 str="Proyectos" />
+                <ButtonLink1 str="Galería" />
 
                 <div className="flex justify-end">
                   <BriefcaseBusiness />

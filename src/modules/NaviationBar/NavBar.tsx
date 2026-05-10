@@ -35,10 +35,10 @@ export function NavbarLuxoflex() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton
-              onClick={() => navigate("/proyectos")}
+              onClick={() => navigate("/galeria")}
               variant="secondary"
             >
-              Proyectos
+              Galería
             </NavbarButton>
             <NavbarButton
               onClick={() => navigate("/contacto")}

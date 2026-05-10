@@ -185,21 +185,29 @@ function MobileMaterialsCarousel() {
               <motion.div
                 key={material.title}
                 className="absolute left-1/2 top-0 h-full"
+                onClick={() => {
+                  if (!isActive) scrollToIndex(index);
+                }}
                 style={{
                   width: cardWidth,
                   zIndex: 30 - distance,
+                  transformStyle: "preserve-3d",
+                  transformOrigin:
+                    offset < 0 ? "right center" : "left center",
                 }}
                 animate={{
                   x: -cardWidth / 2 + offset * peekOffset,
-                  scale: isActive ? 1 : 0.9,
-                  opacity: distance <= 1 ? 1 : distance === 2 ? 0.28 : 0,
-                  filter: isActive ? "blur(0px)" : "blur(0.4px)",
+                  y: isActive ? 0 : 12,
+                  scale: isActive ? 1 : 0.88,
+                  rotateZ: isActive ? 0 : offset < 0 ? -3.5 : 3.5,
+                  rotateY: isActive ? 0 : offset < 0 ? 10 : -10,
+                  opacity: distance <= 1 ? 1 : distance === 2 ? 0.18 : 0,
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 380,
-                  damping: 34,
-                  mass: 0.85,
+                  stiffness: isActive ? 520 : 420,
+                  damping: isActive ? 32 : 36,
+                  mass: 0.74,
                 }}
               >
                 <MobileMaterialCard material={material} index={index} />

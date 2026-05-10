@@ -166,13 +166,13 @@ export function Materials() {
               className="mb-4 inline-flex items-center gap-2 font-rajdhani text-sm font-semibold uppercase tracking-[0.32em] text-amber-300"
             >
               <Sparkles className="h-4 w-4" />
-              Trabajos realizados
+              Galería de trabajos
             </motion.p>
             <motion.h1
               {...fadeUp(0.05)}
               className="max-w-5xl font-audiowide text-5xl font-extralight leading-[0.96] tracking-normal text-white md:text-7xl lg:text-8xl"
             >
-              Galeria{" "}
+              Galería{" "}
               <span className="bg-linear-to-r from-amber-300 via-white to-blue-300 bg-clip-text text-transparent">
                 Luxoflex
               </span>
@@ -184,8 +184,8 @@ export function Materials() {
             className="max-w-md border-l border-white/10 pl-5"
           >
             <p className="font-poppins text-sm leading-relaxed text-zinc-400">
-              Proyectos impresos en flexografia, mangas, laminados y materiales
-              para revisar acabados, color y aplicacion antes de cotizar.
+              Proyectos impresos en flexografía, mangas, laminados y materiales
+              para revisar acabados, color y aplicación antes de cotizar.
             </p>
           </motion.div>
         </div>
@@ -240,7 +240,7 @@ function MobileShowcaseCarousel({
       <div className="mb-4 flex items-end justify-between gap-4">
         <div>
           <p className="font-rajdhani text-xs font-bold uppercase tracking-[0.28em] text-zinc-500">
-            Galeria completa
+            Galería completa
           </p>
           <p className="mt-1 font-poppins text-sm font-semibold text-white/80">
             {String(activeIndex + 1).padStart(2, "0")} /{" "}
@@ -290,21 +290,29 @@ function MobileShowcaseCarousel({
               <motion.div
                 key={item.id}
                 className="absolute left-1/2 top-0 h-full"
+                onClick={() => {
+                  if (!isActive) scrollToIndex(index);
+                }}
                 style={{
                   width: cardWidth,
                   zIndex: 30 - distance,
+                  transformStyle: "preserve-3d",
+                  transformOrigin:
+                    offset < 0 ? "right center" : "left center",
                 }}
                 animate={{
                   x: -cardWidth / 2 + offset * peekOffset,
-                  scale: isActive ? 1 : 0.9,
-                  opacity: distance <= 1 ? 1 : distance === 2 ? 0.28 : 0,
-                  filter: isActive ? "blur(0px)" : "blur(0.4px)",
+                  y: isActive ? 0 : 12,
+                  scale: isActive ? 1 : 0.88,
+                  rotateZ: isActive ? 0 : offset < 0 ? -3.5 : 3.5,
+                  rotateY: isActive ? 0 : offset < 0 ? 10 : -10,
+                  opacity: distance <= 1 ? 1 : distance === 2 ? 0.18 : 0,
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 380,
-                  damping: 34,
-                  mass: 0.85,
+                  stiffness: isActive ? 520 : 420,
+                  damping: isActive ? 32 : 36,
+                  mass: 0.74,
                 }}
               >
                 <MobileShowcaseCard

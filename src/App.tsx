@@ -22,14 +22,15 @@ function App() {
             <Route path="/nosotros" element={<Who />} />
             <Route path="/vision" element={<Vision />} />
             <Route path="/mision" element={<Mission />} />
-            <Route path="/proyectos" element={<PastWorks />} />
+            <Route path="/galeria" element={<PastWorks />} />
             <Route path="/contactus" element={<Navigate to="/contacto" replace />} />
             <Route path="/contactanos" element={<Navigate to="/contacto" replace />} />
             <Route path="/luxoflex" element={<Navigate to="/nosotros" replace />} />
             <Route path="/quienes-somos" element={<Navigate to="/nosotros" replace />} />
             <Route path="/mission" element={<Navigate to="/mision" replace />} />
-            <Route path="/pastworks" element={<Navigate to="/proyectos" replace />} />
-            <Route path="/trabajos" element={<Navigate to="/proyectos" replace />} />
+            <Route path="/proyectos" element={<Navigate to="/galeria" replace />} />
+            <Route path="/pastworks" element={<Navigate to="/galeria" replace />} />
+            <Route path="/trabajos" element={<Navigate to="/galeria" replace />} />
             <Route path="/404" element={<NotFoundPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

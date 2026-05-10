@@ -131,10 +131,10 @@ export default function HeroLuxoflex() {
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
             </button>
             <button
-              onClick={() => navigate("/proyectos")}
+              onClick={() => navigate("/galeria")}
               className="cursor-pointer flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/15 font-poppins font-medium px-6 py-3 rounded-xl transition-all duration-300 text-sm"
             >
-              Ver trabajos
+              Ver galería
             </button>
           </motion.div>
         </div>

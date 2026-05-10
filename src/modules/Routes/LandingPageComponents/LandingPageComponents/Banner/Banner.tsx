@@ -83,7 +83,7 @@ export default function Banner() {
               {...fadeRight(0)}
               className="font-rajdhani uppercase tracking-widest text-blue-400 text-sm"
             >
-              Portafolio de trabajos
+              Galería de trabajos
             </motion.p>
 
             {/* Headline */}
@@ -161,14 +161,14 @@ export default function Banner() {
               className="flex flex-col sm:flex-row gap-3 pt-1"
             >
               <button
-                onClick={() => navigate("/proyectos")}
+                onClick={() => navigate("/galeria")}
                 className="cursor-pointer group flex items-center justify-center gap-2.5 text-white font-poppins font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 text-sm hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)]"
                 style={{
                   background: "linear-gradient(135deg, #1E40AF 0%, #2563EB 60%, #3B82F6 100%)",
                 }}
               >
                 <Eye className="h-4 w-4" />
-                Ver Portafolio
+                Ver Galería
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <LiquidButton

@@ -194,11 +194,11 @@ export default function StartPage() {
           </motion.button>
           <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
             <LiquidButton
-              onClick={() => navigate("/proyectos")}
+              onClick={() => navigate("/galeria")}
               size="xl"
               className="font-poppins font-medium text-white/90 px-8"
             >
-              Ver trabajos
+              Ver galería
               <ArrowRight className="h-4 w-4" />
             </LiquidButton>
           </motion.div>
