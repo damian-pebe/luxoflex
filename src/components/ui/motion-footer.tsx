@@ -114,20 +114,23 @@ const STYLES = `
 }
 
 .footer-giant-bg-text {
-  font-size: clamp(7.25rem, 31vw, 21rem);
+  width: 100vw;
+  font-size: clamp(3.85rem, 18.85vw, 18rem);
   line-height: 0.75;
   font-weight: 900;
   letter-spacing: 0;
+  text-align: center;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.105);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.08) 46%,
-    transparent 78%
+    rgba(255, 255, 255, 0.24) 0%,
+    rgba(255, 255, 255, 0.11) 46%,
+    transparent 80%
   );
   -webkit-background-clip: text;
   background-clip: text;
+  filter: drop-shadow(0 -18px 54px rgba(255, 255, 255, 0.08));
 }
 
 .footer-text-glow {
@@ -354,26 +357,26 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
 
           <div
             ref={giantTextRef}
-            className="footer-giant-bg-text pointer-events-none absolute bottom-5 left-1/2 z-0 -translate-x-1/2 select-none whitespace-nowrap md:-bottom-[3vh]"
+            className="footer-giant-bg-text pointer-events-none absolute -bottom-[1.2vh] left-1/2 z-0 -translate-x-1/2 select-none whitespace-nowrap sm:-bottom-[2.2vh] md:-bottom-[3vh]"
           >
             LUXOFLEX
           </div>
 
-          <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 pb-24 pt-20 text-center md:px-10 md:pb-14 md:pt-14">
-            <div className="mb-5 hidden items-center gap-3 rounded-full border border-white/12 bg-white/[0.045] px-4 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl md:flex">
+          <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 pb-22 pt-16 text-center sm:pb-18 md:px-10 md:pb-14 md:pt-14">
+            <div className="mb-4 flex max-w-[calc(100vw-2.5rem)] items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.045] px-3.5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl sm:mb-5 sm:gap-3 sm:px-4">
               <img
                 src="/luxoflex.webp"
                 alt="Luxoflex"
-                className="h-8 w-8 rounded-full border border-white/15 object-cover"
+                className="h-7 w-7 shrink-0 rounded-full border border-white/15 object-cover sm:h-8 sm:w-8"
               />
-              <span className="font-rajdhani text-xs font-bold uppercase tracking-[0.24em] text-white/72">
+              <span className="truncate font-rajdhani text-[10px] font-bold uppercase tracking-[0.18em] text-white/72 sm:text-xs sm:tracking-[0.24em]">
                 Flexografía y etiquetas premium
               </span>
             </div>
 
             <h2
               ref={headingRef}
-              className="footer-text-glow max-w-5xl font-poppins text-5xl font-black leading-[0.95] tracking-normal md:text-8xl"
+              className="footer-text-glow max-w-5xl font-poppins text-5xl font-black leading-[0.95] tracking-normal sm:text-6xl md:text-8xl"
             >
               Listos para imprimir?
             </h2>
@@ -382,7 +385,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
               Cotiza, revisa trabajos recientes o habla directo con ventas desde los canales oficiales.
             </p>
 
-            <div ref={linksRef} className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div ref={linksRef} className="mt-8 flex w-full flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4">
               {socialLinks.slice(0, 3).map((item) => {
                 const Icon = item.icon;
                 const isExternal = item.href.startsWith("http");
@@ -394,7 +397,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
                     href={item.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="footer-glass-pill footer-social-pill relative isolate inline-flex min-w-[210px] items-center justify-center gap-3 overflow-hidden rounded-full px-8 py-5 text-sm font-bold text-white hover:text-white"
+                    className="footer-glass-pill footer-social-pill relative isolate inline-flex min-w-[min(210px,calc(100vw-2.5rem))] items-center justify-center gap-3 overflow-hidden rounded-full px-7 py-4 text-sm font-bold text-white hover:text-white sm:px-8 sm:py-5"
                     style={
                       {
                         "--social-color": item.color,
@@ -412,7 +415,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
 
             <div
               ref={socialDockRef}
-              className="mt-6 flex flex-wrap items-center justify-center gap-3"
+              className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:mt-6 sm:gap-3"
             >
               {socialLinks.slice(3).map((item) => {
                 const Icon = item.icon;
@@ -425,7 +428,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
                     href={item.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="footer-glass-pill inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white/62 hover:text-white"
+                    className="footer-glass-pill inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white/62 hover:text-white sm:px-6 sm:py-3"
                     style={
                       {
                         "--social-color": item.color,
