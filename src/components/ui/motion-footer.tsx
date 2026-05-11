@@ -14,8 +14,8 @@ import {
   MapPin,
   MessageCircle,
   Phone,
-  type LucideIcon,
 } from "lucide-react";
+import { Tiktok } from "react-bootstrap-icons";
 import { cn } from "@/lib/utils";
 
 if (typeof window !== "undefined") {
@@ -223,10 +223,12 @@ type FooterSocialLink = {
   label: string;
   detail: string;
   href: string;
-  icon: LucideIcon;
+  icon: React.ElementType;
   color: string;
   glow: string;
 };
+
+const TIKTOK_URL = "https://www.tiktok.com/@luxoflex";
 
 const socialLinks: FooterSocialLink[] = [
   {
@@ -252,6 +254,14 @@ const socialLinks: FooterSocialLink[] = [
     icon: Facebook,
     color: "#60a5fa",
     glow: "rgba(96, 165, 250, 0.28)",
+  },
+  {
+    label: "TikTok",
+    detail: "Proceso y videos",
+    href: TIKTOK_URL,
+    icon: Tiktok,
+    color: "#ffffff",
+    glow: "linear-gradient(135deg, rgba(37, 244, 238, 0.24), rgba(254, 44, 85, 0.24))",
   },
   {
     label: "Correo",
@@ -281,9 +291,10 @@ const socialLinks: FooterSocialLink[] = [
 
 type CinematicFooterProps = {
   legalLinks?: React.ReactNode;
+  seoLinks?: React.ReactNode;
 };
 
-export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
+export function CinematicFooter({ legalLinks, seoLinks }: CinematicFooterProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const giantTextRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -363,7 +374,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
           </div>
 
           <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 pb-22 pt-16 text-center sm:pb-18 md:px-10 md:pb-14 md:pt-14">
-            <div className="mb-4 flex max-w-[calc(100vw-2.5rem)] items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.045] px-3.5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl sm:mb-5 sm:gap-3 sm:px-4">
+            <div className="mb-4 hidden max-w-[calc(100vw-2.5rem)] items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.045] px-3.5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl sm:mb-5 sm:flex sm:gap-3 sm:px-4">
               <img
                 src="/luxoflex.webp"
                 alt="Luxoflex"
@@ -386,7 +397,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
             </p>
 
             <div ref={linksRef} className="mt-8 flex w-full flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4">
-              {socialLinks.slice(0, 3).map((item) => {
+              {socialLinks.slice(0, 4).map((item) => {
                 const Icon = item.icon;
                 const isExternal = item.href.startsWith("http");
 
@@ -417,7 +428,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
               ref={socialDockRef}
               className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:mt-6 sm:gap-3"
             >
-              {socialLinks.slice(3).map((item) => {
+              {socialLinks.slice(4).map((item) => {
                 const Icon = item.icon;
                 const isExternal = item.href.startsWith("http");
 
@@ -444,7 +455,16 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
             </div>
           </div>
 
-          <div className="relative z-20 flex w-full flex-col items-center gap-5 px-5 pb-6 md:flex-row md:justify-between md:px-10">
+          {seoLinks && (
+            <nav
+              aria-label="Servicios principales Luxoflex"
+              className="relative z-20 mx-auto mb-5 flex max-w-5xl flex-wrap items-center justify-center gap-2 px-5"
+            >
+              {seoLinks}
+            </nav>
+          )}
+
+          <div className="relative z-20 flex w-full flex-col items-center gap-5 px-5 pb-12 sm:pb-6 md:flex-row md:justify-between md:px-10">
             <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/46">
               <MapPin className="h-3.5 w-3.5 text-yellow-300/80" />
               Guadalajara, Mexico

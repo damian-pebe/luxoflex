@@ -1,139 +1,179 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { logo } from "@/const";
+import { useCallback, useRef, useState } from "react";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Link } from "react-router-dom";
 import {
+  ArrowUpRight,
   BriefcaseBusiness,
   EyeIcon,
   HeartHandshakeIcon,
   HomeIcon,
+  Menu,
   PhoneForwarded,
   UsersIcon,
+  X,
+  type LucideIcon,
 } from "lucide-react";
-import ButtonLink1 from "@/components/style1/button_link/button_link";
+
+type MobileNavItem = {
+  label: string;
+  eyebrow: string;
+  to: string;
+  icon: LucideIcon;
+};
+
+const mobileNavItems: MobileNavItem[] = [
+  { label: "Inicio", eyebrow: "Portada", to: "/", icon: HomeIcon },
+  { label: "Nosotros", eyebrow: "Historia", to: "/nosotros", icon: UsersIcon },
+  { label: "Contáctanos", eyebrow: "Cotiza", to: "/contacto", icon: PhoneForwarded },
+  { label: "Misión", eyebrow: "Proceso", to: "/mision", icon: HeartHandshakeIcon },
+  { label: "Visión", eyebrow: "Futuro", to: "/vision", icon: EyeIcon },
+  { label: "Galería", eyebrow: "Trabajos", to: "/galeria", icon: BriefcaseBusiness },
+];
 
 export function Sidebar() {
+  const [open, setOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const handleOpenChange = useCallback((nextOpen: boolean) => {
+    if (nextOpen && typeof document !== "undefined") {
+      const activeElement = document.activeElement;
+
+      if (activeElement instanceof HTMLElement) {
+        activeElement.blur();
+      }
+    }
+
+    setOpen(nextOpen);
+  }, []);
+
   return (
-    <Drawer>
+    <Drawer open={open} onOpenChange={handleOpenChange} direction="right" shouldScaleBackground={false}>
       <DrawerTrigger asChild>
-        <div className="pr-2 z-50 hover:cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill="currentColor"
-              d="M2.75 2.5a.75.75 0 0 0 0 1.5h10.5a.75.75 0 0 0 0-1.5zM4 8a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 8m-4 4.75A.75.75 0 0 1 .75 12h10.5a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75"
-            />
-          </svg>
-        </div>
+        <button
+          type="button"
+          aria-label="Abrir menú"
+          onClick={(event) => event.currentTarget.blur()}
+          className="group grid size-10 place-items-center rounded-full border border-white/12 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-xl transition duration-300 hover:border-white/24 hover:bg-white/[0.1]"
+        >
+          <Menu className="h-5 w-5 transition duration-300 group-hover:scale-105" />
+        </button>
       </DrawerTrigger>
-      <DrawerContent>
-        <div className="mx-auto w-full max-w-sm">
-          <DrawerHeader>
-            <DrawerTitle>Categorías Luxoflex</DrawerTitle>
-            <DrawerDescription>
-              Convertimos sueños e ideas en etiquetas
-            </DrawerDescription>
-          </DrawerHeader>
-          <div className="py-5 md:flex md:flex-col md:items-center md:justify-center space-y-4 z-10">
-            <DrawerClose asChild>
-              <Link
-                to="/"
-                className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
-              >
-                <div className="flex justify-start">
-                  <ButtonLink1 str="Inicio" />
-                </div>
 
-                <div className="flex justify-end">
-                  <HomeIcon />
-                </div>
-              </Link>
-            </DrawerClose>
+      <DrawerContent
+        showHandle={false}
+        onOpenAutoFocus={(event) => {
+          event.preventDefault();
+          closeButtonRef.current?.focus();
+        }}
+        className="left-auto right-0 top-0 bottom-auto mt-0 h-[100dvh] w-[min(88vw,390px)] overflow-hidden rounded-l-[28px] rounded-r-none border-y-0 border-l border-r-0 border-white/12 bg-[#030304] p-0 text-white shadow-[-28px_0_90px_rgba(0,0,0,0.72)] outline-none"
+      >
+        <div className="relative flex h-full min-h-0 flex-col overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_92%_10%,rgba(250,204,21,0.2),transparent_28%),radial-gradient(circle_at_18%_18%,rgba(59,130,246,0.16),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.055),transparent_34%)]" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-px bg-linear-to-b from-transparent via-yellow-300/35 to-transparent" />
+          <div className="relative z-10 flex items-center justify-between px-5 pb-3 pt-[max(0.9rem,env(safe-area-inset-top))]">
+            <div className="flex min-w-0 items-center">
+              <img
+                src={logo}
+                alt="Luxoflex"
+                className="h-11 w-28 shrink-0 object-contain object-left"
+              />
+            </div>
 
             <DrawerClose asChild>
-              <Link
-                to="/nosotros"
-                className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
+              <button
+                ref={closeButtonRef}
+                type="button"
+                aria-label="Cerrar menú"
+                className="grid size-9 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.055] text-white/72 transition duration-300 hover:bg-white/[0.1] hover:text-white"
               >
-                <ButtonLink1 str="Nosotros" />
-
-                <div className="flex justify-end">
-                  <UsersIcon />
-                </div>
-              </Link>
-            </DrawerClose>
-
-            <DrawerClose asChild>
-              <Link
-                to="/contacto"
-                className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
-              >
-                <ButtonLink1 str="Contáctanos" />
-
-                <div className="flex justify-end">
-                  <PhoneForwarded />
-                </div>
-              </Link>
-            </DrawerClose>
-
-            <DrawerClose asChild>
-              <Link
-                to="/mision"
-                className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
-              >
-                <ButtonLink1 str="Misión" />
-
-                <div className="flex justify-end">
-                  <HeartHandshakeIcon />
-                </div>
-              </Link>
-            </DrawerClose>
-
-            <DrawerClose asChild>
-              <Link
-                to="/vision"
-                className="animate-fadeinbounceup grid grid-cols-2 items-center justify-between"
-              >
-                <ButtonLink1 str="Visión" />
-
-                <div className="flex justify-end">
-                  <EyeIcon />
-                </div>
-              </Link>
-            </DrawerClose>
-
-            <DrawerClose asChild>
-              <Link
-                to="/galeria"
-                className="animate-fadeinbouncedown grid grid-cols-2 items-center justify-between"
-              >
-                <ButtonLink1 str="Galería" />
-
-                <div className="flex justify-end">
-                  <BriefcaseBusiness />
-                </div>
-              </Link>
+                <X className="size-[18px]" />
+              </button>
             </DrawerClose>
           </div>
-          <DrawerFooter>
-            <DrawerClose asChild>
-              <Button variant="default">Regresar</Button>
-            </DrawerClose>
-          </DrawerFooter>
+
+          <div className="relative z-10 px-5 pb-4 pt-1">
+            <DrawerTitle className="font-poppins text-[1.5rem] font-black leading-none tracking-normal text-white">
+              Navega Luxoflex
+            </DrawerTitle>
+            <DrawerDescription className="mt-2.5 max-w-[14rem] text-xs leading-4 text-white/50">
+              Flexografía y etiquetas premium.
+            </DrawerDescription>
+          </div>
+
+          <nav className="relative z-10 min-h-0 overflow-y-auto px-4 pb-2">
+            <div className="space-y-1.5">
+              {mobileNavItems.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <DrawerClose asChild key={item.to}>
+                    <Link
+                      to={item.to}
+                      className="group relative flex min-h-[3.45rem] items-center justify-between overflow-hidden rounded-[1.08rem] border border-white/[0.055] bg-white/[0.032] px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] transition duration-300 active:scale-[0.99] active:bg-white/[0.07]"
+                    >
+                      <span className="pointer-events-none absolute inset-y-2 left-0 w-1 rounded-r-full bg-yellow-300/0 transition duration-300 group-active:bg-yellow-300/70" />
+                      <span className="min-w-0">
+                        <span className="block font-poppins text-[0.94rem] font-bold leading-tight text-white">
+                          {item.label}
+                        </span>
+                        <span className="mt-0.5 block font-rajdhani text-[9px] font-bold uppercase tracking-[0.2em] text-white/38">
+                          {item.eyebrow}
+                        </span>
+                      </span>
+                      <span className="ml-3 grid size-9 shrink-0 place-items-center rounded-full border border-white/[0.07] bg-black/20 text-white/68 transition duration-300 group-active:border-yellow-300/40 group-active:text-yellow-200">
+                        <Icon className="size-[18px]" />
+                      </span>
+                    </Link>
+                  </DrawerClose>
+                );
+              })}
+            </div>
+          </nav>
+
+          <div className="relative z-10 flex min-h-0 flex-1 flex-col pt-5">
+            <div className="pointer-events-none absolute inset-x-0 top-0 bottom-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[length:3.4rem_3.4rem] opacity-55" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-linear-to-b from-[#030304] via-[#030304]/88 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/82 via-black/28 to-transparent" />
+
+            <div className="relative z-10 px-5">
+              <DrawerClose asChild>
+                <Link
+                  to="/contacto"
+                  className="flex min-h-11 items-center justify-center gap-2 rounded-full border border-yellow-200/25 bg-yellow-300 text-sm font-black text-black shadow-[0_14px_44px_rgba(250,204,21,0.16)] transition duration-300 active:scale-[0.99]"
+                >
+                  Cotizar ahora
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </DrawerClose>
+            </div>
+
+            <div className="relative mt-auto h-[6.35rem] w-full overflow-hidden pb-[env(safe-area-inset-bottom)]">
+              <div
+                className="pointer-events-none absolute -bottom-[0.06em] left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center font-poppins text-[clamp(3.9rem,20vw,5rem)] font-black leading-[0.75] tracking-normal opacity-95"
+                style={{
+                  WebkitTextStroke: "1px rgba(255,255,255,0.1)",
+                  WebkitTextFillColor: "transparent",
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.11) 46%, transparent 80%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                LUXOFLEX
+              </div>
+            </div>
+          </div>
         </div>
       </DrawerContent>
     </Drawer>

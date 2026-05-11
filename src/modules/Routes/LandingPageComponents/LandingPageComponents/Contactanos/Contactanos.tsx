@@ -40,7 +40,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Oficina",
-    lines: ["Pedro Garcia Conde #282", "Col. Villahermosa, Gdl."],
+    lines: ["Pedro Garcia Conde #282", "🇲🇽 Guadalajara, Jalisco, Mexico"],
     sub: "Visítanos con cita previa",
     gradient: "from-indigo-500/20 to-indigo-600/10",
     iconColor: "text-indigo-400",
@@ -71,11 +71,15 @@ const Contactanos = () => {
   const onSubmit = async (data: ContactFormValues) => {
     setLoading(true);
     const sendData = {
-      subject: `Nuevo mensaje de contacto - Luxoflex - Empresa: ${data.company} - Nombre: ${data.name}`,
-      text: `Nombre: ${data.name}\nEmail: ${data.email}\nTeléfono: ${data.phone || "No proporcionado"}\nEmpresa: ${data.company || "No proporcionada"}\n\nMensaje: ${data.message}`,
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      company: data.company,
+      message: data.message,
+      source: window.location.href,
     };
     try {
-      await axios.post(`${backendUrl}formSubmit`, sendData);
+      await axios.post(`${backendUrl}contact-us`, sendData);
       toast({ title: "¡Mensaje enviado!", description: "Nos pondremos en contacto pronto." });
       reset();
     } catch {
@@ -272,7 +276,7 @@ const Contactanos = () => {
                       {item.title}
                     </p>
                     {item.lines.map((l, j) => (
-                      <p key={j} className="text-white text-sm font-medium leading-snug truncate">{l}</p>
+                      <p key={j} className="text-white text-sm font-medium leading-snug break-words">{l}</p>
                     ))}
                     <p className="text-zinc-600 text-xs mt-2 flex items-center gap-1.5">
                       <Clock className="h-3 w-3 shrink-0" />
@@ -281,6 +285,7 @@ const Contactanos = () => {
                   </div>
                 </div>
               ))}
+
             </div>
           </motion.div>
         </div>

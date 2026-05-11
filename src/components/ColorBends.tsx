@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 type ColorBendsProps = {
@@ -153,6 +153,7 @@ export default function ColorBends({
   const pointerTargetRef = useRef<THREE.Vector2>(new THREE.Vector2(0, 0));
   const pointerCurrentRef = useRef<THREE.Vector2>(new THREE.Vector2(0, 0));
   const pointerSmoothRef = useRef<number>(8);
+  const [webglUnavailable, setWebglUnavailable] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current!;
@@ -191,11 +192,20 @@ export default function ColorBends({
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    const renderer = new THREE.WebGLRenderer({
-      antialias: false,
-      powerPreference: 'high-performance',
-      alpha: true
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        antialias: false,
+        powerPreference: 'high-performance',
+        alpha: true
+      });
+    } catch {
+      materialRef.current = null;
+      geometry.dispose();
+      material.dispose();
+      setWebglUnavailable(true);
+      return;
+    }
     rendererRef.current = renderer;
     (renderer as any).outputColorSpace = (THREE as any).SRGBColorSpace;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -331,5 +341,11 @@ export default function ColorBends({
     };
   }, []);
 
-  return <div ref={containerRef} className={`w-full h-full relative overflow-hidden ${className}`} style={style} />;
+  return (
+    <div ref={containerRef} className={`w-full h-full relative overflow-hidden ${className ?? ''}`} style={style}>
+      {webglUnavailable ? (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(255,206,41,0.24),transparent_28%),radial-gradient(circle_at_70%_45%,rgba(255,53,135,0.2),transparent_34%),linear-gradient(135deg,rgba(4,4,5,0.88),rgba(0,0,0,0.96))]" />
+      ) : null}
+    </div>
+  );
 }

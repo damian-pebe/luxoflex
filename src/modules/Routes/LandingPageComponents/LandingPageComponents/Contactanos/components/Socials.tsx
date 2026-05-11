@@ -4,7 +4,7 @@ import {
   TelephoneFill,
   Facebook,
   Instagram,
-  Globe,
+  Tiktok,
 } from "react-bootstrap-icons";
 import { ArrowUpRight } from "lucide-react";
 
@@ -34,12 +34,12 @@ const socialLinks = [
     glow: "rgba(236, 72, 153, 0.3)",
   },
   {
-    label: "Sitio web",
-    detail: "luxoflex.mx",
-    href: "https://www.luxoflex.mx",
-    icon: Globe,
-    tint: "#f8fafc",
-    glow: "rgba(255, 255, 255, 0.2)",
+    label: "TikTok",
+    detail: "Procesos y videos",
+    href: "https://www.tiktok.com/@luxoflex",
+    icon: Tiktok,
+    tint: "#ffffff",
+    glow: "linear-gradient(135deg, rgba(37, 244, 238, 0.28), rgba(254, 44, 85, 0.28))",
   },
   {
     label: "Correo",
@@ -61,12 +61,12 @@ const socialLinks = [
 
 export default function Socials() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#050506] px-6 py-24 md:px-12">
+    <section className="relative isolate overflow-hidden bg-[#050506] px-4 py-16 sm:px-6 sm:py-24 md:px-12">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(59,130,246,0.18),transparent_32%),radial-gradient(circle_at_84%_24%,rgba(236,72,153,0.15),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.04),transparent_35%)]" />
       <div className="absolute left-1/2 top-10 -z-10 h-48 w-[38rem] -translate-x-1/2 rounded-full bg-white/[0.08] blur-[110px]" />
 
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="mb-8 flex flex-col gap-4 sm:mb-12 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-rajdhani text-sm uppercase tracking-[0.35em] text-cyan-300/80">
               Canales oficiales
@@ -80,7 +80,7 @@ export default function Socials() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {socialLinks.map((item) => {
             const Icon = item.icon;
 
@@ -90,7 +90,7 @@ export default function Socials() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group relative min-h-[148px] overflow-hidden rounded-[28px] border border-white/[0.14] bg-white/[0.055] p-5 text-white shadow-[0_24px_80px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.24),inset_0_-1px_0_rgba(0,0,0,0.28)] backdrop-blur-[34px] transition duration-500 hover:-translate-y-1 hover:border-white/[0.24] hover:bg-white/[0.085] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                className="group relative min-h-[116px] overflow-hidden rounded-2xl border border-white/[0.14] bg-white/[0.055] p-3.5 text-white shadow-[0_18px_56px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.24),inset_0_-1px_0_rgba(0,0,0,0.28)] backdrop-blur-[34px] transition duration-500 hover:-translate-y-1 hover:border-white/[0.24] hover:bg-white/[0.085] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:min-h-[148px] sm:rounded-[28px] sm:p-5 sm:shadow-[0_24px_80px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.24),inset_0_-1px_0_rgba(0,0,0,0.28)]"
                 style={{
                   WebkitBackdropFilter: "blur(34px) saturate(190%)",
                 }}
@@ -102,24 +102,24 @@ export default function Socials() {
                 <span className="absolute inset-x-5 top-0 h-px bg-linear-to-r from-transparent via-white/[0.45] to-transparent" />
                 <span className="absolute inset-0 bg-linear-to-br from-white/[0.12] via-transparent to-white/[0.025] opacity-80" />
 
-                <span className="relative flex h-full flex-col justify-between gap-7">
+                <span className="relative flex h-full flex-col justify-between gap-5 sm:gap-7">
                   <span className="flex items-start justify-between gap-4">
                     <span
-                      className="grid size-14 place-items-center rounded-2xl border border-white/[0.18] bg-white/[0.12] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_14px_34px_rgba(0,0,0,0.34)] transition duration-500 group-hover:scale-105"
+                      className="grid size-11 place-items-center rounded-xl border border-white/[0.18] bg-white/[0.12] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_14px_34px_rgba(0,0,0,0.34)] transition duration-500 group-hover:scale-105 sm:size-14 sm:rounded-2xl"
                       style={{ color: item.tint }}
                     >
-                      <Icon className="h-6 w-6" />
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </span>
-                    <span className="grid size-9 place-items-center rounded-full border border-white/[0.12] bg-white/[0.08] text-white/50 backdrop-blur-xl transition duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white">
-                      <ArrowUpRight className="h-4 w-4" />
+                    <span className="grid size-8 place-items-center rounded-full border border-white/[0.12] bg-white/[0.08] text-white/50 backdrop-blur-xl transition duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white sm:size-9">
+                      <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     </span>
                   </span>
 
                   <span>
-                    <span className="block text-xl font-semibold tracking-[-0.01em] text-white">
+                    <span className="block text-base font-semibold tracking-[-0.01em] text-white sm:text-xl">
                       {item.label}
                     </span>
-                    <span className="mt-1 block text-sm text-white/50">
+                    <span className="mt-1 block text-xs leading-snug text-white/50 sm:text-sm">
                       {item.detail}
                     </span>
                   </span>
