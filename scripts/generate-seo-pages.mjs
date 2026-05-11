@@ -66,6 +66,8 @@ const buildJsonLd = (route) => {
     "@type": "Organization",
     "@id": `${seoData.siteUrl}/#organization`,
     name: seoData.business.name,
+    legalName: seoData.business.name,
+    alternateName: ["Luxoflex Impresiones", "Luxoflex etiquetas"],
     url: seoData.siteUrl,
     logo: absoluteImageUrl(seoData.business.logo),
     description: seoData.business.description,
@@ -80,6 +82,7 @@ const buildJsonLd = (route) => {
     "@type": "LocalBusiness",
     "@id": `${seoData.siteUrl}/#localbusiness`,
     name: seoData.business.name,
+    alternateName: ["Luxoflex Impresiones", "Luxoflex etiquetas"],
     url: seoData.siteUrl,
     image: absoluteImageUrl(seoData.defaultImage),
     logo: absoluteImageUrl(seoData.business.logo),
@@ -220,6 +223,17 @@ const upsertCanonical = (html, href) => {
   return html.replace("</head>", `    ${tag}\n  </head>`);
 };
 
+const upsertAlternate = (html, hreflang, href) => {
+  const tag = `<link rel="alternate" href="${escapeAttr(href)}" hreflang="${escapeAttr(hreflang)}" />`;
+  const pattern = new RegExp(`<link\\s+rel=["']alternate["'][^>]*hreflang=["']${hreflang}["'][^>]*>`, "i");
+
+  if (pattern.test(html)) {
+    return html.replace(pattern, () => tag);
+  }
+
+  return html.replace("</head>", `    ${tag}\n  </head>`);
+};
+
 const upsertJsonLd = (html, jsonLd) => {
   const tag = `<script id="luxoflex-route-schema" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
   const byId = /<script[^>]*id=["']luxoflex-route-schema["'][\s\S]*?<\/script>/i;
@@ -246,8 +260,11 @@ const renderRouteHtml = ({ route, canonicalPath = route.path, noindex = false })
   html = upsertMeta(html, "name", "description", route.description);
   html = upsertMeta(html, "name", "keywords", route.keywords.join(", "));
   html = upsertMeta(html, "name", "robots", noindex ? "noindex,follow" : "index,follow");
+  html = upsertMeta(html, "name", "googlebot", "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1");
   html = upsertMeta(html, "name", "author", seoData.siteName);
   html = upsertCanonical(html, canonicalUrl);
+  html = upsertAlternate(html, "es-MX", canonicalUrl);
+  html = upsertAlternate(html, "x-default", canonicalUrl);
   html = upsertMeta(html, "property", "og:type", "website");
   html = upsertMeta(html, "property", "og:url", canonicalUrl);
   html = upsertMeta(html, "property", "og:title", route.title);

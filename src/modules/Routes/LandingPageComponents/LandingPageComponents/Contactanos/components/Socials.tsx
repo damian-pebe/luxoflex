@@ -28,7 +28,7 @@ const socialLinks = [
   {
     label: "Instagram",
     detail: "Trabajos recientes",
-    href: "https://www.instagram.com/luxoflex?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    href: "https://www.instagram.com/luxofleximpresiones",
     icon: Instagram,
     tint: "#ec4899",
     glow: "rgba(236, 72, 153, 0.3)",

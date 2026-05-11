@@ -12,27 +12,12 @@ import PastWorks from "./modules/Routes/PastWorks/PastWorks";
 import NotFoundPage from "./404";
 import ServiceSeoPage from "./modules/Routes/ServiceSeo/ServiceSeoPage";
 import { SeoMeta } from "./seo/SeoMeta";
+import { seoData, serviceRoutes } from "./seo/seo";
 
 const shellRoutes = new Set([
-  "/",
-  "/etiquetas-personalizadas",
-  "/flexografia",
-  "/etiquetas-autoadheribles",
-  "/mangas-termocontraibles",
-  "/preprensa",
-  "/contacto",
-  "/nosotros",
-  "/vision",
-  "/mision",
-  "/galeria",
-  "/contactus",
-  "/contactanos",
-  "/luxoflex",
-  "/quienes-somos",
-  "/mission",
-  "/proyectos",
-  "/pastworks",
-  "/trabajos",
+  ...seoData.routes.map((route) => route.path),
+  ...seoData.redirects.map((redirect) => redirect.path),
+  "/404",
 ]);
 
 const normalizeAppPath = (path: string) => path.replace(/\/+$/, "") || "/";
@@ -47,24 +32,25 @@ function AppShell() {
       {showGlobalShell && <NavbarLuxoflex />}
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/etiquetas-personalizadas" element={<ServiceSeoPage path="/etiquetas-personalizadas" />} />
-        <Route path="/flexografia" element={<ServiceSeoPage path="/flexografia" />} />
-        <Route path="/etiquetas-autoadheribles" element={<ServiceSeoPage path="/etiquetas-autoadheribles" />} />
-        <Route path="/mangas-termocontraibles" element={<ServiceSeoPage path="/mangas-termocontraibles" />} />
-        <Route path="/preprensa" element={<ServiceSeoPage path="/preprensa" />} />
+        {serviceRoutes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            element={<ServiceSeoPage path={route.path} />}
+          />
+        ))}
         <Route path="/contacto" element={<Contactus />} />
         <Route path="/nosotros" element={<Who />} />
         <Route path="/vision" element={<Vision />} />
         <Route path="/mision" element={<Mission />} />
         <Route path="/galeria" element={<PastWorks />} />
-        <Route path="/contactus" element={<Navigate to="/contacto" replace />} />
-        <Route path="/contactanos" element={<Navigate to="/contacto" replace />} />
-        <Route path="/luxoflex" element={<Navigate to="/nosotros" replace />} />
-        <Route path="/quienes-somos" element={<Navigate to="/nosotros" replace />} />
-        <Route path="/mission" element={<Navigate to="/mision" replace />} />
-        <Route path="/proyectos" element={<Navigate to="/galeria" replace />} />
-        <Route path="/pastworks" element={<Navigate to="/galeria" replace />} />
-        <Route path="/trabajos" element={<Navigate to="/galeria" replace />} />
+        {seoData.redirects.map((redirect) => (
+          <Route
+            key={redirect.path}
+            path={redirect.path}
+            element={<Navigate to={redirect.target} replace />}
+          />
+        ))}
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

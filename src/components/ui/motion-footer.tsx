@@ -281,8 +281,8 @@ const socialLinks: FooterSocialLink[] = [
   },
   {
     label: "Web",
-    detail: "luxoflex.mx",
-    href: "https://www.luxoflex.mx",
+    detail: "luxoflex.com.mx",
+    href: "https://www.luxoflex.com.mx",
     icon: Globe,
     color: "#facc15",
     glow: "rgba(250, 204, 21, 0.22)",

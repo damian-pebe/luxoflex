@@ -6,7 +6,7 @@ export default function ContactTitles() {
            Contáctanos,
           <a
             className="font-extrabold font-zilla "
-            href="https://luxoflex.vercel.app"
+            href="https://www.luxoflex.com.mx"
             target="_blank"
             rel="noopener noreferrer"
           >

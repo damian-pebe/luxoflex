@@ -36,6 +36,19 @@ const setCanonical = (href: string) => {
   element.setAttribute("href", href);
 };
 
+const setAlternate = (hreflang: string, href: string) => {
+  let element = document.head.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${hreflang}"]`);
+
+  if (!element) {
+    element = document.createElement("link");
+    element.setAttribute("rel", "alternate");
+    element.setAttribute("hreflang", hreflang);
+    document.head.appendChild(element);
+  }
+
+  element.setAttribute("href", href);
+};
+
 export function SeoMeta() {
   const location = useLocation();
 
@@ -51,9 +64,12 @@ export function SeoMeta() {
     setMeta('meta[name="description"]', { name: "description", content: route.description });
     setMeta('meta[name="keywords"]', { name: "keywords", content: route.keywords.join(", ") });
     setMeta('meta[name="robots"]', { name: "robots", content: robots });
+    setMeta('meta[name="googlebot"]', { name: "googlebot", content: "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" });
     setMeta('meta[name="author"]', { name: "author", content: seoData.siteName });
 
     setCanonical(canonicalUrl);
+    setAlternate("es-MX", canonicalUrl);
+    setAlternate("x-default", canonicalUrl);
 
     setMeta('meta[property="og:type"]', { property: "og:type", content: "website" });
     setMeta('meta[property="og:url"]', { property: "og:url", content: canonicalUrl });

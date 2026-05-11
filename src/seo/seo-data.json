@@ -1,11 +1,11 @@
 {
-  "siteUrl": "https://www.luxoflex.mx",
+  "siteUrl": "https://www.luxoflex.com.mx",
   "siteName": "Luxoflex",
   "defaultImage": "/luxoflexImage1.webp",
   "language": "es-MX",
   "business": {
     "name": "Luxoflex",
-    "description": "Fabricantes de etiquetas personalizadas, etiquetas autoadheribles, mangas termocontraibles y preprensa profesional para marcas en Mexico.",
+    "description": "Luxoflex fabrica etiquetas personalizadas, etiquetas autoadheribles, mangas termocontraibles y preprensa profesional para marcas en Mexico.",
     "telephone": "+52 33 3462 6001",
     "secondaryTelephone": "+52 33 1363 5333",
     "email": "luxoflex1ventas@gmail.com",
@@ -20,16 +20,16 @@
     },
     "sameAs": [
       "https://facebook.com/luxoflex",
-      "https://www.instagram.com/luxoflex",
+      "https://www.instagram.com/luxofleximpresiones",
       "https://www.tiktok.com/@luxoflex"
     ]
   },
   "routes": [
     {
       "path": "/",
-      "title": "Etiquetas personalizadas en flexografia premium | Luxoflex Mexico",
-      "description": "Luxoflex fabrica etiquetas personalizadas, autoadheribles, mangas termocontraibles y preprensa profesional para marcas en Mexico. Cotiza impresion premium.",
-      "keywords": ["etiquetas personalizadas", "flexografia", "etiquetas autoadheribles", "mangas termocontraibles", "preprensa", "impresion premium", "etiquetas Mexico"],
+      "title": "Luxoflex | Etiquetas personalizadas y flexografia en Mexico",
+      "description": "Luxoflex fabrica etiquetas personalizadas, etiquetas autoadheribles, mangas termocontraibles y preprensa profesional para marcas en Mexico.",
+      "keywords": ["Luxoflex", "etiquetas personalizadas", "fabricantes de etiquetas", "flexografia", "etiquetas autoadheribles", "mangas termocontraibles", "preprensa", "impresion de etiquetas", "etiquetas Mexico"],
       "image": "/background.webp",
       "schemaType": "WebPage",
       "priority": 1,
@@ -39,8 +39,8 @@
     {
       "path": "/etiquetas-personalizadas",
       "title": "Etiquetas personalizadas para productos | Luxoflex Mexico",
-      "description": "Etiquetas personalizadas para alimentos, bebidas, cosmetica, retail y productos premium. Materiales, acabados y produccion flexografica a medida.",
-      "keywords": ["etiquetas personalizadas", "etiquetas para productos", "etiquetas para marcas", "etiquetas premium", "impresion de etiquetas"],
+      "description": "Luxoflex produce etiquetas personalizadas para alimentos, bebidas, cosmetica, retail y productos premium con materiales, acabados y flexografia a medida.",
+      "keywords": ["Luxoflex etiquetas", "etiquetas personalizadas", "etiquetas para productos", "etiquetas para marcas", "etiquetas premium", "impresion de etiquetas", "fabricantes de etiquetas Mexico"],
       "image": "/luxoflexImage2.webp",
       "schemaType": "Service",
       "priority": 0.95,
@@ -57,6 +57,52 @@
         "materials": ["BOPP blanco", "BOPP transparente", "BOPP plata", "Laminado mate", "Laminado brillante"],
         "benefits": ["Medidas y formas a la medida", "Acabados premium", "Alta lectura en anaquel", "Produccion consistente"],
         "related": ["/flexografia", "/etiquetas-autoadheribles", "/preprensa"]
+      }
+    },
+    {
+      "path": "/fabricantes-de-etiquetas",
+      "title": "Fabricantes de etiquetas personalizadas | Luxoflex Mexico",
+      "description": "Fabricantes de etiquetas personalizadas en Mexico: Luxoflex produce etiquetas autoadheribles, flexografia, mangas termocontraibles y acabados premium.",
+      "keywords": ["fabricantes de etiquetas", "fabricantes de etiquetas personalizadas", "Luxoflex", "etiquetas Mexico", "impresion de etiquetas", "etiquetas autoadheribles"],
+      "image": "/luxoflexImage1.webp",
+      "schemaType": "Service",
+      "priority": 0.94,
+      "changefreq": "weekly",
+      "breadcrumb": [{ "name": "Inicio", "path": "/" }, { "name": "Fabricantes de etiquetas", "path": "/fabricantes-de-etiquetas" }],
+      "service": {
+        "eyebrow": "Fabricacion especializada",
+        "h1": "Fabricantes de etiquetas personalizadas en Mexico",
+        "intro": "Luxoflex fabrica etiquetas personalizadas para marcas que necesitan materiales confiables, color consistente, acabados premium y produccion lista para anaquel.",
+        "summary": "Fabricacion de etiquetas autoadheribles, flexografia, mangas termocontraibles y preprensa para productos de consumo, bebidas, cosmetica y retail.",
+        "accent": "#F97316",
+        "image": "/luxoflexImage1.webp",
+        "applications": ["Marcas de consumo", "Alimentos y bebidas", "Cosmetica", "Retail", "Productos premium"],
+        "materials": ["BOPP blanco", "BOPP transparente", "BOPP plata", "Laminados", "Suajes personalizados"],
+        "benefits": ["Fabricacion a medida", "Asesoria de material", "Color consistente", "Acabados premium"],
+        "related": ["/etiquetas-personalizadas", "/flexografia", "/contacto"]
+      }
+    },
+    {
+      "path": "/impresion-de-etiquetas",
+      "title": "Impresion de etiquetas personalizadas | Luxoflex",
+      "description": "Impresion de etiquetas personalizadas con flexografia, materiales BOPP, laminados y acabados premium para marcas en Mexico.",
+      "keywords": ["impresion de etiquetas", "impresion de etiquetas personalizadas", "Luxoflex", "flexografia etiquetas", "etiquetas premium"],
+      "image": "/flexo_img.webp",
+      "schemaType": "Service",
+      "priority": 0.94,
+      "changefreq": "weekly",
+      "breadcrumb": [{ "name": "Inicio", "path": "/" }, { "name": "Impresion de etiquetas", "path": "/impresion-de-etiquetas" }],
+      "service": {
+        "eyebrow": "Impresion profesional",
+        "h1": "Impresion de etiquetas personalizadas",
+        "intro": "Imprimimos etiquetas personalizadas con procesos flexograficos, control de color y materiales seleccionados para la aplicacion real de cada producto.",
+        "summary": "Impresion de etiquetas para tirajes profesionales con BOPP, laminados, suajes y acabados definidos segun tu envase.",
+        "accent": "#2563EB",
+        "image": "/flexo_img.webp",
+        "applications": ["Botellas", "Empaque flexible", "Alimentos", "Bebidas", "Cuidado personal"],
+        "materials": ["Tintas UV", "BOPP", "Adhesivos permanentes", "Laminado mate", "Laminado brillante"],
+        "benefits": ["Alta definicion", "Color estable", "Entrega profesional", "Opciones premium"],
+        "related": ["/flexografia", "/etiquetas-personalizadas", "/galeria"]
       }
     },
     {
@@ -208,6 +254,9 @@
     }
   ],
   "redirects": [
+    { "path": "/etiquetas", "target": "/etiquetas-personalizadas" },
+    { "path": "/etiquetas-adhesivas", "target": "/etiquetas-autoadheribles" },
+    { "path": "/cotizar-etiquetas", "target": "/contacto" },
     { "path": "/contactus", "target": "/contacto" },
     { "path": "/contactanos", "target": "/contacto" },
     { "path": "/luxoflex", "target": "/nosotros" },
