@@ -59,12 +59,12 @@ export function Sidebar() {
         <div className="relative flex h-full min-h-0 flex-col overflow-hidden">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_92%_10%,rgba(250,204,21,0.2),transparent_28%),radial-gradient(circle_at_18%_18%,rgba(59,130,246,0.16),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.055),transparent_34%)]" />
           <div className="pointer-events-none absolute inset-y-0 left-0 w-px bg-linear-to-b from-transparent via-yellow-300/35 to-transparent" />
-          <div className="relative z-10 flex items-center justify-between px-4 pb-3 pt-[max(0.9rem,env(safe-area-inset-top))]">
+          <div className="relative z-10 flex items-center justify-between px-5 pb-3 pt-[max(0.9rem,env(safe-area-inset-top))]">
             <div className="flex min-w-0 items-center">
               <img
                 src={logo}
                 alt="Luxoflex"
-                className="h-10 w-24 shrink-0 object-contain object-left"
+                className="h-11 w-28 shrink-0 object-contain object-left"
               />
             </div>
 
@@ -79,16 +79,16 @@ export function Sidebar() {
             </DrawerClose>
           </div>
 
-          <div className="relative z-10 px-4 pb-3 pt-1">
-            <DrawerTitle className="font-poppins text-[1.42rem] font-black leading-none tracking-normal text-white">
+          <div className="relative z-10 px-5 pb-4 pt-1">
+            <DrawerTitle className="font-poppins text-[1.5rem] font-black leading-none tracking-normal text-white">
               Navega Luxoflex
             </DrawerTitle>
-            <DrawerDescription className="mt-2 max-w-[14rem] text-xs leading-4 text-white/52">
+            <DrawerDescription className="mt-2.5 max-w-[14rem] text-xs leading-4 text-white/50">
               Flexografía y etiquetas premium.
             </DrawerDescription>
           </div>
 
-          <nav className="relative z-10 min-h-0 flex-1 overflow-y-auto px-3.5 pb-3">
+          <nav className="relative z-10 min-h-0 overflow-y-auto px-4 pb-2">
             <div className="space-y-1.5">
               {mobileNavItems.map((item) => {
                 const Icon = item.icon;
@@ -97,7 +97,7 @@ export function Sidebar() {
                   <DrawerClose asChild key={item.to}>
                     <Link
                       to={item.to}
-                      className="group relative flex min-h-[3.55rem] items-center justify-between overflow-hidden rounded-[1.15rem] border border-white/[0.08] bg-white/[0.045] px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] transition duration-300 active:scale-[0.99] active:bg-white/[0.08]"
+                      className="group relative flex min-h-[3.45rem] items-center justify-between overflow-hidden rounded-[1.08rem] border border-white/[0.055] bg-white/[0.032] px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.065)] transition duration-300 active:scale-[0.99] active:bg-white/[0.07]"
                     >
                       <span className="pointer-events-none absolute inset-y-2 left-0 w-1 rounded-r-full bg-yellow-300/0 transition duration-300 group-active:bg-yellow-300/70" />
                       <span className="min-w-0">
@@ -108,7 +108,7 @@ export function Sidebar() {
                           {item.eyebrow}
                         </span>
                       </span>
-                      <span className="ml-3 grid size-9 shrink-0 place-items-center rounded-full border border-white/10 bg-black/24 text-white/72 transition duration-300 group-active:border-yellow-300/40 group-active:text-yellow-200">
+                      <span className="ml-3 grid size-9 shrink-0 place-items-center rounded-full border border-white/[0.07] bg-black/20 text-white/68 transition duration-300 group-active:border-yellow-300/40 group-active:text-yellow-200">
                         <Icon className="size-[18px]" />
                       </span>
                     </Link>
@@ -118,8 +118,12 @@ export function Sidebar() {
             </div>
           </nav>
 
-          <div className="relative z-10 mt-auto pt-2">
-            <div className="px-4 pb-3">
+          <div className="relative z-10 flex min-h-0 flex-1 flex-col pt-5">
+            <div className="pointer-events-none absolute inset-x-0 top-0 bottom-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[length:3.4rem_3.4rem] opacity-55" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-linear-to-b from-[#030304] via-[#030304]/88 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/82 via-black/28 to-transparent" />
+
+            <div className="relative z-10 px-5">
               <DrawerClose asChild>
                 <Link
                   to="/contacto"
@@ -131,12 +135,9 @@ export function Sidebar() {
               </DrawerClose>
             </div>
 
-            <div className="relative h-[5.8rem] w-full overflow-hidden pb-[env(safe-area-inset-bottom)]">
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.055)_1px,transparent_1px)] bg-[length:3.4rem_3.4rem] opacity-70" />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-linear-to-b from-[#030304]/15 to-transparent" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-black/78 via-black/38 to-transparent" />
+            <div className="relative mt-auto h-[6.35rem] w-full overflow-hidden pb-[env(safe-area-inset-bottom)]">
               <div
-                className="pointer-events-none absolute -bottom-[0.04em] left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center font-poppins text-[clamp(3.55rem,18vw,4.5rem)] font-black leading-[0.75] tracking-normal opacity-95"
+                className="pointer-events-none absolute -bottom-[0.06em] left-1/2 w-full -translate-x-1/2 select-none whitespace-nowrap text-center font-poppins text-[clamp(3.9rem,20vw,5rem)] font-black leading-[0.75] tracking-normal opacity-95"
                 style={{
                   WebkitTextStroke: "1px rgba(255,255,255,0.1)",
                   WebkitTextFillColor: "transparent",
