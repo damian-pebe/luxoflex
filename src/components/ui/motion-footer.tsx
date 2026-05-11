@@ -291,9 +291,10 @@ const socialLinks: FooterSocialLink[] = [
 
 type CinematicFooterProps = {
   legalLinks?: React.ReactNode;
+  seoLinks?: React.ReactNode;
 };
 
-export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
+export function CinematicFooter({ legalLinks, seoLinks }: CinematicFooterProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const giantTextRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -453,6 +454,15 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
               })}
             </div>
           </div>
+
+          {seoLinks && (
+            <nav
+              aria-label="Servicios principales Luxoflex"
+              className="relative z-20 mx-auto mb-5 flex max-w-5xl flex-wrap items-center justify-center gap-2 px-5"
+            >
+              {seoLinks}
+            </nav>
+          )}
 
           <div className="relative z-20 flex w-full flex-col items-center gap-5 px-5 pb-12 sm:pb-6 md:flex-row md:justify-between md:px-10">
             <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/46">

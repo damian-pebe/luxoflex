@@ -36,8 +36,8 @@ const stats = [
 ];
 
 // Headline split: line 1 words, line 2 accented words
-const line1 = ["Transformamos", "ideas", "en"];
-const line2 = ["etiquetas", "inolvidables."];
+const line1 = ["Etiquetas", "personalizadas", "en"];
+const line2 = ["flexografía", "premium."];
 
 export default function StartPage() {
   const navigate = useNavigate();
@@ -155,22 +155,7 @@ export default function StartPage() {
           {...fadeUp(0.9)}
           className="mt-6 text-lg md:text-xl text-zinc-400 font-poppins font-light"
         >
-          Ponemos alma y{" "}
-          <motion.span
-            className="font-zilla font-bold italic"
-            style={{
-              background: "linear-gradient(90deg, #F59E0B, #FBBF24, #F97316, #F59E0B)",
-              backgroundSize: "200% auto",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-            animate={{ backgroundPosition: ["0% center", "200% center"] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-          >
-            magia
-          </motion.span>{" "}
-          en cada etiqueta.
+          Autoadheribles, mangas termocontraíbles y preprensa profesional para marcas en México.
         </motion.p>
 
         {/* CTAs */}

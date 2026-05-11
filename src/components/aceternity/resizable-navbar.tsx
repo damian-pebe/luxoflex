@@ -288,7 +288,7 @@ export const NavbarLogo = () => {
     >
       <img
         src={logo}
-        alt="logo"
+        alt="Luxoflex impresiones"
         width={40}
         height={40}
       />
