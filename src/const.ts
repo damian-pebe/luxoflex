@@ -1,6 +1,5 @@
 
-const backendUrl = "https://luxoflex-backend.onrender.com/"
-// const backendUrl = "http://localhost:8080/"
+const backendUrl = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:8080/";
 
 const background = "/background.webp";
 const logo = "/luxoflex.webp";

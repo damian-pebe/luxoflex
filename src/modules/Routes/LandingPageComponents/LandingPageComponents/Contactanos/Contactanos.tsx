@@ -71,11 +71,15 @@ const Contactanos = () => {
   const onSubmit = async (data: ContactFormValues) => {
     setLoading(true);
     const sendData = {
-      subject: `Nuevo mensaje de contacto - Luxoflex - Empresa: ${data.company} - Nombre: ${data.name}`,
-      text: `Nombre: ${data.name}\nEmail: ${data.email}\nTeléfono: ${data.phone || "No proporcionado"}\nEmpresa: ${data.company || "No proporcionada"}\n\nMensaje: ${data.message}`,
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      company: data.company,
+      message: data.message,
+      source: window.location.href,
     };
     try {
-      await axios.post(`${backendUrl}formSubmit`, sendData);
+      await axios.post(`${backendUrl}contact-us`, sendData);
       toast({ title: "¡Mensaje enviado!", description: "Nos pondremos en contacto pronto." });
       reset();
     } catch {
