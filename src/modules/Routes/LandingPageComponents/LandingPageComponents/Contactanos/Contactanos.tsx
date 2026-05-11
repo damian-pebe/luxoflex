@@ -40,7 +40,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Oficina",
-    lines: ["Pedro Garcia Conde #282", "Col. Villahermosa, Gdl."],
+    lines: ["Pedro Garcia Conde #282", "🇲🇽 Guadalajara, Jalisco, Mexico"],
     sub: "Visítanos con cita previa",
     gradient: "from-indigo-500/20 to-indigo-600/10",
     iconColor: "text-indigo-400",
@@ -272,7 +272,7 @@ const Contactanos = () => {
                       {item.title}
                     </p>
                     {item.lines.map((l, j) => (
-                      <p key={j} className="text-white text-sm font-medium leading-snug truncate">{l}</p>
+                      <p key={j} className="text-white text-sm font-medium leading-snug break-words">{l}</p>
                     ))}
                     <p className="text-zinc-600 text-xs mt-2 flex items-center gap-1.5">
                       <Clock className="h-3 w-3 shrink-0" />
@@ -281,6 +281,7 @@ const Contactanos = () => {
                   </div>
                 </div>
               ))}
+
             </div>
           </motion.div>
         </div>

@@ -14,8 +14,8 @@ import {
   MapPin,
   MessageCircle,
   Phone,
-  type LucideIcon,
 } from "lucide-react";
+import { Tiktok } from "react-bootstrap-icons";
 import { cn } from "@/lib/utils";
 
 if (typeof window !== "undefined") {
@@ -223,10 +223,12 @@ type FooterSocialLink = {
   label: string;
   detail: string;
   href: string;
-  icon: LucideIcon;
+  icon: React.ElementType;
   color: string;
   glow: string;
 };
+
+const TIKTOK_URL = "https://www.tiktok.com/@luxoflex";
 
 const socialLinks: FooterSocialLink[] = [
   {
@@ -252,6 +254,14 @@ const socialLinks: FooterSocialLink[] = [
     icon: Facebook,
     color: "#60a5fa",
     glow: "rgba(96, 165, 250, 0.28)",
+  },
+  {
+    label: "TikTok",
+    detail: "Proceso y videos",
+    href: TIKTOK_URL,
+    icon: Tiktok,
+    color: "#ffffff",
+    glow: "linear-gradient(135deg, rgba(37, 244, 238, 0.24), rgba(254, 44, 85, 0.24))",
   },
   {
     label: "Correo",
@@ -386,7 +396,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
             </p>
 
             <div ref={linksRef} className="mt-8 flex w-full flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4">
-              {socialLinks.slice(0, 3).map((item) => {
+              {socialLinks.slice(0, 4).map((item) => {
                 const Icon = item.icon;
                 const isExternal = item.href.startsWith("http");
 
@@ -417,7 +427,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
               ref={socialDockRef}
               className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:mt-6 sm:gap-3"
             >
-              {socialLinks.slice(3).map((item) => {
+              {socialLinks.slice(4).map((item) => {
                 const Icon = item.icon;
                 const isExternal = item.href.startsWith("http");
 
