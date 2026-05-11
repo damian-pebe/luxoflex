@@ -1,6 +1,7 @@
 "use client";
 
 import { logo } from "@/const";
+import { useCallback, useRef, useState } from "react";
 import {
   Drawer,
   DrawerClose,
@@ -40,12 +41,28 @@ const mobileNavItems: MobileNavItem[] = [
 ];
 
 export function Sidebar() {
+  const [open, setOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  const handleOpenChange = useCallback((nextOpen: boolean) => {
+    if (nextOpen && typeof document !== "undefined") {
+      const activeElement = document.activeElement;
+
+      if (activeElement instanceof HTMLElement) {
+        activeElement.blur();
+      }
+    }
+
+    setOpen(nextOpen);
+  }, []);
+
   return (
-    <Drawer direction="right" shouldScaleBackground={false}>
+    <Drawer open={open} onOpenChange={handleOpenChange} direction="right" shouldScaleBackground={false}>
       <DrawerTrigger asChild>
         <button
           type="button"
           aria-label="Abrir menú"
+          onClick={(event) => event.currentTarget.blur()}
           className="group grid size-10 place-items-center rounded-full border border-white/12 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-xl transition duration-300 hover:border-white/24 hover:bg-white/[0.1]"
         >
           <Menu className="h-5 w-5 transition duration-300 group-hover:scale-105" />
@@ -54,6 +71,10 @@ export function Sidebar() {
 
       <DrawerContent
         showHandle={false}
+        onOpenAutoFocus={(event) => {
+          event.preventDefault();
+          closeButtonRef.current?.focus();
+        }}
         className="left-auto right-0 top-0 bottom-auto mt-0 h-[100dvh] w-[min(88vw,390px)] overflow-hidden rounded-l-[28px] rounded-r-none border-y-0 border-l border-r-0 border-white/12 bg-[#030304] p-0 text-white shadow-[-28px_0_90px_rgba(0,0,0,0.72)] outline-none"
       >
         <div className="relative flex h-full min-h-0 flex-col overflow-hidden">
@@ -70,6 +91,7 @@ export function Sidebar() {
 
             <DrawerClose asChild>
               <button
+                ref={closeButtonRef}
                 type="button"
                 aria-label="Cerrar menú"
                 className="grid size-9 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.055] text-white/72 transition duration-300 hover:bg-white/[0.1] hover:text-white"

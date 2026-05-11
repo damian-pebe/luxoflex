@@ -363,7 +363,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
           </div>
 
           <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-5 pb-22 pt-16 text-center sm:pb-18 md:px-10 md:pb-14 md:pt-14">
-            <div className="mb-4 flex max-w-[calc(100vw-2.5rem)] items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.045] px-3.5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl sm:mb-5 sm:gap-3 sm:px-4">
+            <div className="mb-4 hidden max-w-[calc(100vw-2.5rem)] items-center gap-2.5 rounded-full border border-white/12 bg-white/[0.045] px-3.5 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl sm:mb-5 sm:flex sm:gap-3 sm:px-4">
               <img
                 src="/luxoflex.webp"
                 alt="Luxoflex"
@@ -444,7 +444,7 @@ export function CinematicFooter({ legalLinks }: CinematicFooterProps) {
             </div>
           </div>
 
-          <div className="relative z-20 flex w-full flex-col items-center gap-5 px-5 pb-6 md:flex-row md:justify-between md:px-10">
+          <div className="relative z-20 flex w-full flex-col items-center gap-5 px-5 pb-12 sm:pb-6 md:flex-row md:justify-between md:px-10">
             <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/46">
               <MapPin className="h-3.5 w-3.5 text-yellow-300/80" />
               Guadalajara, Mexico
