@@ -1,5 +1,8 @@
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:8080/";
+const backendUrl =
+  import.meta.env.DEV
+    ? import.meta.env.VITE_BACKEND_URL ?? "http://localhost:8080/"
+    : "https://api.luxoflex.com.mx/";
 
 const background = "/background.webp";
 const logo = "/luxoflex.webp";
