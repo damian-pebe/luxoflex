@@ -5,9 +5,9 @@ import Products from "./Products/Products";
 export default function PastWorks() {
   useScrollToTop();
   return (
-    <div className="container py-5 overflow-hidden">
+    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
       <Materials />
       <Products />
-    </div>
+    </main>
   );
 }

@@ -1,45 +1,153 @@
-import { ThreeDotsWhite } from "@/components/ReusableIcons/ReusableIcons";
 import { motion } from "framer-motion";
+import { Layers, Paintbrush, Printer, ThumbsUp } from "lucide-react";
+import { final_preprensa, flexo_img, preprensa_img, recepcion_disenios } from "@/const";
+
+const steps = [
+  {
+    icon: Layers,
+    title: "Convertimos tus ideas en realidad",
+    description: "Partimos de tu concepto y lo llevamos a un diseño listo para producción.",
+    number: "01",
+    img: recepcion_disenios,
+    imgAlt: "Persona revisando materiales impresos en taller",
+  },
+  {
+    icon: Paintbrush,
+    title: "Diseñamos con precisión",
+    description: "Cada trazo, color y tipografía es cuidadosamente calibrado para tu marca.",
+    number: "02",
+    img: preprensa_img,
+    imgAlt: "Aplicación de tinta en prensa de impresión profesional",
+  },
+  {
+    icon: Printer,
+    title: "Imprimimos con calidad",
+    description: "Tecnología flexográfica de última generación para resultados impecables.",
+    number: "03",
+    img: flexo_img,
+    imgAlt: "Maquinaria industrial de impresión flexográfica",
+  },
+  {
+    icon: ThumbsUp,
+    title: "Entregamos excelencia",
+    description: "Revisamos cada lote antes de entregarlo. Sin errores, sin compromisos.",
+    number: "04",
+    img: final_preprensa,
+    imgAlt: "Sistema automatizado de etiquetado de productos en planta",
+  },
+];
 
 export default function LookingFor() {
-  const steps = [
-    "Convertimos tus ideas en realidad",
-    "Diseñamos con precisión",
-    "Imprimimos con calidad",
-    "Entregamos excelencia",
-  ];
-
   return (
-    <section className="relative py-12 px-6 bg-[#f0e3e3] text-black">
-      <ThreeDotsWhite top={true} />
+    <section aria-labelledby="enfoque-heading" className="relative overflow-hidden bg-[#09090B] py-24 px-6 md:px-20">
+      <div
+        className="absolute inset-x-0 top-0 h-56 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.13),transparent_66%)]"
+        aria-hidden="true"
+      />
+      <div className="relative max-w-7xl mx-auto">
 
-      <motion.h2
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center font-rajdhani text-4xl md:text-5xl font-bold tracking-wide uppercase pt-10"
-      >
-        Nuestro Enfoque
-      </motion.h2>
+        {/* Header — left aligned for editorial feel */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 grid gap-5 border-t border-zinc-800 pt-16 md:grid-cols-[0.78fr_1fr] md:items-end"
+        >
+          <div>
+            <p className="font-rajdhani uppercase tracking-[0.3em] text-yellow-500 text-xs mb-4">
+              Cómo trabajamos
+            </p>
+            <h2
+              id="enfoque-heading"
+              className="font-audiowide font-extralight text-white leading-tight"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
+            >
+              Nuestro{" "}
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #F59E0B, #FBBF24, #60A5FA)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Enfoque
+              </span>
+            </h2>
+          </div>
+          <p className="font-poppins text-sm md:text-base leading-relaxed text-zinc-500 md:max-w-2xl md:justify-self-end">
+            Una ruta simple para que el cliente no cargue con lo técnico: nosotros
+            traducimos intención, material, color y producción en una etiqueta lista para entregar.
+          </p>
+        </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-        {steps.map((step, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -10 }}
-            transition={{ duration: 0.7 }}
-            className="group bg-white rounded-2xl p-6 text-center hover:shadow-purple-600 hover:shadow-2xl border border-zinc-200 cursor-crosshair transition-shadow duration-700 "
-          >
-            <div className="text-xl font-semibold mb-2">{step}</div>
-            <div className="w-6 h-1 mx-auto bg-purple-400 rounded-full mt-2 transition-all duration-500 group-hover:w-20" />
-          </motion.div>
-        ))}
-      </div>
+        {/* Step cards — 4 cols, tall image area */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 48 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative rounded-lg border border-zinc-800 bg-zinc-900/60 hover:border-zinc-600 transition-colors duration-500 overflow-hidden flex flex-col"
+            >
+              {/* Corner squares */}
+              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                <div className="absolute -left-1.5 -top-1.5 h-3 w-3 bg-yellow-500" />
+                <div className="absolute -right-1.5 -top-1.5 h-3 w-3 bg-yellow-500" />
+                <div className="absolute -left-1.5 -bottom-1.5 h-3 w-3 bg-yellow-500" />
+                <div className="absolute -right-1.5 -bottom-1.5 h-3 w-3 bg-yellow-500" />
+              </div>
 
-      <div className="mt-24">
-        <ThreeDotsWhite />
+              {/* Image — taller */}
+              <div className="relative overflow-hidden shrink-0" style={{ height: "260px" }}>
+                <div className="absolute inset-0 bg-linear-to-b from-black/10 via-transparent to-zinc-900 z-10" />
+                <img
+                  src={step.img}
+                  alt={step.imgAlt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+                {/* Step number — large editorial */}
+                <div className="absolute bottom-4 left-5 z-20">
+                  <span
+                    className="font-audiowide font-bold text-5xl leading-none select-none"
+                    style={{ color: "rgba(245,158,11,0.25)" }}
+                  >
+                    {step.number}
+                  </span>
+                </div>
+                {/* Icon */}
+                <div className="absolute top-4 right-4 z-20">
+                  <div className="w-9 h-9 rounded-xl bg-yellow-500/15 border border-yellow-500/25 backdrop-blur-sm flex items-center justify-center">
+                    <step.icon className="h-4 w-4 text-yellow-400" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 p-5 flex flex-col flex-1">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.04), transparent 60%)" }}
+                />
+                <h3 className="font-rajdhani font-bold uppercase tracking-wider text-white text-sm mb-2 group-hover:text-yellow-100 transition-colors duration-200 relative z-10">
+                  {step.title}
+                </h3>
+                <p className="font-poppins text-zinc-500 text-xs leading-relaxed relative z-10">
+                  {step.description}
+                </p>
+              </div>
+
+              <div
+                className="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: "linear-gradient(90deg, transparent, #F59E0B, transparent)" }}
+              />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

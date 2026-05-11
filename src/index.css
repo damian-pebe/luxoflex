@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
 @plugin "tailwindcss-animate";
 
 @variant dark (&:where(.dark, .dark *));
@@ -817,4 +819,90 @@
   20%, 30%  { transform: scale(1.05); filter: brightness(1.1); }
   45%, 55%  { transform: scale(1); }
   70%, 80%  { transform: scale(1.05); filter: brightness(1.1); }
+}
+
+@theme inline {
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  @keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+    }
+  15%, 35% {
+    transform: translateZ(0) rotate(90deg);
+    }
+  65%, 85% {
+    transform: translateZ(0) rotate(270deg);
+    }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+    }
+  }
+}
+
+.luxoflex-laserflow-fallback {
+  --beam-core: 96, 165, 250;
+  --beam-mid: 34, 211, 238;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 24% 8% at 50% 54%, rgba(255, 255, 255, 0.5), transparent 58%),
+    radial-gradient(ellipse 34% 10% at 50% 54%, rgba(var(--beam-mid), 0.82), transparent 70%),
+    radial-gradient(ellipse 48% 14% at 50% 55%, rgba(var(--beam-core), 0.46), transparent 76%),
+    radial-gradient(ellipse 62% 24% at 50% 58%, rgba(var(--beam-core), 0.18), transparent 82%),
+    radial-gradient(ellipse 8% 62% at 50% 22%, rgba(var(--beam-core), 0.52), transparent 74%);
+  filter: saturate(1.15);
+  opacity: 1;
+}
+
+.luxoflex-laserflow-fallback--gold {
+  --beam-core: 245, 158, 11;
+  --beam-mid: 253, 224, 71;
+}
+
+.luxoflex-laserflow-fallback::before,
+.luxoflex-laserflow-fallback::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.luxoflex-laserflow-fallback::before {
+  left: -4%;
+  right: -4%;
+  top: 53%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--beam-core), 0.24) 18%,
+    rgba(var(--beam-mid), 1) 50%,
+    rgba(var(--beam-core), 0.24) 82%,
+    transparent
+  );
+  box-shadow:
+    0 0 16px 5px rgba(var(--beam-core), 0.68),
+    0 0 46px 18px rgba(var(--beam-core), 0.28),
+    0 0 92px 30px rgba(var(--beam-mid), 0.12);
+}
+
+.luxoflex-laserflow-fallback::after {
+  left: 50%;
+  top: -4%;
+  width: min(22vw, 260px);
+  height: 68%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse 52% 34% at 50% 78%, rgba(255, 255, 255, 0.3), transparent 62%),
+    linear-gradient(180deg, transparent, rgba(var(--beam-core), 0.42) 40%, rgba(var(--beam-mid), 0.56) 76%, transparent);
+  filter: blur(14px);
+  mask-image: radial-gradient(ellipse 54% 96% at 50% 50%, black 0%, transparent 78%);
+  opacity: 0.88;
 }

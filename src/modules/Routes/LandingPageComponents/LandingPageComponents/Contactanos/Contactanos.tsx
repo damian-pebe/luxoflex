@@ -1,14 +1,14 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { backendUrl, logo } from "@/const";
-import { ThreeDotsWhite } from "@/components/ReusableIcons/ReusableIcons";
+import { backendUrl } from "@/const";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import ColorBends from "@/components/ColorBends";
 
 interface ContactFormValues {
   name: string;
@@ -18,8 +18,46 @@ interface ContactFormValues {
   company?: string;
 }
 
+const contactInfo = [
+  {
+    icon: Phone,
+    title: "Teléfono",
+    lines: ["+52 33 3462 6001", "+52 33 1363 5333"],
+    sub: "Lun-Dom, 8am–10pm",
+    gradient: "from-blue-500/20 to-blue-600/10",
+    iconColor: "text-blue-400",
+    iconBg: "from-blue-600/30 to-blue-500/10",
+  },
+  {
+    icon: Mail,
+    title: "Correo",
+    lines: ["luxoflex1ventas@gmail.com"],
+    sub: "Respuesta en menos de 24h",
+    gradient: "from-pink-500/20 to-pink-600/10",
+    iconColor: "text-pink-400",
+    iconBg: "from-pink-600/30 to-pink-500/10",
+  },
+  {
+    icon: MapPin,
+    title: "Oficina",
+    lines: ["Pedro Garcia Conde #282", "Col. Villahermosa, Gdl."],
+    sub: "Visítanos con cita previa",
+    gradient: "from-indigo-500/20 to-indigo-600/10",
+    iconColor: "text-indigo-400",
+    iconBg: "from-indigo-600/30 to-indigo-500/10",
+  },
+];
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] },
+});
+
 const Contactanos = () => {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -27,255 +65,226 @@ const Contactanos = () => {
     reset,
     formState: { errors },
   } = useForm<ContactFormValues>({
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    },
+    defaultValues: { name: "", email: "", phone: "", company: "", message: "" },
   });
 
   const onSubmit = async (data: ContactFormValues) => {
+    setLoading(true);
     const sendData = {
       subject: `Nuevo mensaje de contacto - Luxoflex - Empresa: ${data.company} - Nombre: ${data.name}`,
-      text: `Nombre: ${data.name} \n
-  Email: ${data.email}\n
-  Teléfono: ${data.phone || "No proporcionado"}\n
-  Empresa: ${data.company || "No proporcionada"}\n\n
-  Mensaje: ${data.message}`,
+      text: `Nombre: ${data.name}\nEmail: ${data.email}\nTeléfono: ${data.phone || "No proporcionado"}\nEmpresa: ${data.company || "No proporcionada"}\n\nMensaje: ${data.message}`,
     };
-
     try {
-      const response = await axios.post(`${backendUrl}formSubmit`, sendData);
-      console.log("Response:", response.data);
-      toast({
-        title: "¡Mensaje Enviado!",
-        description:
-          "Gracias por contactar a Luxoflex. Nos pondremos en contacto pronto.",
-        variant: "default",
-      });
+      await axios.post(`${backendUrl}formSubmit`, sendData);
+      toast({ title: "¡Mensaje enviado!", description: "Nos pondremos en contacto pronto." });
       reset();
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Error al enviar mensaje",
-        description:
-          "Ha ocurrido un error. Por favor, intente nuevamente más tarde.",
-        variant: "destructive",
-      });
+    } catch {
+      toast({ title: "Error al enviar", description: "Intente nuevamente más tarde.", variant: "destructive" });
+    } finally {
+      setLoading(false);
     }
   };
 
+  const inputClass = (hasError?: boolean) =>
+    `bg-white/5 border text-white placeholder:text-zinc-600 text-sm rounded-xl focus:ring-1 focus:ring-blue-500 focus:border-blue-500/60 transition-colors duration-200 ${
+      hasError ? "border-red-500/60" : "border-white/10"
+    }`;
+
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAFA] font-poppins py-8">
-      <ThreeDotsWhite top={true} />
+    <div className="min-h-screen bg-[#09090B] font-poppins relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <ColorBends
+          colors={["#ec4899", "#3b82f6", "#6366f1"]}
+          rotation={90}
+          speed={0.15}
+          scale={1}
+          frequency={1}
+          warpStrength={1}
+          mouseInfluence={0.3}
+          noise={0.15}
+          parallax={0.3}
+          iterations={1}
+          intensity={1.2}
+          bandWidth={6}
+          transparent
+          autoRotate={0}
+        />
+      </div>
+      <div className="absolute inset-0 z-0 bg-[#09090B]/70 pointer-events-none" />
 
-      <main className="flex-grow pt-8">
-        <div className="text-center relative bg-[#FAFAFA] text-black placeholder:text-gray-700 py-16 overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage:
-                'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="0.8"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
-              backgroundSize: "60px 60px",
-            }}
-          />
-          <div className="container mx-auto px-4 relative z-10">
-            <h1 className="text-6xl md:text-8xl mb-4 animate-fadeInUp font-dancing text-black">
-              Contáctanos
-            </h1>
-            <p className="text-xl md:text-2xl w-full animate-fadeInUp animate-delay-100 font- text-black">
-              ¿Tienes preguntas sobre nuestras etiquetas premium? Nos encantaría
-              escucharte.
-            </p>
-          </div>
-        </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20">
+        {/* Header */}
+        <motion.div {...fadeUp(0)} className="mb-14">
+          <p className="font-rajdhani uppercase tracking-widest text-blue-400 text-sm mb-3">
+            Contáctanos
+          </p>
+          <h1 className="font-audiowide font-extralight text-4xl md:text-5xl text-white leading-tight">
+            Hablemos de tu{" "}
+            <span style={{
+              background: "linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #ec4899 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+              próximo proyecto
+            </span>
+          </h1>
+          <p className="mt-3 text-zinc-500 text-base max-w-lg">
+            ¿Tienes preguntas sobre nuestras etiquetas premium? Nos encantaría escucharte.
+          </p>
+        </motion.div>
 
-        <div className="container mx-auto px-6 md:px-10 lg:px-20 py-16">
-          {" "}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {" "}
-            <Card className="p-6 shadow-2xl animate-fadeInUp animate-delay-200 bg-[#FAFAFA] ">
-              <div className="w-full flex justify-between items-start sm:items-center gap-4">
-                {" "}
-                <h2 className=" text-4xl font-dancing text-black">
-                  Envíanos un Mensaje
-                </h2>
-                <img
-                  className="h-16 flex flex-col justify-center items-center"
-                  src={logo}
-                />
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          {/* Form — 3/5 — true glassmorphism */}
+          <motion.div {...fadeUp(0.1)} className="lg:col-span-3">
+            <div
+              className="rounded-3xl p-8 border border-white/10 relative overflow-hidden"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(32px) saturate(180%)",
+                WebkitBackdropFilter: "blur(32px) saturate(180%)",
+                boxShadow: "0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)",
+              }}
+            >
+              {/* Subtle inner gradient highlight at top */}
+              <div
+                className="absolute inset-x-0 top-0 h-px"
+                style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)" }}
+              />
+              <h2 className="font-poppins font-semibold text-white text-xl mb-6">
+                Envíanos un mensaje
+              </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-black">
-                    Nombre <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="name"
-                    {...register("name")}
-                    placeholder="Nombre..."
-                    className={`${
-                      errors.name ? "border-red-500" : ""
-                    } bg-[#FAFAFA] text-black placeholder:text-gray-700`}
-                  />
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="name" className="text-zinc-400 text-xs uppercase tracking-wider">
+                      Nombre <span className="text-red-400">*</span>
+                    </Label>
+                    <Input
+                      id="name"
+                      {...register("name", { required: true })}
+                      placeholder="Tu nombre"
+                      className={inputClass(!!errors.name)}
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="email" className="text-zinc-400 text-xs uppercase tracking-wider">
+                      Correo <span className="text-red-400">*</span>
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      {...register("email", { required: true })}
+                      placeholder="tu@email.com"
+                      className={inputClass(!!errors.email)}
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-black">
-                    Correo Electrónico <span className="text-red-500">*</span>
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    {...register("email")}
-                    placeholder="Email..."
-                    className={`${
-                      errors.email ? "border-red-500" : ""
-                    } bg-[#FAFAFA] text-black placeholder:text-gray-700`}
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="phone" className="text-zinc-400 text-xs uppercase tracking-wider">
+                      Teléfono
+                    </Label>
+                    <Input
+                      id="phone"
+                      {...register("phone")}
+                      placeholder="+52 33 ..."
+                      className={inputClass()}
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="company" className="text-zinc-400 text-xs uppercase tracking-wider">
+                      Empresa
+                    </Label>
+                    <Input
+                      id="company"
+                      {...register("company")}
+                      placeholder="Tu empresa"
+                      className={inputClass()}
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-black">
-                    Teléfono
-                  </Label>
-                  <Input
-                    id="phone"
-                    {...register("phone")}
-                    placeholder="Phone..."
-                    className="bg-[#FAFAFA] text-black placeholder:text-gray-700"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="company" className="text-black">
-                    Nombre de la Empresa
-                  </Label>
-                  <Input
-                    id="company"
-                    {...register("company")}
-                    placeholder="Empresa..."
-                    className="bg-[#FAFAFA] text-black placeholder:text-gray-700"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-black">
-                    Mensaje <span className="text-red-500">*</span>
+                <div className="space-y-1.5">
+                  <Label htmlFor="message" className="text-zinc-400 text-xs uppercase tracking-wider">
+                    Mensaje <span className="text-red-400">*</span>
                   </Label>
                   <Textarea
                     id="message"
-                    {...register("message")}
+                    {...register("message", { required: true })}
                     placeholder="Cuéntanos cómo podemos ayudarte..."
                     rows={5}
-                    className={`${
-                      errors.message ? "border-red-500" : ""
-                    } bg-[#FAFAFA] text-black placeholder:text-gray-700`}
+                    className={inputClass(!!errors.message)}
                   />
                 </div>
 
-                <Button
+                <button
                   type="submit"
-                  className="w-full bg-black text-white hover:bg-black/90 transition-colors"
+                  disabled={loading}
+                  className="cursor-pointer w-full flex items-center justify-center gap-2 text-white font-semibold text-sm py-3.5 rounded-xl transition-all duration-300 disabled:opacity-50 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(59,130,246,0.35)]"
+                  style={{ background: "linear-gradient(135deg, #1E40AF 0%, #2563EB 60%, #3B82F6 100%)" }}
                 >
-                  Enviar Mensaje
-                </Button>
+                  <Send className="h-4 w-4" />
+                  {loading ? "Enviando..." : "Enviar mensaje"}
+                </button>
               </form>
-            </Card>
-            <div className="space-y-8">
-              <div className="animate-fadeInUp animate-delay-300">
-                <h2 className="text-2xl font-bold mb-6 text-black border-b pb-2">
-                  Información de Contacto
-                </h2>
-
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <Phone className="h-5 w-5 text-black mr-3 mt-1" />
-                    <div>
-                      <h3 className="font-medium text-black">Teléfono</h3>
-                      <p className="text-gray-600">+52 33 3462 6001</p>
-                      <p className="text-gray-600">+52 33 1363 5333</p>
-                      <p className="text-gray-500 text-sm">Lun-Dom, 8am-10pm</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <Mail className="h-5 w-5 text-black mr-3 mt-1" />
-                    <div>
-                      <h3 className="font-medium text-black">Correo</h3>
-                      <p className="text-gray-600">luxoflex1ventas@gmail.com</p>
-                      <p className="text-gray-500 text-sm">
-                        Responderemos en 24 horas
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-black mr-3 mt-1" />
-                    <div>
-                      <h3 className="font-medium text-black">
-                        Ubicación de la Oficina
-                      </h3>
-                      <p className="text-gray-600">
-                        Calle Pedro Garcia Conde, Numero 282, Colonia
-                        Villahermosa
-                      </p>
-                      <p className="text-gray-600">Guadalajara, Jalisco</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hidden md:block bg-white p-6 rounded-lg shadow-2xl animate-fadeInUp animate-delay-400">
-                <div className="flex items-center mb-4">
-                  <MessageSquare className="h-5 w-5 text-black mr-2" />
-                  <h3 className="text-xl font-bold text-black">
-                    Preguntas Frecuentes
-                  </h3>
-                </div>
-
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-medium text-black">
-                      ¿Qué tipos de etiquetas ofrecen?
-                    </h4>
-                    <p className="text-gray-600 text-sm mt-1">
-                      Ofrecemos una amplia gama de etiquetas premium incluyendo
-                      impermeables, térmicas, adhesivas, removibles y etiquetas
-                      con formas personalizadas para diversas aplicaciones.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-medium text-black">
-                      ¿Cuál es la cantidad mínima de pedido?
-                    </h4>
-                    <p className="text-gray-600 text-sm mt-1">
-                      Nuestras cantidades mínimas de pedido varían según el tipo
-                      de etiqueta. Por favor contáctenos para detalles
-                      específicos.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-medium text-black">
-                      ¿Ofrecen servicios urgentes?
-                    </h4>
-                    <p className="text-gray-600 text-sm mt-1">
-                      Sí, ofrecemos producción y envío acelerados para pedidos
-                      urgentes con un costo adicional.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Right col — 2/5 — unified contact panel */}
+          <motion.div {...fadeUp(0.2)} className="lg:col-span-2">
+            <div
+              className="rounded-3xl border border-white/10 overflow-hidden relative"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                backdropFilter: "blur(32px) saturate(180%)",
+                WebkitBackdropFilter: "blur(32px) saturate(180%)",
+                boxShadow: "0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.07)",
+              }}
+            >
+              <div
+                className="absolute inset-x-0 top-0 h-px"
+                style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)" }}
+              />
+
+              {contactInfo.map((item, i) => (
+                <div
+                  key={i}
+                  className={`relative px-6 py-6 flex gap-5 items-start ${i < contactInfo.length - 1 ? "border-b border-white/6" : ""}`}
+                >
+                  {/* Colored glow blob behind icon */}
+                  <div className="relative shrink-0">
+                    <div
+                      className={`absolute inset-0 rounded-2xl blur-xl opacity-50 bg-linear-to-br ${item.iconBg}`}
+                    />
+                    <div
+                      className={`relative w-12 h-12 rounded-2xl flex items-center justify-center bg-linear-to-br ${item.iconBg} border border-white/10`}
+                    >
+                      <item.icon className={`h-5 w-5 ${item.iconColor}`} />
+                    </div>
+                  </div>
+
+                  <div className="min-w-0">
+                    <p className="text-zinc-500 text-[10px] uppercase tracking-widest mb-1.5 font-medium">
+                      {item.title}
+                    </p>
+                    {item.lines.map((l, j) => (
+                      <p key={j} className="text-white text-sm font-medium leading-snug truncate">{l}</p>
+                    ))}
+                    <p className="text-zinc-600 text-xs mt-2 flex items-center gap-1.5">
+                      <Clock className="h-3 w-3 shrink-0" />
+                      {item.sub}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
-      </main>
-      <ThreeDotsWhite />
+      </div>
     </div>
   );
 };
