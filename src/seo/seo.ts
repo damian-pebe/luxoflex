@@ -49,6 +49,7 @@ type SeoData = {
   siteName: string;
   defaultImage: string;
   language: string;
+  primaryNavigation: string[];
   business: SeoBusiness;
   routes: SeoRoute[];
   redirects: Array<{ path: string; target: string }>;
@@ -110,6 +111,10 @@ export const getSeoRoute = (path: string) => {
 export const serviceRoutes = seoData.routes.filter(
   (route): route is SeoRoute & { service: SeoService } => Boolean(route.service)
 );
+
+const primaryNavigationRoutes = seoData.primaryNavigation
+  .map((path) => seoData.routes.find((route) => route.path === path))
+  .filter((route): route is SeoRoute => Boolean(route));
 
 const lastBreadcrumbName = (route: SeoRoute) => {
   const last = route.breadcrumb[route.breadcrumb.length - 1];
@@ -187,6 +192,7 @@ const websiteSchema = () => ({
   "@id": `${seoData.siteUrl}/#website`,
   url: seoData.siteUrl,
   name: seoData.siteName,
+  alternateName: ["Luxoflex Impresiones", "Luxoflex etiquetas"],
   inLanguage: seoData.language,
   publisher: {
     "@id": `${seoData.siteUrl}/#organization`,
@@ -198,7 +204,7 @@ const navigationSchema = () => ({
   "@type": "ItemList",
   "@id": `${seoData.siteUrl}/#site-navigation`,
   name: "Navegacion principal Luxoflex",
-  itemListElement: seoData.routes.map((route, index) => ({
+  itemListElement: primaryNavigationRoutes.map((route, index) => ({
     "@type": "SiteNavigationElement",
     position: index + 1,
     name: lastBreadcrumbName(route),

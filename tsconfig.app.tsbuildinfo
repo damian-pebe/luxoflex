@@ -89,12 +89,15 @@
     "./src/modules/routes/pastworks/products/products.tsx",
     "./src/modules/routes/pastworks/products/components/wavytitle.tsx",
     "./src/modules/routes/pastworks/products/materials/materials.tsx",
+    "./src/modules/routes/serviceseo/serviceseopage.tsx",
     "./src/modules/routes/vision/vision.tsx",
     "./src/modules/routes/vision/components/hero.tsx",
     "./src/modules/routes/vision/components/joinus.tsx",
     "./src/modules/routes/vision/components/lookingfor.tsx",
     "./src/modules/routes/vision/components/valores.tsx",
-    "./src/modules/routes/vision/components/visionstatement.tsx"
+    "./src/modules/routes/vision/components/visionstatement.tsx",
+    "./src/seo/seometa.tsx",
+    "./src/seo/seo.ts"
   ],
   "version": "5.9.3"
 }

@@ -40,6 +40,10 @@ const findRoute = (pathname) => {
 
 const serviceRoutes = seoData.routes.filter((route) => route.service);
 
+const primaryNavigationRoutes = seoData.primaryNavigation
+  .map((pathname) => findRoute(pathname))
+  .filter(Boolean);
+
 const lastBreadcrumbName = (route) => {
   const last = route.breadcrumb[route.breadcrumb.length - 1];
   return last?.name || route.title;
@@ -117,6 +121,7 @@ const buildJsonLd = (route) => {
     "@id": `${seoData.siteUrl}/#website`,
     url: seoData.siteUrl,
     name: seoData.siteName,
+    alternateName: ["Luxoflex Impresiones", "Luxoflex etiquetas"],
     inLanguage: seoData.language,
     publisher: {
       "@id": `${seoData.siteUrl}/#organization`,
@@ -128,7 +133,7 @@ const buildJsonLd = (route) => {
     "@type": "ItemList",
     "@id": `${seoData.siteUrl}/#site-navigation`,
     name: "Navegacion principal Luxoflex",
-    itemListElement: seoData.routes.map((item, index) => ({
+    itemListElement: primaryNavigationRoutes.map((item, index) => ({
       "@type": "SiteNavigationElement",
       position: index + 1,
       name: lastBreadcrumbName(item),
@@ -270,6 +275,7 @@ const renderRouteHtml = ({ route, canonicalPath = route.path, noindex = false })
   html = upsertMeta(html, "property", "og:title", route.title);
   html = upsertMeta(html, "property", "og:description", route.description);
   html = upsertMeta(html, "property", "og:image", imageUrl);
+  html = upsertMeta(html, "property", "og:logo", absoluteImageUrl(seoData.business.logo));
   html = upsertMeta(html, "property", "og:locale", "es_MX");
   html = upsertMeta(html, "property", "og:site_name", seoData.siteName);
   html = upsertMeta(html, "name", "twitter:card", "summary_large_image");

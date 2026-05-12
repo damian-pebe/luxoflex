@@ -3,13 +3,14 @@
   "siteName": "Luxoflex",
   "defaultImage": "/luxoflexImage1.webp",
   "language": "es-MX",
+  "primaryNavigation": ["/", "/nosotros", "/galeria", "/contacto", "/mision", "/vision"],
   "business": {
     "name": "Luxoflex",
     "description": "Luxoflex fabrica etiquetas personalizadas, etiquetas autoadheribles, mangas termocontraibles y preprensa profesional para marcas en Mexico.",
     "telephone": "+52 33 3462 6001",
     "secondaryTelephone": "+52 33 1363 5333",
     "email": "luxoflex1ventas@gmail.com",
-    "logo": "/luxoflex.webp",
+    "logo": "/favicon-512x512.png",
     "foundingDate": "2009",
     "priceRange": "$$",
     "address": {

@@ -76,6 +76,7 @@ export function SeoMeta() {
     setMeta('meta[property="og:title"]', { property: "og:title", content: route.title });
     setMeta('meta[property="og:description"]', { property: "og:description", content: route.description });
     setMeta('meta[property="og:image"]', { property: "og:image", content: imageUrl });
+    setMeta('meta[property="og:logo"]', { property: "og:logo", content: absoluteImageUrl(seoData.business.logo) });
     setMeta('meta[property="og:locale"]', { property: "og:locale", content: "es_MX" });
     setMeta('meta[property="og:site_name"]', { property: "og:site_name", content: seoData.siteName });
 

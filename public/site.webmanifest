@@ -1,0 +1,23 @@
+{
+  "name": "Luxoflex",
+  "short_name": "Luxoflex",
+  "description": "Etiquetas personalizadas, flexografia, mangas termocontraibles y preprensa profesional para marcas en Mexico.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050506",
+  "theme_color": "#050506",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
